@@ -21,7 +21,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className={`antialiased max-w-360 mx-auto`}>
+      <body className={`antialiased max-w-screen-2xl mx-auto`}>
         <Header />
         {children}
         <Footer />
