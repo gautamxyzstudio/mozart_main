@@ -22,6 +22,20 @@
   --color-black80: var(--black-80);
 }
 
+@theme {
+  --animate-rotate360: rotate360 8s linear infinite;
+
+  @keyframes rotate360 {
+    from {
+      transform: rotate(0deg);
+
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --primary: #6739b7;
