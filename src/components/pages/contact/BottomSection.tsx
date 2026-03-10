@@ -1,5 +1,5 @@
 "use client";
-import { Images } from "@/public/exports";
+import { Images, Icons } from "@/public/exports";
 import Image from "next/image";
 import { useForm, SubmitHandler } from "react-hook-form";
 
@@ -130,41 +130,39 @@ export const BottomSection = () => {
             </button>
           </form>
 
-          <div className="mt-12 flex md:flex-row md:flex-nowrap flex-wrap justify-between items-center bg-white rounded-[20px] xl:p-8 md:p-4 p-2 gap-y-6 shadow-[0_10px_50px_rgba(0,0,0,0.05)] border border-gray-100 ">
-            {/* Quick Contact */}
-            <div className="flex items-center  ">
-              <Image
-                src={Images.QuickContact}
-                alt="Quick Contact"
-                className="md:w-10 md:h-10"
-              />
+          <div className="mt-12 flex flex-nowrap justify-between items-center bg-white rounded-[20px] xl:p-8 md:p-4 p-4 gap-x-4 shadow-[0_10px_50px_rgba(0,0,0,0.05)] border border-gray-100 overflow-hidden">
 
-              <div>
-                <p className="font-bold text-black-80 text-lg leading-tight">
+            {/* Quick Contact */}
+            <div className="flex items-center gap-2 min-w-0">
+              <Image
+                src={Icons.QuickContact}
+                alt="Quick Contact"
+                className="xl:w-10 xl:h-10 md:w-8 md:h-8 w-6 h-6 shrink-0"
+              />
+              <div className="min-w-0">
+                <p className="font-bold text-black-80 xl:text-lg md:text-[12px] text-[10px] leading-tight truncate">
                   Quick Contact
                 </p>
-                <p className="text-gray-500 text-sm mt-1 font-medium">
+                <p className="text-gray-500 xl:text-sm md:text-[10px] text-[9px] mt-0.5 font-medium truncate">
                   support@thexyz.media
                 </p>
               </div>
             </div>
 
-            {/* Middle Vertical Divider Line */}
-            <div className="h-12 w-[1.5px] md:flex hidden bg-linear-to-b from-transparent via-purple-400 to-transparent mx-8"></div>
+            <div className="h-10 w-px bg-linear-to-b from-transparent via-purple-400 to-transparent shrink-0"></div>
 
             {/* Phone Number */}
-            <div className="flex items-center  ">
+            <div className="flex items-center gap-2 min-w-0">
               <Image
-                src={Images.PhoneNumber}
+                src={Icons.PhoneNumber}
                 alt="Phone Number"
-                className="md:w-10 md:h-10"
+                className="xl:w-10 xl:h-10 md:w-8 md:h-8 w-6 h-6 shrink-0"
               />
-
-              <div>
-                <p className="font-bold text-[#2D2D2D] text-lg leading-tight">
+              <div className="min-w-0">
+                <p className="font-bold text-[#2D2D2D] xl:text-lg md:text-[12px] text-[10px] leading-tight truncate">
                   Phone Number
                 </p>
-                <p className="text-gray-500 text-sm mt-1 font-medium">
+                <p className="text-gray-500 xl:text-sm md:text-[10px] text-[9px] mt-0.5 font-medium truncate">
                   +1 (778) 302-9979
                 </p>
               </div>
