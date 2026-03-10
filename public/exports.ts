@@ -8,12 +8,18 @@ import Instagram from "./instagram.svg";
 import Facebook from "./facebook.svg";
 import LinkedIn from "./linkedIn.svg";
 import Twitter from "./twitter.svg";
+import NotFound from "./notfound.webp";
+import QuickContact from "./quickcontact.svg";
+import PhoneNumber from "./phone-call.svg"
 
 export const Images = {
   Logo,
   WhiteLogo,
   Disk,
   Lyrics,
+  NotFound,
+  QuickContact,
+   PhoneNumber 
 };
 
 export const Icons = {
