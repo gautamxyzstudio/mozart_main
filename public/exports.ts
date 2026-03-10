@@ -11,6 +11,9 @@ import Twitter from "./twitter.svg";
 import NotFound from "./notfound.webp";
 import QuickContact from "./quickcontact.svg";
 import PhoneNumber from "./phone-call.svg"
+import Album from "./album.webp";
+import AlbumTwo from "./albumTwo.webp";
+import AlbumThree from "./albumThree.webp";
 
 export const Images = {
   Logo,
@@ -18,8 +21,9 @@ export const Images = {
   Disk,
   Lyrics,
   NotFound,
-  QuickContact,
-   PhoneNumber 
+  Album,
+  AlbumTwo,
+  AlbumThree,
 };
 
 export const Icons = {
@@ -29,4 +33,7 @@ export const Icons = {
   Facebook,
   LinkedIn,
   Twitter,
+  QuickContact,
+  PhoneNumber,
 };
+
