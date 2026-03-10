@@ -83,7 +83,7 @@ const Header = () => {
               ? isScrolled
                 ? "bg-background shadow"
                 : "bg-transparent"
-              : "bg-transparent"
+              : "bg-background"
           }`}
         >
           <Link href={"/"}>

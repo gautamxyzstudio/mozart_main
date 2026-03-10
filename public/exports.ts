@@ -8,12 +8,18 @@ import Instagram from "./instagram.svg";
 import Facebook from "./facebook.svg";
 import LinkedIn from "./linkedIn.svg";
 import Twitter from "./twitter.svg";
+import Album from "./album.webp";
+import AlbumTwo from "./albumTwo.webp";
+import AlbumThree from "./albumThree.webp";
 
 export const Images = {
   Logo,
   WhiteLogo,
   Disk,
   Lyrics,
+  Album,
+  AlbumTwo,
+  AlbumThree,
 };
 
 export const Icons = {
@@ -24,3 +30,4 @@ export const Icons = {
   LinkedIn,
   Twitter,
 };
+

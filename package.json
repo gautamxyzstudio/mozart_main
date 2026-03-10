@@ -22,6 +22,7 @@
     "nodemailer": "^8.0.1",
     "react": "19.2.4",
     "react-dom": "19.2.4",
+    "react-infinite-ticker": "^2.3.0",
     "styled-components": "^6.3.11"
   },
   "devDependencies": {
