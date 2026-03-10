@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "@/src/compoments/modules/header/Header";
-import Footer from "@/src/compoments/modules/footer/Footer";
+import Header from "@/src/components/modules/header/Header";
+import Footer from "@/src/components/modules/footer/Footer";
+import { CanonicalURL } from "@/src/components/modules/canonicalUrl/CanonicalURL";
 
 export const metadata: Metadata = {
   title: "MOZART",
@@ -20,6 +21,7 @@ export default function RootLayout({
           href="https://fonts.cdnfonts.com/css/hvdtrial-graphit"
           rel="stylesheet"
         />
+        <CanonicalURL />
       </head>
       <body className={`antialiased max-w-screen-2xl mx-auto`}>
         <Header />
