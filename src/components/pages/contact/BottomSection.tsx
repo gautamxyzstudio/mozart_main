@@ -24,7 +24,7 @@ export const BottomSection = () => {
   };
 
   return (
-    <section className="relative bg-white py-20 overflow-hidden">
+    <section className="relative bg-white pb-20 overflow-hidden">
       {/* Background Large Text */}
       <h1 className="text-[#111] opacity-[0.1] lg:text-[12rem] lg:leading-80 font-bold md:text-[124px] md:leading-40 text-[70px] leading-20">
         Get In Touch
