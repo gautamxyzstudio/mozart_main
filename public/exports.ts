@@ -9,11 +9,15 @@ import Facebook from "./facebook.svg";
 import LinkedIn from "./linkedIn.svg";
 import Twitter from "./twitter.svg";
 import NotFound from "./notfound.webp";
-import QuickContact from "./quickcontact.svg";
-import PhoneNumber from "./phone-call.svg"
+import QuickContact from "./quickContact.svg";
+import PhoneNumber from "./phone-call.svg";
 import Album from "./album.webp";
 import AlbumTwo from "./albumTwo.webp";
 import AlbumThree from "./albumThree.webp";
+import SlideOne from "./slideOne.png";
+import SlideTwo from "./slideTwo.jpg";
+import LeftArrow from "./leftArrow.svg";
+import RightArrow from "./rightArrow.svg";
 
 export const Images = {
   Logo,
@@ -24,6 +28,8 @@ export const Images = {
   Album,
   AlbumTwo,
   AlbumThree,
+  SlideOne,
+  SlideTwo,
 };
 
 export const Icons = {
@@ -35,5 +41,6 @@ export const Icons = {
   Twitter,
   QuickContact,
   PhoneNumber,
+  LeftArrow,
+  RightArrow
 };
-
