@@ -1,5 +1,18 @@
 "use client";
-import { HorizontalTicker } from "react-infinite-ticker";
+import dynamic from "next/dynamic";
+
+interface HorizontalTickerProps {
+  children: React.ReactNode;
+  className?: string;
+  duration?: number;
+}
+
+const HorizontalTicker = dynamic<HorizontalTickerProps>(
+  () => import("react-infinite-ticker").then((mod) => mod.HorizontalTicker),
+  {
+    ssr: false,
+  },
+);
 const HomeTicker = () => {
   return (
     <div className="md:flex xl:py-12 md:pt-3 justify-center w-full -z-10 xl:ml-0 md:ml-12 hidden">
