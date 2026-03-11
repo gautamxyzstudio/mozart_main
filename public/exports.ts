@@ -18,6 +18,15 @@ import SlideOne from "./slideOne.png";
 import SlideTwo from "./slideTwo.jpg";
 import LeftArrow from "./leftArrow.svg";
 import RightArrow from "./rightArrow.svg";
+import LyricsBox from "./lyricsBox.webp";
+import ServiceLyri from "./serviceLyrics.webp";
+import Youtube from "./gif/youtube.gif";
+import Player from "./gif/player.gif";
+import AppleMusic from "./appleMusic.png";
+import JioSaavn from "./jioSaavn.png";
+import Spotify from "./spotify.png";
+import Wynk from "./wynk.png";
+import YoutubeMusic from "./youtubeMusic.png";
 
 export const Images = {
   Logo,
@@ -30,6 +39,13 @@ export const Images = {
   AlbumThree,
   SlideOne,
   SlideTwo,
+  LyricsBox,
+  ServiceLyri,
+  AppleMusic,
+  JioSaavn,
+  Spotify,
+  Wynk,
+  YoutubeMusic,
 };
 
 export const Icons = {
@@ -42,5 +58,10 @@ export const Icons = {
   QuickContact,
   PhoneNumber,
   LeftArrow,
-  RightArrow
+  RightArrow,
+};
+
+export const GIF = {
+  Youtube,
+  Player,
 };

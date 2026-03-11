@@ -74,7 +74,7 @@ export default function AlbumSlider() {
       </div>
 
       {/* Mobile */}
-      <div className="flex flex-row h-full">
+      <div className="flex flex-row h-full md:hidden">
         <Swiper
           effect={"coverflow"}
           coverflowEffect={{
