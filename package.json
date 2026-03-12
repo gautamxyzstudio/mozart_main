@@ -24,7 +24,8 @@
     "react-dom": "19.2.4",
     "react-hook-form": "^7.71.2",
     "react-infinite-ticker": "^2.3.0",
-    "styled-components": "^6.3.11"
+    "styled-components": "^6.3.11",
+    "swiper": "^12.1.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

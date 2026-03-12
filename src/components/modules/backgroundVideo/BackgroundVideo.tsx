@@ -52,7 +52,6 @@ export default function BackgroundVideo() {
         playsInline
         preload="none"
       >
-        {/* <source src="/videos/playerPro.webm" type="video/webm" /> */}
         <source src="/videos/pro.mp4" type="video/mp4" />
       </video>
     </>

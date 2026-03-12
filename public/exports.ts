@@ -9,8 +9,8 @@ import Facebook from "./facebook.svg";
 import LinkedIn from "./linkedIn.svg";
 import Twitter from "./twitter.svg";
 import NotFound from "./notfound.webp";
-import QuickContact from "./quickcontact.svg";
-import PhoneNumber from "./phone-call.svg"
+import QuickContact from "./quickContact.svg";
+import PhoneNumber from "./phone-call.svg";
 import Album from "./album.webp";
 import AlbumTwo from "./albumTwo.webp";
 import AlbumThree from "./albumThree.webp";
@@ -26,10 +26,19 @@ import RecentBlog6 from "./recentblog6.webp"
 import RecentBlog7 from "./recentblog7.webp"
 import RecentBlog8 from "./recentblog8.webp"
 import RecentBlog9 from "./recentblog9.webp"
- 
- 
-
-
+import SlideOne from "./slideOne.png";
+import SlideTwo from "./slideTwo.jpg";
+import LeftArrow from "./leftArrow.svg";
+import RightArrow from "./rightArrow.svg";
+import LyricsBox from "./lyricsBox.webp";
+import ServiceLyri from "./serviceLyrics.webp";
+import Youtube from "./gif/youtube.gif";
+import Player from "./gif/player.gif";
+import AppleMusic from "./appleMusic.png";
+import JioSaavn from "./jioSaavn.png";
+import Spotify from "./spotify.png";
+import Wynk from "./wynk.png";
+import YoutubeMusic from "./youtubeMusic.png";
 
 export const Images = {
   Logo,
@@ -51,8 +60,16 @@ export const Images = {
   RecentBlog6,
   RecentBlog7,
   RecentBlog8,
-  RecentBlog9
-
+  RecentBlog9,
+  SlideOne,
+  SlideTwo,
+  LyricsBox,
+  ServiceLyri,
+  AppleMusic,
+  JioSaavn,
+  Spotify,
+  Wynk,
+  YoutubeMusic,
 };
 
 export const Icons = {
@@ -64,5 +81,11 @@ export const Icons = {
   Twitter,
   QuickContact,
   PhoneNumber,
+  LeftArrow,
+  RightArrow,
 };
 
+export const GIF = {
+  Youtube,
+  Player,
+};
