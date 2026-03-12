@@ -50,11 +50,11 @@ export default function AlbumSlider() {
         >
           {slides.map((img, i) => (
             <SwiperSlide key={i}>
-              <div className="slideCard">
+              <div className="slideCard xl:rounded-2xl rounded-lg overflow-clip">
                 <Image
                   src={img}
                   alt={`${img}`}
-                  className="w-full xl:rounded-2xl rounded-lg"
+                  className="w-full h-full xl:rounded-2xl rounded-lg object-cover object-top"
                 />
               </div>
             </SwiperSlide>
@@ -104,7 +104,7 @@ export default function AlbumSlider() {
             <SwiperSlide key={i}>
               <Image
                 src={img}
-                className="w-full h-81.75 object-cover rounded-lg"
+                className="w-full h-81.75 object-cover rounded-2xl"
                 alt="poster"
               />
             </SwiperSlide>
