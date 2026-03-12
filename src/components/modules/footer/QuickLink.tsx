@@ -70,8 +70,8 @@ const QuickLink = () => {
       label: "Legal",
       linkList: [
         {
-          title: "Terms of Service",
-          link: "/terms",
+          title: "Terms & Conditions",
+          link: "/termsandconditions",
         },
         {
           title: "Privacy Policy",

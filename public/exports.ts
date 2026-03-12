@@ -39,6 +39,10 @@ import JioSaavn from "./jioSaavn.png";
 import Spotify from "./spotify.png";
 import Wynk from "./wynk.png";
 import YoutubeMusic from "./youtubeMusic.png";
+import BgImg from "./bgImg.webp";
+import Facebook2 from "./facebook2.svg";
+import Twitter2 from "./twitter2.svg";
+import linkedIn2 from "./linkedIn2.svg";
 
 export const Images = {
   Logo,
@@ -70,6 +74,7 @@ export const Images = {
   Spotify,
   Wynk,
   YoutubeMusic,
+  BgImg,
 };
 
 export const Icons = {
@@ -83,6 +88,9 @@ export const Icons = {
   PhoneNumber,
   LeftArrow,
   RightArrow,
+  Facebook2,
+  Twitter2,
+  linkedIn2,
 };
 
 export const GIF = {

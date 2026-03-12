@@ -76,7 +76,7 @@ const BlogBottomSection = () => {
         <h2 className="text-[#111] font-bold text-[32px] md:text-[48px] tracking-tight">
           Recent Blogs
         </h2>
-        <button className="bg-[#6739B7] text-white px-8 py-2.5 rounded-full text-sm font-semibold hover:bg-[#532e94] transition-all active:scale-95">
+        <button className="bg-primary text-white px-8 py-2.5 rounded-full text-sm font-semibold hover:bg-primary transition-all active:scale-95">
           View All
         </button>
       </div>
@@ -99,7 +99,7 @@ const BlogBottomSection = () => {
 
             {/* Meta Data */}
             <div className="flex items-center gap-3 mb-3">
-              <span className="text-[#111] font-semibold text-[13px] uppercase tracking-wider">
+              <span className="text-black font-semibold text-[13px] uppercase tracking-wider">
                 {blog.category}
               </span>
               <div className="w-8 h-[1.5px] bg-gray-300"></div>
@@ -107,7 +107,7 @@ const BlogBottomSection = () => {
             </div>
 
             {/* Title */}
-            <h3 className="text-[#111] font-bold text-[19px] md:text-[21px] leading-[1.3] group-hover:text-[#6739B7] transition-colors duration-300">
+            <h3 className="text-black font-bold text-[19px] md:text-[21px] leading-[1.3] group-hover:text-primary transition-colors duration-300">
               {blog.title}
             </h3>
           </div>
