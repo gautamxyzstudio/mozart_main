@@ -4,10 +4,10 @@ import Link from "next/link";
 
 const HomeAboutSection = () => {
   return (
-    <section className="xl:min-h-screen w-full xl:h-full md:h-131 h-202.5 relative overflow-clip">
+    <section className="xl:max-h-202.5 w-full xl:h-202.5 md:h-131 h-202.5 relative overflow-clip">
       <BackgroundVideo />
       <div className="w-full h-full absolute bg-primary top-0 bottom-0 mix-blend-hue" />
-      <div className="flex flex-col z-10 relative w-full h-full md:justify-between xl:min-h-screen">
+      <div className="flex flex-col z-10 relative w-full xl:h-202.5 md:h-131 h-202.5 md:justify-between">
         <span className="xl:text-[200px] xl:leading-51.5 md:text-[124px] md:leading-32.5 text-[70px] leading-19 text-background/10 font-bold xl:-mt-11.25 md:-mt-4.25 -mt-2.25">
           About
         </span>

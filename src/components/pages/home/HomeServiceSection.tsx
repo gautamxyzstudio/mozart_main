@@ -64,6 +64,7 @@ const HomeServiceSection = () => {
           />
           <Image
             src={GIF.Youtube}
+            unoptimized
             alt="Grow on Youtube"
             className="xl:w-100 xl:h-100 md:w-59 md:h-59 w-58.75 h-58.75 absolute xl:top-8 xl:right-6 md:top-4 md:right-4 top-5 right-4 object-cover rounded-full"
           />
@@ -98,6 +99,7 @@ const HomeServiceSection = () => {
           />
           <Image
             src={GIF.Player}
+            unoptimized
             alt="Distribute Yours Song Worldwide"
             className="xl:w-118 xl:h-46.25 md:w-69.5 md:h-27.25 w-57.75 h-22.5 absolute xl:top-23 xl:right-5 md:top-13.75 md:right-3 top-24 right-0 object-cover rounded-2xl"
           />

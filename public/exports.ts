@@ -39,6 +39,10 @@ import JioSaavn from "./jioSaavn.png";
 import Spotify from "./spotify.png";
 import Wynk from "./wynk.png";
 import YoutubeMusic from "./youtubeMusic.png";
+import Dummy from "./dummy.webp";
+import Dummy2 from "./dummy2.webp";
+import Dummy3 from "./dummy3.webp";
+import CircleArrow from "./circleArrow.svg";
 
 export const Images = {
   Logo,
@@ -70,6 +74,9 @@ export const Images = {
   Spotify,
   Wynk,
   YoutubeMusic,
+  Dummy,
+  Dummy2,
+  Dummy3,
 };
 
 export const Icons = {
@@ -83,6 +90,7 @@ export const Icons = {
   PhoneNumber,
   LeftArrow,
   RightArrow,
+  CircleArrow,
 };
 
 export const GIF = {

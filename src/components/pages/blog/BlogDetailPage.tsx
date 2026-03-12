@@ -1,7 +1,6 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 "use client";
+import { Images } from "@/public/exports";
 import Image from "next/image";
-
 import { useState } from "react";
 
 const tocItems = [
@@ -52,7 +51,7 @@ export default function BlogDetailPage() {
               {/* Featured Image */}
               <div className="relative w-full aspect-video rounded-3xl overflow-hidden mb-10 shadow-lg">
                 <Image
-                  src={Images.blogimg}
+                  src={Images.BlogImg}
                   alt="AI DJ Mixer"
                   fill
                   className="object-cover"
