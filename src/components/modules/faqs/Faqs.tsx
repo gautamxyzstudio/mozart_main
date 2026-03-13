@@ -53,17 +53,17 @@ const Faqs = () => {
     };
 
   return (
-    <div className="bg-[#0F1012] relative ">
-      <h1 className=" xl:text-[200px] md:text-[124px] text-[70px]  font-bold text-white/20  leading-none ">
+    <section className="bg-foreground w-full flex flex-col">
+      <span className="xl:text-[200px] xl:leading-51.5 md:text-[124px] md:leading-32.5 text-[70px] leading-19 text-background/10 font-bold xl:-mt-7.25 md:-mt-4.25 -mt-2.25">
         FAQ&apos;s
-      </h1>
+      </span>
 
-      <div className="max-w-8xl relative z-10 py-4 xl:px-20 md:px-8 px-4">
-        <h2 className="xl:text[64px] md:text-[48px] text-[32px] md:text-6xl font-bold text-white xl:mb-16 md:mb-12 mb-6 ">
+      <div className="w-full pt-4 xl:pb-25 md:pb-16 pb-10 xl:px-25 md:px-13 px-6 flex flex-col xl:space-y-13 md:space-y-10 space-y-8">
+        <h2 className="xl:text-[64px] xl:leading-18 md:text-[48px] md:leading-13.5 text-[32px] leading-9.5 font-bold text-background">
           Frequently Asked Questions
         </h2>
 
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-y-6.5 w-full">
           {faqData.map((faq) => {
             const isCurrentExpanded = expanded === faq.id;
 
@@ -78,10 +78,6 @@ const Faqs = () => {
                   backgroundColor: isCurrentExpanded ? "#7632C5" : "#3D3D3D",
                   borderRadius: "24px !important",
                   color: "white",
-                  marginBottom: "12px",
-                  border: isCurrentExpanded
-                    ? "1px solid #7C66E3"
-                    : "1px solid #111",
                   "&:before": { display: "none" },
                   transition:
                     "background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
@@ -94,7 +90,7 @@ const Faqs = () => {
                       className={`
            w-9 h-9 md:w-11 md:h-11 
           rounded-full flex items-center justify-center transition-all duration-300 
-          ${isCurrentExpanded ? "bg-white text-primary rotate-90 shadow-lg" : "bg-primary text-white"}
+          ${isCurrentExpanded ? "bg-background text-primary rotate-90 shadow-lg" : "bg-primary text-background"}
         `}
                     >
                       <ArrowForwardIcon className="text-[1.1rem] md:text-[1.4rem]" />
@@ -127,7 +123,7 @@ const Faqs = () => {
                 >
                   <p
                     className={`
-         leading-relaxed text-sm md:text-base transition-colors duration-300 
+     text-sm md:text-base transition-colors duration-300 
         ${isCurrentExpanded ? "text-blue-50 border-white/20" : "text-gray-300 border-gray-500/30"}
       `}
                   >
@@ -139,7 +135,7 @@ const Faqs = () => {
           })}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

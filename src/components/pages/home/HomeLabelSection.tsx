@@ -34,7 +34,7 @@ const HomeLabelSection = () => {
             For Labels And Managers
           </h2>
           <p className="text-background/70 xl:text-base text-sm xl:w-[60%] md:w-[80%]">
-            We help Punjabi artists and creators go global — with music
+            We help Punjabi artists and creators go global with music
             distribution, YouTube channel management, paid promotions, and
             more...
           </p>
