@@ -54,11 +54,11 @@ const Faqs = () => {
 
   return (
     <div className="bg-[#0F1012] relative ">
-      <h1 className=" xl:text-[200px] md:text-[124px] text-[70px]  font-bold text-white/20  leading-none">
+      <h1 className=" xl:text-[200px] md:text-[124px] text-[70px]  font-bold text-white/20  leading-none ">
         FAQ&apos;s
       </h1>
 
-      <div className="max-w-8xl relative z-10 py-4 xl:px-20 md:px-15 px-4">
+      <div className="max-w-8xl relative z-10 py-4 xl:px-20 md:px-8 px-4">
         <h2 className="xl:text[64px] md:text-[48px] text-[32px] md:text-6xl font-bold text-white xl:mb-16 md:mb-12 mb-6 ">
           Frequently Asked Questions
         </h2>
