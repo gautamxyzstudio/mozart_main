@@ -48,15 +48,6 @@
   }
 }
 
-html,
-body,
-#root {
-  margin: 0;
-  padding: 0;
-  background: var(--background);
-  color: var(--foreground);
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
@@ -149,6 +140,11 @@ body::-webkit-scrollbar {
     height: 10px;
     border-radius: 8px;
   }
+}
+
+
+.testimonial-swiper .swiper-wrapper{
+  transition-timing-function: linear !important;
 }
 
 /* .verticalSwiper .swiper-slide {

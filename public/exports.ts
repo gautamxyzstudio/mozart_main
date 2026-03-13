@@ -47,6 +47,20 @@ import Dummy from "./dummy.webp";
 import Dummy2 from "./dummy2.webp";
 import Dummy3 from "./dummy3.webp";
 import CircleArrow from "./circleArrow.svg";
+import BackImg from "./backImg.svg";
+import MozartIcon from "./mozartIcon.svg";
+import BackImg2 from "./backImg2.svg";
+import BgVector from "./bg-vector.png";
+import BgVector2 from "./bg-vector2.png";
+import Music from "./music.png";
+import Spotify2 from "./spotify2.png"
+import YouTube from "./youtube.png"
+import YouTubeVideo from "./youtube-video.png"
+import Plays from "./plays.png"
+import Sraph from "./sraph.png"
+import Speaker from "./speaker.png"
+
+
 
 export const Images = {
   Logo,
@@ -82,6 +96,18 @@ export const Images = {
   Dummy,
   Dummy2,
   Dummy3,
+  BgVector,
+  BgVector2,
+  Music,
+  Spotify2,
+  YouTube,
+  YouTubeVideo,
+  Plays,
+  Sraph,
+  Speaker
+
+
+  
 };
 
 export const Icons = {
@@ -99,6 +125,9 @@ export const Icons = {
   Twitter2,
   linkedIn2,
   CircleArrow,
+   BackImg,
+   MozartIcon,
+   BackImg2
 };
 
 export const GIF = {

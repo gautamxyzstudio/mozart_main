@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { useState } from "react";
 
 const artists = [
@@ -48,33 +49,35 @@ const ArtistsSection = () => {
         Artists
       </span>
 
-      <div className="relative z-10 -mt-10 md:-mt-16 xl:mt-12">
+      <div className="relative z-10 mt-2 md:mt-7 xl:mt-13">
         <h2 className="text-3xl md:text-5xl font-bold mb-10">Our Artists</h2>
 
-        {/* Scrollable Container - Negative margin used to touch the right edge */}
-        <div className="flex flex-row h-[450px] md:h-125 gap-3 w-full overflow-x-auto no-scrollbar pb-10 xl:-mr-20 md:-mr-13 -mr-6">
+        <div className="flex flex-row  h-92.75 gap-3 w-full overflow-x-auto no-scrollbar pb-10 xl:-mr-10 md:-mr-1">
           {artists.map((artist) => (
             <div
               key={artist.id}
               onClick={() =>
                 setActiveId(activeId === artist.id ? null : artist.id)
               }
-              className={`relative h-full transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] cursor-pointer group rounded-2xl overflow-hidden shadow-xl shrink-0
-                ${activeId === artist.id ? "w-[300px] md:w-[450px]" : "w-[120px] md:w-[150px]"}
-                md:hover:w-[450px]
+              className={`relative h-full transition-all duration-400 ease-in-out cursor-pointer group rounded-2xl overflow-hidden shadow-xl shrink-0
+                ${activeId === artist.id ? "w-75 md:w-112.5" : "w-30 md:w-37.5"}
+                md:hover:w-112.5
               `}
             >
-              <img
+              <Image
                 src={artist.img}
                 alt={artist.name}
-                className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 scale-110 group-hover:scale-100
-                  ${activeId === artist.id ? "grayscale-0" : "grayscale"}
-                  md:group-hover:grayscale-0
-                `}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className={`absolute inset-0 object-cover transition-all duration-1000 ease-in-out object-[center_20%] 
+     ${activeId === artist.id ? "grayscale-0 scale-100 object-center" : "grayscale scale-105"}
+     md:group-hover:grayscale-0 md:group-hover:scale-100 md:group-hover:object-center
+  `}
+                priority={artist.id <= 4}
               />
 
               <div
-                className={`absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent transition-opacity duration-500 flex flex-col justify-end p-6
+                className={`absolute inset-0 bg-linear-to-t from-black/90 via-transparent to-transparent transition-opacity duration-500 flex flex-col justify-end p-6
                 ${activeId === artist.id ? "opacity-100" : "opacity-0"}
                 md:group-hover:opacity-100
               `}
@@ -98,7 +101,7 @@ const ArtistsSection = () => {
               </div>
             </div>
           ))}
-           <div className="min-w-[40px] h-full" />
+          <div className="min-w-10 h-full" />
         </div>
       </div>
     </section>

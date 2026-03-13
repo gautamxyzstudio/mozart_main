@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, FreeMode } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 
 // Swiper styles
 import "swiper/css";
@@ -123,7 +123,7 @@ const Testimonials = () => {
       <span className="xl:text-[200px] xl:leading-51.5 md:text-[124px] md:leading-32.5 text-[70px] leading-19 text-foreground/10 font-bold xl:-mt-11.75 md:-mt-4.25 -mt-2.75 wrap-break-word md:mr-0 mr-6">
         Testimonials
       </span>
-      
+
       <div className="flex flex-col space-y-4 md:items-center md:text-center md:px-0 px-6 w-full">
         <h2 className="xl:text-[64px] xl:leading-18 md:text-[48px] md:leading-13.5 text-[32px] leading-9.5 font-bold text-foreground">
           What Our Client&apos;s Say
@@ -136,20 +136,17 @@ const Testimonials = () => {
       </div>
 
       {/* 3. The Auto-Scroll Swiper */}
-      <div className="relative z-10 w-full md:mt-13 mt-6 xl:pl-25 md:pl-13 px-6 md:pr-0 ">
+      <div className="relative z-10 w-full md:mt-13 mt-6 pl-6 md:pl-10 xl:pl-25">
         <Swiper
-          modules={[Autoplay, FreeMode]}
+          modules={[Autoplay]}
           loop={true}
-          loopAdditionalSlides={5}
-          speed={8000}
-          freeMode={{
-            enabled: true,
-            momentum: false,
-          }}
+          speed={6000}
           autoplay={{
             delay: 0,
             disableOnInteraction: false,
+            pauseOnMouseEnter: false,
           }}
+          allowTouchMove={true}
           slidesPerView={1.2}
           spaceBetween={20}
           breakpoints={{
@@ -157,7 +154,7 @@ const Testimonials = () => {
             1024: { slidesPerView: 3.2, spaceBetween: 30 },
             1280: { slidesPerView: 4.5, spaceBetween: 30 },
           }}
-          className="testimonial-swiper ease-linear!"
+          className="testimonial-swiper"
         >
           {loopTestimonials.map((pair, index) => (
             <SwiperSlide key={index} className="flex flex-col `!h-auto`">
