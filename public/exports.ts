@@ -43,6 +43,10 @@ import BgImg from "./bgImg.webp";
 import Facebook2 from "./facebook2.svg";
 import Twitter2 from "./twitter2.svg";
 import linkedIn2 from "./linkedIn2.svg";
+import Dummy from "./dummy.webp";
+import Dummy2 from "./dummy2.webp";
+import Dummy3 from "./dummy3.webp";
+import CircleArrow from "./circleArrow.svg";
 
 export const Images = {
   Logo,
@@ -75,6 +79,9 @@ export const Images = {
   Wynk,
   YoutubeMusic,
   BgImg,
+  Dummy,
+  Dummy2,
+  Dummy3,
 };
 
 export const Icons = {
@@ -91,6 +98,7 @@ export const Icons = {
   Facebook2,
   Twitter2,
   linkedIn2,
+  CircleArrow,
 };
 
 export const GIF = {
