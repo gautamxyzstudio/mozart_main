@@ -25,11 +25,9 @@ const NavBarDrawer: React.FC<INavBarDrawerProps> = ({
       anchor="right"
       PaperProps={{
         width: "90%",
-        backgroundColor: "transparent",
       }}
       sx={{
         zIndex: 9999,
-        backgroundColor: "transparent",
         "@media(max-width: 1210px)": {
           display: "block",
         },
