@@ -48,22 +48,21 @@
   }
 }
 
+html,
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: "HvDTrial Graphit", sans-serif;
+
   -ms-overflow-style: none;
   scrollbar-width: none;
-  overflow-y: scroll;
 }
 
-.scrollBar {
-  scrollbar-width: none;
-}
-
+html::-webkit-scrollbar,
 body::-webkit-scrollbar {
-  display: none !important;
+  display: none;
 }
+
 
 .customSwiper .swiper-slide {
   transition:

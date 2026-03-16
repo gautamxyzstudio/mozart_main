@@ -53,7 +53,7 @@ const Faqs = () => {
     };
 
   return (
-    <section className="bg-foreground w-full flex flex-col">
+    <section className="bg-foreground w-full flex flex-col relative">
       <span className="xl:text-[200px] xl:leading-51.5 md:text-[124px] md:leading-32.5 text-[70px] leading-19 text-background/10 font-bold xl:-mt-7.25 md:-mt-4.25 -mt-2.25">
         FAQ&apos;s
       </span>
