@@ -53,14 +53,16 @@ import BackImg2 from "./backImg2.svg";
 import BgVector from "./bg-vector.png";
 import BgVector2 from "./bg-vector2.png";
 import Music from "./music.png";
-import Spotify2 from "./spotify2.png"
-import YouTube from "./youtube.png"
-import YouTubeVideo from "./youtube-video.png"
-import Plays from "./plays.png"
-import Sraph from "./sraph.png"
-import Speaker from "./speaker.png"
-
-
+import Spotify2 from "./spotify2.png";
+import YouTube from "./youtube.png";
+import YouTubeVideo from "./youtube-video.png";
+import Plays from "./plays.png";
+import Sraph from "./sraph.png";
+import Speaker from "./speaker.png";
+import SoftwareImg from "./softwareImg.png";
+import EarningsImg from "./earningsImg.png";
+import PlaylistImg from "./playlistImg.png";
+import TakedownImg from "./takedownImg.png"
 
 export const Images = {
   Logo,
@@ -104,10 +106,11 @@ export const Images = {
   YouTubeVideo,
   Plays,
   Sraph,
-  Speaker
-
-
-  
+  Speaker,
+  SoftwareImg,
+  EarningsImg,
+  PlaylistImg,
+  TakedownImg
 };
 
 export const Icons = {
@@ -125,9 +128,9 @@ export const Icons = {
   Twitter2,
   linkedIn2,
   CircleArrow,
-   BackImg,
-   MozartIcon,
-   BackImg2
+  BackImg,
+  MozartIcon,
+  BackImg2,
 };
 
 export const GIF = {
