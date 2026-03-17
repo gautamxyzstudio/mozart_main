@@ -2,10 +2,12 @@
 import { newsletterApi } from "@/src/api/newsletter/newsletterApi";
 import { AxiosError } from "axios";
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 
 const NewsLetter = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const onChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
@@ -18,6 +20,7 @@ const NewsLetter = () => {
   };
 
   const handleSubscribe = async () => {
+    setLoading(true);
     if (!email) {
       setError("Please enter your email");
       return;
@@ -30,16 +33,20 @@ const NewsLetter = () => {
       const res = await newsletterApi({ email });
 
       if (res) {
-        alert("Email subscribed successfully");
+        toast.success("Email subscribed successfully");
+        setLoading(false);
         setEmail("");
       }
     } catch (error) {
       const axiosError = error as AxiosError;
       if (axiosError.status === 400) {
-        alert("Email already subscribed");
+        toast.error("Email already subscribed");
       } else {
-        alert("something went wrong");
+        toast.error("something went wrong");
       }
+    } finally {
+      setLoading(false);
+      setEmail("");
     }
   };
   return (
@@ -66,14 +73,16 @@ const NewsLetter = () => {
               </div>
               <button
                 onClick={handleSubscribe}
-                className="bg-background text-primary font-bold text-base py-3 px-20.5 rounded-full md:flex hidden"
+                disabled={loading}
+                className={`${loading ? "bg-secondary opacity-70 cursor-not-allowed" : "cursor-pointer bg-background"} text-primary font-bold text-base py-3 px-20.5 rounded-full md:flex hidden transition-all duration-300 ease-in-out`}
               >
                 Submit
               </button>
             </div>
             <button
               onClick={handleSubscribe}
-              className="bg-background text-primary font-bold text-base py-3 px-20.5 rounded-full mt-4 md:hidden block w-fit "
+              disabled={loading}
+              className={`${loading ? "bg-secondary opacity-70 cursor-not-allowed" : "cursor-pointer bg-background"} text-primary font-bold text-base py-3 px-20.5 rounded-full mt-4 md:hidden block w-fit cursor-pointer transition-all duration-300 ease-in-out`}
             >
               Submit
             </button>

@@ -1,4 +1,4 @@
-import { Images } from "@/public/exports";
+import { GIF, Images } from "@/public/exports";
 import Image from "next/image";
 import React from "react";
 
@@ -61,20 +61,20 @@ const ServicesCenterSection = () => {
   ];
 
   return (
-    <section className="flex flex-col space-y-8 md:space-y-12 w-full h-full">
+    <section className="flex flex-col w-full h-full">
       {services.map((service, index) => {
         const isEven = index % 2 !== 0;
 
         return (
           <div
             key={service.id}
-            className={`w-full h-auto sticky -top-10 flex flex-col ${
+            className={`w-full h-auto sticky -top-20 md:-top-10 flex flex-col ${
               isEven ? "md:flex-row-reverse" : "md:flex-row"
-            } items-center justify-between py-12 md:py-0 xl:py-27 bg-background overflow-hidden`}
+            } items-center justify-between py-9 md:py-19 xl:py-27 bg-background overflow-hidden`}
           >
             {/* --- Text Content Side --- */}
             <div
-              className={`flex flex-col space-y-6 md:space-y-8 lg:w-[45%] md:w-[50%] w-full z-20 
+              className={`flex flex-col lg:w-[45%] md:w-[50%] w-full z-20 
               ${isEven ? "md:pr-10 XL:pr-20" : "md:pl-10 xl:pl-20"} px-4`}
             >
               <div className="flex flex-col items-start">
@@ -101,43 +101,43 @@ const ServicesCenterSection = () => {
               <Image
                 src={isEven ? Images.BgVector : Images.BgVector2}
                 alt="bg-vector"
-                className={` relative object-contain xl:w-170 xl:h-148.5 md:w-170 md:h-148.5 w-64.25 h-56 ${
+                className={` relative xl:w-170 xl:h-148.5 md:w-105 md:h-91.75 w-64.25 h-56 ${
                   isEven ? " scale-x-[-1]" : ""
                 }`}
               />
 
               {/* Main Images Logic */}
               {service.imgType === "disk" && (
-                <div className="absolute z-10 flex justify-center items-center xl:-left-10 xl:-top-5 md:-left-10 md:top-30 left-10 top-0 ">
+                <div className="absolute z-10 flex justify-center items-center xl:right-29.5 md:right-15.5 right-19 xl:w-150 xl:h-150 md:w-98 md:h-98 w-70 h-70 ">
                   <Image
                     src={Images.Disk}
                     alt="Disk"
-                    className="xl:w-150 xl:h-150 md:w-87.5 md:h-87.5 w-60 h-60 relative animate-rotate360 "
-                  />
-                  <Image
-                    src={Images.Spotify}
-                    alt="S"
-                    className="rounded-xl shadow-lg absolute xl:top-15 xl:left-[84%]  md:top-0  md:left-60 -top-3 left-20  w-10 h-10 md:w-14 md:h-14 xl:w-21 xl:h-21  "
-                  />
-                  <Image
-                    src={Images.Wynk}
-                    alt="W"
-                    className="rounded-xl shadow-lg absolute xl:top-15 xl:left-8 md:top-5  md:left-8 top-47 left-45  w-10 h-10 md:w-14 md:h-14 xl:w-21 xl:h-21"
-                  />
-                  <Image
-                    src={Images.AppleMusic}
-                    alt="A"
-                    className="rounded-xl shadow-lg absolute xl:top-90 xl:-left-6  md:top-60  md:left-2 top-51 left-10  w-10 h-10 md:w-14 md:h-14 xl:w-21 xl:h-21"
+                    className="w-full h-full relative animate-rotate360 "
                   />
                   <Image
                     src={Images.JioSaavn}
-                    alt="J"
-                    className="rounded-xl shadow-lg absolute xl:top-131 xl:left-90  md:top-78  md:left-50 top-22 -left-4  w-10 h-10 md:w-14 md:h-14 xl:w-21 xl:h-21"
+                    alt="S"
+                    className="rounded-xl absolute xl:top-15 xl:right-12 md:top-10 md:right-0 top-2 right-7 w-10 h-10 md:w-14 md:h-14 xl:w-21 xl:h-21  "
+                  />
+                  <Image
+                    src={Images.AppleMusic}
+                    alt="W"
+                    className="rounded-xl absolute xl:-top-4 xl:left-39 md:-top-2 md:left-21 top-1 left-12 w-10 h-10 md:w-14 md:h-14 xl:w-21 xl:h-21"
                   />
                   <Image
                     src={Images.YoutubeMusic}
+                    alt="A"
+                    className="rounded-xl absolute xl:top-66 xl:-left-3 md:top-45 md:-left-3 top-31 -left-2 w-10 h-10 md:w-14 md:h-14 xl:w-21 xl:h-21"
+                  />
+                  <Image
+                    src={Images.Spotify}
                     alt="Y"
-                    className="rounded-xl shadow-lg absolute xl:top-90 xl:left-130  md:top-40  md:left-80 top-10 left-49  w-10 h-10 md:w-14 md:h-14 xl:w-21 xl:h-21"
+                    className="rounded-xl absolute xl:top-107 xl:left-130 md:bottom-8 bottom-12 right-2 w-10 h-10 md:w-14 md:h-14 xl:w-21 xl:h-21"
+                  />
+                  <Image
+                    src={Images.Wynk}
+                    alt="J"
+                    className="rounded-xl absolute xl:top-135 xl:left-69 md:-bottom-4 md:left-40 -bottom-2 w-10 h-10 md:w-14 md:h-14 xl:w-21 xl:h-21"
                   />
                 </div>
               )}
@@ -146,61 +146,66 @@ const ServicesCenterSection = () => {
                 <Image
                   src={Images.YouTubeVideo}
                   alt="YT"
-                  className="xl:w-109.25 xl:h-109.25 md:w-80.25 md:h-80.25 w-51 h-51 absolute xl:left-40 xl:top-10 z-10 md:left-10 md:top-40 left-20  "
+                  className="xl:w-121.75 xl:h-121.75 md:w-80.25 md:h-80.25 w-51 h-51 absolute xl:left-27 xl:top-11.75 z-10 md:left-13 md:top-5.25 left-27.5 rounded-xl"
                 />
               )}
 
               {service.imgType === "player" && (
                 <Image
-                  src={Images.Plays}
+                  src={Images.ArtistManagement}
                   alt="Player"
-                  className="xl:w-130.25 xl:h-109.25 md:w-80.25 md:h-70.25 w-51 h-51 absolute xl:left-30 xl:top-10 z-10 md:left-0 md:top-40 left-30  "
+                  className="xl:w-147.25 xl:h-112.5 md:w-95.25 md:h-73 w-66.75 h-51 absolute xl:right-25 xl:top-18 z-10 md:right-13 md:top-9.25 right-9.5  "
                 />
               )}
 
-              {(service.imgType === "label" ||
-                service.imgType === "promotion") && (
+              {service.imgType === "label" && (
                 <Image
-                  src={
-                    service.imgType === "label" ? Images.Sraph : Images.Speaker
-                  }
+                  src={GIF.LabelDistribution}
+                  unoptimized
                   alt="Service"
-                  className="xl:w-130.25 xl:h-109.25 md:w-80.25 md:h-70.25 w-51 h-51 absolute xl:left-30 xl:top-10 z-10 md:left-10 md:top-40 left-30  "
+                  className="xl:w-145 xl:h-112.5 md:w-92 md:h-78.5 w-59.5 h-51 absolute xl:left-25 xl:top-14.75 z-10 md:left-13 left-16 md:rounded-3xl rounded-xl  "
+                />
+              )}
+              {service.imgType === "promotion" && (
+                <Image
+                  src={Images.Promotion}
+                  alt="Service"
+                  className="xl:w-145 xl:h-112.5 md:w-99.75 md:h-77.25 w-62.75 h-48.75 absolute xl:right-26 xl:top-18 z-10 md:right-13 right-24  "
                 />
               )}
 
               {service.imgType === "software" && (
                 <Image
-                  src={Images.SoftwareImg}
+                  src={Images.MultiLabel}
                   alt="Software"
-                  className="xl:w-109.25 xl:h-109.25 md:w-80.25 md:h-80.25 w-51 h-51 absolute xl:left-60 xl:top-10 z-10 md:left-10 md:top-34 left-20  "
+                  className="xl:w-141 xl:h-141 rounded-full animate-rotate360 md:w-75.5 md:h-75.5 w-67.25 h-67.25 absolute xl:left-27.5 xl:top-3.5 z-10 md:left-14.25 left-16 "
                 />
               )}
 
               {/* 07: Earnings / Monetization */}
               {service.imgType === "earnings" && (
                 <Image
-                  src={Images.EarningsImg}
+                  src={Images.Monetization}
                   alt="Earnings"
-                  className="xl:w-130.25 xl:h-109.25 md:w-80.25 md:h-70.25 w-70 h-51 absolute xl:left-20 xl:top-10 z-10 md:left-0 md:top-40 left-20  "
+                  className="xl:w-157.75 xl:h-112.5 md:w-96 md:h-71 w-68 h-50.25 absolute xl:right-25 xl:top-18 z-10 md:right-8.75 right-17"
                 />
               )}
 
               {/* 08: Playlist */}
               {service.imgType === "playlist" && (
                 <Image
-                  src={Images.PlaylistImg}
+                  src={Images.AutoPlay}
                   alt="Playlist"
-                  className="xl:w-130.25 xl:h-109.25 md:w-85.25 md:h-70.25 w-70 h-51 absolute xl:left-40 xl:top-10 z-10 md:left-10 md:top-40 left-10  "
+                  className="rounded-2xl xl:w-145 xl:h-110.75 md:w-86.75 md:h-66.25 w-65.75 h-50.25 absolute xl:left-25 xl:top-19 z-10 md:left-13 left-19.5"
                 />
               )}
 
               {/* 09: Takedown */}
               {service.imgType === "takedown" && (
                 <Image
-                  src={Images.TakedownImg}
+                  src={Images.TakeDown}
                   alt="Takedown"
-                  className="xl:w-130.25 xl:h-109.25 md:w-80.25 md:h-70.25 w-70 h-51 absolute xl:left-20 xl:top-10 z-10 md:left-10 md:top-40 left-20  "
+                  className="xl:w-147.25 xl:h-112.5 md:w-92 md:h-70.25 w-65.75 h-50.25 absolute xl:right-30 xl:top-18 z-10 md:right-13 right-19.5"
                 />
               )}
             </div>

@@ -1,7 +1,10 @@
 "use client";
 import { Images, Icons } from "@/public/exports";
+import { contactApi } from "@/src/api/contact/contactApi";
 import Image from "next/image";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 interface IFormInput {
   name: string;
@@ -12,15 +15,43 @@ interface IFormInput {
 }
 
 export const BottomSection = () => {
+  const [loading, setLoading] = useState(false);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<IFormInput>();
 
-  const onSubmit: SubmitHandler<IFormInput> = (data) => {
-    console.log("Form Data:", data);
-    alert("Message sent successfully!");
+  const onSubmit = async (data: IFormInput) => {
+    setLoading(true);
+    try {
+      const formData = {
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        service: data.service,
+        message: data.message,
+      };
+      const response = await contactApi(formData);
+      if (response.message === "Email sent successfully!") {
+        reset();
+        toast.success(
+          "Form submitted successfully! We will get back to you soon.",
+        );
+        setLoading(false);
+      } else {
+        toast.error("Failed to submit form. Please try again.");
+        setLoading(false);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error("An error occurred. Please try again later.");
+      setLoading(false);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -124,14 +155,14 @@ export const BottomSection = () => {
 
             <button
               type="submit"
-              className="bg-primary xl:w-[30%] md:w-[40%] w-full text-white px-10 py-3 rounded-full font-semibold  "
+              disabled={loading}
+              className={`${loading ? "opacity-70 cursor-not-allowed " : "cursor-pointer"} bg-primary xl:w-[30%] md:w-[40%] w-full text-background px-10 py-3 rounded-full font-semibold"`}
             >
               Submit
             </button>
           </form>
 
           <div className="mt-12 flex flex-nowrap justify-between items-center bg-white rounded-[20px] xl:p-8 md:p-4 p-4 gap-x-4 shadow-[0_10px_50px_rgba(0,0,0,0.05)] border border-gray-100 overflow-hidden">
-
             {/* Quick Contact */}
             <div className="flex items-center gap-2 min-w-0">
               <Image

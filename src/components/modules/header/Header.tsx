@@ -114,13 +114,13 @@ const Header = () => {
             </button>
             <div className="md:flex flex-row bg-secondary p-0.5 rounded-4xl items-center hidden">
               <Link
-                href={"/signup"}
+                href={`${process.env.NEXT_PUBLIC_ADMIN_BASE_MAIN_URL}/signup`}
                 className="text-base font-bold text-primary py-3.5 px-8.5"
               >
                 Sign Up
               </Link>
               <Link
-                href={"/login"}
+                href={`${process.env.NEXT_PUBLIC_ADMIN_BASE_MAIN_URL}/login`}
                 className="bg-primary py-3.5 px-10.5 rounded-full text-background text-base font-bold"
               >
                 Login

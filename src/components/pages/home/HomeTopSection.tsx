@@ -73,12 +73,12 @@ const HomeTopSection = () => {
           <Image
             src={Images.Disk}
             alt="disk"
-            className="xl:w-176.25 xl:h-175.25 xl:p-5 md:w-88.75 md:h-88 w-81.75 h-81.25 p-2.25 animate-rotate360"
+            className="xl:w-176.25 xl:h-175.25 xl:p-5 md:w-88.75 md:h-88 w-81.75 h-81.25 p-2.25 animate-rotate360 z-5"
           />
-          <div className="w-full xl:-ml-88.25 md:-ml-61.5 xl:mt-35 md:mt-11 -mt-33.5 flex flex-col">
+          <div className="w-full xl:-ml-88.25 md:-ml-61.5 xl:mt-35 md:mt-11 -mt-33.5 flex flex-col ">
             <div
               ref={sectionRef}
-              className="bg-primary w-full xl:py-8.75 xl:pr-25 xl:pl-9 md:py-7.5 md:pr-13 md:pl-10.5 py-4 pl-4 pr-6 z-2 h-auto rounded-l-full flex flex-row items-center xl:gap-x-15.5 md:gap-x-8.5 gap-x-4.5"
+              className="z-10 bg-primary w-full xl:py-8.75 xl:pr-25 xl:pl-9 md:py-7.5 md:pr-13 md:pl-10.5 py-4 pl-4 pr-6 h-auto rounded-l-full flex flex-row items-center xl:gap-x-15.5 md:gap-x-8.5 gap-x-4.5"
             >
               <div className="flex flex-row items-center xl:-space-x-62.75 md:-space-x-32.5 -space-x-18.25 w-fit">
                 {images.map((item, idx) => (

@@ -15,7 +15,7 @@ const HorizontalTicker = dynamic<HorizontalTickerProps>(
 );
 const HomeTicker = () => {
   return (
-    <div className="md:flex xl:py-12 md:pt-3 justify-center w-full -z-10 xl:ml-0 md:ml-12 hidden">
+    <div className="md:flex xl:py-12 md:pt-3 justify-center w-full xl:ml-0 md:ml-12 hidden">
       <HorizontalTicker duration={10000}>
         {tickerData.map((item, idx) => (
           <span

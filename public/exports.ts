@@ -34,11 +34,11 @@ import LyricsBox from "./lyricsBox.webp";
 import ServiceLyri from "./serviceLyrics.webp";
 import Youtube from "./gif/youtube.gif";
 import Player from "./gif/player.gif";
-import AppleMusic from "./appleMusic.png";
-import JioSaavn from "./jioSaavn.png";
-import Spotify from "./spotify.png";
-import Wynk from "./wynk.png";
-import YoutubeMusic from "./youtubeMusic.png";
+import AppleMusic from "./appleMusic.webp";
+import JioSaavn from "./jioSaavn.webp";
+import Spotify from "./spotify.webp";
+import Wynk from "./wynk.webp";
+import YoutubeMusic from "./youtubeMusic.webp";
 import BgImg from "./bgImg.webp";
 import Facebook2 from "./facebook2.svg";
 import Twitter2 from "./twitter2.svg";
@@ -52,17 +52,14 @@ import MozartIcon from "./mozartIcon.svg";
 import BackImg2 from "./backImg2.svg";
 import BgVector from "./bg-vector.png";
 import BgVector2 from "./bg-vector2.png";
-import Music from "./music.png";
-import Spotify2 from "./spotify2.png";
-import YouTube from "./youtube.png";
-import YouTubeVideo from "./youtube-video.png";
-import Plays from "./plays.png";
-import Sraph from "./sraph.png";
-import Speaker from "./speaker.png";
-import SoftwareImg from "./softwareImg.png";
-import EarningsImg from "./earningsImg.png";
-import PlaylistImg from "./playlistImg.png";
-import TakedownImg from "./takedownImg.png"
+import YouTubeVideo from "./youtube.webp";
+import ArtistManagement from "./artistManagement.webp";
+import MultiLabel from "./multiLabel.webp";
+import LabelDistribution from "./gif/labelDistribution.gif";
+import Promotion from "./promotion.webp";
+import Monetization from "./monetization.webp";
+import AutoPlay from "./playlist.webp"
+import TakeDown from "./takedown.webp"
 
 export const Images = {
   Logo,
@@ -100,17 +97,13 @@ export const Images = {
   Dummy3,
   BgVector,
   BgVector2,
-  Music,
-  Spotify2,
-  YouTube,
   YouTubeVideo,
-  Plays,
-  Sraph,
-  Speaker,
-  SoftwareImg,
-  EarningsImg,
-  PlaylistImg,
-  TakedownImg
+  AutoPlay,
+  MultiLabel,
+  ArtistManagement,
+  Promotion,
+  Monetization,
+  TakeDown,
 };
 
 export const Icons = {
@@ -136,4 +129,5 @@ export const Icons = {
 export const GIF = {
   Youtube,
   Player,
+  LabelDistribution,
 };

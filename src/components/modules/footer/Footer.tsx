@@ -61,8 +61,8 @@ const Footer = () => {
           </span>
           <span className="text-background xl:text-base md:text-xs text-[10px] leading-3.5">
             Designed & Developed by{" "}
-            <Link href={"https://www.xyz.studio/"} title="Xyz Studio">
-              Xyz Studio
+            <Link href={"https://www.xyz.studio/"} title="Xyz Studio" className="font-medium">
+              XYZ Studio
             </Link>
           </span>
         </div>
