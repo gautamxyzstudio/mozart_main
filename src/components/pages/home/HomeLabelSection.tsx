@@ -44,7 +44,7 @@ const HomeLabelSection = () => {
           {labelData.map((item, idx) => (
             <div
               key={idx}
-              className="w-full group xl:h-60 xl:hover:h-167 h-58.5 transition-all duration-500 ease-in-out rounded-t-[20px] bg-foreground text-background hover:bg-primary xl:py-17.5 px-5 flex flex-col xl:space-y-15 cursor-pointer"
+              className="w-full group xl:h-60 xl:hover:h-167 h-58.5 transition-all duration-500 ease-in-out rounded-t-[20px] bg-foreground text-background xl:hover:bg-primary xl:py-17.5 px-5 flex flex-col xl:space-y-15 cursor-pointer"
             >
               <div className="flex xl:flex-row flex-col space-y-3 xl:items-center xl:justify-between h-full justify-center">
                 <div className="relative xl:w-[48%]">
@@ -69,7 +69,7 @@ const HomeLabelSection = () => {
               <Image
                 src={item.image}
                 alt="Dummy"
-                className="w-full h-97 object-cover rounded-xl group-hover:block hidden transition-all duration-500 ease-in-out"
+                className="w-full h-97 object-cover rounded-xl xl:group-hover:block hidden transition-all duration-500 ease-in-out"
               />
             </div>
           ))}

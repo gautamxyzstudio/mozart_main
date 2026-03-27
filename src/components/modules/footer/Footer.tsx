@@ -36,9 +36,15 @@ const Footer = () => {
           </p>
           <div className="p-1.5 bg-[#FFFFFF29] xl:mt-2 flex flex-row items-center gap-x-1.5 rounded-full">
             {[
-              { icon: Icons.Instagram, link: "https://www.instagram.com" },
+              {
+                icon: Icons.Instagram,
+                link: "https://www.instagram.com/officialamozart",
+              },
               { icon: Icons.Facebook, link: "https://www.facebook.com" },
-              { icon: Icons.LinkedIn, link: "https://in.linkedin.com/" },
+              {
+                icon: Icons.LinkedIn,
+                link: "https://www.linkedin.com/company/amozart",
+              },
               { icon: Icons.Twitter, link: "https://x.com" },
             ].map((item, idx) => (
               <Link href={item.link} key={idx}>
@@ -61,7 +67,11 @@ const Footer = () => {
           </span>
           <span className="text-background xl:text-base md:text-xs text-[10px] leading-3.5">
             Designed & Developed by{" "}
-            <Link href={"https://www.xyz.studio/"} title="Xyz Studio" className="font-medium">
+            <Link
+              href={"https://www.xyz.studio/"}
+              title="Xyz Studio"
+              className="font-medium"
+            >
               XYZ Studio
             </Link>
           </span>
