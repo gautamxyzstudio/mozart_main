@@ -175,7 +175,7 @@ export const BottomSection = () => {
                   Quick Contact
                 </p>
                 <p className="text-gray-500 xl:text-sm md:text-[10px] text-[9px] mt-0.5 font-medium truncate">
-                  support@thexyz.media
+                 admin@amozart.com
                 </p>
               </div>
             </div>
