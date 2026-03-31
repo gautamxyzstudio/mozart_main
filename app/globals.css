@@ -29,6 +29,7 @@
     from {
       transform: rotate(0deg);
     }
+
     to {
       transform: rotate(360deg);
     }
@@ -63,7 +64,6 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-
 .customSwiper .swiper-slide {
   transition:
     width 0.5s ease-in-out,
@@ -83,15 +83,17 @@ body::-webkit-scrollbar {
 .customSwiper .swiper-slide.swiper-slide-next {
   width: 400px !important;
   height: 400px !important;
+
   .slideCard {
     width: 400px;
     height: 400px;
   }
 }
 
-.customSwiper .swiper-slide-next + .swiper-slide {
+.customSwiper .swiper-slide-next+.swiper-slide {
   width: 360px !important;
   height: 360px !important;
+
   .slideCard {
     width: 360px;
     height: 360px;
@@ -141,8 +143,7 @@ body::-webkit-scrollbar {
   }
 }
 
-
-.testimonial-swiper .swiper-wrapper{
+.testimonial-swiper .swiper-wrapper {
   transition-timing-function: linear !important;
 }
 
@@ -208,7 +209,7 @@ body::-webkit-scrollbar {
     }
   }
 
-  .customSwiper .swiper-slide-next + .swiper-slide {
+  .customSwiper .swiper-slide-next+.swiper-slide {
     width: 208px !important;
     height: 208px !important;
 
@@ -219,14 +220,24 @@ body::-webkit-scrollbar {
   }
 }
 
-
 @layer utilities {
-   .no-scrollbar::-webkit-scrollbar {
+  .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
 
-   .no-scrollbar {
-    -ms-overflow-style: none;   
-    scrollbar-width: none;  
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+.__html {
+  color: var(--foreground);
+
+  p {
+    a {
+      color: var(--primary);
+      font-weight: 700;
+    }
   }
 }

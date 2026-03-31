@@ -6,20 +6,25 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: path.join(__dirname, ".."),
   },
-  images:{
-    remotePatterns:[
+  images: {
+    remotePatterns: [
       {
-        protocol:'https',
-        hostname :"images.unsplash.com",
-        pathname:"/**"
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        pathname: "/**",
       },
       {
-        protocol: 'https',
+        protocol: "https",
         hostname: "i.pravatar.cc", // Yeh add kiya avatars ke liye
         pathname: "/**",
-      }
-    ]
-  }
+      },
+      {
+        protocol: "https",
+        hostname: "mozart-app.s3.ap-southeast-2.amazonaws.com", // Yeh add kiya avatars ke liye
+        pathname: "/**",
+      },
+    ],
+  },
 };
 
 export default nextConfig;

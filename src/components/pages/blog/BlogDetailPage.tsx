@@ -1,25 +1,80 @@
 "use client";
 import { Icons, Images } from "@/public/exports";
+import { useGetBlog, useGetBlogDetailsBySlug } from "@/src/hooks/useBlog";
 import Image from "next/image";
-import { useState } from "react";
+import Link from "next/link";
+import { useMemo, useState } from "react";
+import dayjs from "dayjs";
+import CustomButton from "../../atom/button/CustomButton";
+import { useRouter } from "next/navigation";
+import { TransformedBlog } from "@/src/api/blog/blogApi";
 
-const tocItems = [
-  { label: "Exploring Generative AI in Content Creation", id: "generative-ai" },
-  { label: "Steering Clear of Common AI Writing Pitfalls", id: "ai-pitfalls" },
-  {
-    label: "Understanding ChatGPT Capabilities – Define Your Style",
-    id: "chatgpt-style",
-  },
-  { label: "Understand Your Readers", id: "understand-readers" },
-  {
-    label: "Creating Quality AI-powered Blogs That Stand Out",
-    id: "quality-ai-blogs",
-  },
-  { label: "Conclusion: Embracing AI in Blog Creation", id: "conclusion" },
-];
+interface TOCItem {
+  label: string;
+  id: string;
+}
 
-export default function BlogDetailPage() {
+const BlogCard = ({ props }: { props: TransformedBlog }) => {
+  return (
+    <div className="flex flex-col group h-full p-3 rounded-xl border border-background bg-primary20">
+      {/* Image Wrap */}
+      <div className="w-full aspect-[1.4/1] rounded-xl overflow-hidden mb-5 bg-gray-100">
+        <Image
+          src={props.banner || props.smallBanner || Images.RecentBlog}
+          alt={props.title}
+          width={400}
+          height={300}
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
+        />
+      </div>
+      <span className="text-primary text-sm">
+        {dayjs(props.blogDate).format("DD MMM, YYYY")}
+      </span>
+      {/* Title */}
+      <h3 className="text-black font-bold text-[19px] md:text-[21px] leading-[1.3] group-hover:text-primary transition-colors duration-300 line-clamp-2">
+        {props.title}
+      </h3>
+    </div>
+  );
+};
+
+const slugify = (text: string) => {
+  return text
+    .toLowerCase()
+    .replace(/[^\w ]+/g, "")
+    .replace(/ +/g, "-");
+};
+
+const BlogDetailPage = ({ slug }: { slug: string }) => {
+  const router = useRouter();
+  const { data, isLoading } = useGetBlogDetailsBySlug(slug);
+
   const [activeIndex, setActiveIndex] = useState(0);
+
+  const blogData = data?.blogData;
+
+  const { tocItems, processedContent } = useMemo(() => {
+    if (typeof window === "undefined" || !blogData) {
+      return { tocItems: [], processedContent: blogData || "" };
+    }
+
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(blogData, "text/html");
+    const headings = doc.querySelectorAll("h2, h3");
+    const items: TOCItem[] = [];
+
+    headings.forEach((heading, index) => {
+      const text = heading.textContent || "";
+      let id = heading.id;
+      if (!id) {
+        id = slugify(text) || `heading-${index}`;
+        heading.id = id;
+      }
+      items.push({ label: text, id });
+    });
+
+    return { tocItems: items, processedContent: doc.body.innerHTML };
+  }, [blogData]);
 
   const handleScroll = (id: string, index: number) => {
     setActiveIndex(index);
@@ -29,270 +84,71 @@ export default function BlogDetailPage() {
     }
   };
 
+  const { data: recentBlogsData } = useGetBlog(1, 10);
+
+  const recentBlogs = (recentBlogsData?.data || []).filter(
+    (item) => String(item.id) !== String(data?.id),
+  );
+
   return (
     <>
-      <section className="py-12 lg:py-20  xl:px-9">
-        <div className="xl:max-w-screen-2xl mx-auto px-6 xl:px-16">
+      <section className="xl:max-w-screen-2xl mx-auto px-6 xl:px-25 md:px-13 py-12 lg:py-20 ">
+        <div className="w-full">
           <nav className="mb-8 md:mt-14 mt-5 ">
-            <div className="inline-flex items-center gap-2 bg-[#F8F8F8] px-4 py-2 rounded-lg text-xs font-medium text-gray-500">
-              <span className="hover:text-primary cursor-pointer">Home</span>
+            <div className="inline-flex items-center gap-2 bg-secondary px-4 py-2 rounded-lg md:text-xs text-[10px] font-medium text-gray-500">
+              <Link href="/" className="hover:text-primary cursor-pointer">
+                Home
+              </Link>
               <span>›</span>
-              <span className="hover:text-primary cursor-pointer">Blog</span>
+              <Link href="/blog" className="hover:text-primary cursor-pointer">
+                Blog
+              </Link>
               <span>›</span>
-              <span className="text-primary">Blog Details</span>
+              <span className="text-primary">{data?.title}</span>
             </div>
           </nav>
 
           {/* ===== 2. FEATURED IMAGE (FULL WIDTH) ===== */}
-          <div className="relative w-full aspect-video xl:h-150 rounded-3xl overflow-hidden mb-12 shadow-lg">
-            <Image
-              src={Images.BlogImg}
-              alt="AI DJ Mixer"
-              fill
-              className="object-cover"
-              priority
-            />
+          <div className="flex items-center justify-center mb-10">
+            {isLoading ? (
+              <div className="w-full xl:h-150 md:h-120 h-80 rounded-3xl bg-secondary animate-pulse"></div>
+            ) : (
+              <Image
+                src={data?.banner || data?.smallBanner || ""}
+                alt="AI DJ Mixer"
+                width={1400}
+                height={1400}
+                className="rounded-xl w-[90%] h-[70%] shadow-[0px_0px_5px_0px_rgba(0,0,0,0.25)]"
+              />
+            )}
           </div>
 
           {/* ===== 3. CONTENT & SIDEBAR ROW ===== */}
           <div className="flex flex-col xl:flex-row gap-12 items-start">
             <div className="xl:w-[68%] w-full">
-              <div className="flex items-center gap-4 mb-4">
+              <div className="flex flex-col items-start mb-4 w-full">
                 <span className="text-black font-normal leading-6 text-base tracking-wider">
-                  Technology
+                  {data?.category.map((item: string) => item).join(", ")}
                 </span>
-                <span className="w-8 h-px bg-[#111]"></span>
-                <span className="text-primary text-sm">21 Feb, 2024</span>
+                <div className="w-full flex flex-row gap-x-2 items-center justify-end ">
+                  <span className="w-8 h-px bg-[#111]"></span>
+                  <span className="text-primary text-sm">
+                    {dayjs(data?.blogDate).format("DD MMM, YYYY")}
+                  </span>
+                </div>
               </div>
 
-              <h1 className="text-4xl xl:text-5xl font-medium text-[#2E2E2E] mb-8 leading-tight">
-                How AI is Changing the Way We Work and Live
+              <h1 className="md:text-4xl text-2xl xl:text-5xl font-medium text-foreground mb-8 ">
+                {data?.title}
               </h1>
 
               {/* Content Body */}
-              <div className="space-y-8 text-gray-600 text-base leading-relaxed">
-                <section id="generative-ai">
-                  <h2 className="text-2xl text-black font-medium mb-4">
-                    Exploring Generative AI in Content Creation
-                  </h2>
-                  <p>
-                    Hello there! As a marketing manager in the SaaS industry,
-                    you might be looking for innovative ways to engage your
-                    audience. I bet generative AI has crossed your mind as an
-                    option for creating content. Well, let me share from my
-                    firsthand experience.
-                  </p>
-                  <p className="mt-4">
-                    Google encourages high-quality blogs regardless of whether
-                    they are{" "}
-                    <span className="text-primary cursor-pointer">
-                      written by humans or created using artificial intelligence
-                    </span>{" "}
-                    like ChatGPT. Here&apos;s what matters: producing original
-                    material with expertise and trustworthiness based on{" "}
-                    <span className="text-primary ">
-                      Google E-E-A-T principles.
-                    </span>
-                  </p>
-
-                  <p className="mt-4">
-                    This means focusing more on people-first writing rather than
-                    primarily employing AI tools to manipulate search rankings.
-                    There comes a time when many experienced professionals want
-                    to communicate their insights but get stuck due to limited
-                    writing skills – that’s where Generative AI can step in.
-                  </p>
-                  <p className="mt-4">
-                    So, together, we’re going explore how this technology could
-                    help us deliver valuable content without sounding robotic or
-                    defaulting into mere regurgitations of existing materials
-                    (spoiler alert – common pitfalls!). Hang tight - it’ll be a
-                    fun learning journey!
-                  </p>
-                </section>
-
-                <section id="ai-pitfalls">
-                  <h2 className="text-2xl text-black font-medium mb-4">
-                    Steering Clear of Common AI Writing Pitfalls
-                  </h2>
-                  <p>
-                    Jumping headfirst into using AI, like{" "}
-                    <span className="text-primary">ChatGPT</span>, without a
-                    content strategy can lead to some unfortunate results. One
-                    common pitfall I&apos;ve seen is people opting for quantity
-                    over quality – they churn out blogs, but each one feels
-                    robotic and soulless, reading just like countless others on
-                    the internet.
-                  </p>
-
-                  <p className="mt-4">
-                    Another fault line lies in creating reproductions rather
-                    than delivering unique perspectives that offer value to
-                    readers; it often happens if you let an AI tool write your
-                    full blog unrestrained! Trust me on this – Ask any
-                    experienced marketer or writer about their takeaways from
-                    using generative AI tools. They&apos;ll all agree that
-                    adding a human touch and following specific guidelines are
-                    key when implementing these tech pieces.
-                  </p>
-                  <p className="mt-4">
-                    Remember, our goal here isn’t merely satisfying search
-                    engines but, more importantly, knowledge-hungry humans
-                    seeking reliable information online. So keep your
-                    audience&#39;s needs at heart while leveraging technology’s
-                    assistance!
-                  </p>
-                </section>
-
-                <section id="chatgpt-style">
-                  <h2 className="text-2xl text-black font-medium mb-4">
-                    Understanding ChatGPT Capabilities – Define Your Style
-                  </h2>
-                  <p>
-                    Welcome to the intriguing world of ChatGPT! Its ability and
-                    potential can truly be mind-boggling. I have learned from
-                    experience how capable it is in dealing with diverse content
-                    generation tasks, only that its text sounded slightly
-                    &quot;unnatural&quot;{" "}
-                    <span className="text-primary">
-                      in accordance with TechTarget.
-                    </span>{" "}
-                    However, fear not – there are ways around this!
-                  </p>
-
-                  <p className="mt-4">
-                    One strategic move I&apos;ve seen work wonders is defining
-                    your unique writing style first before handing over the
-                    reins to AI; you treat it like a canvas whereupon our vision
-                    opens up. If we clearly instruct who we&apos;re targeting or
-                    what tone resonates more effectively, generative AI tools
-                    such as ChatGPT will comply remarkably well.
-                  </p>
-
-                  <p className="mt-4">
-                    In framing guidelines, remember to keep audience interests
-                    at heart while adopting technology’s benefits for efficient
-                    output – trust me on this because neglecting these aspects
-                    could backfire by generating unappealing robotic-like reads.
-                  </p>
-                  <p className="mt-4">
-                    Ultimately, aiming towards reader-focused driven creativity
-                    illuminated under authentically humanized narratives holds
-                    priority above all else when crafting blogs using
-                    auto-generation toolkits!
-                  </p>
-                </section>
-
-                <section id="understand-readers">
-                  <h2 className="text-2xl text-black font-medium mb-4">
-                    Understand Your Readers
-                  </h2>
-                  <p>
-                    Understanding your readers is vital when producing blog
-                    posts. It&lsquo;s not about filling blanks with popular
-                    search terms, no matter how much keyword research you do.
-                    Real readability goes beyond that! Your content has to
-                    &apos;speak&apos; directly to your target audience.
-                  </p>
-                  <p className="mt-4">
-                    Building an Ideal Customer Profile (ICP) can help immensely
-                    in this respect (
-                    <span className="text-primary">Dan Martell</span> ). This
-                    tool identifies specific firmographics or psychographic
-                    drivers behind customer success - a valuable guide for
-                    creating targeted outputs catering to arrayed reader types.
-                  </p>
-                  <p className="mt-4">
-                    Simultaneously, SEO aspects also need attention: identifying
-                    suitable keywords & phrases people commonly use enhances
-                    reach (SEO.COM reference). Yet remember – human appeal
-                    doesn’t mean packing text up finely into presentable
-                    semblances bearing little value substance and stuffing it
-                    full with only ‘keywords.
-                  </p>
-                </section>
-
-                <section id="quality-ai-blogs">
-                  <h2 className="text-2xl text-black font-medium mb-4">
-                    Understand Your ReaCreating Quality AI-powered Blogs that
-                    Stand Outders
-                  </h2>
-                  <p>
-                    Creating brilliant AI-powered blogs is a fun blending of
-                    logic with just the right dose of creativity. From defining
-                    your target audience to tuning in ChatGPT&lsquo;s language
-                    style, every step counts towards creating content that’s not
-                    only SEO-friendly but also enjoyable and valuable for
-                    readers.
-                  </p>
-                  <p className="mt-4">
-                    One tactic I’ve found useful is maintaining originality in
-                    message essence, with unique perspectives infusing life
-                    beyond words onto pages!
-                  </p>
-                  <p className="mt-4">
-                    Incorporating trusted references while optimizing blog posts
-                    intelligently (rather than keyword stuffing) can
-                    significantly aid quality enhancements. Remember, it
-                    isn&apos;t about writing for Google here, so avoid tunnel
-                    vision focusing solely on algorithm-driven success rate,
-                    aiming at heart-touching human connections, building loyal
-                    reader bases, and sharing knowledge benefiting others!
-                  </p>
-                </section>
-
-                <section id="conclusion">
-                  <h2 className="text-2xl text-black font-medium mb-4">
-                    Conclusion: Embracing AI in Blog Creation
-                  </h2>
-                  <p>
-                    As we wrap up, let’s remember the heart of blog creation is
-                    serving our readers. Whether a post was drafted by experts
-                    or AI like ChatGPT doesn&apos;t matter to Google algorithms
-                    as long it&apos;s meaningful and high-quality.
-                  </p>
-                  <p>
-                    Through this valuable learning curve together, I hope you’ve
-                    seen how well-implemented strategies can guide generative
-                    tools in delivering content mirroring human quality. Yes! It
-                    often involves some trial & error phases, but trust me –
-                    persistence practiced alongside continuous improvements
-                    results in rewarding feats!
-                  </p>
-                  <p>
-                    Additionally, perhaps most importantly, proofreading every
-                    piece before publishing hugely influences audience
-                    perceptions, establishing professional credibility. Why?
-                    Well, even minor oversights could potentially undermine
-                    reader experiences, turning away prospective subscribers;
-                    hence, maintain meticulous checkpoints for flawless
-                    publications!
-                  </p>
-                  <p>
-                    So here goes my fellow SaaS marketing managers: Embrace
-                    technology enhancement aids responsibly, always keeping
-                    end-user perspectives focal while constantly striving
-                    towards better communication standards, offering insightful,
-                    pleasing read across widespread digital platforms!
-                  </p>
-                  <p className="mt-4">
-                    Let&apos;s be clear: ChatGPT wrote this article and
-                    generated the hero image. It combined my personal
-                    experience, knowledge, and research. From the initial notes
-                    to finish, it took just 37 minutes.
-                  </p>
-                  <p className="mt-4">
-                    Even though it was made by AI, no detection tools could
-                    tell. The only thing used was OpenAI&apos;s Chat API, no
-                    other external tools.
-                  </p>
-                  <p className="mt-4">
-                    It shows how AI can help in making content interesting and
-                    relevant. It&lsquo;s a new chapter in how we create and
-                    share information.
-                  </p>
-                </section>
-              </div>
+              <div
+                className="w-full __html"
+                dangerouslySetInnerHTML={{
+                  __html: processedContent || data?.blogData || "",
+                }}
+              ></div>
             </div>
 
             {/* ================= RIGHT SIDEBAR ================= */}
@@ -347,9 +203,28 @@ export default function BlogDetailPage() {
                     </p>
 
                     <div className="flex gap-4 relative z-10">
-                      <Image src={Icons.Facebook2} alt="facebook" />
-                      <Image src={Icons.Twitter2} alt="Twitter" />
-                      <Image src={Icons.linkedIn2} alt="LinkedIn" />
+                      {[
+                        {
+                          icon: Icons.Facebook2,
+                          link: "https://www.facebook.com/people/Amozart-Official/61578529725247",
+                        },
+                        {
+                          icon: Icons.linkedIn2,
+                          link: "https://www.linkedin.com/company/amozart",
+                        },
+                        {
+                          icon: Icons.Twitter2,
+                          link: "https://x.com/AmozartOfficial",
+                        },
+                      ].map((item, idx) => (
+                        <Link href={item.link} key={idx}>
+                          <Image
+                            src={item.icon}
+                            alt={item.link + idx}
+                            className="w-full h-full"
+                          />
+                        </Link>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -358,6 +233,39 @@ export default function BlogDetailPage() {
           </div>
         </div>
       </section>
+      {recentBlogs.length > 0 && (
+        <div className="mt-10 md:mt-16 xl:mt-25 overflow-hidden lg:mx-0 bg-secondary xl:px-25 xl:py-31 md:px-16 md:py-20 px-6 py-10">
+          <div className="flex flex-row items-center justify-between w-full mb-8 md:mb-14">
+            <h3 className="xl:text-[64px] md:text-5xl text-2xl font-semibold">
+              Latest Blog
+            </h3>
+            <CustomButton
+              label="View All Blogs"
+              buttonType="primary"
+              onClick={() => router.push("/blog")}
+              customClasses="px-6 py-3 md:px-8 md:py-3 !rounded-2xl text-[14px] md:text-[18px] font-medium"
+            />
+          </div>
+
+          <div className="flex flex-nowrap lg:grid lg:grid-cols-3 overflow-x-auto lg:overflow-x-visible no-scrollbar gap-5 md:gap-7 lg:gap-[30px] h-[360px] md:h-[380px] lg:h-[400px] items-center">
+            {recentBlogs.slice(0, 3).map((item) => (
+              <Link
+                key={item.id}
+                href={`/blog/${item.blogSlug || item.title.replace(/ /g, "-")}`}
+                className="shrink-0 snap-center transition-all duration-300 w-[78vw] sm:w-[55vw] md:w-[45vw] lg:w-full h-full"
+              >
+                <div className="transform transition-transform duration-300 hover:scale-[1.02] h-full w-full">
+                  <BlogCard props={item} />
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="w-full flex justify-center mt-6 md:mt-12 lg:mt-16 px-6"></div>
+        </div>
+      )}
     </>
   );
-}
+};
+
+export default BlogDetailPage;

@@ -40,12 +40,15 @@ const Footer = () => {
                 icon: Icons.Instagram,
                 link: "https://www.instagram.com/officialamozart",
               },
-              { icon: Icons.Facebook, link: "https://www.facebook.com" },
+              {
+                icon: Icons.Facebook,
+                link: "https://www.facebook.com/people/Amozart-Official/61578529725247",
+              },
               {
                 icon: Icons.LinkedIn,
                 link: "https://www.linkedin.com/company/amozart",
               },
-              { icon: Icons.Twitter, link: "https://x.com" },
+              { icon: Icons.Twitter, link: "https://x.com/AmozartOfficial" },
             ].map((item, idx) => (
               <Link href={item.link} key={idx}>
                 <Image

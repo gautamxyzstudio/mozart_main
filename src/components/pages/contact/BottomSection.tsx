@@ -2,6 +2,7 @@
 import { Images, Icons } from "@/public/exports";
 import { contactApi } from "@/src/api/contact/contactApi";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
@@ -174,9 +175,12 @@ export const BottomSection = () => {
                 <p className="font-bold text-black-80 xl:text-lg md:text-[12px] text-[10px] leading-tight truncate">
                   Quick Contact
                 </p>
-                <p className="text-gray-500 xl:text-sm md:text-[10px] text-[9px] mt-0.5 font-medium truncate">
-                 admin@amozart.com
-                </p>
+                <Link
+                  href={"mailto:admin@amozart.com"}
+                  className="text-gray-500 xl:text-sm md:text-[10px] text-[9px] mt-0.5 font-medium truncate"
+                >
+                  admin@amozart.com
+                </Link>
               </div>
             </div>
 

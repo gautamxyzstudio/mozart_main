@@ -5,6 +5,7 @@ import Footer from "@/src/components/modules/footer/Footer";
 import { CanonicalURL } from "@/src/components/modules/canonicalUrl/CanonicalURL";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Providers from "./providers";
 
 // import Swiper and modules styles
 import "swiper/css";
@@ -38,10 +39,12 @@ export default function RootLayout({
         <CanonicalURL />
       </head>
       <body className={`antialiased max-w-screen-2xl mx-auto`}>
-        <Header />
-        {children}
-        <Footer />
-        <ToastContainer />
+        <Providers>
+          <Header />
+          {children}
+          <Footer />
+          <ToastContainer />
+        </Providers>
       </body>
     </html>
   );
