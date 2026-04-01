@@ -1,14 +1,7 @@
-import BlogBottomSection from '@/src/components/pages/blog/BlogBottomSection'
-import BlogTopSection from '@/src/components/pages/blog/BlogTopSection'
-import React from 'react'
+import BlogListVeiw from "@/src/components/pages/blog/BlogListVeiw";
 
 const page = () => {
-  return (
-    <>
-    <BlogTopSection />
-    <BlogBottomSection />
-    </>
-  )
-}
+  return <BlogListVeiw />;
+};
 
-export default page
+export default page;

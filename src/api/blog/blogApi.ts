@@ -39,16 +39,14 @@ interface ImageAttributes {
   updatedAt: string;
 }
 
-interface ImageData {
+interface ImageData extends ImageAttributes {
   id: number;
-  attributes: ImageAttributes;
 }
 
-interface BannerData {
-  data: ImageData;
-}
+type BannerData = ImageData;
 
-interface BlogAttributes {
+interface BlogResponse {
+  id: number;
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
@@ -61,11 +59,6 @@ interface BlogAttributes {
   slug: string;
   thumbnail: BannerData;
   category: string[];
-}
-
-interface BlogResponse {
-  id: number;
-  attributes: BlogAttributes;
 }
 
 export interface TransformedBlog {
@@ -101,21 +94,21 @@ export const getBlog = async (
   );
   const blogs = response.data.data.map((blog: BlogResponse) => ({
     id: blog.id,
-    title: blog.attributes.title,
-    blogData: blog.attributes.content,
-    metaTitle: blog.attributes.meta_title,
-    metaDescr: blog.attributes.meta_description,
-    createdAt: blog.attributes.createdAt,
-    updatedAt: blog.attributes.updatedAt,
-    publishedAt: blog.attributes.publishedAt,
-    blogDate: blog.attributes.date,
-    blogSlug: blog.attributes.slug,
-    category: blog.attributes.category,
-    imageId: blog?.attributes.cover_image?.data?.id,
+    title: blog.title,
+    blogData: blog.content,
+    metaTitle: blog.meta_title,
+    metaDescr: blog.meta_description,
+    createdAt: blog.createdAt,
+    updatedAt: blog.updatedAt,
+    publishedAt: blog.publishedAt,
+    blogDate: blog.date,
+    blogSlug: blog.slug,
+    category: blog.category,
+    imageId: blog?.cover_image?.id,
     smallBanner:
-      blog?.attributes.cover_image?.data?.attributes?.formats?.small?.url,
-    banner: blog?.attributes.cover_image?.data?.attributes?.url
-      ? blog.attributes.cover_image.data.attributes.url
+      blog?.cover_image?.formats?.small?.url,
+    banner: blog?.cover_image?.url
+      ? blog.cover_image.url
       : "",
   }));
   return {
@@ -131,23 +124,24 @@ export const getBlogDetailsBySlug = async (
 ): Promise<TransformedBlog> => {
   const response = await axios.get(EndPoint.BLOG_BY_SLUG(slug));
   const blog = response.data.data;
+  console.log(response.data.data);
   return {
     id: blog.id,
-    title: blog.attributes.title,
-    blogData: blog.attributes.content,
-    metaTitle: blog.attributes.meta_title,
-    metaDescr: blog.attributes.meta_description,
-    createdAt: blog.attributes.createdAt,
-    updatedAt: blog.attributes.updatedAt,
-    publishedAt: blog.attributes.publishedAt,
-    blogDate: blog.attributes.date,
-    blogSlug: blog.attributes.slug,
-    category: blog.attributes.category,
-    imageId: blog?.attributes.cover_image?.data?.id,
+    title: blog.title,
+    blogData: blog.content,
+    metaTitle: blog.meta_title,
+    metaDescr: blog.meta_description,
+    createdAt: blog.createdAt,
+    updatedAt: blog.updatedAt,
+    publishedAt: blog.publishedAt,
+    blogDate: blog.date,
+    blogSlug: blog.slug,
+    category: blog.category,
+    imageId: blog?.cover_image?.id,
     smallBanner:
-      blog?.attributes.cover_image?.data?.attributes?.formats?.small?.url,
-    banner: blog?.attributes.cover_image?.data?.attributes?.url
-      ? blog.attributes.cover_image.data.attributes.url
+      blog?.cover_image?.formats?.small?.url,
+    banner: blog?.cover_image?.url
+      ? blog.cover_image.url
       : "",
   };
 };
