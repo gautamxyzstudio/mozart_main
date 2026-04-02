@@ -62,7 +62,7 @@ export const BottomSection = () => {
         Get In Touch
       </h1>
 
-      <div className="px-6 flex  flex-row items-center gap-10 w-full">
+      <div className="px-6 flex flex-row items-center gap-10 w-full md:mt-0 mt-10">
         <Image
           src={Images.Disk}
           alt="Lyrics"
@@ -163,7 +163,7 @@ export const BottomSection = () => {
             </button>
           </form>
 
-          <div className="mt-12 flex flex-nowrap justify-between items-center bg-white rounded-[20px] xl:p-8 md:p-4 p-4 gap-x-4 shadow-[0_10px_50px_rgba(0,0,0,0.05)] border border-gray-100 overflow-hidden">
+          <div className="md:mt-12 mt-8 w-fit flex flex-nowrap justify-between items-center bg-white md:rounded-[20px] rounded-[10px] xl:p-6 md:p-4 p-2 gap-x-4 shadow-[0_10px_50px_rgba(0,0,0,0.1)] border border-gray-100 overflow-hidden">
             {/* Quick Contact */}
             <div className="flex items-center gap-2 min-w-0">
               <Image
@@ -171,23 +171,23 @@ export const BottomSection = () => {
                 alt="Quick Contact"
                 className="xl:w-10 xl:h-10 md:w-8 md:h-8 w-6 h-6 shrink-0"
               />
-              <div className="min-w-0">
-                <p className="font-bold text-black-80 xl:text-lg md:text-[12px] text-[10px] leading-tight truncate">
+              <div className="flex flex-col">
+                <p className="font-bold text-black-80 xl:text-lg md:text-[12px] text-[10px] truncate">
                   Quick Contact
                 </p>
                 <Link
                   href={"mailto:admin@amozart.com"}
-                  className="text-gray-500 xl:text-sm md:text-[10px] text-[9px] mt-0.5 font-medium truncate"
+                  className="text-gray-500 xl:text-sm md:text-[10px] text-[9px] font-medium truncate"
                 >
                   admin@amozart.com
                 </Link>
               </div>
             </div>
 
-            <div className="h-10 w-px bg-linear-to-b from-transparent via-purple-400 to-transparent shrink-0"></div>
+            {/* <div className="h-10 w-px bg-linear-to-b from-transparent via-purple-400 to-transparent shrink-0"></div> */}
 
             {/* Phone Number */}
-            <div className="flex items-center gap-2 min-w-0">
+            {/* <div className="flex items-center gap-2 min-w-0">
               <Image
                 src={Icons.PhoneNumber}
                 alt="Phone Number"
@@ -201,7 +201,7 @@ export const BottomSection = () => {
                   +1 (778) 302-9979
                 </p>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

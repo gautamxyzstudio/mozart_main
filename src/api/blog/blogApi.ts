@@ -13,6 +13,7 @@ interface ImageFormat {
   height: number;
   sizeInBytes: number;
 }
+
 interface ImageFormats {
   large: ImageFormat;
   small: ImageFormat;
@@ -39,14 +40,16 @@ interface ImageAttributes {
   updatedAt: string;
 }
 
-interface ImageData extends ImageAttributes {
+interface ImageData {
   id: number;
+  attributes: ImageAttributes;
 }
 
-type BannerData = ImageData;
+interface BannerData {
+  data: ImageData;
+}
 
-interface BlogResponse {
-  id: number;
+interface BlogAttributes {
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
@@ -61,6 +64,11 @@ interface BlogResponse {
   category: string[];
 }
 
+interface BlogResponse {
+  id: number;
+  attributes: BlogAttributes;
+}
+
 export interface TransformedBlog {
   id: number;
   title: string;
@@ -68,7 +76,7 @@ export interface TransformedBlog {
   metaTitle: string;
   metaDescr: string;
   createdAt: string;
-  smallBanner: string | null;
+  smallBanner: string;
   updatedAt: string;
   publishedAt: string;
   blogDate: string | null;
@@ -81,7 +89,6 @@ export interface TransformedBlog {
 export const getBlog = async (
   page: number,
   limit: number,
-  search: string = "",
   category: string = "",
 ): Promise<{
   data: TransformedBlog[];
@@ -89,26 +96,24 @@ export const getBlog = async (
   page: number;
   limit: number;
 }> => {
-  const response = await axios.get(
-    EndPoint.BLOG(page, limit, search, category),
-  );
+  const response = await axios.get(EndPoint.BLOG(page, limit, category));
   const blogs = response.data.data.map((blog: BlogResponse) => ({
     id: blog.id,
-    title: blog.title,
-    blogData: blog.content,
-    metaTitle: blog.meta_title,
-    metaDescr: blog.meta_description,
-    createdAt: blog.createdAt,
-    updatedAt: blog.updatedAt,
-    publishedAt: blog.publishedAt,
-    blogDate: blog.date,
-    blogSlug: blog.slug,
-    category: blog.category,
-    imageId: blog?.cover_image?.id,
+    title: blog.attributes.title,
+    blogData: blog.attributes.content,
+    metaTitle: blog.attributes.meta_title,
+    metaDescr: blog.attributes.meta_description,
+    createdAt: blog.attributes.createdAt,
+    updatedAt: blog.attributes.updatedAt,
+    publishedAt: blog.attributes.publishedAt,
+    blogDate: blog.attributes.date,
+    blogSlug: blog.attributes.slug,
+    category: blog.attributes.category,
+    imageId: blog?.attributes.cover_image?.data?.id,
     smallBanner:
-      blog?.cover_image?.formats?.small?.url,
-    banner: blog?.cover_image?.url
-      ? blog.cover_image.url
+      blog?.attributes.cover_image?.data?.attributes?.formats?.small?.url,
+    banner: blog?.attributes.cover_image?.data?.attributes?.url
+      ? blog.attributes.cover_image.data.attributes.url
       : "",
   }));
   return {
@@ -127,21 +132,18 @@ export const getBlogDetailsBySlug = async (
   console.log(response.data.data);
   return {
     id: blog.id,
-    title: blog.title,
-    blogData: blog.content,
-    metaTitle: blog.meta_title,
-    metaDescr: blog.meta_description,
-    createdAt: blog.createdAt,
-    updatedAt: blog.updatedAt,
-    publishedAt: blog.publishedAt,
-    blogDate: blog.date,
-    blogSlug: blog.slug,
-    category: blog.category,
-    imageId: blog?.cover_image?.id,
-    smallBanner:
-      blog?.cover_image?.formats?.small?.url,
-    banner: blog?.cover_image?.url
-      ? blog.cover_image.url
-      : "",
+    title: blog.attributes.title,
+    blogData: blog.attributes.content,
+    metaTitle: blog.attributes.meta_title,
+    metaDescr: blog.attributes.meta_description,
+    createdAt: blog.attributes.createdAt,
+    updatedAt: blog.attributes.updatedAt,
+    publishedAt: blog.attributes.publishedAt,
+    blogDate: blog.attributes.date,
+    blogSlug: blog.attributes.slug,
+    category: blog.attributes.category,
+    imageId: blog?.attributes.cover_image?.data?.id,
+    smallBanner: blog?.attributes.cover_image?.data?.attributes?.formats?.small?.url,
+    banner: blog?.attributes.cover_image?.data?.attributes?.url ? blog.attributes.cover_image.data.attributes.url : "",
   };
 };

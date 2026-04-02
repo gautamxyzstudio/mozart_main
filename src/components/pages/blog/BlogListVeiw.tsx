@@ -2,14 +2,37 @@
 
 import BlogTopSection from "./BlogTopSection";
 import BlogBottomSection from "./BlogBottomSection";
-import { useGetBlog } from "@/src/hooks/useBlog";
+import { useGetInfiniteBlog } from "@/src/hooks/useBlog";
+import { useMemo, useState } from "react";
 
 const BlogListVeiw = () => {
-  const { data, isLoading } = useGetBlog(1, 10);
+  const [category, setCategory] = useState("");
+  const {
+    data,
+    isLoading,
+    fetchNextPage,
+    hasNextPage,
+    isFetchingNextPage,
+  } = useGetInfiniteBlog(10, category);
+
+  const blogs = useMemo(() => {
+    return data?.pages.flatMap((page) => page.data) || [];
+  }, [data]);
+
   return (
     <section className="w-full">
-      <BlogTopSection data={data?.data} isLoading={isLoading} />
-      <BlogBottomSection data={data?.data} isLoading={isLoading} />
+      <BlogTopSection
+        data={blogs}
+        isLoading={isLoading}
+        setCategory={setCategory}
+      />
+      <BlogBottomSection
+        data={blogs}
+        isLoading={isLoading}
+        fetchNextPage={fetchNextPage}
+        hasNextPage={hasNextPage}
+        isFetchingNextPage={isFetchingNextPage}
+      />
     </section>
   );
 };

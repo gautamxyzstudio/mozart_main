@@ -3,15 +3,22 @@ import { TransformedBlog } from "@/src/api/blog/blogApi";
 import dayjs from "dayjs";
 import Image from "next/image";
 import Link from "next/link";
+import CustomButton from "../../atom/button/CustomButton";
 
 const BlogBottomSection = ({
   data,
   isLoading,
+  fetchNextPage,
+  hasNextPage,
+  isFetchingNextPage,
 }: {
   data: any;
   isLoading: boolean;
+  fetchNextPage: () => void;
+  hasNextPage: boolean;
+  isFetchingNextPage: boolean;
 }) => {
-  return (
+  return data?.length < 3 ? null : (
     <section className="w-full py-16 px-6 md:px-12 xl:px-24 bg-[#F8F8F8]">
       {/* Header */}
       <div className="flex justify-between items-center mb-12">
@@ -60,6 +67,19 @@ const BlogBottomSection = ({
               </Link>
             ))}
       </div>
+
+      {/* Load More Button */}
+      {hasNextPage && (
+        <div className="flex justify-center mt-12">
+          <CustomButton
+            label={isFetchingNextPage ? "Loading..." : "Load More"}
+            buttonType="primary"
+            onClick={() => fetchNextPage()}
+            disabled={isFetchingNextPage}
+            customClasses="px-10 py-4 !rounded-full font-semibold"
+          />
+        </div>
+      )}
     </section>
   );
 };
