@@ -16,14 +16,14 @@ module.exports = {
     // Custom priority and changefreq per page
     const customPages = {
       '/': { priority: 1.0, changefreq: 'daily' },
-      '/services': { priority: 0.9, changefreq: 'weekly' },
-      '/artists': { priority: 0.8, changefreq: 'weekly' },
-      '/blog': { priority: 0.8, changefreq: 'daily' },
-      '/about': { priority: 0.7, changefreq: 'monthly' },
+      '/services': { priority: 0.9, changefreq: 'daily' },
+      '/artists': { priority: 0.9, changefreq: 'daily' },
+      '/blog': { priority: 0.9, changefreq: 'daily' },
+      '/about': { priority: 0.9, changefreq: 'daily' },
       '/our-story': { priority: 0.7, changefreq: 'monthly' },
       '/our-vision': { priority: 0.7, changefreq: 'monthly' },
-      '/contact': { priority: 0.6, changefreq: 'monthly' },
-      '/terms-and-conditions': { priority: 0.3, changefreq: 'yearly' },
+      '/contact': { priority: 0.7, changefreq: 'monthly' },
+      '/terms-and-conditions': { priority: 0.7, changefreq: 'monthly' },
     };
 
     const custom = customPages[path] || {};
