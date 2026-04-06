@@ -1,0 +1,10 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://amozart.com
+
+# Sitemaps
+Sitemap: https://amozart.com/page-sitemap.xml
+Sitemap: https://amozart.com/sitemap_index.xml
