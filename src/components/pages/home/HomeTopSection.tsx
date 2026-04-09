@@ -56,12 +56,10 @@ const HomeTopSection = () => {
           </div>
           <div className="flex flex-col xl:space-y-8 space-y-6 xl:w-101 md:w-137 w-full">
             <span className="text-sm xl:text-base">
-              We help artists and creators go global with music distribution,
-              YouTube channel management, paid promotions, & more. Lorem ipsum
-              dolor sit amet, consectetur adipiscing elit.
+              Share your music across global streaming platforms and reach real listeners everywhere. We help independent artists, labels, and creators distribute, protect, monetize, and promote their music with advanced tools, royalty tracking, and complete rights management. 
             </span>
             <Link
-              href={"/"}
+              href={`${process.env.NEXT_PUBLIC_ADMIN_BASE_MAIN_URL}`}
               title="Release Now"
               className="bg-primary py-3 md:px-15 md:w-fit w-full text-center rounded-full font-bold text-base text-background hover:shadow-[0_0_32px_0_rgba(110,54,190,0.24)] transition ease-in-out duration-300 hover:translate-y-1.5"
             >

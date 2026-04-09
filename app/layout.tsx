@@ -16,13 +16,13 @@ import "swiper/css/effect-creative";
 import "swiper/css/effect-coverflow";
 
 export const metadata: Metadata = {
-  title: "AMOZART - Distribute Your Music To The World",
+  title: "Amozart | Global Music Services | Music Distribution",
   description:
-    "Release your music globally with AMOZART. We help artists go global with music distribution, YouTube channel management, paid promotions, and more.",
+    "Distribute your music worldwide with top music distribution, promotion, YouTube Content ID, royalty management & artist services. Grow your career globally.",
   openGraph: {
-    title: "AMOZART - Distribute Your Music To The World",
+    title: "Amozart | Global Music Services | Music Distribution",
     description:
-      "Release your music globally with AMOZART. We help artists go global with music distribution, YouTube channel management, paid promotions, and more.",
+      "Distribute your music worldwide with top music distribution, promotion, YouTube Content ID, royalty management & artist services. Grow your career globally.",
     url: "https://amozart.com",
     locale: "en_US",
     images: [
@@ -34,11 +34,15 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AMOZART - Distribute Your Music To The World",
+    title: "Amozart | Global Music Services | Music Distribution ",
     description:
-      "Release your music globally with AMOZART. We help artists go global with music distribution, YouTube channel management, paid promotions, and more.",
+      "Distribute your music worldwide with top music distribution, promotion, YouTube Content ID, royalty management & artist services. Grow your career globally. ",
     images: ["/amozart.png"],
   },
+  robots:{
+    index: true,
+    follow: true,
+  }
 };
 
 export default function RootLayout({

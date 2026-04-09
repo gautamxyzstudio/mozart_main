@@ -49,6 +49,7 @@ import Promotion from "./promotion.webp";
 import Monetization from "./monetization.webp";
 import AutoPlay from "./playlist.webp";
 import TakeDown from "./takedown.webp";
+import Location from "./location.svg";
 
 export const Images = {
   Logo,
@@ -102,6 +103,7 @@ export const Icons = {
   BackImg,
   MozartIcon,
   BackImg2,
+  Location
 };
 
 export const GIF = {

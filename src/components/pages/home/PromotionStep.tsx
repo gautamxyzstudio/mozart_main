@@ -7,18 +7,18 @@ const PromotionStep = () => {
   const stepsData = [
     {
       step: "01",
-      title: "Targeted YouTube Ads",
-      desc: "We run smart, audience-focused YouTube ad campaigns to put your music in front of the right listeners at the right time.",
+      title: "Target Audience Analysis",
+      desc: "We study your genre, sound, and listener behavior to identify the audience most likely to engage with your music, ensuring every campaign starts in the right direction.",
     },
     {
       step: "02",
-      title: "Real Views & Engagement",
-      desc: "Get 100K+ real views with genuine likes, comments, and watch time no bots, only organic growth.",
+      title: "Platform-Based Promotion",
+      desc: "Your music is promoted on key platforms like Spotify, YouTube, Instagram, and more through playlist pitching, social media campaigns, and curated content boosts.",
     },
     {
       step: "03",
-      title: "Global Reach for Artists",
-      desc: "We help Punjabi artists and creators expand worldwide, turning local tracks into global releases.",
+      title: "Performance Optimization",
+      desc: "We monitor streaming and engagement data, then refine strategies to increase visibility, strengthen reach, and maximize overall growth.",
     },
   ];
 

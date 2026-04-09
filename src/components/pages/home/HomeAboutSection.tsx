@@ -16,22 +16,13 @@ const HomeAboutSection = () => {
             About AMozart
           </h2>
           <p className="xl:text-base text-sm text-background/70">
-            AMozart is a comprehensive music distribution platform designed to
-            help independent artists and labels reach global audiences across
-            all major streaming platforms.
+           We are a next-generation music distribution and rights management company built for artists who want global exposure without complications. Our platform helps musicians release their songs on all major streaming services, track royalties in real time, protect copyrights, manage YouTube Content ID, and grow their audience with powerful promotion tools.
           </p>
 
           <p className="xl:text-base text-sm text-background/70 xl:mt-0 -mt-4">
-            With our cutting-edge technology and industry expertise, we&rsquo;ve
-            helped thousands of artists distribute their music to Spotify, Apple
-            Music, Amazon Music, and 100+ other platforms worldwide.
+             With our dedicated support team, transparent reporting, and artist-first approach, we make it easy for creators to take control of their music career and build a lasting presence in the digital world.
           </p>
 
-          <p className="xl:text-base text-sm text-background/70 xl:mt-0 -mt-4">
-            From distribution to promotion, we provide the tools and support you
-            need to build your music career and connect with fans around the
-            world.
-          </p>
           <Link
             href={"/about"}
             title="Release Now"

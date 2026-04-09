@@ -8,12 +8,10 @@ const HomeServiceSection = () => {
       <div className="bg-primary xl:h-156 md:h-91.75 xl:rounded-3xl md:rounded-2xl rounded-xl sticky xl:top-10 md:top-25 top-20 flex md:flex-row flex-col md:items-center md:justify-between items-end md:p-0 p-6 pr-0">
         <div className="flex flex-col space-y-4 xl:w-153.5 xl:ml-13 md:w-90 md:ml-7.5 w-full md:p-0 pr-6">
           <h2 className="text-background font-bold xl:text-[64px] xl:leading-18 md:text-4xl text-[32px] leading-9.5">
-            Distribute Yours Song Worldwide
+          Global Music Distribution for All Major Platforms 
           </h2>
           <p className="text-background/70 xl:text-base text-sm">
-            Get your music on Spotify, Apple Music, YouTube Music, and more—all
-            with one easy upload. Fast, hassle-free distribution with full
-            control and no hidden fees.
+          We distribute your music to Spotify, Apple Music, Amazon Music, JioSaavn, Wynk, TikTok, Instagram and 100+ global platforms. Get fast delivery, royalty insights, playlist pitching and worldwide reach with zero stress. 
           </p>
         </div>
         <div className="xl:w-126.75 xl:h-115 md:w-75 md:h-67.5 w-75.75 h-69 md:mt-0 mt-8 relative">
@@ -71,12 +69,10 @@ const HomeServiceSection = () => {
         </div>
         <div className="flex flex-col space-y-4 xl:w-153.5 xl:mr-13 md:w-90 md:mr-7.5 w-full">
           <h2 className="text-background font-medium xl:text-[64px] xl:leading-18 md:text-4xl text-[32px] leading-9.5">
-            Grow on Youtube
+            Smart YouTube Channel & Content Management
           </h2>
           <p className="text-background/70 xl:text-base text-sm">
-            Get your music on Spotify, Apple Music, YouTube Music, and more—all
-            with one easy upload. Fast, hassle-free distribution with full
-            control and no hidden fees.
+            We help creators manage, optimize, and grow their YouTube channels with content planning, SEO, monetization, YouTube Content ID protection, and professional rights management for maximum revenue. 
           </p>
         </div>
       </div>
@@ -84,11 +80,10 @@ const HomeServiceSection = () => {
       <div className="bg-[#08C2DE] xl:h-156 md:h-91.75 xl:rounded-3xl md:rounded-2xl rounded-xl sticky xl:top-10 md:top-25 top-20 flex md:flex-row flex-col md:items-center md:justify-between items-end md:p-0 p-6 pr-0">
         <div className="flex flex-col space-y-4 xl:w-153.5 xl:ml-13 md:w-90 md:ml-7.5 w-full md:p-0 pr-6">
           <h2 className="text-background font-medium xl:text-[64px] xl:leading-18 md:text-4xl text-[32px] leading-9.5">
-            Build Your Artist Brand
+            Complete Artist Management & Career Building
           </h2>
           <p className="text-background/70 xl:text-base text-sm">
-            We help Punjabi artists and creators go global — with music
-            distribution, YouTube channel management, paid promotions, and more
+           From brand development to release strategy, promotions, bookings, and digital identity—our artist management services guide talent toward a long-term career, helping artists grow with structured planning and industry-level support. 
           </p>
         </div>
         <div className="xl:w-160.75 xl:h-92.5 md:w-95 md:h-55 w-75.75 h-63.5 relative md:mt-0 mt-8">

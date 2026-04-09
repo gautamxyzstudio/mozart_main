@@ -14,33 +14,33 @@ interface FaqItem {
 const faqData: FaqItem[] = [
   {
     id: "panel1",
-    question: "What Does The AMozart Do?",
+    question: "How do I distribute my music worldwide?",
     answer:
-      "The AMozart is a specialized platform helping artists with music distribution, YouTube management, and global growth strategies.",
+      "You can upload your song through our platform, and we deliver it to all major streaming apps like Spotify, Apple Music, JioSaavn, YouTube Music, Amazon Music, and more. We ensure fast delivery and complete metadata accuracy.",
   },
   {
     id: "panel2",
-    question: "Which Platforms Can I Distribute My Music To?",
+    question: "Do I keep 100% rights to my music?",
     answer:
-      "We distribute to all major platforms including Spotify, Apple Music, YouTube Music, Amazon, and 150+ other digital stores.",
+      "Yes. You always stay the full owner of your music copyrights. We only help you distribute, monetize, and protect your releases across global platforms. ",
   },
   {
     id: "panel3",
-    question: "How Can I Monitor The Success Of My Music After Distribution?",
+    question: "How does YouTube Content ID help me?",
     answer:
-      "You get a dedicated dashboard with real-time analytics, daily stream counts, and detailed revenue reports.",
+      "YouTube Content ID scans YouTube for any re-uploads of your music and automatically collects revenue from those videos, making sure you never lose your earnings.",
   },
   {
     id: "panel4",
-    question: "Do You Help With Branding And Visuals?",
+    question: "When will I receive my royalties?",
     answer:
-      "Yes, our creative team helps with cover art design, social media kits, and overall artist branding to ensure a professional look.",
+      "Royalty payments depend on the streaming platforms’ payout cycles, typically every 30 to 60 days. You can track earnings with our detailed analytics and transparent dashboard. ",
   },
   {
     id: "panel5",
-    question: "What Is Your Pricing Structure?",
+    question: "Can you help promote my music? ",
     answer:
-      "We have flexible plans ranging from per-release pricing to yearly subscriptions depending on your needs.",
+      "Yes. We provide music promotion services including playlist pitching, social promotion, campaign planning, and marketing strategies to boost your visibility and streams.",
   },
 ];
 

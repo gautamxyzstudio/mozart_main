@@ -13,9 +13,7 @@ const HomePromotion = () => {
             Promotion That Work
           </h2>
           <p className="text-black80 xl:text-base text-sm md:w-[70%]">
-            Sub text We help Punjabi artists and creators go global with music
-            distribution, YouTube channel management, paid promotions, and
-            more.....
+           We follow a strategic and data-driven approach to promote your music across digital platforms. Our goal is to increase your reach, boost streams, and connect you with the right audience. 
           </p>
         </div>
         <div className="w-full h-full flex justify-center overflow-clip">

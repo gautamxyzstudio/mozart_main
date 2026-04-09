@@ -29,10 +29,7 @@ const Footer = () => {
             />
           </Link>
           <p className="text-background opacity-70 text-base">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-            tristique tortor quis urna consequat, aliquet porta elit convallis.
-            Integer luctus nisl in enim pulvinar, quis fermentum augue feugiat.
-            Aenean a ante id tellus volutpat hendrerit.
+            We are a global music distribution and rights management company helping artists and labels release their songs worldwide. We provide all tools needed to grow your music career with transparency and trust. 
           </p>
           <div className="p-1.5 bg-[#FFFFFF29] xl:mt-2 flex flex-row items-center gap-x-1.5 rounded-full">
             {[
