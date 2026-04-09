@@ -89,7 +89,7 @@ const PromotionStep = () => {
         </div>
 
         {/* Floating Navigation Dots */}
-        <div className="flex justify-center items-center gap-x-0.5 p-1.5 rounded-full absolute z-20 top-60.5 left-1/2 -translate-x-1/2 pointer-events-auto border border-primary20">
+        <div className="flex justify-center mt-6 items-center gap-x-0.5 p-1.5 rounded-full absolute z-20 top-60.5 left-1/2 -translate-x-1/2 pointer-events-auto border border-primary20">
           {stepsData.map((_, idx) => (
             <div
               key={idx}

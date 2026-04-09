@@ -83,7 +83,7 @@ const HomeServiceSection = () => {
             Complete Artist Management & Career Building
           </h2>
           <p className="text-background/70 xl:text-base text-sm">
-           From brand development to release strategy, promotions, bookings, and digital identity—our artist management services guide talent toward a long-term career, helping artists grow with structured planning and industry-level support. 
+           From brand development to release strategy, promotions, bookings, and digital identity-our artist management services guide talent toward a long-term career, helping artists grow with structured planning and industry-level support. 
           </p>
         </div>
         <div className="xl:w-160.75 xl:h-92.5 md:w-95 md:h-55 w-75.75 h-63.5 relative md:mt-0 mt-8">
