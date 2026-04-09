@@ -15,6 +15,7 @@ import "swiper/css/effect-fade";
 import "swiper/css/effect-creative";
 import "swiper/css/effect-coverflow";
 
+
 export const metadata: Metadata = {
   title: "Amozart | Global Music Services | Music Distribution",
   description:

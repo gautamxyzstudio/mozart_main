@@ -4,6 +4,14 @@ import ServicesCenterSection from "@/src/components/pages/services/ServicesCente
 import { ServicesTopSection } from "@/src/components/pages/services/ServicesTopSection";
 import React from "react";
 
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Amozart Services for Independent Artists & Creators",
+  description:
+    "From publishing guidance to release management, Amozart delivers trusted services that help independent artists launch, promote, and build a strong music identity.",
+};
+
 const page = () => {
   return (
     <>

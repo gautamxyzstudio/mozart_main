@@ -1,5 +1,13 @@
 import React from "react";
 
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms & Conditions | Amozart",
+  description:
+    "Terms & Conditions | Amozart",
+};
+
 const Page = () => {
   return (
     <section className="w-full h-full relative flex flex-row justify-between items-start overflow-clip">
