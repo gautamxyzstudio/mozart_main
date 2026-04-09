@@ -14,9 +14,9 @@ interface FaqItem {
 const faqData: FaqItem[] = [
   {
     id: "panel1",
-    question: "What Does The Mozart Do?",
+    question: "What Does The AMozart Do?",
     answer:
-      "The Mozart is a specialized platform helping artists with music distribution, YouTube management, and global growth strategies.",
+      "The AMozart is a specialized platform helping artists with music distribution, YouTube management, and global growth strategies.",
   },
   {
     id: "panel2",

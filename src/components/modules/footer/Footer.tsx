@@ -25,7 +25,7 @@ const Footer = () => {
             <Image
               src={Images.WhiteLogo}
               className="w-auto md:h-10.5 h-4.5"
-              alt="Mozart"
+              alt="AMozart"
             />
           </Link>
           <p className="text-background opacity-70 text-base">
@@ -65,7 +65,7 @@ const Footer = () => {
 
         <div className="w-full border-t border-primary20 xl:py-6 py-4 flex md:flex-row flex-col gap-y-3 justify-between md:items-center xl:mt-0 md:mt-2">
           <span className="text-background xl:text-base md:text-xs text-[10px] leading-3.5">
-            &copy;Copyright {new Date().getFullYear()} Mozart. All Rights
+            &copy;Copyright {new Date().getFullYear()} AMozart. All Rights
             Reserved
           </span>
           <span className="text-background xl:text-base md:text-xs text-[10px] leading-3.5">

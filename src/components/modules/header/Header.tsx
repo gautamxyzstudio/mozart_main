@@ -87,7 +87,7 @@ const Header = () => {
           }`}
         >
           <Link href={"/"}>
-            <Image src={Images.Logo} alt="Mozart" className="w-auto h-6" />
+            <Image src={Images.Logo} alt="AMozart" className="w-auto h-6" />
           </Link>
           <nav className="xl:flex flex-row items-center hidden">
             {routes.map((route, idx) => (

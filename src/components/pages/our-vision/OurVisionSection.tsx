@@ -32,7 +32,7 @@ const OurVisionSection = () => {
               <div className="rounded-full xl:p-8 md:p-5  p-9  shadow-lg">
                 <Image
                   src={Icons.MozartIcon}
-                  alt="Mozart Logo"
+                  alt="AMozart Logo"
                   width={390}
                   height={390}
                   className=" xl:h-8 xl:w-18  md:h-4.5 md:w-10.25 w-9.25 h-4 object-contain"
@@ -50,7 +50,7 @@ const OurVisionSection = () => {
           <p className="text-black/70 xl:text-base md:text-[14px] text-[14px] leading-relaxed max-w-lg mx-auto md:mx-0">
             Our vision is to empower artists globally by removing barriers in
             music distribution and promotion. We believe talent deserves
-            visibility, ownership, and fair opportunities and Mozart is here to
+            visibility, ownership, and fair opportunities and AMozart is here to
             make that happen.
           </p>
         </div>

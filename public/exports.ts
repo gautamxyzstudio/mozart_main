@@ -1,7 +1,7 @@
-import Logo from "./mozartLogo.webp";
+import Logo from "./amozart.webp";
 import Humbugger from "./humbugger.svg";
 import Close from "./close.svg";
-import WhiteLogo from "./whiteLogo.webp";
+import WhiteLogo from "./amozartWhite.webp";
 import Disk from "./disk.webp";
 import Lyrics from "./lyrics.webp";
 import Instagram from "./instagram.svg";
@@ -14,18 +14,7 @@ import PhoneNumber from "./phone-call.svg";
 import Album from "./album.webp";
 import AlbumTwo from "./albumTwo.webp";
 import AlbumThree from "./albumThree.webp";
-import BlogImg from "./blogImg.webp";
-import BlogImg2 from "./blogImg2.webp";
-import BlogImg3 from "./blogImg3.webp";
 import RecentBlog from "./recentblog1.webp";
-import RecentBlog2 from "./recentblog2.webp";
-import RecentBlog3 from "./recentblog3.webp";
-import RecentBlog4 from "./recentblog4.webp";
-import RecentBlog5 from "./recentblog5.webp";
-import RecentBlog6 from "./recentblog6.webp";
-import RecentBlog7 from "./recentblog7.webp";
-import RecentBlog8 from "./recentblog8.webp";
-import RecentBlog9 from "./recentblog9.webp";
 import SlideOne from "./slideOne.png";
 import SlideTwo from "./slideTwo.jpg";
 import LeftArrow from "./leftArrow.svg";
@@ -58,8 +47,8 @@ import MultiLabel from "./multiLabel.webp";
 import LabelDistribution from "./gif/labelDistribution.gif";
 import Promotion from "./promotion.webp";
 import Monetization from "./monetization.webp";
-import AutoPlay from "./playlist.webp"
-import TakeDown from "./takedown.webp"
+import AutoPlay from "./playlist.webp";
+import TakeDown from "./takedown.webp";
 
 export const Images = {
   Logo,
@@ -70,18 +59,7 @@ export const Images = {
   Album,
   AlbumTwo,
   AlbumThree,
-  BlogImg,
-  BlogImg2,
-  BlogImg3,
   RecentBlog,
-  RecentBlog2,
-  RecentBlog3,
-  RecentBlog4,
-  RecentBlog5,
-  RecentBlog6,
-  RecentBlog7,
-  RecentBlog8,
-  RecentBlog9,
   SlideOne,
   SlideTwo,
   LyricsBox,

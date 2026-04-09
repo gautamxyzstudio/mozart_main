@@ -45,7 +45,7 @@ const NavBarDrawer: React.FC<INavBarDrawerProps> = ({
         <div className="flex flex-col space-y-8">
           <div className="flex flex-row items-center-safe justify-between w-full py-3.5">
             <Link href={"/"} onClick={onClose}>
-              <Image src={Images.Logo} alt="Mozart" className="w-auto h-6" />
+              <Image src={Images.Logo} alt="AMozart" className="w-auto h-6" />
             </Link>
             <button
               onClick={onClose}

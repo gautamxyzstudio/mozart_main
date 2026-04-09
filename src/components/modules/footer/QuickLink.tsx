@@ -7,7 +7,7 @@ const QuickLink = () => {
       label: "Company",
       linkList: [
         {
-          title: "About Mozart",
+          title: "About AMozart",
           link: "/about",
         },
         {

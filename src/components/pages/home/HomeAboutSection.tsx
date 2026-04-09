@@ -13,10 +13,10 @@ const HomeAboutSection = () => {
         </span>
         <div className="flex flex-col self-end space-y-4 text-background xl:pr-25 md:pr-13 md:pl-0 px-6 md:items-start items-center md:text-start text-center xl:w-[47%] md:w-[52%] w-full xl:mt-0 md:-mt-6">
           <h2 className="xl:text-[64px] xl:leading-18 md:text-[48px] md:leading-13.5 text-[32px] leading-9.5 font-bold">
-            About Mozart
+            About AMozart
           </h2>
           <p className="xl:text-base text-sm text-background/70">
-            Mozart is a comprehensive music distribution platform designed to
+            AMozart is a comprehensive music distribution platform designed to
             help independent artists and labels reach global audiences across
             all major streaming platforms.
           </p>
@@ -41,7 +41,7 @@ const HomeAboutSection = () => {
           </Link>
         </div>
         <span className="xl:text-[200px] xl:leading-51.5 md:text-[124px] md:leading-32.5 text-[70px] leading-19 text-background/10 font-bold text-end xl:-mb-13.25 xl:mt-0 md:-mt-6 -mb-3 self-end flex h-full items-end">
-          Mozart
+          AMozart
         </span>
       </div>
     </section>

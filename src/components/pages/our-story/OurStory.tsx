@@ -19,16 +19,16 @@ const OurStory = () => {
           </h2>
           <div className="space-y-6 max-w-lg mx-auto md:mx-0">
             <p className="text-background/70 xl:text-base md:text-sm text-sm leading-relaxed">
-              Mozart is a modern music distribution and promotion platform built
-              for independent artists, creators, and labels. Our mission is
-              simple: help your music reach the world without limits. From
+              AMozart is a modern music distribution and promotion platform
+              built for independent artists, creators, and labels. Our mission
+              is simple: help your music reach the world without limits. From
               global distribution to artist growth, we give you the tools you
               need to succeed in today&apos;s digital music industry.
             </p>
             <p className="text-background/70 xl:text-base md:text-sm text-sm leading-relaxed">
               We distribute your music to all major streaming platforms
               including Spotify, Apple Music, YouTube Music, Instagram, and
-              more. Along with distribution, Mozart supports artists with
+              more. Along with distribution, AMozart supports artists with
               promotion, brand building, and digital rights.
             </p>
           </div>
@@ -60,7 +60,7 @@ const OurStory = () => {
               <div className="bg-white/10 rounded-full p-3 md:p-4 border border-white/20 shadow-xl">
                 <Image
                   src={Icons.MozartIcon}
-                  alt="Mozart Logo"
+                  alt="AMozart Logo"
                   width={70}
                   height={70}
                   className="xl:w-14 xl:h-14 md:w-12 md:h-12 w-10 h-10 object-contain"
