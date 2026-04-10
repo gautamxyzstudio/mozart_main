@@ -35,7 +35,7 @@ const Footer = () => {
             {[
               {
                 icon: Icons.Instagram,
-                link: "https://www.instagram.com/officialamozart",
+                link: "https://www.instagram.com/amozartglobal",
               },
               {
                 icon: Icons.Facebook,
@@ -47,7 +47,7 @@ const Footer = () => {
               },
               { icon: Icons.Twitter, link: "https://x.com/AmozartOfficial" },
             ].map((item, idx) => (
-              <Link href={item.link} key={idx}>
+              <Link href={item.link} target="_blank" key={idx}>
                 <Image
                   src={item.icon}
                   alt={item.link + idx}
