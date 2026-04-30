@@ -5,82 +5,225 @@ import { Autoplay } from "swiper/modules";
 
 // Swiper styles
 import "swiper/css";
-import "swiper/css/free-mode";
-import "swiper/css/autoplay";
 import Image from "next/image";
 
-const testimonialPairs = [
+// const testimonialPairs = [
+//   {
+//     top: {
+//       id: 1,
+//       name: "Jane Cooper",
+//       role: "CEO of AI",
+//       text: "Ipsum integer faucibus eu morbi integer. Tempus in volutpat libero mauris neque dolor.",
+//     },
+//     bottom: {
+//       id: 2,
+//       name: "Georges Embolo",
+//       role: "Director",
+//       text: "Ipsum integer faucibus eu morbi integer. Tempus in volutpat libero mauris neque dolor. Pellentesque sagittis.",
+//     },
+//   },
+//   {
+//     top: {
+//       id: 3,
+//       name: "Brooklyn Simmons",
+//       role: "Manager",
+//       text: "Ipsum integer faucibus eu morbi integer. Tempus in volutpat libero mauris neque dolor. Pellentesque sagittis.",
+//     },
+//     bottom: {
+//       id: 4,
+//       name: "Jane Cooper",
+//       role: "Designer",
+//       text: "Ipsum integer faucibus eu morbi integer. Tempus in volutpat libero mauris neque dolor.",
+//     },
+//   },
+//   {
+//     top: {
+//       id: 5,
+//       name: "Leslie Alexander",
+//       role: "Founder",
+//       text: "Fantastic service! The team was very helpful and the results exceeded my expectations.",
+//     },
+//     bottom: {
+//       id: 6,
+//       name: "Guy Hawkins",
+//       role: "Developer",
+//       text: "The automation tools are a lifesaver. Highly recommend this to any creative professional.",
+//     },
+//   },
+//   {
+//     top: {
+//       id: 7,
+//       name: "Robert Fox",
+//       role: "Artist",
+//       text: "A game changer for music distribution. My tracks are now reaching a global audience easily.",
+//     },
+//     bottom: {
+//       id: 8,
+//       name: "Kristin Watson",
+//       role: "Creator",
+//       text: "Best platform for Punjabi creators. The support is top-notch and very fast.",
+//     },
+//   },
+//   {
+//     top: {
+//       id: 9,
+//       name: "Wade Warren",
+//       role: "Producer",
+//       text: "Smooth interface and very intuitive. I was able to manage my channel with zero hassle.",
+//     },
+//     bottom: {
+//       id: 10,
+//       name: "Jenny Wilson",
+//       role: "Marketing",
+//       text: "The paid promotions actually work! Saw a significant jump in my views and engagement.",
+//     },
+//   },
+// ];
+
+const testimonialPairs = [ 
+
   {
+
     top: {
+
       id: 1,
-      name: "Jane Cooper",
-      role: "CEO of AI",
-      text: "Ipsum integer faucibus eu morbi integer. Tempus in volutpat libero mauris neque dolor.",
-    },
-    bottom: {
-      id: 2,
-      name: "Georges Embolo",
-      role: "Director",
-      text: "Ipsum integer faucibus eu morbi integer. Tempus in volutpat libero mauris neque dolor. Pellentesque sagittis.",
-    },
-  },
-  {
-    top: {
-      id: 3,
-      name: "Brooklyn Simmons",
-      role: "Manager",
-      text: "Ipsum integer faucibus eu morbi integer. Tempus in volutpat libero mauris neque dolor. Pellentesque sagittis.",
-    },
-    bottom: {
-      id: 4,
-      name: "Jane Cooper",
-      role: "Designer",
-      text: "Ipsum integer faucibus eu morbi integer. Tempus in volutpat libero mauris neque dolor.",
-    },
-  },
-  {
-    top: {
-      id: 5,
-      name: "Leslie Alexander",
-      role: "Founder",
-      text: "Fantastic service! The team was very helpful and the results exceeded my expectations.",
-    },
-    bottom: {
-      id: 6,
-      name: "Guy Hawkins",
-      role: "Developer",
-      text: "The automation tools are a lifesaver. Highly recommend this to any creative professional.",
-    },
-  },
-  {
-    top: {
-      id: 7,
-      name: "Robert Fox",
+
+      name: "Rahul Mehta",
+
       role: "Artist",
-      text: "A game changer for music distribution. My tracks are now reaching a global audience easily.",
+
+      text: "they made my song reach every platforms I never imagined. Super easy and fast service!",
+
     },
+
     bottom: {
-      id: 8,
-      name: "Kristin Watson",
-      role: "Creator",
-      text: "Best platform for Punjabi creators. The support is top-notch and very fast.",
+
+      id: 2,
+
+      name: "Emily Johnson",
+
+      role: "Artist",
+
+      text: "Loved how smooth the music distribution was. Amozart handled everything perfectly.",
+
     },
+
   },
+
   {
+
     top: {
-      id: 9,
-      name: "Wade Warren",
-      role: "Producer",
-      text: "Smooth interface and very intuitive. I was able to manage my channel with zero hassle.",
+
+      id: 3,
+
+      name: "Gurpreet Singh",
+
+      role: "Artist",
+
+      text: "Their promotion boosted my track plays in just a few days. Best choice for new artists!",
+
     },
+
     bottom: {
-      id: 10,
-      name: "Jenny Wilson",
-      role: "Marketing",
-      text: "The paid promotions actually work! Saw a significant jump in my views and engagement.",
+
+      id: 4,
+
+      name: "Aarav Nair",
+
+      role: "Artist",
+
+      text: "Amozart’s artist management really helped me stay focused on creating music.",
+
     },
+
   },
+
+  {
+
+    top: {
+
+      id: 5,
+
+      name: "Mike Anderson",
+
+      role: "Artist",
+
+      text: "YouTube Content ID worked flawlessly. Finally my music royalties are safe.",
+
+    },
+
+    bottom: {
+
+      id: 6,
+
+      name: "Simran Kaur",
+
+      role: "Artist",
+
+      text: "Their team supported me at every step. My release felt totally stress-free.",
+
+    },
+
+  },
+
+  {
+
+    top: {
+
+      id: 7,
+
+      name: "Jason Martinez",
+
+      role: "Artist",
+
+      text: "Royalty and rights management has become so easy with Amozart. Truly reliable.",
+
+    },
+
+    bottom: {
+
+      id: 8,
+
+      name: "Manpreet Dhillon",
+
+      role: "Artist",
+
+      text: "Thanks to Amozart, my track got proper promotion and reached a wider audience.",
+
+    },
+
+  },
+
+  {
+
+    top: {
+
+      id: 9,
+
+      name: "Sophia Williams",
+
+      role: "Artist",
+
+      text: "Professional and quick service! Perfect for any independent artist.",
+
+    },
+
+    bottom: {
+
+      id: 10,
+
+      name: "Vikas Sharma",
+
+      role: "Artist",
+
+      text: "Amozart’s music label management gave my song a proper launch. Loved the experience.",
+
+    },
+
+  },
+
 ];
+ 
 interface Testimonial {
   id: number;
   name: string;
@@ -129,7 +272,7 @@ const Testimonials = () => {
           What Our Client&apos;s Say
         </h2>
         <p className="text-black80 xl:text-base text-sm xl:w-1/2 md:w-[70%]">
-          Sub text We help Punjabi artists and creators go global with music
+        We help Punjabi artists and creators go global with music
           distribution, YouTube channel management, paid promotions, and
           more.....
         </p>
