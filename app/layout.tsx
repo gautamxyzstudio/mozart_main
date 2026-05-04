@@ -17,6 +17,8 @@ import "swiper/css/effect-creative";
 import "swiper/css/effect-coverflow";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://amozart.com"),
+
   title: "Amozart | Global Music Services | Music Distribution",
   description:
     "Distribute your music worldwide with top music distribution, promotion, YouTube Content ID, royalty management & artist services. Grow your career globally.",
@@ -27,14 +29,21 @@ export const metadata: Metadata = {
     url: "https://amozart.com",
     siteName: "AMOZART",
     type: "website",
-    images: ["https://amozart.com/amozart.png"],
+    images: [
+      {
+        url: "/amozart.png",
+        width: 1200,
+        height: 630,
+        alt: "Amozart",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Amozart | Global Music Services | Music Distribution ",
-    images: ["https://amozart.com/amozart.png"],
     description:
-      "Release your music globally with AMOZART. We help artists go global with music distribution, YouTube channel management, paid promotions, and more.",
+      "Distribute your music worldwide with top music distribution, promotion, YouTube Content ID, royalty management & artist services. Grow your career globally.",
+    images: ["/amozart.png"],
   },
   robots: {
     index: true,
