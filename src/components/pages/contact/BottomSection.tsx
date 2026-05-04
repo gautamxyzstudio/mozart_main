@@ -183,25 +183,6 @@ export const BottomSection = () => {
                 </Link>
               </div>
             </div>
-
-            {/* <div className="h-10 w-px bg-linear-to-b from-transparent via-purple-400 to-transparent shrink-0"></div> */}
-
-            {/* Phone Number */}
-            {/* <div className="flex items-center gap-2 min-w-0">
-              <Image
-                src={Icons.PhoneNumber}
-                alt="Phone Number"
-                className="xl:w-10 xl:h-10 md:w-8 md:h-8 w-6 h-6 shrink-0"
-              />
-              <div className="min-w-0">
-                <p className="font-bold text-[#2D2D2D] xl:text-lg md:text-[12px] text-[10px] leading-tight truncate">
-                  Phone Number
-                </p>
-                <p className="text-gray-500 xl:text-sm md:text-[10px] text-[9px] mt-0.5 font-medium truncate">
-                  +1 (778) 302-9979
-                </p>
-              </div>
-            </div> */}
           </div>
         </div>
       </div>

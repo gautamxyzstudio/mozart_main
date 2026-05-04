@@ -70,7 +70,7 @@ const ServicesCenterSection = () => {
             key={service.id}
             className={`w-full h-auto sticky -top-20 md:-top-10 flex flex-col ${
               isEven ? "md:flex-row-reverse" : "md:flex-row"
-            } items-center justify-between py-9 md:py-19 xl:py-27 bg-background overflow-hidden`}
+            } items-center justify-between py-9 bg-background overflow-hidden`}
           >
             {/* --- Text Content Side --- */}
             <div

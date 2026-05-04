@@ -2,7 +2,7 @@ import React from "react";
 
 const ContactTopSection = () => {
   return (
-    <section className="w-full xl:h-156 md:h-119 h-81 relative flex flex-col justify-center items-center overflow-clip">
+    <section className="w-full xl:h-145 md:h-110 h-81 relative flex flex-col justify-center items-center overflow-clip">
       <div className="absolute md:w-37 md:h-188.75 w-17.5 h-87.5 bg-[linear-gradient(180deg,rgba(103,57,183,0)_0%,rgba(103,57,183,0.45)_33.78%,rgba(103,57,183,0)_66.97%)] opacity-20 rotate-24 xl:mt-15.25 xl:ml-0 md:-mt-3 md:-ml-9 mt-11.25 left-0" />
       <div className="absolute md:w-37 md:h-188.75 w-17.5 h-87.5 bg-[linear-gradient(180deg,rgba(103,57,183,0)_0%,rgba(103,57,183,0.45)_33.78%,rgba(103,57,183,0)_66.97%)] opacity-20 xl:rotate-204 rotate-24 xl:-mt-44.5 xl:mr-10 md:-mt-3 md:mr-3.5 mt-12.5 mr-17 right-0" />
       <div>

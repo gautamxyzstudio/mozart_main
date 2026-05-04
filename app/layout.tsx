@@ -4,6 +4,7 @@ import Header from "@/src/components/modules/header/Header";
 import Footer from "@/src/components/modules/footer/Footer";
 import { CanonicalURL } from "@/src/components/modules/canonicalUrl/CanonicalURL";
 import { ToastContainer } from "react-toastify";
+import { GoogleTagManager } from "@next/third-parties/google";
 import "react-toastify/dist/ReactToastify.css";
 import Providers from "./providers";
 
@@ -15,7 +16,6 @@ import "swiper/css/effect-fade";
 import "swiper/css/effect-creative";
 import "swiper/css/effect-coverflow";
 
-
 export const metadata: Metadata = {
   title: "Amozart | Global Music Services | Music Distribution",
   description:
@@ -25,25 +25,21 @@ export const metadata: Metadata = {
     description:
       "Distribute your music worldwide with top music distribution, promotion, YouTube Content ID, royalty management & artist services. Grow your career globally.",
     url: "https://amozart.com",
-    locale: "en_US",
-    images: [
-      {
-        url: "/amozart.png",
-      },
-    ],
+    siteName: "AMOZART",
     type: "website",
+    images: ["https://amozart.com/amozart.png"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Amozart | Global Music Services | Music Distribution ",
+    images: ["https://amozart.com/amozart.png"],
     description:
-      "Distribute your music worldwide with top music distribution, promotion, YouTube Content ID, royalty management & artist services. Grow your career globally. ",
-    images: ["/amozart.png"],
+      "Release your music globally with AMOZART. We help artists go global with music distribution, YouTube channel management, paid promotions, and more.",
   },
-  robots:{
+  robots: {
     index: true,
     follow: true,
-  }
+  },
 };
 
 export default function RootLayout({
@@ -63,6 +59,9 @@ export default function RootLayout({
           content="m6-TDGzBNK3GBch_S9HUkA96m-znL-s6B5otuhizHVQ"
         />
         <CanonicalURL />
+        <GoogleTagManager
+          gtmId={`${process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER}`}
+        />
       </head>
       <body className={`antialiased max-w-screen-2xl mx-auto`}>
         <Providers>

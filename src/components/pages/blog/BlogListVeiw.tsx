@@ -7,13 +7,8 @@ import { useMemo, useState } from "react";
 
 const BlogListVeiw = () => {
   const [category, setCategory] = useState("");
-  const {
-    data,
-    isLoading,
-    fetchNextPage,
-    hasNextPage,
-    isFetchingNextPage,
-  } = useGetInfiniteBlog(10, category);
+  const { data, isLoading, fetchNextPage, hasNextPage, isFetchingNextPage } =
+    useGetInfiniteBlog(9, category);
 
   const blogs = useMemo(() => {
     return data?.pages.flatMap((page) => page.data) || [];
