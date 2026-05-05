@@ -16,11 +16,27 @@ const HomeAboutSection = () => {
             About AMozart
           </h2>
           <p className="xl:text-base text-sm text-background/70">
-           We are a next-generation music distribution and rights management company built for artists who want global exposure without complications. Our platform helps musicians release their songs on all major streaming services, track royalties in real time, protect copyrights, manage YouTube Content ID, and grow their audience with powerful promotion tools.
+            Amozart is named after the legendary composer{" "}
+            <strong className="font-bold text-background">
+              &ldquo;Wolfgang Amadeus Mozart&rdquo;
+            </strong>
+            , inspiring us to help artists share their music with the world in a
+            smooth and powerful way
+          </p>
+          <p className="xl:text-base text-sm text-background/70">
+            We are a next-generation music distribution and rights management
+            company built for artists who want global exposure without
+            complications. Our platform helps musicians release their songs on
+            all major streaming services, track royalties in real time, protect
+            copyrights, manage YouTube Content ID, and grow their audience with
+            powerful promotion tools.
           </p>
 
           <p className="xl:text-base text-sm text-background/70 xl:mt-0 -mt-4">
-             With our dedicated support team, transparent reporting, and artist-first approach, we make it easy for creators to take control of their music career and build a lasting presence in the digital world.
+            With our dedicated support team, transparent reporting, and
+            artist-first approach, we make it easy for creators to take control
+            of their music career and build a lasting presence in the digital
+            world.
           </p>
 
           <Link
