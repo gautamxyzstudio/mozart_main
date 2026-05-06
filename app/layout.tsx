@@ -68,9 +68,7 @@ export default function RootLayout({
           content="m6-TDGzBNK3GBch_S9HUkA96m-znL-s6B5otuhizHVQ"
         />
         <CanonicalURL />
-        <GoogleTagManager
-          gtmId={`${process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER}`}
-        />
+        <GoogleTagManager gtmId={`GTM-NZGHV84P`} />
       </head>
       <body className={`antialiased max-w-screen-2xl mx-auto`}>
         <Providers>
