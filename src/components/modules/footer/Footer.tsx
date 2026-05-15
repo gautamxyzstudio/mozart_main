@@ -29,7 +29,10 @@ const Footer = () => {
             />
           </Link>
           <p className="text-background opacity-70 text-base">
-            We are a global music distribution and rights management company helping artists and labels release their songs worldwide. We provide all tools needed to grow your music career with transparency and trust. 
+            We are a global music distribution and rights management company
+            helping artists and labels release their songs worldwide. We provide
+            all tools needed to grow your music career with transparency and
+            trust.
           </p>
           <div className="p-1.5 bg-[#FFFFFF29] xl:mt-2 flex flex-row items-center gap-x-1.5 rounded-full">
             {[
@@ -65,7 +68,7 @@ const Footer = () => {
             &copy;Copyright {new Date().getFullYear()} AMozart. All Rights
             Reserved
           </span>
-          <span className="text-background xl:text-base md:text-xs text-[10px] leading-3.5">
+          {/* <span className="text-background xl:text-base md:text-xs text-[10px] leading-3.5">
             Designed & Developed by{" "}
             <Link
               href={"https://www.xyz.studio/"}
@@ -74,7 +77,7 @@ const Footer = () => {
             >
               XYZ Studio
             </Link>
-          </span>
+          </span> */}
         </div>
       </div>
     </footer>
