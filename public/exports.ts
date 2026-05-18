@@ -36,6 +36,7 @@ import Dummy from "./dummy.webp";
 import Dummy2 from "./dummy2.webp";
 import Dummy3 from "./dummy3.webp";
 import CircleArrow from "./circleArrow.svg";
+import CircleArrow2 from "./circleArrow2.webp";
 import BackImg from "./backImg.svg";
 import MozartIcon from "./mozartIcon.svg";
 import BackImg2 from "./backImg2.svg";
@@ -50,11 +51,31 @@ import Monetization from "./monetization.webp";
 import AutoPlay from "./playlist.webp";
 import TakeDown from "./takedown.webp";
 import Location from "./location.svg";
+import Spotify2 from "./spotify2.svg";
+import AppleMusic2 from "./appleMusic2.svg";
+import TikTok from "./tikTok.svg"
+import Amazon from "./Amazon_Music.svg"
+import Tidal from "./Tidal.svg"
+import instagram2 from "./instagram2.svg"
+import Deerzer from "./deezer.svg"
+import Beatport from "./beatport.svg"
+import Music from "./music.svg"
+import Pandora from "./pandora.svg"
+import Vevo from "./vevo.svg"
+import Shazam from "./shazam.svg"
+import Distribution from "./fastDistribution.webp"
+import RealTime from "./RealTime.webp"
+import playlist2 from "./playlist2.webp"
+import Vegan from "./vegan.webp"
+import GlobalReach from "./GlobalReach.webp"
+import Royalties from "./royalties.webp"
+import Menztion from "./menztionTool.webp"
 
 export const Images = {
   Logo,
   WhiteLogo,
   Disk,
+  CircleArrow2,
   Lyrics,
   NotFound,
   Album,
@@ -83,6 +104,13 @@ export const Images = {
   Promotion,
   Monetization,
   TakeDown,
+  Distribution,
+  RealTime,
+  playlist2,
+  Vegan,
+  GlobalReach,
+  Royalties,
+  Menztion
 };
 
 export const Icons = {
@@ -103,7 +131,19 @@ export const Icons = {
   BackImg,
   MozartIcon,
   BackImg2,
-  Location
+  Location,
+  Spotify2,
+  AppleMusic2,
+  TikTok,
+  Amazon,
+  Tidal,
+  instagram2,
+  Deerzer,
+  Beatport,
+  Music,
+  Pandora,
+  Vevo,
+  Shazam
 };
 
 export const GIF = {

@@ -273,7 +273,7 @@ const Testimonials = () => {
         </h2>
         <p className="text-black80 xl:text-base text-sm xl:w-1/2 md:w-[70%]">
         We help Punjabi artists and creators go global with music
-          distribution, YouTube channel management, paid promotions, and
+            distribution, YouTube channel management, paid promotions, and
           more.....
         </p>
       </div>

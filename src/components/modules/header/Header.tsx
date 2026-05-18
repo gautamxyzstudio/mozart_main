@@ -78,11 +78,11 @@ const Header = () => {
               transition: { duration: 0.3, ease: "easeInOut" },
             },
           }}
-          className={`xl:max-w-screen-2xl mx-auto xl:px-25 md:px-13 px-6 xl:py-6 py-3.5 flex flex-row items-center-safe justify-between fixed top-0 left-0 right-0 z-999 ${
+          className={`xl:max-w-screen-2xl mx-auto xl:px-25 md:px-13 px-6 xl:py-4 py-3.5 flex flex-row items-center-safe justify-between fixed top-0 left-0 right-0 z-999 ${
             isLaptop
               ? isScrolled
                 ? "bg-background shadow"
-                : "bg-transparent"
+                : "bg-white"
               : "bg-background"
           }`}
         >
