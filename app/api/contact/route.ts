@@ -12,6 +12,7 @@ interface FormData {
 export async function POST(req: Request): Promise<NextResponse> {
   const body = await req.json();
   const { name, email, phone, service, message } = body as FormData;
+  console.log("body", body);
 
   const transporter = nodemailer.createTransport({
     service: "gmail",

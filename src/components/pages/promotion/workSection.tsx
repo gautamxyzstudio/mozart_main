@@ -2,46 +2,45 @@ import { Icons, Images } from "@/public/exports";
 import Image from "next/image";
 import React from "react";
 
-const HomeLabelSection = () => {
+const WorkSection = () => {
     const labelData = [
         {
-            label: "Share Your Music ",
+            label: "Upload Music ",
             description:
                 "Manage your music on YouTube with advanced Content Management System access. Track performance, manage claims, and protect your content.",
             image: Images.Dummy,
         },
         {
-            label: "Promotion Goals",
+            label: "Add Details",
             description:
                 "Take control of your digital rights. Protect your music across streaming platforms and social media channels with our rights management tools.",
             image: Images.Dummy2,
         },
         {
-            label: "Run the Campaign ",
+            label: "Distribute Everywhere ",
             description:
                 "Set up and manage royalty distribution with customizable split templates. Ensure fair compensation for all contributors to your music.",
             image: Images.Dummy3,
         },
         {
-            label: "Track Your Results",
+            label: "Earn & Track  ",
             description:
                 "Set up and manage royalty distribution with customizable split templates. Ensure fair compensation for all contributors to your music.",
             image: Images.Dummy3,
         },
     ];
     return (
-        <section className="bg-foreground flex flex-col xl:space-y-12.75 md:space-y-8 space-y-6 w-full xl:pb-15">
+        <section className="bg-foreground flex flex-col xl:space-y-18.75 md:space-y-8 space-y-6 w-full xl:pb-25">
             <span className="xl:text-[200px] xl:leading-51.5 md:text-[124px] md:leading-32.5 text-[70px] leading-19 text-background/10 font-bold xl:-mt-11.25 md:-mt-4.25 -mt-2.25">
                 Works
             </span>
-            <div className="w-full flex flex-col xl:space-y-13.75 md:space-y-6 space-y-4 xl:px-25 md:px-13 px-6 ">
+            <div className="w-full flex flex-col xl:space-y-13.75 md:space-y-6 space-y-4 xl:px-25 md:px-13 px-6">
                 <div className="w-full flex flex-col space-y-4">
                     <h2 className="xl:text-[64px] xl:leading-18 md:text-[48px] md:leading-13.5 text-[32px] leading-9.5 font-bold text-white">
                         How It Works
                     </h2>
                     <p className="text-white xl:text-base text-sm xl:w-[60%] md:w-[80%]">
-                        Getting your music live worldwide is simple and fast. Follow a few easy steps to upload, distribute, and start earning from your music. w
-                    </p>
+Take Your Music From Release to Reach                    </p>
                 </div>
 
                 <div className="w-full h-auto flex flex-col space-y-0">
@@ -83,4 +82,4 @@ const HomeLabelSection = () => {
     );
 };
 
-export default HomeLabelSection;
+export default WorkSection;

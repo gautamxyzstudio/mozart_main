@@ -13,10 +13,10 @@ const MusicDistribution = () => {
       glow: "rgba(24, 119, 242, 0.5)",
       bg: "#1877F2",
       border: "#1877F2",
-      radius: 47,
+      radius: 40,
       angle: 20,
-      mobileRadius: 48,
-      mobileAngle: 120, // 9 o'clock
+      mobileRadius: 40,
+      mobileAngle: 108,
       svg: (
         <svg viewBox="0 0 24 24" className="w-[55%] h-[55%] fill-white">
           <path d="M16.5 6C14.62 6 13.06 7.03 12 8.5C10.94 7.03 9.38 6 7.5 6C4.46 6 2 8.46 2 11.5C2 14.54 4.46 17 7.5 17C9.38 17 10.94 15.97 12 14.5C13.06 15.97 14.62 17 16.5 17C19.54 17 22 14.54 22 11.5C22 8.46 19.54 6 16.5 6ZM7.5 15C5.57 15 4 13.43 4 11.5C4 9.57 5.57 8 7.5 8C8.91 8 10.13 8.85 10.72 10.12C10.9 10.5 11 11 11 11.5C11 12 10.9 12.5 10.72 12.88C10.13 14.15 8.91 15 7.5 15ZM16.5 15C15.09 15 13.87 14.15 13.28 12.88C13.1 12.5 13 12 13 11.5C13 11 13.1 10.5 13.28 10.12C13.87 8.85 15.09 8 16.5 8C18.43 8 20 9.57 20 11.5C20 13.43 18.43 15 16.5 15Z" />
@@ -28,10 +28,10 @@ const MusicDistribution = () => {
       glow: "rgba(230, 0, 83, 0.5)",
       bg: "#E60053",
       border: "#E60053",
-      radius: 47,
-      angle: 161,
-      mobileRadius: 48,
-      mobileAngle: 340, // top right-ish
+      radius: 40,
+      angle: 160,
+      mobileRadius: 40,
+      mobileAngle: 36,
       svg: (
         <svg viewBox="0 0 24 24" className="w-[60%] h-[60%] fill-white">
           <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="2" />
@@ -45,10 +45,10 @@ const MusicDistribution = () => {
       glow: "rgba(224, 64, 251, 0.5)",
       bg: "#10091c",
       border: "#E040FB",
-      radius: 47,
-      angle:90,
-      mobileRadius: 48,
-      mobileAngle: 250, // bottom left
+      radius: 40,
+      angle: 95,
+      mobileRadius: 40,
+      mobileAngle: 252,
       svg: (
         <svg viewBox="0 0 24 24" className="w-[60%] h-[60%] stroke-[#E040FB] stroke-[2.5] fill-none" strokeLinecap="round">
           <line x1="12" y1="6" x2="12" y2="18" />
@@ -69,28 +69,28 @@ const MusicDistribution = () => {
       bg: "#1DB954",
       border: "#1DB954",
       radius: 40,
-      angle: 124,
+      angle: 130,
       mobileRadius: 40,
-      mobileAngle: 315, // top right
+      mobileAngle: 324,
       svg: (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 124 124" fill="none">
-          <g filter="url(#filter0_d_2632_7813)">
-            <rect x="32" y="32" width="60" height="60" rx="30" fill="#1ED760" />
-            <path d="M80.6683 58.9364C80.0195 58.9364 79.6203 58.7708 79.0589 58.4396C70.1766 53.0255 54.2956 51.7262 44.016 54.6561C43.5669 54.7835 43.0055 54.9873 42.4067 54.9873C40.76 54.9873 39.5 53.6752 39.5 51.981C39.5 50.2485 40.5479 49.2676 41.6707 48.9364C46.062 47.6243 50.9772 47.0001 56.3291 47.0001C65.436 47.0001 74.9795 48.9364 81.9532 53.0892C82.9263 53.6625 83.5625 54.4523 83.5625 55.9682C83.5625 57.7007 82.1902 58.9364 80.6683 58.9364ZM76.8009 68.6434C76.1522 68.6434 75.7156 68.3504 75.2665 68.1083C67.4695 63.395 55.8425 61.4969 45.5006 64.3631C44.9018 64.5287 44.5774 64.6943 44.016 64.6943C42.6812 64.6943 41.5958 63.586 41.5958 62.223C41.5958 60.8599 42.2446 59.9555 43.5295 59.586C46.9976 58.5924 50.5406 57.8536 55.7303 57.8536C63.8267 57.8536 71.6487 59.9045 77.8114 63.6497C78.8219 64.2612 79.2211 65.051 79.2211 66.1593C79.2087 67.5351 78.1607 68.6434 76.8009 68.6434ZM73.4451 77.0001C72.9211 77.0001 72.5968 76.8345 72.1102 76.5415C64.3257 71.7517 55.2687 71.5478 46.324 73.4204C45.8374 73.5478 45.2012 73.7517 44.8394 73.7517C43.6293 73.7517 42.8683 72.7708 42.8683 71.7389C42.8683 70.4268 43.6293 69.8026 44.5649 69.5988C54.7822 67.2931 65.2239 67.4969 74.1312 72.9364C74.8922 73.4332 75.3413 73.879 75.3413 75.0383C75.3413 76.1975 74.4556 77.0001 73.4451 77.0001Z" fill="#111111" />
-          </g>
-          <defs>
-            <filter id="filter0_d_2632_7813" x="0" y="0" width="124" height="124" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
-              <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-              <feOffset />
-              <feGaussianBlur stdDeviation="16" />
-              <feComposite in2="hardAlpha" operator="out" />
-              <feColorMatrix type="matrix" values="0 0 0 0 0.117647 0 0 0 0 0.843137 0 0 0 0 0.376471 0 0 0 1 0" />
-              <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2632_7813" />
-              <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2632_7813" result="shape" />
-            </filter>
-          </defs>
-        </svg>
+       <svg xmlns="http://www.w3.org/2000/svg" width="124" height="124" viewBox="0 0 124 124" fill="none">
+  <g filter="url(#filter0_d_2711_7813)">
+    <rect x="32" y="32" width="60" height="60" rx="30" fill="#1ED760"  />
+    <path d="M80.6683 58.9364C80.0195 58.9364 79.6203 58.7708 79.0589 58.4396C70.1766 53.0255 54.2956 51.7262 44.016 54.6561C43.5669 54.7835 43.0055 54.9873 42.4067 54.9873C40.76 54.9873 39.5 53.6752 39.5 51.981C39.5 50.2485 40.5479 49.2676 41.6707 48.9364C46.062 47.6243 50.9772 47.0001 56.3291 47.0001C65.436 47.0001 74.9795 48.9364 81.9532 53.0892C82.9263 53.6625 83.5625 54.4523 83.5625 55.9682C83.5625 57.7007 82.1902 58.9364 80.6683 58.9364ZM76.8009 68.6434C76.1522 68.6434 75.7156 68.3504 75.2665 68.1083C67.4695 63.395 55.8425 61.4969 45.5006 64.3631C44.9018 64.5287 44.5774 64.6943 44.016 64.6943C42.6812 64.6943 41.5958 63.586 41.5958 62.223C41.5958 60.8599 42.2446 59.9555 43.5295 59.586C46.9976 58.5924 50.5406 57.8536 55.7303 57.8536C63.8267 57.8536 71.6487 59.9045 77.8114 63.6497C78.8219 64.2612 79.2211 65.051 79.2211 66.1593C79.2087 67.5351 78.1607 68.6434 76.8009 68.6434ZM73.4451 77.0001C72.9211 77.0001 72.5968 76.8345 72.1102 76.5415C64.3257 71.7517 55.2687 71.5478 46.324 73.4204C45.8374 73.5478 45.2012 73.7517 44.8394 73.7517C43.6293 73.7517 42.8683 72.7708 42.8683 71.7389C42.8683 70.4268 43.6293 69.8026 44.5649 69.5988C54.7822 67.2931 65.2239 67.4969 74.1312 72.9364C74.8922 73.4332 75.3413 73.879 75.3413 75.0383C75.3413 76.1975 74.4556 77.0001 73.4451 77.0001Z" fill="#111111"/>
+  </g>
+  <defs>
+    <filter id="filter0_d_2711_7813" x="0" y="0" width="124" height="124" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset/>
+      <feGaussianBlur stdDeviation="16"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.117647 0 0 0 0 0.843137 0 0 0 0 0.376471 0 0 0 1 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2711_7813"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2711_7813" result="shape"/>
+    </filter>
+  </defs>
+</svg>
       ),
     },
     {
@@ -99,13 +99,36 @@ const MusicDistribution = () => {
       bg: "#FFFFFF",
       border: "#FFFFFF",
       radius: 40,
-      angle: 56,
+      angle: 60,
       mobileRadius: 40,
-      mobileAngle: 270, // very top
+      mobileAngle: 180,
       svg: (
-        <svg viewBox="0 0 24 24" className="w-[50%] h-[50%] fill-black">
-          <path d="M12 6.012l3.006-3.006 3.006 3.006-3.006 3.006-3.006-3.006zm-6.012 6.012l3.006-3.006 3.006 3.006-3.006 3.006zm6.012 0l3.006-3.006 3.006 3.006-3.006 3.006zm6.012 0l3.006-3.006 3.006 3.006-3.006 3.006zm-12.024 6.012l3.006-3.006 3.006 3.006-3.006 3.006zm6.012 0l3.006-3.006 3.006 3.006-3.006 3.006z" />
-        </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="124" height="124" viewBox="0 0 124 124" fill="none">
+  <g filter="url(#filter0_d_2711_7820)">
+    <g clip-path="url(#clip0_2711_7820)">
+      <path d="M80 32H44C37.3726 32 32 37.3726 32 44V80C32 86.6274 37.3726 92 44 92H80C86.6274 92 92 86.6274 92 80V44C92 37.3726 86.6274 32 80 32Z" fill="white"/>
+      <path d="M67.6051 57.4003L61.4047 63.6019L55.2031 57.4003L61.4047 51.2023L67.6051 57.4003Z" fill="#111111" />
+      <path d="M67.6051 69.8047L61.4047 76.0051L55.2031 69.8047L61.4107 63.6031L67.6051 69.8047Z" fill="#111111"/>
+      <path d="M55.1989 57.4039L48.9973 63.6019L42.7969 57.4039L48.9973 51.2L55.1989 57.4039Z" fill="#111111"/>
+      <path d="M80.0114 57.4039L73.8134 63.6019L67.6094 57.4039L73.8134 51.2L80.0114 57.4039Z" fill="#111111"/>
+    </g>
+  </g>
+  <defs>
+    <filter id="filter0_d_2711_7820" x="0" y="0" width="124" height="124" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset/>
+      <feGaussianBlur stdDeviation="16"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2711_7820"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2711_7820" result="shape"/>
+    </filter>
+    <clipPath id="clip0_2711_7820">
+      <rect x="32" y="32" width="60" height="60" rx="30" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>
       ),
     },
 
@@ -116,9 +139,9 @@ const MusicDistribution = () => {
       bg: "#E1306C",
       border: "#E1306C",
       radius: 33,
-      angle: 153,
+      angle: 145,
       mobileRadius: 32,
-      mobileAngle: 1, // middle right
+      mobileAngle: 0,
       svg: (
         <svg viewBox="0 0 24 24" className="w-[55%] h-[55%] fill-white">
           <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" strokeWidth="1.5" />
@@ -132,9 +155,9 @@ const MusicDistribution = () => {
       bg: "#FF0000",
       border: "#FF0000",
       radius: 33,
-      angle: 90,
+      angle: 110,
       mobileRadius: 32,
-      mobileAngle: 220, // top left
+      mobileAngle: 288,
       svg: (
         <svg viewBox="0 0 24 24" className="w-[55%] h-[55%] fill-white">
           <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="2" />
@@ -148,9 +171,9 @@ const MusicDistribution = () => {
       bg: "#FC3C44",
       border: "#FC3C44",
       radius: 33,
-      angle: 27,
+      angle: 40,
       mobileRadius: 32,
-      mobileAngle: 180, // bottom right
+      mobileAngle: 216,
       svg: (
         <svg viewBox="0 0 24 24" className="w-[55%] h-[55%] fill-white">
           <path d="M19 3H9c-1.1 0-2 .9-2 2v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V8h8v4.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V3z" />
@@ -165,9 +188,9 @@ const MusicDistribution = () => {
       bg: "#E2F017",
       border: "#E2F017",
       radius: 26,
-      angle: 138,
-      mobileRadius: 24,
-      mobileAngle: 130, // bottom left
+      angle: 80,
+      mobileRadius: 32,
+      mobileAngle: 144,
       svg: (
         <svg viewBox="0 0 24 24" className="w-[55%] h-[55%] fill-black">
           <path d="M19.5 9.5C19.5 5.5 16 2.5 12 2.5S4.5 5.5 4.5 9.5c0 3.2 2 6 5 6.7v-2.1c-1.8-.6-3-2.3-3-4.6 0-2.8 2.5-5 5.5-5s5.5 2.2 5.5 5c0 2.3-1.2 4-3 4.6v2.1c3-.7 5-3.5 5-6.7z" />
@@ -181,9 +204,9 @@ const MusicDistribution = () => {
       bg: "#00D2C4",
       border: "#00D2C4",
       radius: 26,
-      angle: 42,
-      mobileRadius: 24,
-      mobileAngle: 80, // bottom
+      angle: 30,
+      mobileRadius: 32,
+      mobileAngle: 72,
       svg: (
         <svg viewBox="0 0 24 24" className="w-[60%] h-[60%] fill-white">
           <path d="M12 3a1 1 0 0 1 1 1v12.27a3.5 3.5 0 1 1-2 0V4a1 1 0 0 1 1-1z" />
@@ -270,7 +293,6 @@ const MusicDistribution = () => {
             <circle cx="50" cy="50" r="24" fill="none" stroke="#ffffff" strokeWidth="0.4" />
             <circle cx="50" cy="50" r="32" fill="none" stroke="#ffffff" strokeWidth="0.4" />
             <circle cx="50" cy="50" r="40" fill="none" stroke="#ffffff" strokeWidth="0.4" />
-            <circle cx="50" cy="50" r="48" fill="none" stroke="#ffffff" strokeWidth="0.4" />
           </svg>
 
           {/* Fully Visible Slow-Rotating Vinyl Record */}
@@ -351,7 +373,6 @@ const MusicDistribution = () => {
             <circle cx="500" cy="570" r="260" fill="none" stroke="#ffffff" strokeWidth="1.5" />
             <circle cx="500" cy="570" r="330" fill="none" stroke="#ffffff" strokeWidth="1.5" />
             <circle cx="500" cy="570" r="400" fill="none" stroke="#ffffff" strokeWidth="1.5" />
-            <circle cx="500" cy="570" r="470" fill="none" stroke="#ffffff" strokeWidth="1.5" />
           </svg>
 
           {/* Premium realistic slow-rotating vinyl record */}

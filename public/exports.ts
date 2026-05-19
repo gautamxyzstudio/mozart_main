@@ -70,6 +70,11 @@ import Vegan from "./vegan.webp"
 import GlobalReach from "./GlobalReach.webp"
 import Royalties from "./royalties.webp"
 import Menztion from "./menztionTool.webp"
+import Vegan2 from "./vegan2.webp"
+import SmartAudience  from "./smartaudience.webp"
+import Algorithm from "./algorithm.webp"
+import Influencer from "./Influencermusic.webp"  
+import Organic from "./organic.webp"
 
 export const Images = {
   Logo,
@@ -108,9 +113,14 @@ export const Images = {
   RealTime,
   playlist2,
   Vegan,
+  Vegan2,
   GlobalReach,
   Royalties,
-  Menztion
+  Menztion,
+  SmartAudience,
+  Algorithm,
+  Influencer,
+  Organic
 };
 
 export const Icons = {
