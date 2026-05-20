@@ -75,6 +75,17 @@ import SmartAudience  from "./smartaudience.webp"
 import Algorithm from "./algorithm.webp"
 import Influencer from "./Influencermusic.webp"  
 import Organic from "./organic.webp"
+import YouTubeMUsic2 from "./youtubemusic2.webp"
+import ChannelLayout from "./channellayout.webp"
+import SeoTagImg from "./seotag_img.webp"
+import ContentPlan from "./contentplan.webp"
+import Thumnail from "./thumbnaildesign.webp"
+import Audience from "./audience.webp"
+import Community from "./community.webp"
+import AnalystReporting from "./analyticsreporting.webp"
+import YouTubeContentID from "./contentimg.webp"
+import Eligible from "./eligibleimg.webp"
+ 
 
 export const Images = {
   Logo,
@@ -120,7 +131,17 @@ export const Images = {
   SmartAudience,
   Algorithm,
   Influencer,
-  Organic
+  Organic,
+  YouTubeMUsic2,
+  ChannelLayout,
+  SeoTagImg,
+  ContentPlan,
+  Thumnail,
+  Audience,
+  Community,
+  AnalystReporting,
+  YouTubeContentID,
+  Eligible,
 };
 
 export const Icons = {

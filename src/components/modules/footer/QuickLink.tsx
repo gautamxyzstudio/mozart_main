@@ -6,31 +6,31 @@ import React from "react";
 
 const QuickLink = () => {
   const quickLink = [
-    {
-      label: "Company",
-      linkList: [
-        {
-          title: "About AMozart",
-          link: "/about",
-          icon: undefined,
-        },
-        {
-          title: "Our Story",
-          link: "/our-story",
-          icon: undefined,
-        },
-        {
-          title: "Press & Media",
-          link: "/media",
-          icon: undefined,
-        },
-        {
-          title: "Contact Us",
-          link: "/contact",
-          icon: undefined,
-        },
-      ],
-    },
+    // {
+    //   label: "Company",
+    //   linkList: [
+    //     {
+    //       title: "About AMozart",
+    //       link: "/about",
+    //       icon: undefined,
+    //     },
+    //     {
+    //       title: "Our Story",
+    //       link: "/our-story",
+    //       icon: undefined,
+    //     },
+    //     {
+    //       title: "Press & Media",
+    //       link: "/media",
+    //       icon: undefined,
+    //     },
+    //     {
+    //       title: "Contact Us",
+    //       link: "/contact",
+    //       icon: undefined,
+    //     },
+    //   ],
+    // },
     {
       label: "Services",
       linkList: [
@@ -40,18 +40,48 @@ const QuickLink = () => {
           icon: undefined,
         },
         {
+          title: "YouTube Channel Management",
+          link: "/youtube-channel-management",
+          icon: undefined,
+        },
+        {
+          title: "YouTube Content ID",
+          link: "/youtube-content-id",
+          icon: undefined,
+        },
+        {
           title: "Artist Management",
-          link: "/artist-management",
+          link: "/artists",
           icon: undefined,
         },
         {
-          title: "Playlist Pitching",
-          link: "/playlist-pitching",
+          title: "Label Distribution",
+          link: "/services",
           icon: undefined,
         },
         {
-          title: "Royalty Collection",
-          link: "/royalty-collection",
+          title: "Music Promotion",
+          link: "/music-promotion",
+          icon: undefined,
+        },
+        {
+          title: "Multi-Label Management",
+          link: "/services",
+          icon: undefined,
+        },
+        {
+          title: "Monetization",
+          link: "/services",
+          icon: undefined,
+        },
+        {
+          title: "Auto Playlist & Promotion",
+          link: "/services",
+          icon: undefined,
+        },
+        {
+          title: "Takedown of illegal content",
+          link: "/services",
           icon: undefined,
         },
       ],
@@ -130,30 +160,48 @@ const QuickLink = () => {
           className="w-fit flex flex-col space-y-5 items-start text-background"
         >
           <span className="text-sm">{item.label}</span>
-          <div className="flex flex-col space-y-2.5 items-start opacity-60">
-          {item.linkList.map((subItem, idx) =>
-              subItem?.icon ? (
-                <Link
-                  key={idx}
-                  href={subItem.link}
-                  className="text-sm flex items-center gap-2
-                  w-[198px] md:w-[214px] xl:w-[313px]"
-                >
-                  <Image
-                    src={subItem.icon}
-                    alt={subItem.title}
-                    className="w-6 h-6"
-                  />
-                  <span>{subItem.title}</span>
-                </Link>
-              ) : (
-                <Link key={idx} href={subItem.link} className="text-sm">
-                  {subItem.title}
-                </Link>
-              ),
-            )}
- 
-          </div>
+          
+          {item.label === "Services" ? (
+            <div className="flex flex-row gap-x-8 md:gap-x-12 xl:gap-x-16 items-start opacity-60">
+              <div className="flex flex-col space-y-2.5 items-start">
+                {item.linkList.slice(0, 5).map((subItem, sIdx) => (
+                  <Link key={sIdx} href={subItem.link} className="text-sm hover:text-white transition-colors duration-200">
+                    {subItem.title}
+                  </Link>
+                ))}
+              </div>
+              <div className="flex flex-col space-y-2.5 items-start">
+                {item.linkList.slice(5).map((subItem, sIdx) => (
+                  <Link key={sIdx + 5} href={subItem.link} className="text-sm hover:text-white transition-colors duration-200">
+                    {subItem.title}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div className="flex flex-col space-y-2.5 items-start opacity-60">
+              {item.linkList.map((subItem, idx) =>
+                subItem?.icon ? (
+                  <Link
+                    key={idx}
+                    href={subItem.link}
+                    className="text-sm flex items-center gap-2 w-[198px] md:w-[214px] xl:w-[313px] hover:text-white transition-colors duration-200"
+                  >
+                    <Image
+                      src={subItem.icon}
+                      alt={subItem.title}
+                      className="w-6 h-6"
+                    />
+                    <span>{subItem.title}</span>
+                  </Link>
+                ) : (
+                  <Link key={idx} href={subItem.link} className="text-sm hover:text-white transition-colors duration-200">
+                    {subItem.title}
+                  </Link>
+                )
+              )}
+            </div>
+          )}
         </div>
       ))}
     </div>

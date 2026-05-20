@@ -263,11 +263,11 @@ const Testimonials = () => {
   return (
     <div className="overflow-clip flex flex-col w-full xl:py-25 md:pb-20 pb-16">
       {/* 1. Large Background Title (Watermark) */}
-      <span className="xl:text-[200px] xl:leading-51.5 md:text-[124px] md:leading-32.5 text-[70px] leading-19 text-foreground/10 font-bold xl:-mt-11.75 md:-mt-4.25 -mt-2.75 wrap-break-word md:mr-0 mr-6">
+      <span className="xl:text-[200px] xl:leading-12.5 md:text-[124px] md:leading-32.5 text-[70px] leading-19 text-foreground/10 font-bold xl:-mt-11.75 md:-mt-4.25 -mt-2.75 wrap-break-word md:mr-0 mr-6">
         Testimonials
       </span>
 
-      <div className="flex flex-col space-y-4 md:items-center md:text-center md:px-0 px-6 w-full">
+      <div className="flex flex-col space-y-4 md:items-center md:text-center md:px-0 px-6 w-full xl:mt-20 ">
         <h2 className="xl:text-[64px] xl:leading-18 md:text-[48px] md:leading-13.5 text-[32px] leading-9.5 font-bold text-foreground">
           What Our Client&apos;s Say
         </h2>

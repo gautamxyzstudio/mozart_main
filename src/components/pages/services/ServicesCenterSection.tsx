@@ -17,7 +17,7 @@ const ServicesCenterSection = () => {
       title: "YouTube Channel Management",
       desc: "From strategy to execution, we manage your YouTube channel end-to-end. This includes content optimization, copyright management, SEO, and monetization.",
       imgType: "youtube",
-      link: "/services",
+      link: "/youtube-channel-management",
     },
     {
       id: "03",
