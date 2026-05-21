@@ -85,6 +85,12 @@ import Community from "./community.webp"
 import AnalystReporting from "./analyticsreporting.webp"
 import YouTubeContentID from "./contentimg.webp"
 import Eligible from "./eligibleimg.webp"
+import YouTubeContent from "./youtubecontent.webp"
+import ArtistImg from "./artistsection.webp"
+import ArtistImg2 from "./artistsection2.webp"
+import GoodThing from "./goodthing.webp"
+import AlbumFour from "./albumFour.webp"
+import MusicLabel from "./musicLabel.webp"
  
 
 export const Images = {
@@ -142,6 +148,12 @@ export const Images = {
   AnalystReporting,
   YouTubeContentID,
   Eligible,
+   YouTubeContent,
+   ArtistImg,
+   ArtistImg2,
+   GoodThing,
+   AlbumFour,
+   MusicLabel,
 };
 
 export const Icons = {

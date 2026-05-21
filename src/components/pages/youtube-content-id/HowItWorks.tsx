@@ -30,13 +30,13 @@ const HowItWorks = () => {
     <section className="w-full bg-white py-20 px-6 md:px-12 xl:px-20 font-sans">
       <div className="max-w-7xl mx-auto flex flex-col gap-16">
         {/* Top Section */}
-        <div className="flex flex-col md:flex-row items-center justify-between w-full gap-10">
+        <div className="flex flex-col-reverse md:flex-row items-center justify-between w-full gap-10">
           <div className="flex flex-col md:w-1/2 w-full text-center md:text-left">
-            <h2 className="text-black font-extrabold text-[36px] md:text-[48px] xl:text-[56px] leading-[1.1] tracking-tight">
+            <h2 className="text-black font-medium text-[32px] md:text-[32px] xl:text-[64px] leading-[1.1] tracking-tight">
               How YouTube <br className="hidden md:block" /> Content ID Works
             </h2>
-            <p className="mt-6 text-black/70 text-sm md:text-base xl:text-lg max-w-lg leading-relaxed mx-auto md:mx-0">
-              Amozart makes it simple to protect your music and earn royalties from every YouTube use. Here's how the entire Content ID process works from start to finish.
+            <p className="mt-6 text-[#414141] font-normal text-sm md:text-base xl:text-lg max-w-lg leading-relaxed mx-auto md:mx-0">
+              Amozart makes it simple to protect your music and earn royalties from every YouTube use. Here&apos;s how the entire Content ID process works from start to finish.
             </p>
           </div>
 

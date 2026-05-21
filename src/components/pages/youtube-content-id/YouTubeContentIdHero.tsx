@@ -63,7 +63,7 @@ const YouTubeContentIdHero = () => {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 md:w-96 md:h-96 bg-red-600/30 rounded-full blur-[100px] pointer-events-none -z-10" />
 
             <Image
-              src={Images.YouTubeContentID}
+              src={Images.YouTubeContent}
               alt="YouTube Content ID"
               className="w-full h-auto rounded-2xl object-contain drop-shadow-[0_15px_50px_rgba(220,38,38,0.4)] animate-float-bob"
               priority

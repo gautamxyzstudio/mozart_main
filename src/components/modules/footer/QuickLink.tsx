@@ -56,7 +56,7 @@ const QuickLink = () => {
         },
         {
           title: "Label Distribution",
-          link: "/services",
+          link: "/music-label",
           icon: undefined,
         },
         {
@@ -69,21 +69,21 @@ const QuickLink = () => {
           link: "/services",
           icon: undefined,
         },
-        {
-          title: "Monetization",
-          link: "/services",
-          icon: undefined,
-        },
-        {
-          title: "Auto Playlist & Promotion",
-          link: "/services",
-          icon: undefined,
-        },
-        {
-          title: "Takedown of illegal content",
-          link: "/services",
-          icon: undefined,
-        },
+        // {
+        //   title: "Monetization",
+        //   link: "/services",
+        //   icon: undefined,
+        // },
+        // {
+        //   title: "Auto Playlist & Promotion",
+        //   link: "/services",
+        //   icon: undefined,
+        // },
+        // {
+        //   title: "Takedown of illegal content",
+        //   link: "/services",
+        //   icon: undefined,
+        // },
       ],
     },
     {

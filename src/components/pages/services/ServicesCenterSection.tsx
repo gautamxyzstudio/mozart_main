@@ -31,7 +31,7 @@ const ServicesCenterSection = () => {
       title: "Label Distribution",
       desc: "Professional distribution for labels, delivering content efficiently across multiple platforms under one roof.",
       imgType: "label",
-      link: "/services",
+      link: "/music-label",
     },
     {
       id: "05",
@@ -61,13 +61,13 @@ const ServicesCenterSection = () => {
       imgType: "playlist",
       link: "/services",
     },
-    {
-      id: "09",
-      title: "Takedown of illegal content",
-      desc: "We protect your rights by helping you claim ownership and take down unauthorized or pirated versions of your content across the web.",
-      imgType: "takedown",
-      link: "/services",
-    },
+    // {
+    //   id: "09",
+    //   title: "Takedown of illegal content",
+    //   desc: "We protect your rights by helping you claim ownership and take down unauthorized or pirated versions of your content across the web.",
+    //   imgType: "takedown",
+    //   link: "/services",
+    // },
   ];
 
   return (

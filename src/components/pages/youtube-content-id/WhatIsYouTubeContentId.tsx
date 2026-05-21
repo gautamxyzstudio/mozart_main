@@ -5,8 +5,8 @@ import { Images } from "@/public/exports";
 
 const   WhatIsYouTubeContentId = () => {
   return (
-    <section className="w-full bg-[#F8F8F8] py-20 px-6 md:px-12 xl:px-20 font-sans">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 lg:gap-20">
+    <section className="w-full bg-[#F8F8F8] py-10 px-6 md:px-12 xl:px-20 font-sans">
+      <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-12 lg:gap-20">
         
         {/* Left Side: Illustration */}
         <div className="w-full md:w-1/2 flex justify-center items-center relative">

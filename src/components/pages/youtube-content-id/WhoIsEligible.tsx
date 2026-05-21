@@ -58,9 +58,9 @@ const WhoIsEligible = () => {
             {criteria.map((item, idx) => (
               <div key={idx} className="flex flex-row items-start gap-6">
                 {/* Number styling with the offset background */}
-                <div className="relative flex-shrink-0 w-12 h-12 flex items-center justify-center">
-                  <div className="absolute inset-0 bg-[#1e1245] rounded-tl-md rounded-tr-md rounded-bl-md rounded-br-2xl"></div>
-                  <span className="relative text-[#7c3aed] font-extrabold text-[22px] leading-none tracking-tight">
+                <div className="relative flex-shrink-0 w-12 h-12">
+                  <div className="absolute inset-0 bg-[#1e1245] rounded-tl-[5px] rounded-tr-[20px] rounded-bl-[20px] rounded-br-md"></div>
+                  <span className="absolute -top-1.5 -right-2 text-[#7c3aed] font-medium text-[40px] leading-none tracking-tight">
                     {item.num}
                   </span>
                 </div>
