@@ -99,6 +99,11 @@ import GlobalChartsGlobe from "./globalchart.webp"
 import GlobalChart2 from "./globalchart2.webp"
 import Price from "./priceImg.webp"
 import RoyaltyImg from "./royaltyImg.webp"
+import ROyalty1 from "./royalty1.webp"
+import ROyalty2 from "./royalty2.webp"
+import ROyalty3 from "./royalty3.webp"
+import ROyalty4 from "./royalty4.webp"
+import ROyalty5 from "./royalty5.webp"
 
 export const Images = {
   Logo,
@@ -168,7 +173,13 @@ export const Images = {
    GlobalChartsGlobe,
    GlobalChart2,
     Price,
-    RoyaltyImg
+    RoyaltyImg,
+    ROyalty1,
+    ROyalty2,
+    ROyalty3,
+    ROyalty4,
+    ROyalty5
+
 };
 
 export const Icons = {

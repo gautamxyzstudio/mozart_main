@@ -69,11 +69,11 @@ const QuickLink = () => {
           link: "/music-promotion",
          
         },
-        {
-          title: "Multi-Label Management",
-          link: "/services",
+        // {
+        //   title: "Multi-Label Management",
+        //   link: "/services",
           
-        },
+        // },
         {
           title: "Royalty-rights Management",
           link: "/royalty-rights-management",

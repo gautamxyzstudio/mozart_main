@@ -20,13 +20,13 @@ const WhyChooseDistribution = () => {
         {/* Curved Dotted/Dashed SVG ribbon paths */}
         <svg
           viewBox="0 0 1000 520"
-          className="absolute left-0 right-0 lg:top-[33%] md:top-[27%] w-full   h-[520px] pointer-events-none  z-0 overflow-visible hidden md:block"
+          className="absolute left-0 right-0 lg:top-[33%] md:top-[27%] w-full   h-130 pointer-events-none  z-0 overflow-visible hidden md:block"
         >
           {/* Top curve */}
           <path
             d="M -50,40 Q 500,200 1050,40"
             fill="none"
-            stroke="rgba(255,255,255,0.4)"
+            stroke="rgba(255,255,255,0.5)"
             strokeWidth="1"
             strokeDasharray="5,5"
           />
@@ -35,7 +35,7 @@ const WhyChooseDistribution = () => {
           <path
             d="M -50,320 Q 500,480 1050,320"
             fill="none"
-            stroke="rgba(255,255,255,0.4)"
+            stroke="rgba(255,255,255,0.5)"
             strokeWidth="1"
             strokeDasharray="5,5"
           />

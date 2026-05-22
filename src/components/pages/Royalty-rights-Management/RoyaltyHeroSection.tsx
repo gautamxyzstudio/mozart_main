@@ -14,12 +14,12 @@ const RoyaltyHeroSection = () => {
       {/* Main Content Grid */}
       <div className="w-full max-w-7xl mx-auto px-6 md:px-12 xl:px-20 flex flex-col md:flex-row items-center justify-between relative z-10 pb-16 md:pb-24">
         {/* Left Column: Typography Content */}
-        <div className="flex flex-col items-start md:w-[50%] w-full space-y-6 md:pr-8 text-left">
-          <span className="text-white font-medium text-lg md:text-xl xl:text-[45px]">
+        <div className="flex flex-col md:items-start items-center md:w-[50%] w-full space-y-3 md:pr-8 md:text-left text-center">
+          <h2 className="text-white font-medium text-[28px] md:text-xl xl:text-[45px]">
             Turn Every Play Into
-          </span>
-          <div className="flex flex-col leading-none">
-            <h1 className="text-white font-extrabold text-[44px] md:text-[52px] xl:text-[70px] leading-[1.05] ">
+          </h2>
+          <div className="flex flex-col leading-1 ">
+            <h1 className="text-white font-bold text-[44px] md:text-[52px] xl:text-[70px] leading-[1.05] ">
               Your Pay Your Sound
             </h1>
           </div>

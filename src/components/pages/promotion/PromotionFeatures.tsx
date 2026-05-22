@@ -5,8 +5,8 @@ import React from "react";
 const KeyFeatures = () => {
   return (
     <>
-      <section className="bg-white">
-        <span className="w-full xl:text-[200px] xl:leading-51.5 md:text-[120px] md:leading-32.5 text-[60px] leading-19 text-black/70 font-bold opacity-10 xl:-mt-7 md:-mt-5 -mt-3 xl:-ml-1 md:-ml-1 -ml-1">
+      <section className="bg-white xl:-mt-8 md:-mt-5 -mt-3">
+        <span className="w-full xl:text-[200px] xl:leading-51.5 md:text-[120px] md:leading-32.5 text-[60px] leading-19 text-black/70 font-bold opacity-10 xl:-mt-7 md:-mt-5 -mt-3 xl:-ml-4 md:-ml-1 -ml-1">
           Key Features
         </span>
 

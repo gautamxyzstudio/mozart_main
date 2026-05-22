@@ -15,7 +15,7 @@ const RoyaltyService = () => {
         </h3>
 
         <div className="xl:px-25 xl:pt-0  md:pb-25 md:px-13 px-6 py-16 flex flex-col xl:space-y-13 md:space-y-6 space-y-8 ">
-          <div className="bg-[#D3FFE8] xl:h-156 md:h-91.75 xl:rounded-3xl md:rounded-2xl rounded-xl sticky xl:top-10 md:top-25 top-20 flex md:flex-row flex-col md:items-center md:justify-between items-end lg:p-15 md:p-6.25 p-6">
+          <div className="bg-[#FFD5D2] xl:h-156 md:h-91.75 xl:rounded-3xl md:rounded-2xl rounded-xl sticky xl:top-10 md:top-25 top-20 flex md:flex-row flex-col md:items-center md:justify-between items-end lg:p-15 md:p-6.25 p-6">
             <div className="flex flex-col space-y-4 xl:w-153.5 xl:ml-13 md:w-90 md:ml-7.5 w-full md:p-0 pr-6">
               <h2 className="text-black font-bold xl:text-[64px] xl:leading-18 md:text-4xl text-[32px] leading-9.5">
               Royalty Collection & Payments 
@@ -25,7 +25,7 @@ const RoyaltyService = () => {
               </p>
             </div>
             <div className="xl:w-126.75 xl:h-115 md:w-75 md:h-67.5 w-75.75 h-69 md:mt-0 mt-8 relative">
-              <Image src={Images.Vegan2} alt="fast distribution " />
+              <Image src={Images.ROyalty1} alt="fast distribution " />
             </div>
           </div>
 
@@ -39,7 +39,7 @@ const RoyaltyService = () => {
               </p>
             </div>
             <div className="flex flex-col space-y-4 xl:w-150 xl:mr-13 md:w-90 md:mr-7.5 w-full">
-              <Image src={Images.SmartAudience} alt="analytics" />
+              <Image src={Images.ROyalty2} alt="analytics" />
             </div>
           </div>
 
@@ -53,7 +53,7 @@ const RoyaltyService = () => {
               </p>
             </div>
             <div className="flex flex-col space-y-4 xl:w-153.5 xl:mr-13 md:w-90 md:mr-7.5 w-full">
-              <Image src={Images.Algorithm} alt="playlist pitching" />
+              <Image src={Images.ROyalty3} alt="playlist pitching" />
             </div>
           </div>
 
@@ -67,7 +67,7 @@ const RoyaltyService = () => {
               </p>
             </div>
             <div className="flex flex-col space-y-4 xl:w-153.5 xl:mr-13 md:w-90 md:mr-7.5 w-full">
-              <Image src={Images.Influencer} alt="Influencer Music Promotion" />
+              <Image src={Images.ROyalty4} alt="Influencer Music Promotion" />
             </div>
           </div>
 
@@ -81,7 +81,7 @@ const RoyaltyService = () => {
               </p>
             </div>
             <div className="flex flex-col space-y-4 xl:w-153.5 xl:mr-13 md:w-90 md:mr-7.5 w-full">
-              <Image src={Images.Organic} alt="Global Reach" />
+              <Image src={Images.ROyalty5} alt="Global Reach" />
             </div>
           </div>
           <div className="bg-[#C3E5FF] xl:h-156 md:h-91.75 xl:rounded-3xl md:rounded-2xl rounded-xl sticky xl:top-10 md:top-25 top-20 flex md:flex-row flex-col md:items-center md:justify-between items-end lg:p-15 md:p-6.25 p-6">
@@ -94,24 +94,10 @@ const RoyaltyService = () => {
               </p>
             </div>
             <div className="flex flex-col space-y-4 xl:w-153.5 xl:mr-13 md:w-90 md:mr-7.5 w-full">
-              <Image src={Images.Royalties} alt="Keep 100% Royalties" />
+              <Image src={Images.ROyalty5} alt="Keep 100% Royalties" />
             </div>
           </div>
-          <div className="bg-[#C5FFF8] xl:h-156 md:h-91.75 xl:rounded-3xl md:rounded-2xl rounded-xl sticky xl:top-10 md:top-25 top-20 flex md:flex-row flex-col md:items-center md:justify-between items-end lg:p-15 md:p-6.25 p-6">
-            <div className="flex flex-col space-y-4 xl:w-153.5 xl:ml-13 md:w-90 md:ml-7.5 w-full md:p-0 pr-6">
-              <h2 className="text-black font-medium xl:text-[64px] xl:leading-18 md:text-4xl text-[32px] leading-9.5">
-                Monetization Tools
-              </h2>
-              <p className="text-black xl:text-base text-sm">
-                Earn from multiple sources like streaming, YouTube Content ID,
-                and social platforms. Maximize revenue from every piece of
-                content you release. {" "}
-              </p>
-            </div>
-            <div className="flex flex-col space-y-4 xl:w-153.5 xl:mr-13 md:w-90 md:mr-7.5 w-full">
-              <Image src={Images.Menztion} alt="Keep 100% Royalties" />
-            </div>
-          </div>
+         
         </div>
       </section>
     </>

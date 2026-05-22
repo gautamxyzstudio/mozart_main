@@ -86,7 +86,7 @@ const WhyChooseRoyalty = () => {
               </h3>
 
               {/* Feature Description */}
-              <p className="text-white/45 text-xs md:text-[14px] lg:text-[15px] font-light leading-relaxed max-w-[250px]">
+              <p className="text-white/45 text-xs md:text-[14px] lg:text-[15px] font-light leading-relaxed max-w-62.5">
                 {feat.desc}
               </p>
             </div>

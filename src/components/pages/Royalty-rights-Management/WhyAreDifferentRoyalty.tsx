@@ -8,22 +8,22 @@ const WhyAreDifferentRoyalty = () => {
   const features = [
     {
       num: "01",
-      title: "Accurate Global Rankings",
+      title: "Master Royalties ",
       desc: "Get your tracks placed on high-traffic editorial and algorithmic playlists across Spotify, Apple Music, and more.",
     },
     {
       num: "02",
-      title: "Worldwide Music Coverage",
+      title: "Publishing Royalties ",
       desc: "We secure features on top music blogs and online publications to build your credibility and online presence.",
     },
     {
       num: "03",
-      title: "Easy-to-Use Dashboard",
+      title: "Performance Royalties ",
       desc: "Targeted social campaigns across Instagram, TikTok, and Twitter to grow your fanbase organically.",
     },
     {
       num: "04",
-      title: "Built for Artists & Labels",
+      title: "Sync Royalties",
       desc: "Precision-targeted ads on Meta, YouTube, and TikTok to drive streams and engagement.",
     },
   ];
@@ -36,7 +36,7 @@ const WhyAreDifferentRoyalty = () => {
           Types of Royalties We Manage
         </h2>
 
-        <p className="text-white/80 text-sm  mt-6 mb-10 md:mb-16">
+        <p className="text-white/70 text-sm w-160   mt-6 mb-10 md:mb-16">
           We help artists collect different types of royalties that come from
           multiple uses of their music. Each royalty type is important, and we
           make sure you don’t miss any earnings from anywhere. 
