@@ -464,7 +464,7 @@ const MusicCareer = () => {
                       </div>
 
                       {/* Mozart Center Logo */}
-                      <div className="absolute z-20 w-[42px] h-[42px] md:w-[48px] md:h-[48px] rounded-full bg-[#6236b0] flex items-center justify-center border-2 border-[#8c52ff] shadow-[0_0_15px_rgba(140,82,255,0.7)] pointer-events-none">
+                      <div className="absolute z-20 w-[42px] h-[42px] md:w-[48px] md:h-[48px] rounded-full bg-primary flex items-center justify-center  pointer-events-none">
                         <Image
                           src={Icons.MozartIcon}
                           alt="Mozart Brand Logo"
