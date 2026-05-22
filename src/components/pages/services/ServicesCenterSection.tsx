@@ -10,56 +10,56 @@ const ServicesCenterSection = () => {
       title: "Music Distribution",
       desc: "We get your music on every major digital platform—Spotify, Apple Music, Amazon Music, and many more—making it accessible to a global audience.",
       imgType: "disk",
-      link: "/music-distribution",
+      link: "services/music-distribution",
     },
     {
       id: "02",
       title: "YouTube Channel Management",
       desc: "From strategy to execution, we manage your YouTube channel end-to-end. This includes content optimization, copyright management, SEO, and monetization.",
       imgType: "youtube",
-      link: "/youtube-channel-management",
+      link: "services/youtube-channel-management",
     },
     {
       id: "03",
       title: "Artist Management",
       desc: "We help artists build their careers with complete support—brand development, release planning, bookings, and digital placement.",
       imgType: "player",
-      link: "/artists",
+      link: "services/artists-management",
     },
     {
       id: "04",
       title: "Label Distribution",
       desc: "Professional distribution for labels, delivering content efficiently across multiple platforms under one roof.",
       imgType: "label",
-      link: "/music-label",
+      link: "/services/label-distribution",
     },
     {
       id: "05",
       title: " MusicPromotion",
       desc: "We track, collect, and deposit your earnings from all platforms royalties, ad revenue, and streaming payouts directly into your account.",
       imgType: "promotion",
-      link: "/music-promotion",
+      link: "/services/music-promotion",
     },
     {
       id: "06",
-      title: "Multi-Label Management",
+      title: "Global Music Charts",
       desc: "Our custom-built software enables easy management of multiple labels from a single dashboard—perfect for music businesses with diverse catalogs.",
       imgType: "software",
-      link: "/services",
+      link: "/services/global-music-charts",
     },
     {
       id: "07",
-      title: "Monetization",
+      title: "Royalty-rights Management",
       desc: "From strategy to execution, we manage your YouTube channel end-to-end. This includes content optimization, copyright management, SEO, and monetization..",
       imgType: "earnings",
-      link: "/services",
+      link: "/services/royalty-rights-management",
     },
     {
       id: "08",
-      title: "Auto Playlist & Promotion",
+      title: "YouTube Content ID",
       desc: "AI-powered system automatically promotes your content and places it in curated playlists for maximum exposure..",
       imgType: "playlist",
-      link: "/services",
+      link: "/services/youtube-content-id",
     },
     // {
     //   id: "09",
@@ -95,19 +95,14 @@ const ServicesCenterSection = () => {
               </div>
 
               <div className="flex flex-col space-y-4">
-                 <Link href={service.link}>
-                <h2 className="font-bold xl:text-[64px] md:text-[32px] text-[32px]   text-black">
-                  {service.title}
-                </h2>
-                <p className="text-gray-500 lg:text-base md:text-sm text-sm leading-relaxed max-w-md">
-                  {service.desc}
-                </p>
-                  
-                  
-                  
-                  
-                  </Link>
-                
+                <Link href={service.link}>
+                  <h2 className="font-bold xl:text-[64px] md:text-[32px] text-[32px]   text-black">
+                    {service.title}
+                  </h2>
+                  <p className="text-gray-500 lg:text-base md:text-sm text-sm leading-relaxed max-w-md">
+                    {service.desc}
+                  </p>
+                </Link>
               </div>
             </div>
 

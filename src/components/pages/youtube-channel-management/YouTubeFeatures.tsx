@@ -6,7 +6,7 @@ const YouTubeFeatures = () => {
   return (
     <>
       <section className="bg-white">
-        <span className="w-full xl:text-[200px] xl:leading-34 md:text-[120px] md:leading-22 text-[60px] leading-13 text-black/70 font-bold opacity-10 xl:-mt-7 md:-mt-5 mt-10 xl:-ml-0 md:-ml-0 -ml-1 select-none">
+        <span className="w-full xl:text-[200px] xl:leading-34 md:text-[120px] md:leading-22 text-[60px] leading-13 text-black/70 font-bold opacity-10 xl:-mt-7 md:-mt-5 mt-10 xl:-ml-3 md:-ml-3 -ml-1 select-none">
           Key Features
         </span>
 

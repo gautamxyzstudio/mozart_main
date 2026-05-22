@@ -1,7 +1,6 @@
 import { Icons } from "@/public/exports";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 const QuickLink = () => {
   const quickLink = [
@@ -36,22 +35,18 @@ const QuickLink = () => {
         {
           title: "Music Distribution",
           link: "/services/music-distribution",
-          icon: undefined,
         },
         {
           title: "YouTube Channel Management",
           link: "/services/youtube-channel-management",
-          icon: undefined,
         },
         {
           title: "YouTube Content ID",
           link: "/services/youtube-content-id",
-          icon: undefined,
         },
         {
           title: "Artist Management",
           link: "/services/artists-management",
-          icon: undefined,
         },
         {
           title: "Label Distribution",
@@ -174,30 +169,15 @@ const QuickLink = () => {
             </div>
           ) : (
             <div className="flex flex-col space-y-2.5 items-start opacity-60">
-              {item.linkList.map((subItem, idx) =>
-                subItem?.icon ? (
-                  <Link
-                    key={idx}
-                    href={subItem.link}
-                    className="text-sm flex items-center gap-2 w-[198px] md:w-[214px] xl:w-[313px] hover:text-white transition-colors duration-200"
-                  >
-                    <Image
-                      src={subItem.icon}
-                      alt={subItem.title}
-                      className="w-6 h-6"
-                    />
-                    <span>{subItem.title}</span>
-                  </Link>
-                ) : (
-                  <Link
-                    key={idx}
-                    href={subItem.link}
-                    className="text-sm hover:text-white transition-colors duration-200"
-                  >
-                    {subItem.title}
-                  </Link>
-                ),
-              )}
+              {item.linkList.map((subItem, idx) => (
+                <Link
+                  key={idx}
+                  href={subItem.link}
+                  className="text-sm hover:text-white transition-colors duration-200"
+                >
+                  {subItem.title}
+                </Link>
+              ))}
             </div>
           )}
         </div>
