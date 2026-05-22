@@ -100,7 +100,7 @@ const WhyAreDifferentRoyalty = () => {
 
                 {/* Hover Glow Background */}
                 <div
-                  className={`absolute inset-0 bg-white/[0.03] transition-opacity duration-300 -z-20 ${
+                  className={`absolute inset-0 bg-white/3 transition-opacity duration-300 -z-20 ${
                     isOpen ? "opacity-100" : "opacity-0"
                   }`}
                 />
