@@ -57,17 +57,27 @@ const QuickLink = () => {
         {
           title: "Label Distribution",
           link: "/music-label",
-          icon: undefined,
+          
+        },
+        {
+          title: "Global Music Charts",
+          link: "/global-music-charts",
+          
         },
         {
           title: "Music Promotion",
           link: "/music-promotion",
-          icon: undefined,
+         
         },
         {
           title: "Multi-Label Management",
           link: "/services",
-          icon: undefined,
+          
+        },
+        {
+          title: "Royalty-rights Management",
+          link: "/royalty-rights-management",
+         
         },
         // {
         //   title: "Monetization",

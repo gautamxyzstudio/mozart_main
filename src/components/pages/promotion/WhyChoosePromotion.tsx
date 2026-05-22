@@ -78,8 +78,7 @@ const WhyChoosePromotion = () => {
                 </svg>
               </div>
 
-              {/* Content (Jo ab line ke upar open hoga) */}
-              <div
+               <div
                 className={`transition-all duration-500 ease-in-out overflow-hidden ${isOpen
                     ? "max-h-[160px] opacity-100 pb-4"
                     : "max-h-0 opacity-0 pointer-events-none"

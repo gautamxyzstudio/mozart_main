@@ -16,17 +16,17 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "i.pravatar.cc", // Yeh add kiya avatars ke liye
+        hostname: "i.pravatar.cc",  
         pathname: "/**",
       },
       {
         protocol: "https",
-        hostname: "mozart-app.s3.ap-southeast-2.amazonaws.com", // Yeh add kiya avatars ke liye
+        hostname: "mozart-app.s3.ap-southeast-2.amazonaws.com",  
         pathname: "/**",
       },
     ],
   },
-  allowedDevOrigins: ["192.168.1.8"],
+  allowedDevOrigins: ["192.168.1.5"],
 };
 
 export default nextConfig;

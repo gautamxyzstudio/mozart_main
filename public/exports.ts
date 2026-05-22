@@ -91,7 +91,14 @@ import ArtistImg2 from "./artistsection2.webp"
 import GoodThing from "./goodthing.webp"
 import AlbumFour from "./albumFour.webp"
 import MusicLabel from "./musicLabel.webp"
- 
+import Transparent from "./transparent.webp"
+import ReleaseSport from "./ReleaseSport.webp"
+import ArtistFriendly from "./artistFriendly.webp"
+import Track from "./track.webp"
+import GlobalChartsGlobe from "./globalchart.webp"
+import GlobalChart2 from "./globalchart2.webp"
+import Price from "./priceImg.webp"
+import RoyaltyImg from "./royaltyImg.webp"
 
 export const Images = {
   Logo,
@@ -154,6 +161,14 @@ export const Images = {
    GoodThing,
    AlbumFour,
    MusicLabel,
+   Transparent,
+   ReleaseSport,
+   ArtistFriendly,
+   Track,
+   GlobalChartsGlobe,
+   GlobalChart2,
+    Price,
+    RoyaltyImg
 };
 
 export const Icons = {

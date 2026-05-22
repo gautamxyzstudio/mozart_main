@@ -444,13 +444,13 @@ const MusicDistribution = () => {
       {/* Stats Bar */}
       <div className="w-full bg-[#030105] py-10 md:py-12 relative z-20 overflow-hidden">
         {/* Top Gradient */}
-        <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-[#17032f]/30 via-[#15032d]/10 to-transparent pointer-events-none z-10" />
+        <div className="absolute top-0 left-0 w-full h-24 bg-linear-to-b from-[#17032f]/30 via-[#15032d]/10 to-transparent pointer-events-none z-10" />
 
         {/* Left Fade */}
-        <div className="absolute left-0 top-0 h-full w-20 md:w-32 bg-gradient-to-r from-[#030105] to-transparent z-30 pointer-events-none" />
+        <div className="absolute left-0 top-0 h-full w-20 md:w-32 bg-linear-to-r from-[#030105] to-transparent z-30 pointer-events-none" />
 
         {/* Right Fade */}
-        <div className="absolute right-0 top-0 h-full w-20 md:w-32 bg-gradient-to-l from-[#030105] to-transparent z-30 pointer-events-none" />
+        <div className="absolute right-0 top-0 h-full w-20 md:w-32 bg-linear-to-l from-[#030105] to-transparent z-30 pointer-events-none" />
 
         <div className="flex w-full overflow-hidden relative z-20">
           <div className="flex w-max animate-marquee space-x-16 md:space-x-24 px-8 md:px-12">

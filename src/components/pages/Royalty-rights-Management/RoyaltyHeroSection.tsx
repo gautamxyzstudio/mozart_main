@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { Images } from "@/public/exports";
+import Link from "next/link";
 
-const YouTubeHero = () => {
+const RoyaltyHeroSection = () => {
   return (
     <section className="bg-black text-white w-full flex flex-col overflow-hidden relative pt-24 md:pt-40">
       {/* Decorative dark purple/indigo background glows */}
@@ -15,37 +15,43 @@ const YouTubeHero = () => {
       <div className="w-full max-w-7xl mx-auto px-6 md:px-12 xl:px-20 flex flex-col md:flex-row items-center justify-between relative z-10 pb-16 md:pb-24">
         {/* Left Column: Typography Content */}
         <div className="flex flex-col items-start md:w-[50%] w-full space-y-6 md:pr-8 text-left">
-          <span className="text-white/80 font-medium text-lg md:text-xl xl:text-[35px]">
-           Promote. Optimize. Transform. 
+          <span className="text-white font-medium text-lg md:text-xl xl:text-[45px]">
+            Turn Every Play Into
           </span>
           <div className="flex flex-col leading-none">
-            <h1 className="text-white font-extrabold text-[44px] md:text-[52px] xl:text-[100px] leading-[1.05] tracking-tight">
-              Your Music
-            </h1>
-            <h1 className="text-white font-extrabold text-[44px] md:text-[52px] xl:text-[100px] leading-[1.05] tracking-tight">
-              YouTube
+            <h1 className="text-white font-extrabold text-[44px] md:text-[52px] xl:text-[70px] leading-[1.05] ">
+              Your Pay Your Sound
             </h1>
           </div>
           <p className="text-white/70 text-sm md:text-base xl:text-lg font-light leading-relaxed max-w-md">
-            We handle everything behind the scenes, so your music performs better, reaches further, and grows faster.
+            From streams to global usage, we ensure your rights are protected,
+            and your royalties are collected without missing a beat.{" "}
           </p>
-
+        <div className="mt-8 w-full flex justify-center md:justify-start">
+            <Link
+              href="/apply"
+              className="inline-flex w-[85%] md:w-auto items-center justify-center px-8 md:px-15 py-3.5 rounded-full bg-primary text-white font-bold text-base hover:bg-gray-100 transition-colors shadow-lg"
+            >
+              Apply Now
+            </Link>
+          </div>
         </div>
+
 
         {/* Right Column: Premium Illustration */}
         <div className="md:w-[50%] w-full mt-12 md:mt-0 flex items-center justify-center relative">
           {/* Semicircle glowing background vector to replicate original vectors */}
           <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
             {/* <Image
-              src={Images.BgVector2}
-              alt="bg-vector"
-              className="w-[120%] h-[120%] opacity-20 object-contain scale-110"
-            /> */}
+                  src={Images.BgVector2}
+                  alt="bg-vector"
+                  className="w-[120%] h-[120%] opacity-20 object-contain scale-110"
+                /> */}
           </div>
 
           <div className="relative z-10 w-full max-w-120 xl:max-w-137.5 aspect-square flex items-center justify-center">
             <Image
-              src={Images.YouTubeMUsic2}
+              src={Images.RoyaltyImg}
               alt="YouTube Channel Management"
               className="w-full h-auto rounded-2xl object-contain drop-shadow-[0_15px_50px_rgba(103,57,183,0.35)] animate-float-bob"
               priority
@@ -98,4 +104,4 @@ const YouTubeHero = () => {
   );
 };
 
-export default YouTubeHero;
+export default RoyaltyHeroSection;

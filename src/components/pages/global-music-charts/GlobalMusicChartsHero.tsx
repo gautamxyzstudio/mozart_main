@@ -1,0 +1,96 @@
+import React from "react";
+import Image from "next/image";
+import { Images } from "@/public/exports";
+import Link from "next/link";
+
+const GlobalMusicChartsHero = () => {
+  return (
+    <section className="w-full bg-black xl:pt-37.5 md:pt-20 overflow-hidden relative min-h-[90vh] flex flex-col justify-center">
+      {/* Background elements */}
+      {/* <div className="absolute top-0 left-0 w-[100px] h-[200px] bg-linear-to-l from-[#371b69]/30 to-transparent pointer-events-none" />
+      <div className="absolute -bottom-20 -left-20 w-125 h-125 bg-[#6739b7]/10 rounded-full blur-[1000px] pointer-events-none" /> */}
+
+      <div className="max-w-360 mx-auto px-6 md:px-12 xl:px-20 w-full relative z-10 grow flex items-center mt-10">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20 w-full">
+          {/* Left Text Content */}
+          <div className="w-full lg:w-1/2 flex flex-col items-start">
+            <h1 className="text-4xl md:text-5xl xl:text-[40px] font-bold text-white  mb-3">
+              Reach to the Top of the
+            </h1>
+            <h2 className="xl:text-[84px] md:text-[42px] text-[48px] font-bold text-white leading-24.75">
+              Global Music Charts
+            </h2>
+            <p className="text-white text-sm md:text-sm xl:text-base  max-w-lg mb-10 font-medium ">
+              Submit your music to global charts and track your performance
+              worldwide with powerful chart insights
+            </p>
+            <Link
+              href="/services"
+              className="bg-[#7b42f6] hover:bg-[#6833d6] text-white px-23.5 py-3 rounded-full font-medium text-lg transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(123,66,246,0.4)]"
+            >
+              Buy Now
+            </Link>
+          </div>
+
+          {/* Right Image Content */}
+          <div className="w-full lg:w-1/2 flex justify-center lg:justify-end relative">
+            <div className="relative w-full max-w-[600px] aspect-square animate-float-bob">
+              <div className="absolute inset-0 bg-[#7b42f6]/20 rounded-full blur-[100px] -z-10" />
+              <Image
+                src={Images.GlobalChartsGlobe}
+                alt="Global Music Charts Globe"
+                layout="fill"
+                objectFit="contain"
+                className="drop-shadow-2xl"
+                priority
+              />
+            </div>  
+          </div>
+        </div>
+      </div>
+
+      {/* Stats Bar */}
+      <div className="w-full bg-transparent py-10 md:py-12 mt-20 relative z-20 overflow-hidden">
+        {/* Bottom Black Gradient */}
+        <div className="absolute bottom-0 left-0 w-full h-28 bg-gradient-to-t from-[#000000] via-[#000000]/95 to-transparent pointer-events-none z-10" />
+
+        {/* Left Fade */}
+        <div className="absolute left-0 top-0 h-full w-24 md:w-40 bg-gradient-to-r from-[#000000] via-[#000000]/90 to-transparent z-30 pointer-events-none" />
+
+        {/* Right Fade */}
+        <div className="absolute right-0 top-0 h-full w-24 md:w-40 bg-gradient-to-l from-[#000000] via-[#000000]/90 to-transparent z-30 pointer-events-none" />
+
+        <div className="flex w-full overflow-hidden relative z-20">
+          <div className="flex w-max animate-marquee space-x-16 md:space-x-24 px-8 md:px-12">
+            {Array(10)
+              .fill([
+                { value: "150+", label: "Platforms Worldwide" },
+                { value: "1M+", label: "Tracks Distributed" },
+                { value: "200K+", label: "Independent Artists" },
+                { value: "99.9%", label: "Platform Uptime" },
+                { value: "100+", label: "Countries Reached" },
+                { value: "100%", label: "Royalty Retention" },
+              ])
+              .flat()
+              .map((stat, idx) => (
+                <div
+                  key={idx}
+                  className="flex flex-col items-center text-center space-y-2 shrink-0"
+                >
+                  <span className="text-3xl md:text-[38px] xl:text-[46px] font-black text-[#555] leading-none tracking-tight hover:text-[#7b42f6] transition-colors duration-300">
+                    {stat.value}
+                  </span>
+
+                  <span className="text-xs md:text-[13px] xl:text-sm font-medium text-[#888] tracking-widest uppercase leading-tight whitespace-nowrap">
+                    {stat.label}
+                  </span>
+                </div>
+              ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default GlobalMusicChartsHero;
