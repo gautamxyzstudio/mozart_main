@@ -1,6 +1,5 @@
 import { Icons } from "@/public/exports";
 import Image from "next/image";
-import link from "next/link";
 import Link from "next/link";
 import React from "react";
 
@@ -36,64 +35,40 @@ const QuickLink = () => {
       linkList: [
         {
           title: "Music Distribution",
-          link: "/music-distribution",
+          link: "/services/music-distribution",
           icon: undefined,
         },
         {
           title: "YouTube Channel Management",
-          link: "/youtube-channel-management",
+          link: "/services/youtube-channel-management",
           icon: undefined,
         },
         {
           title: "YouTube Content ID",
-          link: "/youtube-content-id",
+          link: "/services/youtube-content-id",
           icon: undefined,
         },
         {
           title: "Artist Management",
-          link: "/artists",
+          link: "/services/artists-management",
           icon: undefined,
         },
         {
           title: "Label Distribution",
-          link: "/music-label",
-          
+          link: "/services/label-distribution",
         },
         {
           title: "Global Music Charts",
-          link: "/global-music-charts",
-          
+          link: "/services/global-music-charts",
         },
         {
           title: "Music Promotion",
-          link: "/music-promotion",
-         
-        },
-        {
-          title: "Multi-Label Management",
-          link: "/services",
-          
+          link: "/services/music-promotion",
         },
         {
           title: "Royalty-rights Management",
-          link: "/royalty-rights-management",
-         
+          link: "/services/royalty-rights-management",
         },
-        // {
-        //   title: "Monetization",
-        //   link: "/services",
-        //   icon: undefined,
-        // },
-        // {
-        //   title: "Auto Playlist & Promotion",
-        //   link: "/services",
-        //   icon: undefined,
-        // },
-        // {
-        //   title: "Takedown of illegal content",
-        //   link: "/services",
-        //   icon: undefined,
-        // },
       ],
     },
     {
@@ -150,7 +125,8 @@ const QuickLink = () => {
       label: "Address",
       linkList: [
         {
-          title: "Imperial Tower, CP 67, Sector 67, Sahibzada Ajit Singh Nagar, Punjab 160062",
+          title:
+            "Imperial Tower, CP 67, Sector 67, Sahibzada Ajit Singh Nagar, Punjab 160062",
           link: "https://maps.app.goo.gl/CW8EbVCQmuw8wUB76",
           icon: Icons.Location,
         },
@@ -160,7 +136,7 @@ const QuickLink = () => {
           icon: Icons.Location,
         },
       ],
-    }
+    },
   ];
   return (
     <div className="flex flex-row flex-wrap justify-between items-start gap-6 w-full">
@@ -170,19 +146,27 @@ const QuickLink = () => {
           className="w-fit flex flex-col space-y-5 items-start text-background"
         >
           <span className="text-sm">{item.label}</span>
-          
+
           {item.label === "Services" ? (
             <div className="flex flex-row gap-x-8 md:gap-x-12 xl:gap-x-16 items-start opacity-60">
               <div className="flex flex-col space-y-2.5 items-start">
                 {item.linkList.slice(0, 5).map((subItem, sIdx) => (
-                  <Link key={sIdx} href={subItem.link} className="text-sm hover:text-white transition-colors duration-200">
+                  <Link
+                    key={sIdx}
+                    href={subItem.link}
+                    className="text-sm hover:text-white transition-colors duration-200"
+                  >
                     {subItem.title}
                   </Link>
                 ))}
               </div>
               <div className="flex flex-col space-y-2.5 items-start">
                 {item.linkList.slice(5).map((subItem, sIdx) => (
-                  <Link key={sIdx + 5} href={subItem.link} className="text-sm hover:text-white transition-colors duration-200">
+                  <Link
+                    key={sIdx + 5}
+                    href={subItem.link}
+                    className="text-sm hover:text-white transition-colors duration-200"
+                  >
                     {subItem.title}
                   </Link>
                 ))}
@@ -205,10 +189,14 @@ const QuickLink = () => {
                     <span>{subItem.title}</span>
                   </Link>
                 ) : (
-                  <Link key={idx} href={subItem.link} className="text-sm hover:text-white transition-colors duration-200">
+                  <Link
+                    key={idx}
+                    href={subItem.link}
+                    className="text-sm hover:text-white transition-colors duration-200"
+                  >
                     {subItem.title}
                   </Link>
-                )
+                ),
               )}
             </div>
           )}

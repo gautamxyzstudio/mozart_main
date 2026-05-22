@@ -61,7 +61,7 @@ const orbitPlatforms = [
         fill="none"
       >
         <g filter="url(#filter0_d_2523_56567)">
-          <g clip-path="url(#clip0_2523_56567)">
+          <g clipPath="url(#clip0_2523_56567)">
             <path
               d="M59.3784 18.5447H28.7533C23.1154 18.5447 18.5449 23.1151 18.5449 28.7531V59.3782C18.5449 65.0161 23.1154 69.5866 28.7533 69.5866H59.3784C65.0164 69.5866 69.5868 65.0161 69.5868 59.3782V28.7531C69.5868 23.1151 65.0164 18.5447 59.3784 18.5447Z"
               fill="white"
@@ -88,9 +88,9 @@ const orbitPlatforms = [
             width="88.1315"
             height="88.1324"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feColorMatrix
               in="SourceAlpha"
               type="matrix"
@@ -193,9 +193,9 @@ const orbitPlatforms = [
             width="88.1315"
             height="88.1324"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feColorMatrix
               in="SourceAlpha"
               type="matrix"
@@ -372,10 +372,7 @@ const MusicCareer = () => {
         {/* Section Header */}
         <div className=" mb-20 md:mb-28 xl:mb-36 px-6 md:px-12 xl:px-20">
           <h2 className="text-3xl md:text-4xl xl:text-[46px] font-bold text-white leading-tight xl:leading-[1.2] max-w-3xl ">
-            Grow Your Music Career With Real{" "}
-             
-              Industry Advantages
-            
+            Grow Your Music Career With Real Industry Advantages
           </h2>
           <p className="mt-5 md:mt-7 text-[#9ca3af] text-sm md:text-base xl:text-base max-w-2xl  leading-relaxed font-light">
             The tools your label provides — transparent data, scheduled

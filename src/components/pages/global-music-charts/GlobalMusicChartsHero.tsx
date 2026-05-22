@@ -7,20 +7,61 @@ const GlobalMusicChartsHero = () => {
   return (
     <section className="w-full bg-black xl:pt-37.5 md:pt-20 overflow-hidden relative min-h-[90vh] flex flex-col justify-center">
       {/* Background elements */}
-      {/* <div className="absolute top-0 left-0 w-[100px] h-[200px] bg-linear-to-l from-[#371b69]/30 to-transparent pointer-events-none" />
-      <div className="absolute -bottom-20 -left-20 w-125 h-125 bg-[#6739b7]/10 rounded-full blur-[1000px] pointer-events-none" /> */}
+      <div className="absolute top-0 left-0 w-[100px] h-[200px] xl:w-[255px] xl:h-[255px] pointer-events-none">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="618"
+          height="803"
+          viewBox="0 0 618 803"
+          fill="none"
+        >
+          <g filter="url(#filter0_f_2445_81327)">
+            <circle
+              cx="170.5"
+              cy="355.5"
+              r="127.5"
+              fill="#6739B7"
+              style={{ fill: "#6739B7", fillOpacity: 1 }}
+            />
+          </g>
+          <defs>
+            <filter
+              id="filter0_f_2445_81327"
+              x="-277"
+              y="-92"
+              width="895"
+              height="895"
+              filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB"
+            >
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="BackgroundImageFix"
+                result="shape"
+              />
+              <feGaussianBlur
+                stdDeviation="160"
+                result="effect1_foregroundBlur_2445_81327"
+              />
+            </filter>
+          </defs>
+        </svg>
+      </div>
+      <div className="absolute -bottom-20 -left-20 w-125 h-125 bg-[#6739b7]/10 rounded-full blur-[1000px] pointer-events-none" />
 
-      <div className="max-w-360 mx-auto px-6 md:px-12 xl:px-20 w-full relative z-10 grow flex items-center mt-10">
+      <div className="max-w-360 mx-auto px-6 md:px-12 xl:px-20 w-full relative z-10 grow flex items-center mt-[116px] md:mt-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20 w-full">
           {/* Left Text Content */}
-          <div className="w-full lg:w-1/2 flex flex-col items-start">
-            <h1 className="text-4xl md:text-5xl xl:text-[40px] font-bold text-white  mb-3">
+          <div className="w-full lg:w-1/2 flex flex-col md:items-start items-center md:text-start text-center space-y-3">
+            <h1 className="text-2xl md:text-5xl xl:text-[40px] font-bold text-white">
               Reach to the Top of the
             </h1>
-            <h2 className="xl:text-[84px] md:text-[42px] text-[48px] font-bold text-white leading-24.75">
+            <h2 className="xl:text-[84px] md:text-[42px] text-[48px] md:font-bold font-medium text-white xl:leading-24.75 leading-14">
               Global Music Charts
             </h2>
-            <p className="text-white text-sm md:text-sm xl:text-base  max-w-lg mb-10 font-medium ">
+            <p className="text-white text-sm md:text-sm xl:text-base max-w-lg mb-10 ">
               Submit your music to global charts and track your performance
               worldwide with powerful chart insights
             </p>
@@ -44,7 +85,7 @@ const GlobalMusicChartsHero = () => {
                 className="drop-shadow-2xl"
                 priority
               />
-            </div>  
+            </div>
           </div>
         </div>
       </div>
@@ -52,13 +93,13 @@ const GlobalMusicChartsHero = () => {
       {/* Stats Bar */}
       <div className="w-full bg-transparent py-10 md:py-12 mt-20 relative z-20 overflow-hidden">
         {/* Bottom Black Gradient */}
-        <div className="absolute bottom-0 left-0 w-full h-28 bg-gradient-to-t from-[#000000] via-[#000000]/95 to-transparent pointer-events-none z-10" />
+        <div className="absolute bottom-0 left-0 w-full h-28 bg-linear-to-t from-[#000000] via-[#000000]/95 to-transparent pointer-events-none z-10" />
 
         {/* Left Fade */}
-        <div className="absolute left-0 top-0 h-full w-24 md:w-40 bg-gradient-to-r from-[#000000] via-[#000000]/90 to-transparent z-30 pointer-events-none" />
+        <div className="absolute left-0 top-0 h-full w-24 md:w-40 bg-linear-to-r from-[#000000] via-[#000000]/90 to-transparent z-30 pointer-events-none" />
 
         {/* Right Fade */}
-        <div className="absolute right-0 top-0 h-full w-24 md:w-40 bg-gradient-to-l from-[#000000] via-[#000000]/90 to-transparent z-30 pointer-events-none" />
+        <div className="absolute right-0 top-0 h-full w-24 md:w-40 bg-linear-to-l from-[#000000] via-[#000000]/90 to-transparent z-30 pointer-events-none" />
 
         <div className="flex w-full overflow-hidden relative z-20">
           <div className="flex w-max animate-marquee space-x-16 md:space-x-24 px-8 md:px-12">

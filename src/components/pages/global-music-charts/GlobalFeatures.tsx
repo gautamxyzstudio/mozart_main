@@ -1,4 +1,4 @@
-import { GIF, Images } from "@/public/exports";
+import { Images } from "@/public/exports";
 import Image from "next/image";
 import React from "react";
 
@@ -7,11 +7,11 @@ const KeyFeatures = () => {
     <>
       <section className="bg-white">
         <span className="w-full xl:text-[200px] xl:leading-51.5 md:text-[120px] md:leading-32.5 text-[60px] leading-19 text-black/70 font-bold opacity-10 xl:-mt-20 md:-mt-5 -mt-3 xl:-ml-1 md:-ml-1 -ml-1">
-       Features 
+          Features
         </span>
 
         <h3 className="text-4xl text-black font-bold text-center lg:py-10 md:pt-7 pt-5">
-       Smart Chart Features 
+          Smart Chart Features
         </h3>
 
         <div className="xl:px-25 xl:pt-0  md:pb-25 md:px-13 px-6 py-16 flex flex-col xl:space-y-13 md:space-y-6 space-y-8 ">

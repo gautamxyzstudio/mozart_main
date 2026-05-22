@@ -50,7 +50,6 @@ const BlogTopSection = ({
             </button>
           ))}
         </div>
-        
 
         <div className="flex flex-col md:flex-row gap-6 justify-between w-full h-auto ">
           {isLoading ? (
@@ -58,7 +57,7 @@ const BlogTopSection = ({
           ) : data?.[0] ? (
             <Link
               href={`/blog/${data[0].blogSlug}`}
-              className="relative xl:h-151 md:h-89 h-56 xl:w-193.75 md:w-120 w-full rounded-[30px] overflow-hidden group"
+              className="relative xl:h-151 md:h-89 h-56 md:w-[59%]  w-full rounded-xl lg:rounded-3xl overflow-hidden group"
             >
               {data[0].smallBanner && (
                 <Image
@@ -81,14 +80,14 @@ const BlogTopSection = ({
             </Link>
           ) : null}
 
-          <div className="xl:w-110.25 md:w-120 flex flex-col gap-6 w-full xl:h-151 md:h-89 h-56">
+          <div className="md:w-[39%] flex flex-col gap-6 w-full xl:h-151 md:h-89 ">
             {/* Small Card 1 */}
             {isLoading ? (
-              <div className="relative xl:h-72.25 md:h-60 h-40 w-full rounded-3xl bg-secondary animate-pulse" />
+              <div className="relative xl:h-72.25 md:h-60 h-56 w-full rounded-xl lg:rounded-3xl bg-secondary animate-pulse" />
             ) : data?.[1] ? (
               <Link
                 href={`/blog/${data[1].blogSlug}`}
-                className="relative xl:h-72.25 md:h-60 h-40 w-full rounded-3xl overflow-hidden group"
+                className="relative xl:h-72.25 md:h-60 h-56 w-full rounded-xl lg:rounded-3xl overflow-hidden group"
               >
                 {data[1].smallBanner && (
                   <Image
@@ -112,13 +111,13 @@ const BlogTopSection = ({
 
             {/* Small Card 2 */}
             {isLoading ? (
-              <div className="relative xl:h-72.25 md:h-60 h-40 w-full rounded-3xl bg-secondary animate-pulse" />
+              <div className="relative xl:h-72.25 md:h-60 h-56 w-full rounded-xl lg:rounded-3xl bg-secondary animate-pulse" />
             ) : data?.[2] ? (
               <Link
                 href={`/blog/${data[2].blogSlug}`}
-                className="relative xl:h-72.25 md:h-60 h-40 w-full rounded-3xl overflow-hidden group"
+                className="relative xl:h-72.25 md:h-60 h-56 w-full rounded-xl lg:rounded-3xl overflow-hidden group"
               >
-                {data[2].smallBanner && (
+                {data[22].smallBanner && (
                   <Image
                     src={data[2].smallBanner}
                     width={800}
