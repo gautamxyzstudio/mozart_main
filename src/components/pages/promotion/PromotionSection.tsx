@@ -13,7 +13,7 @@ const PromotionSection = () => {
         {
             step: "01",
             icon: <TrackChangesIcon fontSize="medium" />,
-            title: "Target Audience Analysis",
+            title: "Industry Expertise ",
             desc: "We study your genre, sound, and listener behavior to identify the audience most likely to engage with your music, ensuring every campaign starts in the right direction.",
         },
         {
