@@ -6,13 +6,13 @@ const WhyArtistsTrustUs = () => {
   const points = [
     {
       num: "01",
-      title: "Industry-Focused Expertise",
-      desc: "Understands the music industry deeply, helping you make the right moves at the right time.",
+      title: " Industry-Focused Expertise",
+      desc: "Understands the music industry deeply, helping you make the right moves at the right time. ",
     },
     {
       num: "02",
       title: "Personalized Artist Support",
-      desc: "Every artist gets a custom plan tailored to their style, goals, and long-term growth.",
+      desc: "Every artist gets a custom plan tailored to their style, goals, and long-term growth. ",
     },
     {
       num: "03",
@@ -22,12 +22,12 @@ const WhyArtistsTrustUs = () => {
     {
       num: "04",
       title: "Growth-Driven Strategy",
-      desc: "From branding to releases, every decision we make is aimed at expanding your reach and results.",
+      desc: "From branding to releases, every decision we make is aimed at expanding your reach and results. ",
     },
     {
       num: "05",
-      title: "End-to-End Career Support",
-      desc: "Handle management, marketing, distribution, and more, so you stay focused on creating great music.",
+      title: " End-to-End Career Support",
+      desc: "Handle management, marketing, distribution, and more, so you stay focused on creating great music. ",
     },
   ];
 

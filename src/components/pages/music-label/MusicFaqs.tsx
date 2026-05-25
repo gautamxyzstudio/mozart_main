@@ -9,34 +9,33 @@ interface FAQItem {
 
 const faqData: FAQItem[] = [
   {
-    question: "What Happens When YouTube Content ID Finds A Match?",
+    question: "What does a music label do for an artist?",
     answer:
-      "When a match is found, a Content ID claim is automatically placed on the video. Depending on your preferences, this claim can either monetize the video (running ads and transferring revenue to you), track its viewership statistics, or block it entirely from being viewed. With AMozart, we default to monetization to maximize your music earnings.",
+"A music label helps distribute your songs to global platforms, manage royalties, and support your career growth with tools like those at Amozart.  "  },
+  {
+    question: "How do I get my music signed by a label? ",
+    answer:
+    "Most labels look for quality music, consistent releases, and audience engagement. At Amozart, strong tracks and a professional profile improve your chances.  ",
   },
   {
-    question: "Do I Get A Copyright Strike With A Content ID Claim?",
+    question: "What are the benefits of signing with an independent label? ",
     answer:
-      "No. A Content ID claim is completely different from a copyright strike. A Content ID claim is an automated system match that simply allows you to manage or monetize your music in user-uploaded videos without affecting the uploader's channel health. A copyright strike only occurs through a formal, manual DMCA takedown request.",
+      "Independent labels often offer more creative freedom, close support, and personalized development, which Amozart focuses on for artist success.  ",
   },
   {
-    question: "Why Do Some User Videos Get Blocked While Others Are Monetized?",
+    question: "Can I still retain my rights if I sign with a label?",
     answer:
-      "This is determined by the copyright owner's specific settings. While AMozart defaults to monetizing matched videos so you can earn royalties, you can choose to block videos in certain regions or globally. If another co-owner or rights holder of the song requests a block, YouTube will apply the block policy.",
+      "Yes, many independent labels allow you to keep more control over your music rights, and Amozart’s agreements aim for transparency and fairness.  ",
   },
   {
-    question: "Can Short Clips Or YouTube Shorts Be Claimed?",
+    question: " How long does it take for music to go live after signing? ",
     answer:
-      "Yes. YouTube's advanced Content ID algorithm is capable of identifying audio matches as brief as just a few seconds. This ensures that even short clips, loops, and YouTube Shorts featuring your tracks are accurately detected, claimed, and monetized on your behalf.",
+      "After submission and approval, tracks typically go live in a few days to weeks, and with Amozart’s tools, the process is streamlined for faster release.  ",
   },
   {
-    question: "Will My Music Be Available On YouTube Music Automatically?",
+    question: "What should I prepare before submitting my music?",
     answer:
-      "Yes. When you distribute your music with AMozart, we deliver your tracks to all major streaming stores including YouTube Music. This automatically creates official 'Art Tracks' on YouTube. The Content ID system runs separately to detect and monetize user-generated content using your music.",
-  },
-  {
-    question: "What Content Is Not Eligible For Content ID Claims?",
-    answer:
-      "To be eligible for Content ID, you must own 100% of the exclusive rights to the audio. Ineligible content includes: non-exclusive beats or instrumentals (such as leased beats), public domain recordings, royalty-free loops, sound effects, copyright-free background music, and unauthorized remixes, mashups, or compilation albums.",
+      "Have fully mixed tracks, high-quality artwork, correct metadata, and a clear artist bio, all of which help Amozart review and release your music smoothly. ",
   },
 ];
 

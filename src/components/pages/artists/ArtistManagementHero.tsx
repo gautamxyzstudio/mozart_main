@@ -34,7 +34,7 @@ const ArtistManagementHero = () => {
           Are You Serious
         </span>
         
-        <h1 className="text-white font-medium text-5xl md:text-6xl xl:text-[76px] leading-14 max-w-4xl mx-auto">
+        <h1 className="text-white font-bold text-5xl md:text-6xl xl:text-[76px] leading-14 max-w-4xl mx-auto">
           About Your Music?
         </h1>
         

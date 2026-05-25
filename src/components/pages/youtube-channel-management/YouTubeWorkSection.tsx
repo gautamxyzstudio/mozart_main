@@ -5,27 +5,27 @@ import React from "react";
 const YouTubeWorkSection = () => {
     const labelData = [
         {
-            label: "Share Your Music ",
+            label: "Expert Music Managers",
             description:
-                "Manage your music on YouTube with advanced Content Management System access. Track performance, manage claims, and protect your content.",
+                "Our team understands how YouTube music works and what makes songs perform better. We manage your channel with proven methods built for real growth.",
             image: Images.Dummy,
         },
         {
-            label: "Promotion Goals",
+            label: "Complete Channel Handling",
             description:
-                "Take control of your digital rights. Protect your music across streaming platforms and social media channels with our rights management tools.",
+                "From uploads to SEO to comments—everything is managed for you. You get a fully organized and professional YouTube music presence. ",
             image: Images.Dummy2,
         },
         {
-            label: "Run the Campaign ",
+            label: "Transparent & Simple ",
             description:
-                "Set up and manage royalty distribution with customizable split templates. Ensure fair compensation for all contributors to your music.",
+                "You always know what we are doing and how your channel is performing.Clear reports and easy communication keep everything stress-free. ",
             image: Images.Dummy3,
         },
         {
-            label: "Track Your Results",
+            label: "Growth-Focused Approach",
             description:
-                "Set up and manage royalty distribution with customizable split templates. Ensure fair compensation for all contributors to your music.",
+                "Every step we take is planned to increase your views, subscribers, and reach. We focus on long-term success, not short-term numbers. ",
             image: Images.Dummy3,
         },
     ];

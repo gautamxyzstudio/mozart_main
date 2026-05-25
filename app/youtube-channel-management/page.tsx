@@ -1,0 +1,27 @@
+import React from "react";
+import { Metadata } from "next";
+import YouTubeHero from "@/src/components/pages/youtube-channel-management/YouTubeHero";
+import WhyChooseYouTube from "@/src/components/pages/youtube-channel-management/WhyChooseYouTube";
+import YouTubeFeatures from "@/src/components/pages/youtube-channel-management/YouTubeFeatures";
+import Testimonials from "@/src/components/modules/testimonials/Testimonials";
+import Faqs from "@/src/components/modules/faqs/Faqs";
+
+export const metadata: Metadata = {
+  title: "YouTube Channel Management for Musicians | AMozart",
+  description:
+    "Scale your artist channel on YouTube. From copyright whitelisting via Content ID, video SEO, channel layout designs to custom monetization setup with AMozart.",
+};
+
+const page = () => {
+  return (
+    <>
+      <YouTubeHero />
+      <WhyChooseYouTube />
+      <YouTubeFeatures />
+      <Testimonials />
+      <Faqs />
+    </>
+  );
+};
+
+export default page;

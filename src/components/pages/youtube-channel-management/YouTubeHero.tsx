@@ -14,22 +14,25 @@ const YouTubeHero = () => {
       {/* Main Content Grid */}
       <div className="w-full max-w-7xl mx-auto px-6 md:px-12 xl:px-20 flex flex-col md:flex-row items-center justify-between relative z-10 pb-16 md:pb-24">
         {/* Left Column: Typography Content */}
-        <div className="flex flex-col items-start md:w-[50%] w-full space-y-6 md:pr-8 text-left">
-          <span className="text-white/80 font-medium text-lg md:text-xl xl:text-[35px]">
-           Promote. Optimize. Transform. 
+        <div className="flex flex-col xl:items-start items-center md:w-[50%] w-full space-y-6 md:pr-8 text-center xl:text-left">
+          <span className="text-white/80 font-medium text-[20px] md:text-xl xl:text-[35px]">
+            Promote. Optimize. Transform.
           </span>
-          <div className="flex flex-col leading-none">
-            <h1 className="text-white font-extrabold text-[44px] md:text-[52px] xl:text-[100px] leading-[1.05] tracking-tight">
+
+          <div className="flex flex-col leading-none items-center xl:items-start">
+            <h1 className="text-white font-extrabold text-[44px] md:text-[52px] xl:text-[100px] leading-[1.05]">
               Your Music
             </h1>
+
             <h1 className="text-white font-extrabold text-[44px] md:text-[52px] xl:text-[100px] leading-[1.05] tracking-tight">
               YouTube
             </h1>
           </div>
-          <p className="text-white/70 text-sm md:text-base xl:text-lg font-light leading-relaxed max-w-md">
-            We handle everything behind the scenes, so your music performs better, reaches further, and grows faster.
-          </p>
 
+          <p className="text-white/70 text-sm md:text-base xl:text-lg font-light leading-relaxed max-w-md">
+            We handle everything behind the scenes, so your music performs
+            better, reaches further, and grows faster.
+          </p>
         </div>
 
         {/* Right Column: Premium Illustration */}

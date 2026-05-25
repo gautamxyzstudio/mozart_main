@@ -104,6 +104,11 @@ import ROyalty2 from "./royalty2.webp"
 import ROyalty3 from "./royalty3.webp"
 import ROyalty4 from "./royalty4.webp"
 import ROyalty5 from "./royalty5.webp"
+import GlobalImg1 from "./globalImg1.webp"
+import GlobalImg2 from "./globalImg2.webp"
+import GlobalImg3 from "./globalImg3.webp"
+import GlobalImg4 from "./globalImg4.webp"
+import GlobalImg5 from "./globalImg5.webp"
 
 export const Images = {
   Logo,
@@ -178,7 +183,12 @@ export const Images = {
     ROyalty2,
     ROyalty3,
     ROyalty4,
-    ROyalty5
+    ROyalty5,
+    GlobalImg1,
+    GlobalImg2,
+    GlobalImg3,
+    GlobalImg4,
+    GlobalImg5
 
 };
 

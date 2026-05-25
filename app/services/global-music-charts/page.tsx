@@ -6,7 +6,7 @@ import WhatIsGlobalChart from '@/src/components/pages/global-music-charts/WhatIs
 import GlobalWork from '@/src/components/pages/global-music-charts/GlobalWork';
 import LaunchSongCard from '@/src/components/pages/global-music-charts/LaunchSongCard';
 import Testimonials from '@/src/components/modules/testimonials/Testimonials';
-import Faqs from '@/src/components/modules/faqs/Faqs';
+ import GlobalFaqs from '@/src/components/pages/global-music-charts/GlobalFaqs';
 
 export const metadata = {
   title: "Global Music Charts | AMozart",
@@ -25,7 +25,7 @@ export default function GlobalMusicChartsPage() {
       <GlobalWork />
       <LaunchSongCard />
       <Testimonials />
-      <Faqs />
+      <GlobalFaqs />
     </>
   );
 }

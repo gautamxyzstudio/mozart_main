@@ -375,9 +375,7 @@ const MusicCareer = () => {
             Grow Your Music Career With Real Industry Advantages
           </h2>
           <p className="mt-5 md:mt-7 text-[#9ca3af] text-sm md:text-base xl:text-base max-w-2xl  leading-relaxed font-light">
-            The tools your label provides — transparent data, scheduled
-            releases, support, and opportunities — build the career trust and
-            familiarity your fans and industry insiders expect.
+          Partnering with Amozart Label gives independent artists the tools, support, and opportunities needed to release music confidently and reach a global audience. 
           </p>
         </div>
 

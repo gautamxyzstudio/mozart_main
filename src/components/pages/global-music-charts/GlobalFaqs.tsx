@@ -9,38 +9,38 @@ interface FAQItem {
 
 const faqData: FAQItem[] = [
   {
-    question: "What happens when YouTube Content ID finds a match?",
+    question: "What does a music label do for an artist?",
     answer:
-      "It automatically claims the video and monetizes, tracks, or blocks it based on your settings. ",
+      "A music label helps distribute your songs to global platforms, manage royalties, and support your career growth with tools like those at Amozart.  ",
   },
   {
-    question: "Do I get a copyright strike with a Content ID claim? ",
+    question: " How do I get my music signed by a label? ",
     answer:
-      "No, Content ID claims don’t give copyright strikes or affect channel status. ",
+      "Most labels look for quality music, consistent releases, and audience engagement. At Amozart, strong tracks and a professional profile improve your chances.",
   },
   {
-    question: "Can I use Content ID if my channel isn’t in the YouTube Partner Program?",
+    question: " What are the benefits of signing with an independent label? ",
     answer:
-      "Yes. You don’t need YPP — Content ID works through a rights management partner. ",
+      "Independent labels often offer more creative freedom, close support, and personalized development, which Amozart focuses on for artist success.",
   },
   {
-    question: " Why do some user videos get blocked while others are monetized? ",
+    question: "Can I still retain my rights if I sign with a label?",
     answer:
-      "It depends on the policy you choose: monetize, track, or block. ",
+      "Yes, many independent labels allow you to keep more control over your music rights, and Amozart’s agreements aim for transparency and fairness.  ",
   },
   {
-    question: " Can short clips or YouTube Shorts be claimed?",
+    question: "How long does it take for music to go live after signing? ",
     answer:
-      "Yes, YouTube scans Shorts and applies Content ID claims like normal videos. ",
+      "After submission and approval, tracks typically go live in a few days to weeks, and with Amozart’s tools, the process is streamlined for faster release.  ",
   },
   {
-    question: "What content is not eligible for Content ID claims?",
+    question: "What should I prepare before submitting my music?",
     answer:
-      "Music with unlicensed samples, public-domain content, or non-exclusive rights cannot be claimed. ",
+      "Have fully mixed tracks, high-quality artwork, correct metadata, and a clear artist bio, all of which help Amozart review and release your music smoothly. ",
   },
 ];
 
-const FAQ = () => {
+const GlobalFaqs = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleIndex = (index: number) => {
@@ -109,9 +109,7 @@ const FAQ = () => {
                 >
                   <div
                     className={`px-6 pb-6 md:px-10 md:pb-8 text-sm md:text-base leading-relaxed  pt-4 transition-colors duration-300 ${
-                      isOpen
-                        ? "text-white/85  "
-                        : "text-[#4a4a4a] "
+                      isOpen ? "text-white/85  " : "text-[#4a4a4a] "
                     }`}
                   >
                     {item.answer}
@@ -126,4 +124,4 @@ const FAQ = () => {
   );
 };
 
-export default FAQ;
+export default GlobalFaqs;

@@ -9,38 +9,34 @@ interface FAQItem {
 
 const faqData: FAQItem[] = [
   {
-    question: "What happens when YouTube Content ID finds a match?",
+    question: "How do you manage YouTube music channels?",
     answer:
-      "It automatically claims the video and monetizes, tracks, or blocks it based on your settings. ",
+      "We handle full YouTube music content management including uploads, SEO, thumbnails, and audience growth. ",
   },
   {
-    question: "Do I get a copyright strike with a Content ID claim? ",
+    question: "How can my songs appear in YouTube Music new releases?",
     answer:
-      "No, Content ID claims don’t give copyright strikes or affect channel status. ",
+      "We optimize your uploads with proper metadata, timing, and SEO so your tracks can show in YouTube Music new releases and recommendations. ",
   },
   {
-    question: "Can I use Content ID if my channel isn’t in the YouTube Partner Program?",
+    question:  "Do you help with YouTube SEO for music videos?",
     answer:
-      "Yes. You don’t need YPP — Content ID works through a rights management partner. ",
+      "Yes, we use advanced YouTube SEO strategies like optimized titles, tags, and descriptions to improve rankings and visibility. ",
   },
   {
-    question: " Why do some user videos get blocked while others are monetized? ",
+    question: " Can you manage my song releases on YouTube?",
     answer:
-      "It depends on the policy you choose: monetize, track, or block. ",
+      "Yes, we manage complete music releases including scheduling, optimization, and performance tracking for every upload. ",
   },
   {
-    question: " Can short clips or YouTube Shorts be claimed?",
+    question: "Will my music be available on YouTube Music automatically?",
     answer:
-      "Yes, YouTube scans Shorts and applies Content ID claims like normal videos. ",
+      "Yes, properly uploaded and managed content can appear on YouTube Music, helping fans discover your songs easily. ",
   },
-  {
-    question: "What content is not eligible for Content ID claims?",
-    answer:
-      "Music with unlicensed samples, public-domain content, or non-exclusive rights cannot be claimed. ",
-  },
+ 
 ];
 
-const FAQ = () => {
+const YouTubeFaqs = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleIndex = (index: number) => {
@@ -126,4 +122,4 @@ const FAQ = () => {
   );
 };
 
-export default FAQ;
+export default YouTubeFaqs;

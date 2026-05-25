@@ -9,34 +9,34 @@ interface FAQItem {
 
 const faqData: FAQItem[] = [
   {
-    question: "What does an artist manager do? ",
+    question: "What does an artist manager do?",
     answer:
-      "When a match is found, a Content ID claim is automatically placed on the video. Depending on your preferences, this claim can either monetize the video (running ads and transferring revenue to you), track its viewership statistics, or block it entirely from being viewed. With AMozart, we default to monetization to maximize your music earnings.",
+      "An artist manager helps guide your music career, handles business decisions, and supports growth. Amozart helps make this process smooth.  ",
   },
   {
-    question: "When should an artist hire a manager? ",
+    question: "When should an artist hire a manager?",
     answer:
-      "No. A Content ID claim is completely different from a copyright strike. A Content ID claim is an automated system match that simply allows you to manage or monetize your music in user-uploaded videos without affecting the uploader's channel health. A copyright strike only occurs through a formal, manual DMCA takedown request.",
+      "You should consider a manager when your music has traction, goals, and a plan for growth; Amozart steps in to elevate your career.  ",
   },
   {
-    question: "How much do artist managers charge? ",
+    question: " How much do artist managers charge?",
     answer:
-      "This is determined by the copyright owner's specific settings. While AMozart defaults to monetizing matched videos so you can earn royalties, you can choose to block videos in certain regions or globally. If another co-owner or rights holder of the song requests a block, YouTube will apply the block policy.",
+      "Most artist managers take a standard commission of earnings, and Amozart’s terms are always clear and fair.  ",
   },
   {
-    question: "Can artists manage themselves? ",
+    question: "Can artists manage themselves? ",
     answer:
-      "Yes. YouTube's advanced Content ID algorithm is capable of identifying audio matches as brief as just a few seconds. This ensures that even short clips, loops, and YouTube Shorts featuring your tracks are accurately detected, claimed, and monetized on your behalf.",
+      "Yes, many artists self-manage early on, but Amozart can help you scale faster with expert support and industry guidance.",
   },
   {
-    question: "What’s the difference between a manager and an agent?",
+    question: "What’s the difference between a manager and an agent?",
     answer:
-      "Yes. When you distribute your music with AMozart, we deliver your tracks to all major streaming stores including YouTube Music. This automatically creates official 'Art Tracks' on YouTube. The Content ID system runs separately to detect and monetize user-generated content using your music.",
+      "A manager oversees your overall career; an agent focuses on booking shows. Amozart provides full management strategy.  ",
   },
   {
-    question: "How do I find the right manager for my music? ",
+    question: "How do I find the right manager for my music?",
     answer:
-      "To be eligible for Content ID, you must own 100% of the exclusive rights to the audio. Ineligible content includes: non-exclusive beats or instrumentals (such as leased beats), public domain recordings, royalty-free loops, sound effects, copyright-free background music, and unauthorized remixes, mashups, or compilation albums.",
+      "Start by networking, asking for referrals, and checking experience; artists often choose Amozart for trusted industry expertise. ",
   },
 ];
 
@@ -109,9 +109,7 @@ const ArtistFaq = () => {
                 >
                   <div
                     className={`px-6 pb-6 md:px-10 md:pb-8 text-sm md:text-base leading-relaxed  pt-4 transition-colors duration-300 ${
-                      isOpen
-                        ? "text-white/85  "
-                        : "text-[#4a4a4a] "
+                      isOpen ? "text-white/85  " : "text-[#4a4a4a] "
                     }`}
                   >
                     {item.answer}
