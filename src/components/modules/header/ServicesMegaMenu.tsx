@@ -180,7 +180,7 @@ const platforms = [
     glow: "rgba(225, 48, 108, 0.5)",
     bg: "#E1306C",
     border: "#E1306C",
-  angle: 335,
+    angle: 335,
     svg: (
       <svg viewBox="0 0 24 24" className="w-[55%] h-[55%] fill-white">
         <circle
@@ -657,11 +657,21 @@ const ServicesMegaMenu: React.FC<ServicesMegaMenuProps> = ({ onClose }) => {
             {/* Floating graphic */}
             <div className="absolute right-0 bottom-0 w-56 h-28 flex items-end justify-end p-2 overflow-hidden">
               <div className="w-full h-full relative group-hover:-translate-y-1.25 transition-transform duration-500 ease-out">
+                {/* Money Image */}
                 <Image
                   src={Images.Money}
                   alt="Royalty management"
                   className="w-full h-full object-contain object-bottom"
                 />
+
+                {/* Rotating Disk */}
+                <div className="absolute left-11 bottom-2 w-9 h-9 animate-spin [animation-duration:5s]">
+                  <Image
+                    src={Images.Disk}
+                    alt="Disk"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
               </div>
             </div>
           </Link>
