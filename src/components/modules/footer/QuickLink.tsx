@@ -145,7 +145,7 @@ const QuickLink = () => {
           {item.label === "Services" ? (
             <div className="flex flex-row gap-x-8 md:gap-x-12 xl:gap-x-16 items-start opacity-60">
               <div className="flex flex-col space-y-2.5 items-start">
-                {item.linkList.slice(0, 5).map((subItem, sIdx) => (
+                {item.linkList.slice(0, 4).map((subItem, sIdx) => (
                   <Link
                     key={sIdx}
                     href={subItem.link}
@@ -156,7 +156,7 @@ const QuickLink = () => {
                 ))}
               </div>
               <div className="flex flex-col space-y-2.5 items-start">
-                {item.linkList.slice(5).map((subItem, sIdx) => (
+                {item.linkList.slice(4).map((subItem, sIdx) => (
                   <Link
                     key={sIdx + 5}
                     href={subItem.link}
