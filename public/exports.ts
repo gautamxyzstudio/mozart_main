@@ -109,6 +109,9 @@ import GlobalImg2 from "./globalImg2.webp"
 import GlobalImg3 from "./globalImg3.webp"
 import GlobalImg4 from "./globalImg4.webp"
 import GlobalImg5 from "./globalImg5.webp"
+import Money from "./money.webp"
+import YouTubeNav from "./youTubeNav.webp";
+import Mobile from "./Mobile.webp"
 
 export const Images = {
   Logo,
@@ -188,7 +191,10 @@ export const Images = {
     GlobalImg2,
     GlobalImg3,
     GlobalImg4,
-    GlobalImg5
+    GlobalImg5,
+    Money,
+    YouTubeNav,
+    Mobile
 
 };
 

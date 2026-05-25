@@ -20,13 +20,13 @@ const LaunchSongCard = () => {
           <h2 className="text-white text-[28px] xl:text-[60px]  md:text-[30px] font-bold  xl:leading-18 md:leading-10 mb-6 md:mb-8 xl:mt-26 md:mt-10">
             Launch Your <br className="hidden md:block" /> Song to Global Charts
           </h2>
-
+{/* 
           <p className="text-white/80 text-sm md:text-base font-medium tracking-wide mb-8 md:mb-10">
             For All Music Label Artist For Only{" "}
             <span className="text-white font-bold text-lg md:text-xl ml-1">
               Rs 8999
             </span>
-          </p>
+          </p> */}
 
           <button className="bg-white text-[#6c3cc1] font-bold text-sm md:text-base px-10 md:px-12 py-3.5 rounded-full shadow-md hover:bg-opacity-95 active:scale-95 transition-all duration-200">
             Buy Now
