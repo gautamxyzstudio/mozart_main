@@ -88,7 +88,7 @@ const Header = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
             onClick={() => setIsServicesOpen(false)}
-            className="fixed inset-0 bg-black/10 backdrop-blur-[2px] z-[990] cursor-pointer"
+            className="fixed inset-0 bg-black/10 backdrop-blur-0.1 z-[990] cursor-pointer"
           />
         )}
       </AnimatePresence>
