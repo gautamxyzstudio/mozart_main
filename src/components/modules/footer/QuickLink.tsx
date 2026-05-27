@@ -74,11 +74,11 @@ const QuickLink = () => {
           link: "/help-center",
           icon: undefined,
         },
-        {
-          title: "FAQs",
-          link: "/faqs",
-          icon: undefined,
-        },
+        // {
+        //   title: "FAQs",
+        //   link: "/faqs",
+        //   icon: undefined,
+        // },
         {
           title: "Artist Guide",
           link: "/artist-guide",
