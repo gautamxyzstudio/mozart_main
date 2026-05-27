@@ -117,7 +117,7 @@ const BlogTopSection = ({
                 href={`/blog/${data[2].blogSlug}`}
                 className="relative xl:h-72.25 md:h-60 h-56 w-full rounded-xl lg:rounded-3xl overflow-hidden group"
               >
-                {data[22].smallBanner && (
+                {data[2].smallBanner && (
                   <Image
                     src={data[2].smallBanner}
                     width={800}

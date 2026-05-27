@@ -14,7 +14,7 @@ const MusicLabelHero = () => {
   ];
 
   return (
-    <section className="relative min-h-[90vh] lg:min-h-screen w-full bg-[#06030b] flex flex-col justify-between overflow-hidden text-white font-sans pt-28 md:pt-36 pb-0 z-10">
+    <section className="relative min-h-[90vh] lg:min-h-200 w-full bg-[#06030b] flex flex-col justify-between overflow-hidden text-white font-sans pt-28 md:pt-36 pb-0 z-10">
       {/* 
         Background image layer.
         Displays the user's uploaded image 'artistsection.webp' at 100% opacity 

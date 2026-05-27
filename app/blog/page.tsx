@@ -1,5 +1,5 @@
+ 
 import BlogListVeiw from "@/src/components/pages/blog/BlogListVeiw";
-
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,7 +9,12 @@ export const metadata: Metadata = {
 };
 
 const page = () => {
-  return <BlogListVeiw />;
+  return (
+
+    <BlogListVeiw />
+  )
+  
+  
 };
 
 export default page;
