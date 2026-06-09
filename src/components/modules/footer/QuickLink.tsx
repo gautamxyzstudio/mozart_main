@@ -120,14 +120,19 @@ const QuickLink = () => {
       label: "Address",
       linkList: [
         {
-          title:
-            "Imperial Tower, CP 67, Sector 67, Sahibzada Ajit Singh Nagar, Punjab 160062",
-          link: "https://maps.app.goo.gl/CW8EbVCQmuw8wUB76",
+          title: "515 W Pender St Vancouver, BC V6B 6H5",
+          link: "https://maps.app.goo.gl/nt8qqf2CFPewBCKU8",
           icon: Icons.Location,
         },
         {
-          title: "515 W Pender St Vancouver, BC V6B 6H5",
-          link: "https://maps.app.goo.gl/nt8qqf2CFPewBCKU8",
+          title: "Carrer de Trafalgar, 10, 08010 Barcelona, Spain",
+          link: "https://maps.app.goo.gl/k5P3myLo1BHSYWYk7",
+          icon: Icons.Location,
+        },
+        {
+          title:
+            "Imperial Tower, CP 67, Sector 67, Sahibzada Ajit Singh Nagar, Punjab 160062",
+          link: "https://maps.app.goo.gl/CW8EbVCQmuw8wUB76",
           icon: Icons.Location,
         },
       ],

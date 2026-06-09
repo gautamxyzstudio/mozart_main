@@ -247,7 +247,7 @@ const BlogDetailPage = ({ slug }: { slug: string }) => {
             />
           </div>
 
-          <div className="flex flex-nowrap lg:grid lg:grid-cols-3 overflow-x-auto lg:overflow-x-visible no-scrollbar gap-5 md:gap-7 lg:gap-[30px] h-[360px] md:h-[380px] lg:h-[400px] items-center">
+          <div className="flex flex-nowrap lg:grid lg:grid-cols-3 overflow-x-auto lg:overflow-x-visible no-scrollbar gap-5 md:gap-7 lg:gap-7.5 h-90 md:h-95 lg:h-100 items-center">
             {recentBlogs.slice(0, 3).map((item) => (
               <Link
                 key={item.id}

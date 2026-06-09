@@ -129,7 +129,6 @@ export const getBlogDetailsBySlug = async (
 ): Promise<TransformedBlog> => {
   const response = await axios.get(EndPoint.BLOG_BY_SLUG(slug));
   const blog = response.data.data;
-  console.log(response.data.data);
   return {
     id: blog.id,
     title: blog.attributes.title,

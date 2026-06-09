@@ -40,7 +40,7 @@ const HomeLabelSection = () => {
                         How It Works
                     </h2>
                     <p className="text-white xl:text-base text-sm xl:w-[60%] md:w-[80%]">
-                        Getting your music live worldwide is simple and fast. Follow a few easy steps to upload, distribute, and start earning from your music. w
+                        Getting your music live worldwide is simple and fast. Follow a few easy steps to upload, distribute, and start earning from your music.
                     </p>
                 </div>
 
