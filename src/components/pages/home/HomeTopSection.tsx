@@ -50,7 +50,7 @@ const HomeTopSection = () => {
             <span className="text-2xl font-medium md:text-[48px] md:leading-13.5 xl:text-[64px] xl:leading-17.5">
               Distribute Your Music To
             </span>
-            <span className="text-4xl font-bold md:text-[64px] md:leading-17.5 xl:text-[100px] xl:leading-26.5">
+            <span className="text-4xl font-bold md:text-[64px] md:leading-17.5 xl:text-[100px] xl:leading-26.5 ">
               The World
             </span>
           </div>

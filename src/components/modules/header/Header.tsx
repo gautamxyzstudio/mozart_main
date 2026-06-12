@@ -115,15 +115,14 @@ const Header = () => {
               transition: { duration: 0.3, ease: "easeInOut" },
             },
           }}
-          className={`xl:max-w-screen-2xl mx-auto xl:px-25 md:px-13 px-6 xl:py-4 py-3.5 flex flex-row items-center-safe justify-between fixed top-0 left-0 right-0 z-999 transition-all duration-300 ${
-            isServicesOpen
+          className={`xl:max-w-screen-2xl mx-auto xl:px-25 md:px-13 px-6 xl:py-4 py-3.5 flex flex-row items-center-safe justify-between fixed top-0 left-0 right-0 z-999 transition-all duration-300 ${isServicesOpen
               ? "bg-white"
               : isLaptop
                 ? isScrolled
                   ? "bg-background shadow"
                   : "bg-white"
                 : "bg-background"
-          }`}
+            }`}
         >
           <Link href={"/"}>
             <Image src={Images.Logo} alt="AMozart" className="w-auto h-6" />
@@ -140,11 +139,10 @@ const Header = () => {
                 >
                   <Link
                     href={route.href}
-                    className={`text-base py-3.5 px-9 rounded-full cursor-pointer hover:text-primary transition ease-in-out duration-500 flex items-center gap-1.5 ${
-                      pathName === route.href || (isServices && isServicesOpen)
+                    className={`text-base py-3.5 px-9 rounded-full cursor-pointer   hover:text-primary transition ease-in-out duration-500 flex items-center gap-1.5 relative group ${pathName === route.href || (isServices && isServicesOpen)
                         ? "bg-primary20 text-primary uppercase"
                         : ""
-                    }`}
+                      }`}
                   >
                     {route.label}
                     {isServices && (
@@ -162,6 +160,15 @@ const Header = () => {
                         <polyline points="6 9 12 15 18 9"></polyline>
                       </motion.svg>
                     )}
+                    {/* Equalizer Underline animation from Variation 2 */}
+                    <span
+                      className="eq-underline transition-all duration-300 opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100"
+                    >
+                      <i></i>
+                      <i></i>
+                      <i></i>
+                      <i></i>
+                    </span>
                   </Link>
                 </div>
               );

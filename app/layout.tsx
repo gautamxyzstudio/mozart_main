@@ -63,6 +63,10 @@ export default function RootLayout({
           href="https://fonts.cdnfonts.com/css/hvdtrial-graphit"
           rel="stylesheet"
         />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Martel:wght@400;600;700;800;900&display=swap"
+          rel="stylesheet"
+        />
         <meta
           name="google-site-verification"
           content="m6-TDGzBNK3GBch_S9HUkA96m-znL-s6B5otuhizHVQ"

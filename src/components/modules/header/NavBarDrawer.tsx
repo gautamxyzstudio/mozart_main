@@ -419,17 +419,15 @@ const NavBarDrawer: React.FC<INavBarDrawerProps> = ({
                         onClick={() =>
                           setIsServicesExpanded(!isServicesExpanded)
                         }
-                        className={`rounded-full uppercase text-base w-full py-2.5 flex flex-row items-center justify-between cursor-pointer transition-all duration-300 ${
-                          isServicesExpanded || pathName.startsWith("/services")
+                        className={`rounded-full uppercase text-base w-full py-2.5 flex flex-row items-center justify-between cursor-pointer transition-all duration-300 ${isServicesExpanded || pathName.startsWith("/services")
                             ? " text-primary font-bold"
                             : "text-foreground"
-                        }`}
+                          }`}
                       >
                         <span>{item.label}</span>
                         <svg
-                          className={`w-4 h-4 transition-transform duration-300 ${
-                            isServicesExpanded ? "rotate-180" : ""
-                          }`}
+                          className={`w-4 h-4 transition-transform duration-300 ${isServicesExpanded ? "rotate-180" : ""
+                            }`}
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
@@ -471,11 +469,10 @@ const NavBarDrawer: React.FC<INavBarDrawerProps> = ({
                     <Link
                       href={item.href}
                       onClick={onClose}
-                      className={`rounded-2xl uppercase text-base w-full py-2.5 transition-all duration-300 ${
-                        pathName === item.href
+                      className={`rounded-2xl uppercase text-base w-full py-2.5 transition-all duration-300 ${pathName === item.href
                           ? " text-primary font-bold"
                           : "text-foreground"
-                      }`}
+                        }`}
                     >
                       {item.label}
                     </Link>
