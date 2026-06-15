@@ -487,20 +487,20 @@ const NavBarDrawer: React.FC<INavBarDrawerProps> = ({
           </div>
         </div>
 
-        <div className="flex flex-row bg-secondary p-0.5 rounded-4xl  w-fit mt-8">
+        <div className="flex flex-row items-center gap-x-4 mt-8">
           <Link
             href={`${process.env.NEXT_PUBLIC_ADMIN_BASE_MAIN_URL}/signup`}
             onClick={onClose}
-            className="text-base font-bold text-primary py-3.5 px-8.5"
+            className="text-base font-bold text-primary py-2 px-4 hover:opacity-85 transition-all duration-300"
           >
             Sign Up
           </Link>
           <Link
-            href={`${process.env.NEXT_PUBLIC_ADMIN_BASE_MAIN_URL}/login`}
+            href={`${process.env.NEXT_PUBLIC_ADMIN_BASE_MAIN_URL}`}
             onClick={onClose}
-            className="bg-primary py-3.5 px-10.5 rounded-full text-background text-base font-bold"
+            className="bg-gradient-to-r from-[#9053F6] to-[#6739b7] text-white text-base font-bold py-2.5 px-6 rounded-full shadow-[0_8px_20px_rgba(103,57,183,0.35)] hover:shadow-[0_12px_28px_rgba(103,57,183,0.5)] hover:translate-y-[-1px] transition-all duration-300 text-center"
           >
-            Login
+            Release Now
           </Link>
         </div>
       </nav>

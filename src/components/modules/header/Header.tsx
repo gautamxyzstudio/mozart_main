@@ -51,17 +51,20 @@ const Header = () => {
     setIsServicesOpen(false);
   }, [pathName]);
 
+  const lastScrollYRef = useRef(0);
+
   useEffect(() => {
     if (!isLaptop) {
       setIsVisible(true);
       return;
     }
 
-    setLastScrollY(window.scrollY);
+    lastScrollYRef.current = window.scrollY;
     setIsScrolled(window.scrollY > 80);
 
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
+      const lastScrollY = lastScrollYRef.current;
 
       if (currentScrollY < lastScrollY || currentScrollY < 100) {
         setIsVisible(true);
@@ -69,13 +72,13 @@ const Header = () => {
         setIsVisible(false);
       }
 
-      setLastScrollY(currentScrollY);
+      lastScrollYRef.current = currentScrollY;
       setIsScrolled(currentScrollY > 80);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY, isLaptop]);
+  }, [isLaptop]);
 
   return (
     <React.Fragment>
@@ -93,15 +96,21 @@ const Header = () => {
         )}
       </AnimatePresence>
 
+      {/* BACKGROUND AURA GLOW MATCHING THE MOCKUP */}
+      <div className="fixed top-0 left-0 right-0 h-48 pointer-events-none z-[997] flex justify-center overflow-visible">
+        <div className="w-full max-w-7xl h-full bg-[radial-gradient(100%_100%_at_50%_0%,_rgba(225,205,255,0.55)_0%,_rgba(242,230,255,0.2)_50%,_transparent_100%)] filter blur-[20px]" />
+      </div>
+
       <AnimatePresence>
         <motion.header
-          initial="hidden"
+          initial={false}
           animate={isVisible ? "visible" : "exit"}
           variants={{
-            hidden: { opacity: 0, y: -100 },
+            hidden: { opacity: 0, y: -100, x: "-50%" },
             visible: {
               opacity: 1,
               y: 0,
+              x: "-50%",
               transition: {
                 type: "spring",
                 stiffness: 100,
@@ -112,37 +121,40 @@ const Header = () => {
             exit: {
               y: -100,
               opacity: 0,
+              x: "-50%",
               transition: { duration: 0.3, ease: "easeInOut" },
             },
           }}
-          className={`xl:max-w-screen-2xl mx-auto xl:px-25 md:px-13 px-6 xl:py-4 py-3.5 flex flex-row items-center-safe justify-between fixed top-0 left-0 right-0 z-999 transition-all duration-300 ${isServicesOpen
-              ? "bg-white"
+          className={`fixed top-5 left-1/2 w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] xl:max-w-7xl z-999 transition-all duration-300 flex flex-row items-center justify-between rounded-full py-2.5 px-6 md:px-8 border ${
+            isServicesOpen
+              ? "bg-[#FCFAFF] border-[#EBE4F9] shadow-[10_15px_35px_rgba(103,57,183,0.18)]"
               : isLaptop
                 ? isScrolled
-                  ? "bg-background shadow"
-                  : "bg-white"
-                : "bg-background"
-            }`}
+                  ? "bg-[#FCFAFF]/95 backdrop-blur-md border-[#EBE4F9]/100 shadow-[0_15px_35px_-5px_rgba(103,57,183,0.15),_0_8px_20px_-6px_rgba(103,57,183,0.08)]"
+                  : "bg-[#FCFAFF]/85 backdrop-blur-md border-[#EBE4F9]/100 shadow-[0_10px_30px_-8px_rgba(103,57,183,0.08)]"
+                : "bg-[#FCFAFF]/95 backdrop-blur-md border-[#EBE4F9]/100 shadow-[0_15px_35px_-5px_rgba(103,57,183,0.15),_0_8px_20px_-6px_rgba(103,57,183,0.08)]"
+          }`}
         >
-          <Link href={"/"}>
-            <Image src={Images.Logo} alt="AMozart" className="w-auto h-6" />
+          <Link href={"/"} className="flex items-center">
+            <Image src={Images.Logo} alt="AMozart" className="w-full h-2 md:h-5 xl:h-6 2xl:h-7" />
           </Link>
-          <nav className="xl:flex flex-row items-center hidden">
+          <nav className="xl:flex flex-row items-center gap-x-1 hidden">
             {routes.map((route, idx) => {
               const isServices = route.label === "Services";
               return (
                 <div
                   key={idx + 1}
-                  className="relative py-2"
+                  className="relative py-1"
                   onMouseEnter={isServices ? handleMouseEnter : undefined}
                   onMouseLeave={isServices ? handleMouseLeave : undefined}
                 >
                   <Link
                     href={route.href}
-                    className={`text-base py-3.5 px-9 rounded-full cursor-pointer   hover:text-primary transition ease-in-out duration-500 flex items-center gap-1.5 relative group ${pathName === route.href || (isServices && isServicesOpen)
-                        ? "bg-primary20 text-primary uppercase"
-                        : ""
-                      }`}
+                    className={`text-base py-2.5 px-6 rounded-full cursor-pointer hover:text-primary transition ease-in-out duration-500 flex items-center gap-1.5 relative group ${
+                      pathName === route.href || (isServices && isServicesOpen)
+                        ? "bg-white shadow-[0_4px_14px_rgba(103,57,183,0.1)] text-primary font-medium"
+                        : "text-[#4B4B4F]"
+                    }`}
                   >
                     {route.label}
                     {isServices && (
@@ -174,7 +186,7 @@ const Header = () => {
               );
             })}
           </nav>
-          <div className="flex flex-row items-center-safe gap-x-1.5">
+          <div className="flex flex-row items-center-safe gap-x-4">
             <button
               onClick={onPressMenuButton}
               className="xl:hidden flex items-center md:p-3.5 p-1.5 rounded-full bg-secondary"
@@ -186,18 +198,18 @@ const Header = () => {
                 alt="humbugger"
               />
             </button>
-            <div className="md:flex flex-row bg-secondary p-0.5 rounded-4xl items-center hidden">
+            <div className="md:flex flex-row items-center gap-x-4 hidden">
               <Link
                 href={`${process.env.NEXT_PUBLIC_ADMIN_BASE_MAIN_URL}/signup`}
-                className="text-base font-bold text-primary py-3.5 px-8.5"
+                className="text-base font-bold text-primary py-2 px-4 hover:opacity-85 transition-all duration-300"
               >
                 Sign Up
               </Link>
               <Link
-                href={`${process.env.NEXT_PUBLIC_ADMIN_BASE_MAIN_URL}/login`}
-                className="bg-primary py-3.5 px-10.5 rounded-full text-background text-base font-bold"
+                href={`${process.env.NEXT_PUBLIC_ADMIN_BASE_MAIN_URL}`}
+                className="bg-gradient-to-r from-[#9053F6] to-[#6739b7] text-white text-base font-bold py-2.5 px-6 rounded-full shadow-[0_8px_20px_rgba(103,57,183,0.35)] hover:shadow-[0_12px_28px_rgba(103,57,183,0.5)] hover:translate-y-[-1px] transition-all duration-300"
               >
-                Login
+                Release Now
               </Link>
             </div>
           </div>
@@ -212,7 +224,7 @@ const Header = () => {
                 transition={{ duration: 0.25, ease: "easeOut" }}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
-                className="absolute top-full left-6 right-6 xl:left-25 xl:right-25 mt-2 bg-white rounded-2xl shadow-[0_20px_50px_rgba(103,57,183,0.15)] border border-[#e1d7f1]/30 overflow-hidden z-[1000]"
+                className="absolute top-full left-0 right-0 mt-3 bg-white rounded-2xl shadow-[0_20px_50px_rgba(103,57,183,0.15)] border border-[#e1d7f1]/30 overflow-hidden z-[1000] w-full"
               >
                 <ServicesMegaMenu onClose={() => setIsServicesOpen(false)} />
               </motion.div>

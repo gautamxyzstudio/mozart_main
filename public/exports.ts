@@ -112,6 +112,7 @@ import GlobalImg5 from "./globalImg5.webp"
 import Money from "./money.webp"
 import YouTubeNav from "./youTubeNav.webp";
 import Mobile from "./Mobile.webp"
+import ComingSoon from "./comingsoon.png"
 
 export const Images = {
   Logo,
@@ -194,7 +195,8 @@ export const Images = {
     GlobalImg5,
     Money,
     YouTubeNav,
-    Mobile
+    Mobile,
+    ComingSoon
 
 };
 
