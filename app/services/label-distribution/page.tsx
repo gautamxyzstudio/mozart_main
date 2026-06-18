@@ -8,7 +8,7 @@ import MusicBanner from "@/src/components/pages/music-label/MusicBanner";
 import MusicFaqs from "@/src/components/pages/music-label/MusicFaqs";
 
 export const metadata: Metadata = {
-  title: "Professional Music Label Services | AMozart",
+  title: "Professional Music Label Services | Amozart",
   description:
     "Empowering independent artists to become global recording stars. Get expert distribution, planning, marketing, and global reach for your music label.",
 };

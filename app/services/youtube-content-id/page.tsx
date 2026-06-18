@@ -10,7 +10,7 @@ import FAQ from "@/src/components/pages/youtube-content-id/FAQ";
 export const metadata: Metadata = {
   title: "YouTube Content ID Protection & Monetization | AMozart",
   description:
-    "Manage, protect, and monetize your music. Use AMozart Content ID to register your songs and capture all YouTube royalties.",
+    "Manage, protect, and monetize your music. Use Amozart Content ID to register your songs and capture all YouTube royalties.",
 };
 
 const page = () => {

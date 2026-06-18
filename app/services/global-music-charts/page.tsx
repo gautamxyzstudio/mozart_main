@@ -9,7 +9,7 @@ import Testimonials from '@/src/components/modules/testimonials/Testimonials';
  import GlobalFaqs from '@/src/components/pages/global-music-charts/GlobalFaqs';
 
 export const metadata = {
-  title: "Global Music Charts | AMozart",
+  title: "Global Music Charts | Amozart",
   description: "Submit your music to global charts and track your performance worldwide with powerful chart insights",
 };
 

@@ -7,7 +7,7 @@ import Testimonials from "@/src/components/modules/testimonials/Testimonials";
 import Faqs from "@/src/components/modules/faqs/Faqs";
 
 export const metadata: Metadata = {
-  title: "YouTube Channel Management for Musicians | AMozart",
+  title: "YouTube Channel Management for Musicians | Amozart",
   description:
     "Scale your artist channel on YouTube. From copyright whitelisting via Content ID, video SEO, channel layout designs to custom monetization setup with AMozart.",
 };

@@ -65,7 +65,7 @@ const Footer = () => {
 
         <div className="w-full border-t border-primary20 xl:py-6 py-4 flex md:flex-row flex-col gap-y-3 justify-between md:items-center xl:mt-0 md:mt-2">
           <span className="text-background xl:text-base md:text-xs text-[10px] leading-3.5">
-            &copy; {new Date().getFullYear()} AMozart. All Rights
+            &copy; {new Date().getFullYear()} Amozart. All Rights
             Reserved
           </span>
           {/* <span className="text-background xl:text-base md:text-xs text-[10px] leading-3.5">

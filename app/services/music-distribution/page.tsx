@@ -9,9 +9,9 @@ import KeyFeatures from "@/src/components/pages/music-distribution/KeyFeatures";
 import WorksSection from "@/src/components/pages/music-distribution/WorksSection";
 
 export const metadata: Metadata = {
-  title: "Global Music Distribution Platform | AMozart",
+  title: "Global Music Distribution Platform | Amozart",
   description:
-    "Deliver your songs to Spotify, Apple Music, TikTok, JioSaavn, Wynk, and 150+ other digital stores. Keep 100% of your royalties and rights with AMozart.",
+    "Deliver your songs to Spotify, Apple Music, TikTok, JioSaavn, Wynk, and 150+ other digital stores. Keep 100% of your royalties and rights with Amozart.",
 };
 
 const page = () => {

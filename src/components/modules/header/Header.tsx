@@ -187,6 +187,18 @@ const Header = () => {
             })}
           </nav>
           <div className="flex flex-row items-center-safe gap-x-4">
+            <Link
+              href={`${process.env.NEXT_PUBLIC_ADMIN_BASE_MAIN_URL}/signup`}
+              className="xl:block hidden text-base font-bold text-primary py-2 px-4 hover:opacity-85 transition-all duration-300"
+            >
+              Sign Up
+            </Link>
+            <Link
+              href={`${process.env.NEXT_PUBLIC_ADMIN_BASE_MAIN_URL}`}
+              className="md:block hidden bg-gradient-to-r from-[#9053F6] to-[#6739b7] text-white text-base font-bold py-2.5 px-6 rounded-full shadow-[0_8px_20px_rgba(103,57,183,0.35)] hover:shadow-[0_12px_28px_rgba(103,57,183,0.5)] hover:translate-y-[-1px] transition-all duration-300"
+            >
+              Release Now
+            </Link>
             <button
               onClick={onPressMenuButton}
               className="xl:hidden flex items-center md:p-3.5 p-1.5 rounded-full bg-secondary"
@@ -198,20 +210,6 @@ const Header = () => {
                 alt="humbugger"
               />
             </button>
-            <div className="md:flex flex-row items-center gap-x-4 hidden">
-              <Link
-                href={`${process.env.NEXT_PUBLIC_ADMIN_BASE_MAIN_URL}/signup`}
-                className="text-base font-bold text-primary py-2 px-4 hover:opacity-85 transition-all duration-300"
-              >
-                Sign Up
-              </Link>
-              <Link
-                href={`${process.env.NEXT_PUBLIC_ADMIN_BASE_MAIN_URL}`}
-                className="bg-gradient-to-r from-[#9053F6] to-[#6739b7] text-white text-base font-bold py-2.5 px-6 rounded-full shadow-[0_8px_20px_rgba(103,57,183,0.35)] hover:shadow-[0_12px_28px_rgba(103,57,183,0.5)] hover:translate-y-[-1px] transition-all duration-300"
-              >
-                Release Now
-              </Link>
-            </div>
           </div>
 
           {/* MEGA MENU CONTAINER */}

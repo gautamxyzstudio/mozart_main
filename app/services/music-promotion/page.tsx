@@ -10,9 +10,9 @@ import MusicPromotionWork from "@/src/components/pages/promotion/MusicPromotionW
 import MusicsPromotion from "@/src/components/pages/promotion/MusicsPromotionChoose";
 
 export const metadata: Metadata = {
-  title: "Music Promotion Services | AMozart",
+  title: "Music Promotion Services | Amozart",
   description:
-    "Promote your music worldwide on Spotify, YouTube, TikTok, Instagram, and major streaming platforms. Reach new listeners and grow your organic fanbase with AMozart.",
+    "Promote your music worldwide on Spotify, YouTube, TikTok, Instagram, and major streaming platforms. Reach new listeners and grow your organic fanbase with Amozart.",
 };
 
 const page = () => {

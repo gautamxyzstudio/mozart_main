@@ -8,9 +8,9 @@ import Faqs from "@/src/components/modules/faqs/Faqs";
 import YouTubeWorkSection from "@/src/components/pages/youtube-channel-management/YouTubeWorkSection";
 
 export const metadata: Metadata = {
-  title: "YouTube Channel Management for Musicians | AMozart",
+  title: "YouTube Channel Management for Musicians | Amozart",
   description:
-    "Scale your artist channel on YouTube. From copyright whitelisting via Content ID, video SEO, channel layout designs to custom monetization setup with AMozart.",
+    "Scale your artist channel on YouTube. From copyright whitelisting via Content ID, video SEO, channel layout designs to custom monetization setup with Amozart.",
 };
 
 const page = () => {
