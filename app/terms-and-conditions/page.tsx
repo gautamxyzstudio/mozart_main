@@ -1,101 +1,141 @@
 import React from "react";
-
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions | Amozart",
+  title: "Terms of Service | AMozart",
   description:
-    "Terms & Conditions | Amozart",
+    "Terms of Service for AMozart - global music distribution and rights management platform. Understand your rights, royalties, and content distribution details.",
 };
 
 const Page = () => {
   return (
-    <section className="w-full h-full relative flex flex-row justify-between items-start overflow-clip">
-      <div className="absolute md:w-37 md:h-188.75 w-17.5 h-87.5 bg-[linear-gradient(180deg,rgba(103,57,183,0)_0%,rgba(103,57,183,0.45)_33.78%,rgba(103,57,183,0)_66.97%)] opacity-20 rotate-24 xl:mt-15.25 xl:ml-0 md:-mt-3 md:-ml-9 mt-11.25 left-0" />
-      <div className="absolute md:w-37 md:h-188.75 w-17.5 h-87.5 bg-[linear-gradient(180deg,rgba(103,57,183,0)_0%,rgba(103,57,183,0.45)_33.78%,rgba(103,57,183,0)_66.97%)] opacity-20 xl:rotate-204 rotate-24 xl:-mt-44.5 xl:mr-10 md:-mt-3 md:mr-3.5 mt-12.5 mr-17 right-0" />
-      {/* Content */}
-      <div className="relative z-10 max-w-257.25  md:mt-30.5 mt-20 xl:mb-30 md:mb-20 mb-10 xl:px-26 md:px-12 px-6">
-        {/* Heading */}
-        <h1 className="text-4xl md:text-[80px] font-bold text-black mb-10">
-          Terms & Conditions
-        </h1>
+    <section className="w-full relative min-h-screen bg-white text-foreground overflow-clip">
+      {/* Background slanted purple gradient shape on top-right */}
+      <div className="absolute md:w-30 md:h-188.75 w-17.5 h-87.5 bg-[linear-gradient(180deg,rgba(103,57,183,0)_0%,rgba(103,57,183,0.45)_33.78%,rgba(103,57,183,0)_66.97%)] opacity-20 xl:rotate-204 rotate-24 xl:-mt-70.5 xl:mr-10 md:-mt-3 md:mr-9 mt-12.5 mr-6 right-6" />
 
-        {/* Terms text */}
-        <div className="text-black font-medium text-base leading-7 space-y-6">
-          <ol className="list-decimal pl-5 space-y-6">
-            <li>
-              This Agreement governs the relationship between Ditto Ltd, trading
-              as Ditto Music of 29-31 Parliament Street, Liverpool, L8 5RN,
-              Company No. 03976764 (‘us/we/our’) and __________________
-              (‘you/your/the Artist’) in respect of any musical works or sound
-              recordings (‘Works’) that you submit to us for inclusion in any of
-              the services (‘Service’).
-            </li>
+      {/* Content Container */}
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-13 xl:px-28 pt-28 pb-16 md:pt-36 md:pb-24 lg:pt-44 lg:pb-32">
+        {/* Header Section */}
+        <div className="flex flex-col items-start w-full">
+          <h1 className="text-[52px] md:text-6xl lg:text-[80px] font-bold tracking-tight text-foreground font-sans leading-none">
+            Terms & <span className="text-primary">Conditions</span>
+          </h1>
+          <div className="w-[75%] h-[1.5px] bg-gradient-to-r from-[#6739b7] to-transparent mt-8 mb-16" />
+        </div>
 
-            <li>
-              <p className=" font-semibold">Grant of Rights.</p>
+        {/* Content Body */}
+        <div className="max-w-[1000px] text-black80 font-medium text-base md:text-lg leading-7 md:leading-8 space-y-12">
+          {/* Introduction */}
+          <div className="space-y-4">
+            <h2 className="text-xl md:text-2xl font-bold text-foreground">Introduction</h2>
+            <p className="text-base text-[#414141] font-normal">
+              Welcome to Amozart. By accessing or using our music distribution platform, website, applications, and related services (collectively, the &quot;Services&quot;), you agree to be bound by these Terms of Service (&quot;Terms&quot;). If you do not agree, please do not use our Services.
+               These Terms are commonly used by digital music distribution platforms and are designed to define user rights, content ownership, distribution permissions, royalties, and platform responsibilities.
+            </p>
+            
+          </div>
 
-              <p className="mb-3">
-                In consideration of the fees payable by us and the services
-                provided by us pursuant to this Agreement, you grant to us and
-                our licensees for the term of this Agreement:
-              </p>
+          {/* 1. Eligibility */}
+          <div className="space-y-1">
+            <h2 className="text-xl md:text-2xl font-bold text-foreground">1. Eligibility</h2>
+            <p className="text-sm text-[#414141] font-normal">
+              You must be at least 18 years old or have legal parental/guardian consent to use Amozart.
+            </p>
+            <p className="text-sm text-[#414141] font-normal">By creating an account, you represent that:</p>
+            <ul className="list-disc pl-6 space-y-1">
+              <li className="text-base text-[#414141] font-normal">The information you provide is accurate and current.</li>
+              <li className="text-base text-[#414141] font-normal">You have the authority to enter into this agreement.</li>
+              <li className="text-base text-[#414141] font-normal">You will comply with all applicable laws and regulations.</li>
+            </ul>
+          </div>
 
-              <ol className="list-[upper-alpha] pl-6 space-y-3">
-                <li>
-                  a non-exclusive worldwide licence to use, reproduce,
-                  distribute, display, publicly perform, exhibit, broadcast and
-                  transmit and make available to all persons and media whether
-                  now known or existing in the future the Works for distribution
-                  in the Service.
-                </li>
+          {/* 2. Account Registration */}
+          <div className="space-y-1">
+            <h2 className="text-xl md:text-2xl font-bold text-foreground">2. Account Registration</h2>
+            <p className="text-sm text-[#414141] font-normal">You are responsible for:</p>
+            <ul className="list-disc pl-6 space-y-1">
+              <li className="text-base text-[#414141] font-normal">Maintaining the confidentiality of your account credentials.</li>
+              <li className="text-base text-[#414141] font-normal">All activities occurring under your account.</li>
+              <li className="text-base text-[#414141] font-normal">Keeping your contact and payment information updated.</li>
+            </ul>
+            <p className="text-sm text-[#414141] font-normal pt-2">
+              Amozart reserves the right to suspend or terminate accounts that violate these Terms.
+            </p>
+          </div>
 
-                <li>
-                  a non-exclusive licence of the following rights as defined in
-                  the Copyright, Designs and Patents Act:
-                  <ul className="list-disc pl-6 mt-3 space-y-2">
-                    <li>The Performing Right</li>
-                    <li>The Dubbing Right</li>
-                    <li>The New Media Communication Right</li>
-                    <li>The New Media Dubbing Right</li>
-                    <li>The Foreign Rights Management Right</li>
-                    <li>The International New Media Communication Right</li>
-                    <li>The International New Media Dubbing Right</li>
-                  </ul>
-                </li>
+          {/* 3. Ownership of Content */}
+          <div className="space-y-1">
+            <h2 className="text-xl md:text-2xl font-bold text-foreground">3. Ownership of Content</h2>
+            <p className="text-sm text-[#414141] font-normal">
+              You retain full ownership of your music, recordings, artwork, metadata, videos, and related intellectual property (&quot;Content&quot;).
+            </p>
+            <p className="text-sm text-[#414141] font-normal">Amozart does not claim ownership of your Content.</p>
+            <p className="text-sm text-[#414141] font-normal">You represent and warrant that:</p>
+            <ul className="list-disc pl-6 space-y-1">
+              <li className="text-base text-[#414141] font-normal">You own or control all necessary rights.</li>
+              <li className="text-base text-[#414141] font-normal">Your Content does not infringe third-party rights.</li>
+              <li className="text-base text-[#414141] font-normal">You have obtained all required licenses, permissions, and clearances.</li>
+            </ul>
+            <p className="text-sm text-[#414141]/60 font-normal pt-2">
+              Artists generally retain ownership while granting distributors limited rights necessary for distribution and monetization.
+            </p>
+          </div>
 
-                <li>
-                  Synchronise the Works in moving images (for example
-                  incorporating the Work into the soundtrack of a video game,
-                  advert, film or television show).
-                </li>
-              </ol>
-            </li>
+          {/* 4. Distribution License */}
+          <div className="space-y-1">
+            <h2 className="text-xl md:text-2xl font-bold text-foreground">4. Distribution License</h2>
+            <p className="text-sm text-[#414141] font-normal">
+              By uploading Content, you grant Amozart a worldwide, non-exclusive, royalty-bearing license to:
+            </p>
+            <ul className="list-disc pl-6 space-y-1">
+              <li className="text-base text-[#414141] font-normal">Distribute your Content to digital service providers (DSPs).</li>
+              <li className="text-base text-[#414141] font-normal">Deliver Content to streaming and download platforms.</li>
+              <li className="text-base text-[#414141] font-normal">Use artwork, metadata, artist names, and promotional materials.</li>
+              <li className="text-base text-[#414141] font-normal">Create preview clips and promotional snippets.</li>
+              <li className="text-base text-[#414141] font-normal">Process, encode, and format Content for distribution purposes.</li>
+            </ul>
+            <p className="text-sm text-[#414141] font-normal pt-2">
+              This license remains active until you request takedown or terminate distribution.
+            </p>
+            <p className="text-sm text-[#414141]/60 font-normal">
+              Music distributors typically require a distribution license to deliver content and associated metadata to DSPs.
+            </p>
+          </div>
 
-            <li>
-              You grant to us (on behalf of yourself) all necessary consents
-              under the Copyright, Designs and Patents Act 1988 (‘Act’) and any
-              modifications or re-enactment thereof to enable us to make the
-              fullest possible use of the Works.
-            </li>
+          {/* 5. Distribution Services */}
+          <div className="space-y-1">
+            <h2 className="text-xl md:text-2xl font-bold text-foreground">5. Distribution Services</h2>
+            <p className="text-sm text-[#414141] font-normal">Amozart may distribute Content to:</p>
+            <ul className="list-disc pl-6 space-y-1">
+              <li className="text-base text-[#414141] font-normal">Spotify</li>
+              <li className="text-base text-[#414141] font-normal">Apple Music</li>
+              <li className="text-base text-[#414141] font-normal">YouTube Music</li>
+              <li className="text-base text-[#414141] font-normal">Amazon Music</li>
+              <li className="text-base text-[#414141] font-normal">TikTok</li>
+              <li className="text-base text-[#414141] font-normal">Instagram</li>
+              <li className="text-base text-[#414141] font-normal">Deezer</li>
+              <li className="text-base text-[#414141] font-normal">Tidal</li>
+            </ul>
+            <p className="text-sm text-[#414141] font-normal pt-2">Other current or future digital platforms.</p>
+            <p className="text-sm text-[#414141]/60 font-normal">
+              Distribution availability may vary by territory, platform, and content eligibility.
+            </p>
+          </div>
 
-            <li>
-              Standard Service prices shall be listed at www.dittomusic.com.
-              Services carried out shall be as listed on www.dittomusic.com at
-              time of purchase.
-            </li>
-
-            <li>
-              Payment shall only be made to you if accumulated outstanding
-              earnings exceed $25GBP.
-            </li>
-
-            <li>
-              You warrant, agree and undertake both on behalf of yourself that
-              the Works are original to you and have not been copied from any
-              third party.
-            </li>
-          </ol>
+          {/* 6. Royalties and Payments */}
+          <div className="space-y-1">
+            <h2 className="text-xl md:text-2xl font-bold text-foreground">6. Royalties and Payments</h2>
+            <p className="text-sm text-[#414141] font-normal">Subject to applicable fees:</p>
+            <ul className="list-disc pl-6 space-y-1">
+              <li className="text-base text-[#414141] font-normal">You will receive royalties earned from distributed Content.</li>
+              <li className="text-base text-[#414141] font-normal">Royalties are paid after Amozart receives funds from DSPs.</li>
+              <li className="text-base text-[#414141] font-normal">Payment schedules may vary depending on DSP reporting.</li>
+              <li className="text-base text-[#414141] font-normal">Minimum payout thresholds may apply.</li>
+            </ul>
+            <p className="text-sm text-[#414141] font-normal pt-2">
+              Amozart is not responsible for delays caused by DSPs, payment processors, or banking institutions.
+            </p>
+          </div>
         </div>
       </div>
     </section>

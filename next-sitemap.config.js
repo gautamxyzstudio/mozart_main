@@ -24,6 +24,11 @@ module.exports = {
       '/our-vision': { priority: 0.7, changefreq: 'monthly' },
       '/contact': { priority: 0.7, changefreq: 'monthly' },
       '/terms-and-conditions': { priority: 0.7, changefreq: 'monthly' },
+      '/privacy-policy': { priority: 0.7, changefreq: 'monthly' },
+      '/copyright-policy': { priority: 0.7, changefreq: 'monthly' },
+      '/cookie-policy': { priority: 0.7, changefreq: 'monthly' },
+      '/help-center': { priority: 0.7, changefreq: 'monthly' },
+      '/artist-guide': { priority: 0.7, changefreq: 'monthly' },
     };
 
     const custom = customPages[path] || {};

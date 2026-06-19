@@ -186,7 +186,7 @@ const Header = () => {
               );
             })}
           </nav>
-          <div className="flex flex-row items-center-safe gap-x-4">
+          <div className="flex flex-row items-center-safe  gap-x-4">
             <Link
               href={`${process.env.NEXT_PUBLIC_ADMIN_BASE_MAIN_URL}/signup`}
               className="xl:block hidden text-base font-bold text-primary py-2 px-4 hover:opacity-85 transition-all duration-300"

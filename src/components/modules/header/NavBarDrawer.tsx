@@ -395,7 +395,7 @@ const NavBarDrawer: React.FC<INavBarDrawerProps> = ({
     >
       <nav className="w-full h-full flex flex-col justify-between px-8 pb-8 bg-background overflow-scroll backdrop-blur-lg no-scrollbar">
         <div className="flex flex-col space-y-8">
-          <div className="flex flex-row  justify-between w-full py-3.5">
+          <div className="flex flex-row items-center justify-between w-full py-3.5">
             <Link href={"/"} onClick={onClose}>
               <Image src={Images.Logo} alt="AMozart" className="w-auto h-6" />
             </Link>
@@ -487,7 +487,7 @@ const NavBarDrawer: React.FC<INavBarDrawerProps> = ({
           </div>
         </div>
 
-        <div className="flex flex-row items-center gap-x-4 mt-8">
+        <div className="flex flex-row items-center justify-center gap-x-4 w-full mt-8">
           <Link
             href={`${process.env.NEXT_PUBLIC_ADMIN_BASE_MAIN_URL}/signup`}
             onClick={onClose}

@@ -96,7 +96,7 @@ const QuickLink = () => {
       linkList: [
         {
           title: "Terms & Conditions",
-          link: "/termsandconditions",
+          link: "/terms-and-conditions",
           icon: undefined,
         },
         {

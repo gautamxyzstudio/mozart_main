@@ -5,7 +5,6 @@ import { Autoplay } from "swiper/modules";
 
 // Swiper styles
 import "swiper/css";
-import Image from "next/image";
 
 // const testimonialPairs = [
 //   {
@@ -92,7 +91,7 @@ const testimonialPairs = [
 
       role: "Artist",
 
-      text: "they made my song reach every platforms I never imagined. Super easy and fast service!",
+      text: "They made my song reach every platforms I never imagined. Super easy and fast service!",
 
     },
 
@@ -231,18 +230,18 @@ interface Testimonial {
   text: string;
 }
 
+const getInitials = (name: string) => {
+  const parts = name.trim().split(" ");
+  if (parts.length === 1) return parts[0].charAt(0).toUpperCase();
+  return (parts[0].charAt(0) + parts[parts.length - 1].charAt(0)).toUpperCase();
+};
+
 const loopTestimonials = [...testimonialPairs, ...testimonialPairs];
 const TestimonialCard = ({ item }: { item: Testimonial }) => (
   <div className="bg-[#F8F8F8] p-6 rounded-2xl w-full mb-6 last:mb-0  transition-all duration-300 ">
     <div className="flex items-center gap-3 mb-4">
-      <div className="relative w-11 h-11 rounded-full overflow-hidden bg-gray-200 shrink-0">
-        <Image
-          src={`https://i.pravatar.cc/150?u=${item.id}`}
-          alt={item.name}
-          width={100}
-          height={100}
-          className="object-cover w-full h-full"
-        />
+      <div className="w-11 h-11 rounded-full flex items-center justify-center bg-gradient-to-br from-[#9053F6] to-[#512DA8] text-white font-bold text-sm shrink-0 select-none">
+        {getInitials(item.name)}
       </div>
       <div className="text-left">
         <h4 className="font-bold text-gray-900 text-[15px] leading-tight">

@@ -425,7 +425,7 @@ const MusicDistribution = () => {
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[350px] h-[350px] md:w-[700px] md:h-[700px] bg-primary/25 rounded-full blur-[120px] pointer-events-none z-0" />
 
       {/* Typography Section */}
-      <div className="w-full flex flex-col items-center text-center px-6 relative z-10">
+      <div className="w-full flex flex-col items-center text-center px-6 relative z-10 pt-5">
         <span className="text-white/80 font-medium text-[20px] md:text-2xl xl:text-3xl mb-1 md:mb-2 tracking-wide font-sans">
           Your Music
         </span>
