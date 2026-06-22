@@ -97,7 +97,7 @@ const Header = () => {
       </AnimatePresence>
 
       {/* BACKGROUND AURA GLOW MATCHING THE MOCKUP */}
-      <div className="fixed top-0 left-0 right-0 h-48 pointer-events-none z-[997] flex justify-center overflow-visible">
+      <div className={`fixed top-0 left-0 right-0 h-48 pointer-events-none z-[997] flex justify-center overflow-visible transition-opacity duration-300 ${isVisible ? "opacity-100" : "opacity-0"}`}>
         <div className="w-full max-w-7xl h-full bg-[radial-gradient(100%_100%_at_50%_0%,_rgba(225,205,255,0.55)_0%,_rgba(242,230,255,0.2)_50%,_transparent_100%)] filter blur-[20px]" />
       </div>
 
@@ -125,15 +125,14 @@ const Header = () => {
               transition: { duration: 0.3, ease: "easeInOut" },
             },
           }}
-          className={`fixed top-5 left-1/2 w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] xl:max-w-7xl z-999 transition-all duration-300 flex flex-row items-center justify-between rounded-full py-2.5 px-6 md:px-8 border ${
-            isServicesOpen
+          className={`fixed top-5 left-1/2 w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] xl:max-w-7xl z-999 transition-all duration-300 flex flex-row items-center justify-between rounded-full py-2.5 px-6 md:px-8 border ${isServicesOpen
               ? "bg-[#FCFAFF] border-[#EBE4F9] shadow-[10_15px_35px_rgba(103,57,183,0.18)]"
               : isLaptop
                 ? isScrolled
                   ? "bg-[#FCFAFF]/95 backdrop-blur-md border-[#EBE4F9]/100 shadow-[0_15px_35px_-5px_rgba(103,57,183,0.15),_0_8px_20px_-6px_rgba(103,57,183,0.08)]"
                   : "bg-[#FCFAFF]/85 backdrop-blur-md border-[#EBE4F9]/100 shadow-[0_10px_30px_-8px_rgba(103,57,183,0.08)]"
                 : "bg-[#FCFAFF]/95 backdrop-blur-md border-[#EBE4F9]/100 shadow-[0_15px_35px_-5px_rgba(103,57,183,0.15),_0_8px_20px_-6px_rgba(103,57,183,0.08)]"
-          }`}
+            }`}
         >
           <Link href={"/"} className="flex items-center">
             <Image src={Images.Logo} alt="AMozart" className="lg:w-[250px] md:w-[200px] w-[180px] h-auto" />
@@ -150,11 +149,10 @@ const Header = () => {
                 >
                   <Link
                     href={route.href}
-                    className={`text-base py-2.5 px-6 rounded-full cursor-pointer hover:text-primary transition ease-in-out duration-500 flex items-center gap-1.5 relative group ${
-                      pathName === route.href || (isServices && isServicesOpen)
+                    className={`text-base py-2.5 px-6 rounded-full cursor-pointer hover:text-primary transition ease-in-out duration-500 flex items-center gap-1.5 relative group ${pathName === route.href || (isServices && isServicesOpen)
                         ? "bg-white shadow-[0_4px_14px_rgba(103,57,183,0.1)] text-primary font-medium"
                         : "text-[#4B4B4F]"
-                    }`}
+                      }`}
                   >
                     {route.label}
                     {isServices && (

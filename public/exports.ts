@@ -113,6 +113,7 @@ import Money from "./money.webp"
 import YouTubeNav from "./youTubeNav.webp";
 import Mobile from "./Mobile.webp"
 import ComingSoon from "./comingsoon.png"
+import Four from "./fore.webp"
 
 export const Images = {
   Logo,
@@ -196,7 +197,8 @@ export const Images = {
     Money,
     YouTubeNav,
     Mobile,
-    ComingSoon
+    ComingSoon,
+    Four
 
 };
 

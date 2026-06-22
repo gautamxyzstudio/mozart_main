@@ -43,11 +43,11 @@ const WhyArtistsTrustUs = () => {
 
           <div className="relative z-10 w-full max-w-[420px]">
             <Image
-              src={Images.AlbumFour}
+              src={Images.Four}
               alt="App Mockup"
               width={500}
               height={700}
-              className="w-full h-auto object-contain drop-shadow-2xl"
+              className="w-full h-auto object-contain drop-shadow-2xl rounded-xl"
             />
           </div>
         </div>
