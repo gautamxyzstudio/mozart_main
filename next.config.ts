@@ -27,6 +27,40 @@ const nextConfig: NextConfig = {
     ],
   },
   allowedDevOrigins: ["192.168.1.8:3000"],
+  async redirects() {
+    return [
+      {
+        source: "/service",
+        destination: "/services",
+        permanent: true,
+      },
+      {
+        source: "/service/:path*",
+        destination: "/services/:path*",
+        permanent: true,
+      },
+      {
+        source: "/youtube-channel-management",
+        destination: "/services/youtube-channel-management",
+        permanent: true,
+      },
+      {
+        source: "/youtube-content-id",
+        destination: "/services/youtube-content-id",
+        permanent: true,
+      },
+      {
+        source: "/Royalty-rights-Management",
+        destination: "/services/royalty-rights-management",
+        permanent: true,
+      },
+      {
+        source: "/royalty-rights-management",
+        destination: "/services/royalty-rights-management",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

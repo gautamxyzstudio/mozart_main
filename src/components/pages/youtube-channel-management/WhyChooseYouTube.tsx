@@ -14,15 +14,15 @@ const WhyChooseYouTube = () => {
           </span>
 
           <h2 className="text-white font-extrabold text-center text-3xl md:text-5xl lg:text-[56px] leading-tight tracking-tight -mt-6 md:-mt-1 xl:-mt-1 relative z-10">
-            Benefits
+            Why Artists Choose Our YouTube Channel Management Service
           </h2>
         </div>
 
         {/* Curved Dotted/Dashed SVG ribbon paths */}
 
         <svg
-          viewBox="0 0 1000 520"
-          className="absolute left-0 right-0 lg:top-[28%] md:top-[17%] w-full h-[540px] pointer-events-none z-0 overflow-visible hidden md:block"
+          viewBox="0 0 1000 700"
+          className="absolute left-0 right-0 lg:top-[33%] md:top-[25%] w-full h-[600px] pointer-events-none z-0 overflow-visible hidden md:block"
         >
           {/* Top curve */}
           <path
@@ -33,9 +33,9 @@ const WhyChooseYouTube = () => {
             strokeDasharray="9,5"
           />
 
-          {/* Bottom curve - more gap */}
+          {/* Bottom curve - Increased gap */}
           <path
-            d="M -50,320 Q 500,480 1050,320"
+            d="M -50,470 Q 500,650 1050,470"
             fill="none"
             stroke="rgba(255,255,255,0.2)"
             strokeWidth="1"
@@ -49,25 +49,25 @@ const WhyChooseYouTube = () => {
             {
               num: "01",
               title: "Higher Reach",
-              desc: "Your songs get more visibility, helping every release perform better.",
+              desc: "Through music YouTube channel optimization, your songs get discovered by more listeners. Better titles, tags, and descriptions mean your videos surface in more searches and recommendations.",
               offsetClass: "md:translate-y-0",
             },
             {
               num: "02",
-              title: "Faster Growth",
-              desc: "Consistent uploads and smart strategies grow your audience naturally.",
+              title: "Faster, Consistent Growth",
+              desc: "We focus on real subscriber growth on YouTube through consistent uploads, smart content scheduling, and proven strategies - not shortcuts that put your channel at risk.",
               offsetClass: "md:translate-y-[40px] lg:translate-y-[55px]",
             },
             {
               num: "03",
               title: "Better Engagement",
-              desc: "Viewers interact more with your music through optimized content.",
+              desc: "Optimized content, thumbnails, and active community management keep your audience watching, commenting, and coming back for your next release.",
               offsetClass: "md:translate-y-[40px] lg:translate-y-[55px]",
             },
             {
               num: "04",
-              title: "Zero Effort",
-              desc: "You focus on creating music while we manage everything on your channel.",
+              title: "Zero Effort, Full Management",
+              desc: "You make the music. We manage the channel. From SEO to comments to monthly reporting, our YouTube channel management services cover every part of running a music channel professionally.",
               offsetClass: "md:translate-y-0",
             },
           ].map((feat, idx) => (
@@ -76,17 +76,17 @@ const WhyChooseYouTube = () => {
               className={`flex flex-col items-start text-left ${feat.offsetClass} transition-transform duration-500`}
             >
               {/* Massive stylized number */}
-              <span className="text-5xl md:text-[64px] xl:text-8xl font-black tracking-tighter leading-none mb-3 md:mb-5 select-none text-white/[0.08]">
+              <span className="text-5xl md:text-5xl lg:text-7xl xl:text-6xl font-black tracking-tighter leading-none mb-3 md:mb-5 select-none text-white/[0.08]">
                 {feat.num}
               </span>
 
               {/* Feature Title */}
-              <h3 className="text-white font-extrabold text-base md:text-base lg:text-xl xl:text-2xl mb-2 md:mb-3 tracking-wide">
+              <h3 className="text-white font-extrabold text-base md:text-[15px] lg:text-lg xl:text-2xl mb-2 md:mb-3 tracking-wide">
                 {feat.title}
               </h3>
 
               {/* Feature Description */}
-              <p className="text-white/45 text-xs md:text-[14px] lg:text-[15px] font-light leading-relaxed max-w-[250px]">
+              <p className="text-white/45 text-xs md:text-[11.5px] lg:text-sm xl:text-[15px] font-light leading-relaxed max-w-[250px] md:max-w-[170px] lg:max-w-[220px] xl:max-w-[250px]">
                 {feat.desc}
               </p>
             </div>

@@ -5,27 +5,27 @@ import React from "react";
 const HomeLabelSection = () => {
     const labelData = [
         {
-            label: "Share Your Music ",
+            label: "Share Your Music",
             description:
-                "Manage your music on YouTube with advanced Content Management System access. Track performance, manage claims, and protect your content.",
+                "Upload your track, add your artwork, and fill in your release details. Our platform accepts all standard audio formats and walks you through every field so nothing gets rejected by a streaming platform.",
             image: Images.Dummy,
         },
         {
-            label: "Promotion Goals",
+            label: "Choose Your Platforms",
             description:
-                "Take control of your digital rights. Protect your music across streaming platforms and social media channels with our rights management tools.",
+                "Select the platforms you want to release on - from Spotify and Apple Music to JioSaavn, Wynk, Deezer, Tidal, and 150+ others. You can target global audiences or focus on specific regional markets, all from the same dashboard.",
             image: Images.Dummy2,
         },
         {
-            label: "Run the Campaign ",
+            label: "Set Your Release Date",
             description:
-                "Set up and manage royalty distribution with customizable split templates. Ensure fair compensation for all contributors to your music.",
+                "Pick a date and let us handle the rest. We submit your music to every selected platform and confirm delivery within 24 to 72 hours. You'll be notified the moment your track goes live.",
             image: Images.Dummy3,
         },
         {
-            label: "Track Your Results",
+            label: "Track and Earn",
             description:
-                "Set up and manage royalty distribution with customizable split templates. Ensure fair compensation for all contributors to your music.",
+                "Once live, your real-time analytics dashboard shows streams, listener data, and earnings as they come in. All royalties are paid directly to you - 100%, every time, on schedule.",
             image: Images.Dummy3,
         },
     ];

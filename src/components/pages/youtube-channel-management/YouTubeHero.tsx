@@ -14,29 +14,35 @@ const YouTubeHero = () => {
       {/* Main Content Grid */}
       <div className="w-full max-w-7xl mx-auto px-6 md:px-12 xl:px-20 flex flex-col md:flex-row items-center justify-between relative z-10 pb-16 md:pb-24">
         {/* Left Column: Typography Content */}
-        <div className="flex flex-col xl:items-start items-center md:w-[50%] w-full space-y-6 md:pr-8 text-center xl:text-left">
-          <span className="text-white/80 font-medium text-[20px] md:text-xl xl:text-[35px]">
-            Promote. Optimize. Transform.
-          </span>
+        <div className="flex flex-col xl:items-start items-center md:w-[55%] w-full space-y-6 md:pr-8 text-center xl:text-left">
+         
 
-          <div className="flex flex-col leading-none items-center xl:items-start">
-            <h1 className="text-white font-extrabold text-[44px] md:text-[52px] xl:text-[100px] leading-[1.05]">
-              Your Music
+          <div className="flex flex-col leading-tight items-center md:items-start xl:items-start select-none">
+            <h1 className="text-white font-extrabold text-[34px] md:text-[40px] xl:text-[70px] leading-tight">
+              YouTube Channel
             </h1>
-
-            <h1 className="text-white font-extrabold text-[44px] md:text-[52px] xl:text-[100px] leading-[1.05] tracking-tight">
-              YouTube
+            <h1 className="text-primary bg-linear-to-r from-[#8c52ff] to-[#a273ff] bg-clip-text font-extrabold text-[34px] md:text-[48px] xl:text-[76px] ">
+              Management
+            </h1>
+            <h1 className="text-white font-extrabold text-[30px] md:text-[42px] xl:text-[68px]  ">
+              for Musicians
             </h1>
           </div>
 
-          <p className="text-white/70 text-sm md:text-base xl:text-lg font-light leading-relaxed max-w-md">
-            We handle everything behind the scenes, so your music performs
-            better, reaches further, and grows faster.
+        
+
+            {/* Intro Paragraph Section */}
+      <div className="w-full  py-1 relative z-20">
+        <div className="max-w-4xl   ">
+          <p className="text-white/80 text-base md:text-[14px] lg:text-[15px] font-light leading-relaxed ">
+            Growing a music career on YouTube takes more than just uploading songs. Amozart offers complete YouTube channel management for artists who want real, sustainable growth - covering everything from channel setup and video SEO to thumbnail design and audience strategy. We also provide dedicated YouTube channel management for Punjabi artists, helping regional musicians build a global audience without losing their local fanbase. Whether you're starting from zero or already have a channel that needs a clear growth plan, our team manages every detail so your channel keeps moving forward.
           </p>
+        </div>
+      </div>
         </div>
 
         {/* Right Column: Premium Illustration */}
-        <div className="md:w-[50%] w-full mt-12 md:mt-0 flex items-center justify-center relative">
+        <div className="md:w-[45%] w-full mt-12 md:mt-0 flex items-center justify-center relative">
           {/* Semicircle glowing background vector to replicate original vectors */}
           <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
             {/* <Image
@@ -97,6 +103,8 @@ const YouTubeHero = () => {
           </div>
         </div>
       </div>
+
+     
     </section>
   );
 };

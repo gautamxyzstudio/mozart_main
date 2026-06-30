@@ -5,27 +5,27 @@ import React from "react";
 const YouTubeWorkSection = () => {
     const labelData = [
         {
-            label: "Expert Music Managers",
+            label: "Expert Music Channel Managers",
             description:
-                "Our team understands how YouTube music works and what makes songs perform better. We manage your channel with proven methods built for real growth.",
+                "Our team understands how YouTube's music ecosystem actually works - what gets songs recommended, what keeps subscribers watching, and what turns casual listeners into fans.",
             image: Images.Dummy,
         },
         {
-            label: "Complete Channel Handling",
+            label: "Built for Indian and Punjabi Artists",
             description:
-                "From uploads to SEO to comments—everything is managed for you. You get a fully organized and professional YouTube music presence. ",
+                "As a YouTube channel management service India relies on for regional growth, we understand exactly how to position Punjabi and Indian music for both local and global audiences.",
             image: Images.Dummy2,
         },
         {
-            label: "Transparent & Simple ",
+            label: "Transparent & Simple",
             description:
-                "You always know what we are doing and how your channel is performing.Clear reports and easy communication keep everything stress-free. ",
+                "You always know what we're doing and how your channel is performing - clear reporting, no guesswork, no vague updates.",
             image: Images.Dummy3,
         },
         {
-            label: "Growth-Focused Approach",
+            label: "Growth-Focused, Not Numbers-Focused",
             description:
-                "Every step we take is planned to increase your views, subscribers, and reach. We focus on long-term success, not short-term numbers. ",
+                "We're not chasing the fastest growing YouTube channels through shortcuts. Our approach is built for the kind of best growing channel on YouTube that lasts - real subscribers, real engagement, real career growth.",
             image: Images.Dummy3,
         },
     ];
@@ -36,11 +36,11 @@ const YouTubeWorkSection = () => {
             </span>
             <div className="w-full flex flex-col xl:space-y-13.75 md:space-y-6 space-y-4 xl:px-25 md:px-13 px-6 ">
                 <div className="w-full flex flex-col space-y-4">
-                    <h2 className="xl:text-[64px] xl:leading-3 md:text-[48px] md:leading-13.5 text-[29px] leading-9.5 font-bold text-white">
-                   What Makes Us Different 
+                    <h2 className="xl:text-[64px] xl:leading-18 md:text-[48px] md:leading-13.5 text-[29px] leading-9.5 font-bold text-white">
+                        A YouTube Channel Management Service India Trusts
                     </h2>
                     {/* <p className="text-white xl:text-base text-sm xl:w-[60%] md:w-[80%]">
-                        Getting your music live worldwide is simple and fast. Follow a few easy steps to upload, distribute, and start earning from your music. w
+                        Getting your music live worldwide is simple and fast. Follow a few easy steps to upload, distribute, and start earning from your music. w
                     </p> */}
                 </div>
 

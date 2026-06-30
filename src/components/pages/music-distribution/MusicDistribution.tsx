@@ -427,22 +427,22 @@ const MusicDistribution = () => {
       {/* Typography Section */}
       <div className="w-full flex flex-col items-center text-center px-6 relative z-10 pt-5">
         <span className="text-white/80 font-medium text-[20px] md:text-3xl xl:text-5xl mb-1 md:mb-2 tracking-wide font-sans">
-          Your Music
+          Music Distribution
         </span>
 
         <h1 className="text-white font-extrabold text-[28px] leading-tight md:text-6xl xl:text-[76px] xl:leading-[86px] tracking-tight">
-          Every Platform
+          That Reaches
         </h1>
 
         <h1 className="text-white font-extrabold text-[34px] leading-tight md:text-6xl xl:text-[76px] xl:leading-[86px] tracking-tight mb-4 md:mb-7">
-          One{" "}
+          Every{" "}
           <span className="text-[#8c52ff] bg-linear-to-r from-[#8c52ff] to-[#a273ff] bg-clip-text">
-            Distribution
+            Platform
           </span>
         </h1>
 
-        <p className="text-white/70 text-[14px] md:text-lg xl:text-base font-light tracking-wide max-w-xl mx-auto mb-8 md:mb-16">
-          Get your songs on Spotify, Apple Music & 150+ platforms
+        <p className="text-white/70 text-[14px] md:text-lg xl:text-base font-light tracking-wide max-w-3xl mx-auto mb-8 md:mb-16">
+          The simplest online music distribution service for independent artists - get your songs on Spotify, Apple Music, JioSaavn, Wynk, and 150+ platforms worldwide.
         </p>
       </div>
 

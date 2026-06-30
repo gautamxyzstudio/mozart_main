@@ -5,13 +5,13 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
-interface FaqItem {
+export interface FaqItem {
   id: string;
   question: string;
   answer: string;
 }
 
-const faqData: FaqItem[] = [
+const defaultFaqData: FaqItem[] = [
   {
     id: "panel1",
     question: "How do I distribute my music worldwide?",
@@ -44,7 +44,11 @@ const faqData: FaqItem[] = [
   },
 ];
 
-const Faqs = () => {
+interface FaqsProps {
+  faqData?: FaqItem[];
+}
+
+const Faqs: React.FC<FaqsProps> = ({ faqData = defaultFaqData }) => {
   const [expanded, setExpanded] = useState<string | false>(false);
 
   const handleChange =
