@@ -16,35 +16,32 @@ const YouTubeContentIdHero = () => {
         {/* Left Column: Typography Content */}
         <div className="flex flex-col items-center md:items-start md:w-[50%] w-full   md:pr-1 text-center md:text-left">
           <span className="text-white font-medium text-[24px] md:text-[24px] xl:text-[48px]">
-            Global Music
+            YouTube Content ID
           </span>
 
           <div className="flex flex-col leading-[1.15] items-center md:items-start w-full">
             {/* Desktop Heading */}
             <div className="hidden md:flex flex-col space-y-2">
               <h1 className="text-white font-bold text-[40px] xl:text-[71px] md:text-[40px] tracking-tight">
-                Protection and Monetization on
+                for Independent
               </h1>
 
               <h1 className="text-[#7e4bc8] font-bold text-[52px] xl:text-[75px] tracking-tight">
-                YouTube
+                Artists
               </h1>
             </div>
 
             {/* Mobile Heading */}
             <div className="flex md:hidden flex-col items-center text-center">
               <h1 className="text-white font-medium text-[38px] tracking-tight leading-[1.25]">
-                Protection &<br />
-                Monetization
-                <br />
-                on <span className="text-[#7e4bc8] font-medium">YouTube</span>
+                YouTube Content ID <br />
+                for <span className="text-[#7e4bc8] font-medium">Independent Artists</span>
               </h1>
             </div>
           </div>
 
           <p className="text-white/70 text-[15px] md:text-[14px] xl:text-[14px] font-light leading-relaxed max-w-lg px-2 md:px-0">
-            Manage, protect, and monetize your music. Use Amoozart Content ID to
-            register your songs and capture all YouTube royalties
+            Register your music with YouTube Content ID and turn every reupload, cover, and use of your song into a revenue stream -automatically.
           </p>
 
           <div className="mt-8 w-full flex justify-center md:justify-start">
@@ -52,7 +49,7 @@ const YouTubeContentIdHero = () => {
               href="/apply"
               className="inline-flex w-[85%] md:w-auto items-center justify-center px-8 md:px-15 py-3.5 rounded-full bg-white text-[#7e4bc8] font-bold text-base hover:bg-gray-100 transition-colors shadow-lg"
             >
-              Apply Now
+              Get Started Free
             </Link>
           </div>
         </div>

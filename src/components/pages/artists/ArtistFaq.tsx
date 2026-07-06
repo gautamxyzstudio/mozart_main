@@ -9,34 +9,29 @@ interface FAQItem {
 
 const faqData: FAQItem[] = [
   {
-    question: "What does an artist manager do?",
+    question: "What does an artist manager do for musicians?",
     answer:
-      "An artist manager helps guide your music career, handles business decisions, and supports growth. Amozart helps make this process smooth.  ",
+      "An artist manager handles the business side of your music career — release planning, branding, promotion, distribution, and contract guidance — so you can focus entirely on making music.",
   },
   {
-    question: "When should an artist hire a manager?",
+    question: "How do I find an artist manager for independent musicians?",
     answer:
-      "You should consider a manager when your music has traction, goals, and a plan for growth; Amozart steps in to elevate your career.  ",
+      "Look for a manager with real industry experience, transparent fees, and a genuine understanding of your music and goals. Amozart offers a complete music artist management service that covers every part of your career from one place.",
   },
   {
-    question: " How much do artist managers charge?",
+    question: "How much does an artist manager charge in India?",
     answer:
-      "Most artist managers take a standard commission of earnings, and Amozart’s terms are always clear and fair.  ",
+      "Most managers in India charge between 15 to 20 percent of gross earnings. Amozart offers fixed, transparent pricing with no hidden commissions so you always know exactly what you are paying.",
   },
   {
-    question: "Can artists manage themselves? ",
+    question: "Do you offer artist management for Punjabi singers specifically?",
     answer:
-      "Yes, many artists self-manage early on, but Amozart can help you scale faster with expert support and industry guidance.",
+      "Yes. Punjabi artist management is one of our core specialties. We understand the Punjabi music market and help artists reach both Indian and international audiences through the right platforms and the right strategy.",
   },
   {
-    question: "What’s the difference between a manager and an agent?",
+    question: "Do I need separate services for management and distribution?",
     answer:
-      "A manager oversees your overall career; an agent focuses on booking shows. Amozart provides full management strategy.  ",
-  },
-  {
-    question: "How do I find the right manager for my music?",
-    answer:
-      "Start by networking, asking for referrals, and checking experience; artists often choose Amozart for trusted industry expertise. ",
+      "No. Amozart is a complete artist management and music distribution service — both are handled by our team under one account, saving you time, money, and the hassle of working with multiple agencies.",
   },
 ];
 

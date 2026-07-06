@@ -28,23 +28,23 @@ const ArtistManagementHero = () => {
       {/* Main Hero Content */}
       <div className="grow flex flex-col items-center justify-center text-center z-10 py-10 md:py-24 px-6 md:px-12 xl:px-20">
         <span className="text-white text-2xl md:text-2xl xl:text-[48px] font-medium mb-1 block">
-          Are You Serious
+          Music Artist Management Service
         </span>
         
-        <h1 className="text-white font-bold text-5xl md:text-6xl xl:text-[76px] leading-14 max-w-4xl mx-auto">
-          About Your Music?
+        <h1 className="text-white font-bold text-5xl md:text-6xl xl:text-[76px] xl:leading-22 md:leading-14 leading-13 max-w-4xl mx-auto">
+          Artist Management for Independent Musicians
         </h1>
         
         <p className="mt-3 text-white text-[20px] md:text-base xl:text-lg max-w-2xl leading-relaxed mx-auto font-light">
-          From planning to promotion, we manage everything so you can focus on creating your best music.
+          Your music career, fully managed. From branding and promotion to distribution and royalties — we handle everything so you can focus on your music.
         </p>
 
         <div className="mt-10 flex justify-center w-full">
           <Link
             href="/apply"
-            className=" xl:px-15 px-17 py-2 rounded-full bg-white text-[#5d36b8] font-bold text-base hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg"
+            className=" xl:px-10 xl:py-3 px-17 py-2 rounded-full bg-white text-[#5d36b8] font-bold text-base hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg"
           >
-            Apply Now
+            Start Your Journey
           </Link>
         </div>
       </div>

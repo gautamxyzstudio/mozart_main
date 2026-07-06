@@ -25,11 +25,11 @@ const   WhatIsYouTubeContentId = () => {
         {/* Right Side: Text Content */}
         <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left space-y-6">
           <h2 className="text-[#111] font-extrabold text-[40px] md:text-[48px] xl:text-[56px] leading-[1.1] tracking-tight">
-            What is YouTube <br className="hidden lg:block" /> Content ID
+            What Is YouTube <br className="hidden lg:block" /> Content ID?
           </h2>
           
           <p className="text-[#4a4a4a] text-base md:text-lg max-w-lg leading-relaxed">
-            YouTube Content ID is YouTube&lsquo;s automated system that detects when your music is used in any video on the platform. It helps rights holders track usage, protect their content, and earn royalties from every eligible upload.
+            YouTube Content ID is a system that automatically detects when your music is used in any video on YouTube. Once your track is registered, YouTube scans every video on the platform and flags any match it finds. As the rights holder, you decide what happens — earn from it, track it, or block it. It is the simplest way for independent artists to protect their music and collect royalties from every use on YouTube.
           </p>
           
           <div className="pt-2 w-full flex justify-center md:justify-start">
@@ -37,7 +37,7 @@ const   WhatIsYouTubeContentId = () => {
               href="/apply"
               className="inline-flex w-[85%] md:w-auto items-center justify-center px-20 py-3.5 rounded-full bg-[#6840d0] text-white font-bold text-base hover:bg-[#5b36b8] transition-colors shadow-lg"
             >
-              Apply Now
+              Get Started Free
             </Link>
           </div>
         </div>

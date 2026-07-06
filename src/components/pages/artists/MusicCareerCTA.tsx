@@ -32,20 +32,19 @@ const MusicCareerCTA = () => {
 
           {/* Left Content */}
           <div className="relative z-10 w-full md:w-[70%] px-6 pt-12 md:p-10 xl:p-10 flex flex-col items-center md:items-start text-center md:text-left">
-            <h2 className="text-4xl md:text-[26px] lg:text-[64px] font-bold text-white  mb-5">
-              One good thing <br /> about music
+            <h2 className="text-4xl md:text-[26px] lg:text-[58px] font-bold text-white  mb-5 leading-tight">
+              Ready to Take <br /> Your Music Global?
             </h2>
 
-            <p className="text-white/90 text-[13px] md:text-sm font-medium leading-relaxed mb-8 max-w-[280px] md:max-w-[420px] mx-auto md:mx-0">
-              &ldquo;When it hits you, you feel no pain&quot; Bob Marley <br />
-              Now Let&apos;s Turn That Feeling Into a Successful Career
+            <p className="text-white/90 text-[13px] md:text-sm font-medium leading-relaxed mb-8 max-w-[280px] md:max-w-[420px] mx-auto md:mx-0 font-light">
+              Join hundreds of independent and Punjabi artists already growing their careers with Amozart.
             </p>
 
             <Link
               href="/apply"
               className="inline-flex items-center justify-center px-15 py-3 rounded-full bg-white text-[#6c42c7] font-bold text-[15px] hover:bg-gray-100 hover:scale-105 active:scale-95 transition-all duration-300 shadow-md"
             >
-              Join Now
+              Start Managing My Career
             </Link>
           </div>
 

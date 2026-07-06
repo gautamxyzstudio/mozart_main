@@ -4,7 +4,7 @@ const ManagingArtist = () => {
   const cards = [
     {
       title: "Career Strategy &\nDevelopment",
-      desc: "Create a clear roadmap for your music journey. Every step is planned to help you grow consistently and professionally.",
+      desc: "We create a clear roadmap for your music career — planned releases, audience growth, and long-term goals — so every move you make takes you forward.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -22,8 +22,8 @@ const ManagingArtist = () => {
       bg: "bg-[radial-gradient(circle_at_top_left,#27c2ff_0%,#3b82f6_45%,#7c3aed_100%)]",
     },
     {
-      title: "Marketing & Branding",
-      desc: "Build your brand identity and promote your music across the right platforms. Our goal is to help you stand out in a crowded industry.",
+      title: "Music Branding & Promotion",
+      desc: "We build your artist identity and promote your music across the right platforms — so fans notice you, remember you, and keep coming back.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -41,8 +41,8 @@ const ManagingArtist = () => {
       bg: "bg-[radial-gradient(circle_at_bottom_left,#05e0a1_0%,#14d1c8_45%,#1aa7ff_100%)]",
     },
     {
-      title: "Digital Distribution & Sync\nPlacement",
-      desc: "Ensure your music reaches all major streaming platforms. Plus, we help you explore sync opportunities for films, ads, and shows.",
+      title: "Distribution & Sync\nPlacement",
+      desc: "We deliver your music to 150+ streaming platforms worldwide and open doors to sync opportunities in films, ads, and web series — more reach, more revenue.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -79,8 +79,8 @@ const ManagingArtist = () => {
       bg: "bg-[radial-gradient(circle_at_top_right,#1ac7f2_0%,#3b82f6_50%,#7a4dcb_100%)]",
     },
     {
-      title: "Revenue & Royalties\nOptimization",
-      desc: "Track your earnings, fix missing payouts, and maximize your royalty income. You get full transparency and better financial results.",
+      title: "Revenue & Royalty Management",
+      desc: "We track every rupee your music earns, fix missing payouts, and give you full transparency over your income — so you always get paid what you deserve.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -122,7 +122,7 @@ const ManagingArtist = () => {
     },
     {
       title: "Contract & Legal Advisory",
-      desc: "Guide you through deals, contracts, and legal decisions. You stay protected and make smarter moves in your music career.",
+      desc: "We guide you through every deal, contract, and legal decision — so you stay protected and always know exactly what you are signing.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -144,9 +144,14 @@ const ManagingArtist = () => {
   return (
     <section className="w-full bg-[#F8F8F8] py-20 overflow-hidden">
       <div className="max-w-10xl mx-auto px-6 md:px-12 xl:px-20">
-        <h2 className="text-3xl md:text-[32px] xl:text-[64px] font-medium text-center text-[#111111] mb-16">
-          Managing Artist to the World
-        </h2>
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-[32px] xl:text-[64px] font-medium text-[#111111]">
+            Managing Independent Musicians to the World
+          </h2>
+          <p className="mt-4 text-gray-600 text-sm md:text-base xl:text-lg max-w-2xl mx-auto font-light">
+            One team. Every service. Your career — fully managed.
+          </p>
+        </div>
 
         <div className="flex flex-wrap justify-center gap-6 xl:gap-6">
           {cards.map((card, idx) => (

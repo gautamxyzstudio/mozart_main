@@ -6,28 +6,28 @@ const WhoIsEligible = () => {
   const criteria = [
     {
       num: "01",
-      title: "Global Music Protection",
-      desc: "Your tracks are fully registered in YouTube's Content ID system with accurate metadata and audio fingerprints, ensuring every use of your music is detected.",
+      title: "Independent Artists",
+      desc: "Any artist who fully owns their original music can register through Amozart — no label required.",
     },
     {
       num: "02",
-      title: "No unauthorized samples",
-      desc: "Songs containing unlicensed samples, loops, beats, or copyrighted elements cannot be registered.",
+      title: "Independent Labels",
+      desc: "Labels managing multiple artists can register their full catalog and track all earnings in one place.",
     },
     {
       num: "03",
-      title: "Clear metadata is required",
-      desc: "Accurate titles, artist names, composer details, and ownership info must be provided for proper Content ID matching.",
+      title: "Punjabi & Regional Artists",
+      desc: "We specifically support Punjabi, Hindi, and other South Asian artists in accessing Content ID without a major distributor.",
     },
     {
       num: "04",
-      title: "High-quality audio files",
-      desc: "Your track should be professionally mixed and mastered for optimal recognition by YouTube's system.",
+      title: "Artists on Free Plans",
+      desc: "You do not need a paid plan. Free distribution users on Amozart can also register for Content ID and start earning from YouTube.",
     },
     {
       num: "05",
-      title: "No public domain or royalty-free content",
-      desc: "Your tracks are fully registered in YouTube's Content ID system with accurate metadata and audio fingerprints, ensuring every use of your music is detected.",
+      title: "Labels Needing Full Roster Management",
+      desc: "Manage royalties, Content ID reporting, and rights across your entire artist roster from a single Amozart account.",
     },
   ];
 
@@ -49,10 +49,15 @@ const WhoIsEligible = () => {
         </div>
 
         {/* Right Side: Content */}
-        <div className="w-full lg:w-1/2 flex flex-col space-y-10">
-          <h2 className="font-extrabold text-[36px] md:text-[48px] xl:text-[52px] leading-[1.1] tracking-tight">
-            Who is Eligible for <br className="hidden md:block" /> Content ID
-          </h2>
+        <div className="w-full lg:w-1/2 flex flex-col space-y-8">
+          <div>
+            <h2 className="font-extrabold text-[36px] md:text-[48px] xl:text-[52px] leading-[1.1] tracking-tight">
+              Who Is Eligible for Amozart&apos;s YouTube Content ID Service?
+            </h2>
+            <p className="text-white/60 text-sm md:text-base xl:text-lg leading-relaxed mt-4 font-light">
+              Content ID registration is open to all original music creators and labels on Amozart — here is what you need to qualify.
+            </p>
+          </div>
 
           <div className="flex flex-col space-y-8">
             {criteria.map((item, idx) => (

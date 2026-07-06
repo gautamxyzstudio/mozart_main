@@ -7,22 +7,22 @@ const HowItWorks = () => {
     {
       step: "01",
       title: "Upload Your Music",
-      desc: "You submit your original songs, beats, or catalog to the Amozart platform. Our team reviews your content to ensure it qualifies for YouTube Content ID.",
+      desc: "Submit your track to Amozart with your artist name, track title, and release details. We handle everything from there.",
     },
     {
       step: "02",
-      title: "Register Your Tracks",
-      desc: "Once approved, Amozart sends your audio fingerprints and metadata to YouTube's official Content ID database, enabling automated tracking across the platform.",
+      title: "We Register Your Fingerprint",
+      desc: "We create a unique audio fingerprint for your track and register it in YouTube's Content ID system.",
     },
     {
       step: "03",
-      title: "YouTube Detection",
-      desc: "YouTube's system constantly scans billions of videos. Whenever your music is detected whether in user-generated content or large channels; Content ID automatically identifies it.",
+      title: "YouTube Finds Every Match",
+      desc: "YouTube automatically scans millions of videos and detects every use of your music — reuploads, covers, background music, and more.",
     },
     {
       step: "04",
-      title: "Claim & Earn Royalties",
-      desc: "Amozart claims eligible videos on your behalf. Ads are monetized, revenue is collected, and you receive your royalties directly through your Amozart dashboard.",
+      title: "You Earn From Every Use",
+      desc: "For every match found, you choose to monetize, track, or block it. All royalties go directly to you.",
     },
   ];
 
@@ -33,10 +33,10 @@ const HowItWorks = () => {
         <div className="flex flex-col-reverse md:flex-row items-center justify-between w-full gap-10">
           <div className="flex flex-col md:w-1/2 w-full text-center md:text-left">
             <h2 className="text-black font-medium text-[32px] md:text-[32px] xl:text-[64px] leading-[1.1] tracking-tight">
-              How YouTube <br className="hidden md:block" /> Content ID Works
+              How YouTube <br className="hidden md:block" /> Content ID Works for Musicians
             </h2>
             <p className="mt-6 text-[#414141] font-normal text-sm md:text-base xl:text-lg max-w-lg leading-relaxed mx-auto md:mx-0">
-              Amozart makes it simple to protect your music and earn royalties from every YouTube use. Here&apos;s how the entire Content ID process works from start to finish.
+              From registration to royalty collection — here&apos;s exactly what happens after you sign up.
             </p>
           </div>
 

@@ -9,34 +9,34 @@ interface FAQItem {
 
 const faqData: FAQItem[] = [
   {
-    question: "What happens when YouTube Content ID finds a match?",
+    question: "What is a YouTube Content ID and do I need it as an independent artist?",
     answer:
-      "It automatically claims the video and monetizes, tracks, or blocks it based on your settings. ",
+      "YouTube Content ID is a fingerprinting system that scans all YouTube videos for your music and collects revenue on your behalf whenever a match is found. If you're an independent artist with original music, you need it — without it, every reupload and background music use of your song earns nothing for you.",
   },
   {
-    question: "Do I get a copyright strike with a Content ID claim? ",
+    question: "How does YouTube Content ID work for musicians practically?",
     answer:
-      "No, Content ID claims don’t give copyright strikes or affect channel status. ",
+      "Once your track is registered, YouTube scans every video on the platform against your audio fingerprint. When it finds a match, it automatically applies your chosen policy — monetize, track, or block — without you having to do anything manually.",
   },
   {
-    question: "Can I use Content ID if my channel isn’t in the YouTube Partner Program?",
+    question: "Can I monetize music on YouTube without a label through Amozart?",
     answer:
-      "Yes. You don’t need YPP — Content ID works through a rights management partner. ",
+      "Yes. Amozart gives independent artists direct access to YouTube Content ID without needing a label. You own your music, you register it through us, and all royalties come directly to you.",
   },
   {
-    question: " Why do some user videos get blocked while others are monetized? ",
+    question: "What happens when someone uploads a cover of my song?",
     answer:
-      "It depends on the policy you choose: monetize, track, or block. ",
+      "Cover videos are matched by YouTube's Content ID system just like reuploads. Once your music is registered, you automatically earn royalties from YouTube cover videos — the revenue from those videos is redirected to you rather than the uploader.",
   },
   {
-    question: " Can short clips or YouTube Shorts be claimed?",
+    question: "What is the difference between a Content ID claim and a copyright strike?",
     answer:
-      "Yes, YouTube scans Shorts and applies Content ID claims like normal videos. ",
+      "A Content ID claim is automatic and non-punitive — it monetizes a video on your behalf without penalizing the uploader. A copyright strike is a manual action that can remove content and harm the uploader's channel. For most artists, Content ID monetization is the smarter, more profitable approach.",
   },
   {
-    question: "What content is not eligible for Content ID claims?",
+    question: "Is your Content ID service available for artists in India?",
     answer:
-      "Music with unlicensed samples, public-domain content, or non-exclusive rights cannot be claimed. ",
+      "Yes. As a YouTube Content ID registration service India artists use, we handle all regional requirements and ensure your music rights protection on YouTube India is set up correctly across both local and international audiences.",
   },
 ];
 

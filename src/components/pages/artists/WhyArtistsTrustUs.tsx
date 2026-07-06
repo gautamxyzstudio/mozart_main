@@ -6,28 +6,28 @@ const WhyArtistsTrustUs = () => {
   const points = [
     {
       num: "01",
-      title: " Industry-Focused Expertise",
-      desc: "Understands the music industry deeply, helping you make the right moves at the right time. ",
+      title: "Real Industry Experience",
+      desc: "Our team has hands-on experience in music releases, promotions, and career management — real results for real artists, not just advice.",
     },
     {
       num: "02",
-      title: "Personalized Artist Support",
-      desc: "Every artist gets a custom plan tailored to their style, goals, and long-term growth. ",
+      title: "Everything in One Place",
+      desc: "Management, distribution, branding, and royalties — all handled by one team. No separate agencies, no confusion, no missed opportunities.",
     },
     {
       num: "03",
-      title: "Transparent & Honest Management",
-      desc: "Keep every process clear - no hidden terms, no confusion, just clean communication.",
+      title: "Built for Indian & Punjabi Artists",
+      desc: "We understand the Indian and Punjabi music market deeply — which platforms work, which strategies win, and how to grow your audience locally and globally.",
     },
     {
       num: "04",
-      title: "Growth-Driven Strategy",
-      desc: "From branding to releases, every decision we make is aimed at expanding your reach and results. ",
+      title: "You Stay in Full Control",
+      desc: "Your music, your rights, your decisions — always. We manage your career without taking ownership of anything you create.",
     },
     {
       num: "05",
-      title: " End-to-End Career Support",
-      desc: "Handle management, marketing, distribution, and more, so you stay focused on creating great music. ",
+      title: "Transparent & Honest",
+      desc: "No hidden fees, no empty promises. You always know what we are doing, why we are doing it, and what results to expect.",
     },
   ];
 
@@ -54,9 +54,14 @@ const WhyArtistsTrustUs = () => {
 
         {/* Right Side: Content */}
         <div className="w-full md:w-1/2 flex flex-col z-10">
-          <h2 className="text-3xl md:text-[28px] lg:text-[50px] font-bold text-white mb-14 tracking-wide">
-            Why Artists Trust Us
-          </h2>
+          <div className="mb-14">
+            <h2 className="text-3xl md:text-[28px] lg:text-[50px] font-bold text-white tracking-wide">
+              Why Artists Trust Amozart
+            </h2>
+            <p className="mt-4 text-[#a8a8a8] text-sm md:text-base font-light">
+              We do not just manage careers — we build them.
+            </p>
+          </div>
 
           <div className="flex flex-col gap-10">
             {points.map((point, idx) => (

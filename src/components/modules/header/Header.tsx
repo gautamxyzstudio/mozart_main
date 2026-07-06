@@ -113,7 +113,7 @@ const Header = () => {
               x: "-50%",
               transition: {
                 type: "spring",
-                stiffness: 100,
+                stiffness: 120,
                 damping: 20,
                 mass: 1,
               },
@@ -122,10 +122,10 @@ const Header = () => {
               y: -100,
               opacity: 0,
               x: "-50%",
-              transition: { duration: 0.3, ease: "easeInOut" },
+              transition: { duration: 0.8, ease: "easeInOut" },
             },
           }}
-          className={`fixed top-5 left-1/2 w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] xl:max-w-7xl z-999 transition-all duration-300 flex flex-row items-center justify-between rounded-full py-2.5 px-6 md:px-8 border ${isServicesOpen
+          className={`fixed top-5 left-1/2 w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] xl:max-w-7xl z-999 transition-[background-color,border-color,box-shadow] duration-300 flex flex-row items-center justify-between rounded-full py-2.5 px-6 md:px-8 border ${isServicesOpen
               ? "bg-[#FCFAFF] border-[#EBE4F9] shadow-[10_15px_35px_rgba(103,57,183,0.18)]"
               : isLaptop
                 ? isScrolled
