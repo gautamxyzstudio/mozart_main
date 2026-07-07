@@ -8,36 +8,36 @@ const WhyAreDifferent = () => {
   const features = [
     {
       num: "01",
-      title: "Accurate Global Rankings",
-      desc: "Get your tracks placed on high-traffic editorial and algorithmic playlists across Spotify, Apple Music, and more.",
+      title: "Point 01 — Real Time Data",
+      desc: "Our real time music chart tracking updates your chart position as it happens — so you can act on trends immediately, not days later.",
     },
     {
       num: "02",
-      title: "Worldwide Music Coverage",
-      desc: "We secure features on top music blogs and online publications to build your credibility and online presence.",
+      title: "Point 02 — Multi-Platform Coverage",
+      desc: "We track your music across Spotify, Apple Music, YouTube music charts global, JioSaavn, Wynk, and more — one complete picture across every platform.",
     },
     {
       num: "03",
-      title: "Easy-to-Use Dashboard",
-      desc: "Targeted social campaigns across Instagram, TikTok, and Twitter to grow your fanbase organically.",
+      title: "Point 03 — Actionable Insights",
+      desc: "Our global music chart data insights for artists go beyond raw numbers — showing which regions are growing, which playlists are driving streams, and what to do next.",
     },
     {
       num: "04",
-      title: "Built for Artists & Labels",
-      desc: "Precision-targeted ads on Meta, YouTube, and TikTok to drive streams and engagement.",
+      title: "Point 04 — Built for Independent Artists",
+      desc: "Unlike tools made for major labels, our music chart tracking for independent artists is simple, affordable, and built around how independent artists actually work.",
     },
   ];
 
   return (
     <section className="w-full bg-primary overflow-hidden xl:py-20 md:py-16 py-12 relative">
       <div className="absolute xl:right-0 xl:-top-5 md:right-0 md:-top-5 select-none pointer-events-none hidden md:block opacity-[0.08] xl:text-[220px] md:text-[130px] font-black text-white leading-none">
-        Different
+        Amozart
       </div>
 
       <div className="max-w-350 mx-auto px-6 md:px-12 lg:px-16">
         {/* Main Section Heading */}
         <h2 className="text-white text-3xl md:text-4xl lg:text-[44px] font-bold mb-10 md:mb-16  flex  xl:mt-20 md:mt-5">
-          Why We’re Different
+          Why Artists Choose Amozart for Music Chart Tracking
         </h2>
 
         {/* Features Grid */}

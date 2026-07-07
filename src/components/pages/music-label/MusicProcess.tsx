@@ -10,21 +10,21 @@ interface ProcessStep {
 const steps: ProcessStep[] = [
   {
     id: "01",
-    titlePrefix: "Music ",
-    titleHighlight: "Submission",
-    description: "Upload your track with artwork and details, letting the team evaluate your song quickly and accurately for the next steps."
+    titlePrefix: "Submit ",
+    titleHighlight: "Your Music",
+    description: "Upload your track, artwork, and release details. Our team reviews every submission quickly so nothing delays your release timeline."
   },
   {
     id: "02",
     titlePrefix: "Quality Check ",
     titleHighlight: "& Approval",
-    description: "Your music goes through a proper review to ensure rights, originality, and platform readiness before it moves toward release."
+    description: "Every track goes through a thorough review covering audio quality, rights clearance, and platform readiness — making sure your release meets every platform's requirements before going live."
   },
   {
     id: "03",
     titlePrefix: "Global Release ",
-    titleHighlight: "& Royalty Growth",
-    description: "Your song reaches major music platforms worldwide, helping you expand your audience and begin earning consistent royalties."
+    titleHighlight: "& Royalty Collection",
+    description: "Your music goes live on 150+ streaming platforms worldwide. Your real-time dashboard then tracks streams, listener data, and royalties from every platform — all in one place."
   }
 ];
 
@@ -34,7 +34,7 @@ export default function MusicProcess() {
       <div className="max-w-6xl mx-auto">
         {/* Section Heading */}
         <h2 className="text-3xl sm:text-4xl xl:text-[64px] font-medium text-center text-gray-900 mb-12 tracking-tight">
-      Your Music Journey Process 
+      How the Label Distribution Process Works
         </h2>
 
         {/* Steps Grid */}

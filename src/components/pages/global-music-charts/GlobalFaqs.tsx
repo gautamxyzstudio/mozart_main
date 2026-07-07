@@ -9,35 +9,35 @@ interface FAQItem {
 
 const faqData: FAQItem[] = [
   {
-    question: "What does a music label do for an artist?",
+    question: "Q1. What is a music chart tracking service?",
     answer:
-      "A music label helps distribute your songs to global platforms, manage royalties, and support your career growth with tools like those at Amozart.  ",
+      "It monitors your chart position across worldwide music charts — Spotify, Apple Music, YouTube Music, JioSaavn — giving you real time data on streams, rankings, and listener activity in one place."
   },
   {
-    question: " How do I get my music signed by a label? ",
+    question: "Q2. How do I get my music on global charts?",
     answer:
-      "Most labels look for quality music, consistent releases, and audience engagement. At Amozart, strong tracks and a professional profile improve your chances.",
+      "Start with correct metadata, wide distribution, and proper chart registration. Amozart's global music chart submission service handles registration and monitors your performance from day one."
   },
   {
-    question: " What are the benefits of signing with an independent label? ",
+    question: "Q3. How do I track music performance worldwide?",
     answer:
-      "Independent labels often offer more creative freedom, close support, and personalized development, which Amozart focuses on for artist success.",
+      "Amozart's music performance tracking dashboard pulls data from every major platform into one report — streams, chart positions, and geographic listener data updated in real time."
   },
   {
-    question: "Can I still retain my rights if I sign with a label?",
+    question: "Q4. Do you track charts for Punjabi artists?",
     answer:
-      "Yes, many independent labels allow you to keep more control over your music rights, and Amozart’s agreements aim for transparency and fairness.  ",
+      "Yes. Our global music charts for Punjabi artists covers JioSaavn, Wynk, Spotify, and Apple Music — giving Punjabi musicians full visibility into both local and global chart performance."
   },
   {
-    question: "How long does it take for music to go live after signing? ",
+    question: "Q5. How can I improve my chart position?",
     answer:
-      "After submission and approval, tracks typically go live in a few days to weeks, and with Amozart’s tools, the process is streamlined for faster release.  ",
+      "Our global music chart data insights for artists show exactly which playlists, regions, and strategies are driving your current position — and what actions will grow it further."
   },
   {
-    question: "What should I prepare before submitting my music?",
+    question: "Q6. Is chart tracking available for artists in India?",
     answer:
-      "Have fully mixed tracks, high-quality artwork, correct metadata, and a clear artist bio, all of which help Amozart review and release your music smoothly. ",
-  },
+      "Yes. Our music chart tracking service India covers regional and international platforms — perfect for Indian artists tracking both local and global music performance."
+  }
 ];
 
 const GlobalFaqs = () => {

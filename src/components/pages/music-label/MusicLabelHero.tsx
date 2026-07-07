@@ -30,16 +30,15 @@ const MusicLabelHero = () => {
       {/* Main Hero Content */}
       <div className="flex-grow flex flex-col items-center justify-center text-center z-10 py-10 md:py-24 px-6 md:px-12 xl:px-20">
         <span className="text-white text-2xl md:text-4xl xl:text-[48px] font-medium mb-6 block">
-          Your Music, Our Label
+          Independent Label Distribution Service
         </span>
 
-        <h1 className="text-white font-bold text-[27px] md:text-5xl xl:text-[67px] xl:leading-18 md:leading-17 leading-8  max-w-4xl mx-auto">
-          Independent Artists Become Global Recording Stars 
+        <h1 className="text-white font-bold text-[27px] md:text-5xl xl:text-[64px] xl:leading-18 md:leading-17 leading-8  max-w-4xl mx-auto">
+          Label Distribution for Independent Artists & Labels
         </h1>
 
         <p className="mt-3 text-white text-[20px] md:text-base xl:text-base max-w-2xl leading-relaxed mx-auto font-light">
-          From planning to promotion, we manage everything so you can focus on
-          creating your best music.  {" "}
+          Amozart is a complete independent label distribution service built for artists and labels who want professional global releases without giving up their rights. Whether you are a solo artist or a growing label managing multiple artists, we give you everything a major record label distribution company offers — at a fraction of the cost.
         </p>
 
         <div className="mt-10 flex justify-center w-full">

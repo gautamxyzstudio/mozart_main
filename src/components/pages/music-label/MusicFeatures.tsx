@@ -3,8 +3,8 @@ import React from "react";
 const MusicFeatures = () => {
   const cards = [
     {
-      title: "Unlimited Global Distribution ",
-      desc: "Reach major streaming platforms and online stores worldwide with unlimited music releases. Track streams, earnings, and listener data from a single dashboard for smarter growth.  ",
+      title: "Feature 01 — Global Distribution",
+      desc: "Release unlimited tracks across 150+ platforms worldwide. Our global platform reach for labels ensures your music is available on Spotify, Apple Music, JioSaavn, Wynk, Amazon Music, Tidal, and more — from one single submission.",
       //   icon: (
       //     <svg
       //       xmlns="http://www.w3.org/2000/svg"
@@ -56,8 +56,8 @@ const MusicFeatures = () => {
       bg: "bg-[radial-gradient(circle_at_top_right,#1ac7f2_0%,#3b82f6_50%,#7a4dcb_100%)]",
     },
     {
-      title: "Smart Royalty Splits & Payment Management ",
-      desc: "Set up automated royalty splits and pay all your signed artists effortlessly. Handle credits, metadata, and track details fast so payments stay transparent and on time.  ",
+      title: "Feature 02 — Royalty Splits & Payments",
+      desc: "Our royalty splits for independent labels system lets you set automated percentage splits for every track, assign artist credits, and track individual earnings — full transparency for you and every artist on your roster.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -131,8 +131,8 @@ const MusicFeatures = () => {
       bg: "bg-[linear-gradient(0deg,color(display-p3_0.4235_0.3294_0.6392)_0%,color(display-p3_0_0.6941_0.8235)_99.99%)] rounded-[6px]",
     },
     {
-      title: "Pre-Save Links and Promotion Tools ",
-      desc: "Generate pre-save and shareable links for every release to boost early engagement. Pull fans in before launch day and maximize impact across platforms.  ",
+      title: "Feature 03 — Pre-Save & Promotional Tools",
+      desc: "Build momentum before your release with pre-save links and shareable assets. Drive first-day streams and give every release the best possible start across every platform.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -193,8 +193,8 @@ const MusicFeatures = () => {
       bg: "bg-[radial-gradient(circle_at_bottom_left,#FECACA_0%,#F87171_45%,#DC2626_100%)] rounded-[6px]",
     },
     {
-      title: "Built-In Labels Contract System ",
-      desc: "Access customizable legal templates to sign new talent quickly without the usual paperwork headaches, keeping deals clear and professional.  ",
+      title: "Feature 04 — Label Contract System",
+      desc: "Sign and manage new talent professionally using customisable contract templates built for independent labels. Our music label services handle deals cleanly without expensive legal costs on every new signing.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -238,8 +238,8 @@ const MusicFeatures = () => {
       bg: "bg-[radial-gradient(circle_at_top,#ffca1f_0%,#ff8f38_45%,#f25555_100%)]",
     },
     {
-      title: "Music Publishing & Sync Opportunities",
-      desc: "Track extra publishing royalties and pitch your artists’ songs for TV, film, games, and ads -opening new revenue streams beyond streaming.  ",
+      title: "Feature 05 — Publishing & Sync Placement",
+      desc: "We collect publishing royalties and pitch your music for sync placement in films, ads, and TV shows — revenue streams most independent distributor music platforms completely ignore.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -286,8 +286,8 @@ const MusicFeatures = () => {
       bg: "bg-[radial-gradient(circle_at_top_left,#ff74ea_0%,#d946ef_48%,#9b4dff_100%)]",
     },
     {
-      title: "Priority Support for Label Accounts ",
-      desc: "Get dedicated help when issues arise, with fast response times and expert guidance to keep your label running smoothly.  ",
+      title: "Feature 06 — Priority Label Support",
+      desc: "Label accounts get dedicated, fast-response support for every issue — release delays, metadata corrections, or royalty discrepancies — resolved quickly so your label never stops moving.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -310,7 +310,7 @@ const MusicFeatures = () => {
     <section className="w-full bg-[#F8F8F8] py-20 overflow-hidden">
       <div className="max-w-10xl mx-auto px-6 md:px-12 xl:px-20">
         <h2 className="text-3xl md:text-[32px] xl:text-[64px] font-medium text-center text-[#111111] mb-16">
-          Powerful Label Features to Manage, Release & Grow 
+          Everything Included in Our Label Music Distribution Service
         </h2>
 
         <div className="flex flex-wrap  gap-6 xl:gap-6">

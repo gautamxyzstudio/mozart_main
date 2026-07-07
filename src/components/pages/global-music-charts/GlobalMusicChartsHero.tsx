@@ -55,21 +55,20 @@ const GlobalMusicChartsHero = () => {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20 w-full">
           {/* Left Text Content */}
           <div className="w-full lg:w-1/2 flex flex-col md:items-start items-center md:text-start text-center space-y-3">
-            <h1 className="text-2xl md:text-5xl xl:text-[40px] font-bold text-white">
-              Reach to the Top of the
+            <span className="text-[#7b42f6] uppercase tracking-widest text-sm xl:text-[22px] md:text-[15px] font-bold mb-1 block">
+              Global Music Chart Tracking Service
+            </span>
+            <h1 className="text-3xl md:text-5xl xl:text-[54px] font-extrabold text-white xl:leading-tight leading-tight">
+              Global Music Charts for Independent Artists
             </h1>
-            <h2 className="xl:text-[84px] md:text-[42px] text-[48px] md:font-bold font-medium text-white xl:leading-24.75 leading-14">
-              Global Music Charts
-            </h2>
-            <p className="text-white text-sm md:text-sm xl:text-base max-w-lg mb-10 ">
-              Submit your music to global charts and track your performance
-              worldwide with powerful chart insights
+            <p className="text-gray-300 text-sm md:text-base xl:text-lg max-w-lg mb-8 font-light leading-relaxed">
+              Monitor your music performance across worldwide music charts in real time — and take every decision that grows your career with actual data behind it.
             </p>
             <Link
               href="/services"
-              className="bg-[#7b42f6] hover:bg-[#6833d6] text-white px-23.5 py-3 rounded-full font-medium text-lg transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(123,66,246,0.4)]"
+              className="bg-[#7b42f6] hover:bg-[#6833d6] text-white px-10 py-4.5 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(123,66,246,0.4)]"
             >
-              Buy Now
+              Track My Music Now
             </Link>
           </div>
 

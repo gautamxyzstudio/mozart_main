@@ -9,34 +9,35 @@ interface FAQItem {
 
 const faqData: FAQItem[] = [
   {
-    question: "What does a music label do for an artist?",
+    question: "Q1. What is label distribution for independent artists?",
     answer:
-"A music label helps distribute your songs to global platforms, manage royalties, and support your career growth with tools like those at Amozart.  "  },
-  {
-    question: "How do I get my music signed by a label? ",
-    answer:
-    "Most labels look for quality music, consistent releases, and audience engagement. At Amozart, strong tracks and a professional profile improve your chances.  ",
+      "It is a service that delivers your music to global platforms, collects royalties, and manages rights — without signing to a major label. Amozart gives independent artists the same tools that major record label distribution companies use."
   },
   {
-    question: "What are the benefits of signing with an independent label? ",
+    question: "Q2. How is Amozart different from other record distribution companies?",
     answer:
-      "Independent labels often offer more creative freedom, close support, and personalized development, which Amozart focuses on for artist success.  ",
+      "Most record distribution companies only deliver music to platforms. Amozart combines digital distribution for labels with royalty splits, sync placement, contract tools, and artist management — all in one place."
   },
   {
-    question: "Can I still retain my rights if I sign with a label?",
+    question: "Q3. Do I keep my rights when distributing through Amozart?",
     answer:
-      "Yes, many independent labels allow you to keep more control over your music rights, and Amozart’s agreements aim for transparency and fairness.  ",
+      "Yes — always. Label distribution rights ownership is central to how Amozart works. You keep 100% of your master rights and publishing credits at all times."
   },
   {
-    question: " How long does it take for music to go live after signing? ",
+    question: "Q4. Can I manage multiple artists under one account?",
     answer:
-      "After submission and approval, tracks typically go live in a few days to weeks, and with Amozart’s tools, the process is streamlined for faster release.  ",
+      "Yes. Our manage multiple artists label account is built for growing rosters. Upload releases, set royalty splits, and track every artist's earnings from one simple dashboard."
   },
   {
-    question: "What should I prepare before submitting my music?",
+    question: "Q5. Is Amozart right for labels and artists in India?",
     answer:
-      "Have fully mixed tracks, high-quality artwork, correct metadata, and a clear artist bio, all of which help Amozart review and release your music smoothly. ",
+      "Yes. As a dedicated music label for independent artists India, we cover regional platforms like JioSaavn and Wynk alongside every major international store — perfect for Indian and Punjabi artists releasing locally and globally."
   },
+  {
+    question: "Q6. What does the independent distributor music service include?",
+    answer:
+      "Global distribution to 150+ platforms, royalty splits, pre-save links, sync placement, a contract system, and dedicated label support — everything a growing independent label needs."
+  }
 ];
 
 const MusicFaqs = () => {

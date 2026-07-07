@@ -12,31 +12,31 @@ interface FeatureItem {
 
 const features: FeatureItem[] = [
   {
-    titlePrefix: "Global ",
+    titlePrefix: "Point 01 — Global ",
     titleHighlight: "Platform Reach",
     description:
-      "Distribute your music seamlessly across 150+ major streaming platforms worldwide, giving your content global visibility and ensuring every listener can find your music from any corner of the world.",
+      "Your music reaches 150+ platforms worldwide through our global platform reach for labels — Spotify, Apple Music, JioSaavn, Wynk, Tidal, Amazon Music, and more. One submission, complete global availability.",
     image: Images.CircleArrow2,
   },
   {
-    titlePrefix: "Transparent ",
+    titlePrefix: "Point 02 — Transparent ",
     titleHighlight: "Royalty System",
     description:
-      "Tracking your detailed royalty earning with a simple real-time dashboard, so you'll always know exactly how much you're earning, where your fans are, and how to grow faster.",
+      "Our transparent royalty system shows every rupee your music earns — real-time platform breakdowns, listener locations, and payment schedules — so you and your artists always know exactly what is coming in.",
     image: Images.Transparent,
   },
   {
-    titlePrefix: "Professional Release ",
-    titleHighlight: "Support",
+    titlePrefix: "Point 03 — Full ",
+    titleHighlight: "Rights Ownership",
     description:
-      "From release strategy to pre-save links, quality checks, and platform optimization — our team ensures every release hits the market with maximum impact and professional polish.",
+      "Label distribution rights ownership is at the core of Amozart. You keep 100% of your master rights and publishing credits — always. We distribute your music without claiming any ownership of what you create.",
     image: Images.ReleaseSport,
   },
   {
-    titlePrefix: "Artist-Friendly ",
-    titleHighlight: "Tools",
+    titlePrefix: "Point 04 — Manage ",
+    titleHighlight: "Your Full Roster",
     description:
-      "Get access to powerful tools to manage your releases, monitor real-time analytics, track listener data, and grow your career — all from a single, intuitive dashboard built for musicians.",
+      "Our manage multiple artists label account lets you handle every artist, release, and royalty split from one simple dashboard — no spreadsheets, no confusion, everything in one place.",
     image: Images.ArtistFriendly,
   },
 ];
@@ -372,7 +372,7 @@ const MusicCareer = () => {
         {/* Section Header */}
         <div className=" mb-20 md:mb-28 xl:mb-36 px-6 md:px-12 xl:px-20">
           <h2 className="text-3xl md:text-4xl xl:text-[46px] font-bold text-white leading-tight xl:leading-[1.2] max-w-3xl ">
-            Grow Your Music Career With Real Industry Advantages
+            Why Amozart Is the Best Distribution for Record Labels in India
           </h2>
           <p className="mt-5 md:mt-7 text-[#9ca3af] text-sm md:text-base xl:text-base max-w-2xl  leading-relaxed font-light">
           Partnering with Amozart Label gives independent artists the tools, support, and opportunities needed to release music confidently and reach a global audience. 

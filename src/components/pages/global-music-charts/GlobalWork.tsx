@@ -7,26 +7,25 @@ const GlobalWork = () => {
         {
             label: "Submit Your Music",
             description:
-                "Upload your track or provide streaming links to begin the chart tracking process. We verify your details to ensure your music is ready for global ranking. ",
+                "Upload your track with complete metadata through our global music chart submission service. Accurate details ensure your music is correctly identified and ranked from day one.",
             image: Images.Dummy,
         },
         {
-            label: "Data Collection Begins ",
+            label: "We Register & Track",
             description:
-                "Our system gathers real-time data from streaming platforms and audience engagement. Every play, view, and interaction helps shape your chart position. ",
+                "We register your release across chart systems and begin real time music chart tracking immediately — your dashboard populates with data from the moment your music goes live.",
             image: Images.Dummy2,
         },
         {
-            label: "Performance Is Analyzed",
+            label: "Monitor Your Performance",
             description:
-                "Our system gathers real-time data from streaming platforms and audience engagement.Every play, view, and interaction helps shape your chart position. ",
+                "Watch your worldwide music charts position update in real time — streams, listener locations, platform breakdowns, and chart trends all in one place.",
             image: Images.Dummy2,
         },
-       
         {
-            label: "Charts Update Weekly ",
+            label: "Improve Your Position",
             description:
-                "Your global chart position refreshes regularly with the latest data. See your progress, track your growth, and watch your rank rise over time. ",
+                "Use your music chart analytics data to understand how to improve your music chart position — which markets need more promotion and which strategies are driving the most growth.",
             image: Images.Dummy3,
         },
     ];
@@ -37,12 +36,9 @@ const GlobalWork = () => {
             </span>
             <div className="w-full flex flex-col xl:space-y-13.75 md:space-y-6 space-y-4 xl:px-25 md:px-13 px-6 ">
                 <div className="w-full flex flex-col space-y-4">
-                    <h2 className="xl:text-[64px] xl:leading-3 md:text-[48px] md:leading-13.5 text-[29px] leading-9.5 font-bold text-white">
-                   WhyAreDifferent
+                    <h2 className="xl:text-[64px] xl:leading-[1.2] md:text-[48px] md:leading-[1.2] text-[29px] leading-9.5 font-bold text-white max-w-4xl">
+                        How to Get Your Music on Global Charts With Amozart
                     </h2>
-                    {/* <p className="text-white xl:text-base text-sm xl:w-[60%] md:w-[80%]">
-                        Getting your music live worldwide is simple and fast. Follow a few easy steps to upload, distribute, and start earning from your music. w
-                    </p> */}
                 </div>
 
                 <div className="w-full h-auto flex flex-col space-y-0">

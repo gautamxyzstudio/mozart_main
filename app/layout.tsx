@@ -15,6 +15,8 @@ import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import "swiper/css/effect-creative";
 import "swiper/css/effect-coverflow";
+import Script from "next/script";
+import ClarityTracker from "@/src/components/clarityTracker/ClarityTracker";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://amozart.com"),
@@ -67,19 +69,45 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Martel:wght@400;600;700;800;900&display=swap"
           rel="stylesheet"
         />
+
+        {/* ✅ Google Analytics */}
+
+        <Script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`}
+        />
+
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+             window.dataLayer = window.dataLayer || [];
+             function gtag(){dataLayer.push(arguments);}
+             gtag('js', new Date());
+             gtag('config', '${process.env.NEXT_PUBLIC_GA_TRACKING_ID}', {
+                 page_path: window.location.pathname,
+               }); `,
+          }}
+        />
         <meta
           name="google-site-verification"
           content="m6-TDGzBNK3GBch_S9HUkA96m-znL-s6B5otuhizHVQ"
         />
         <CanonicalURL />
         <GoogleTagManager gtmId={`${process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER}`} />
+
       </head>
       <body className={`antialiased max-w-screen-2xl mx-auto`}>
+
         <Providers>
+          <ClarityTracker />
           <Header />
+
           {children}
           <Footer />
           <ToastContainer />
+          
         </Providers>
       </body>
     </html>

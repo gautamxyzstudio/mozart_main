@@ -33,18 +33,17 @@ export default function MusicBanner() {
         <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
           {/* Main Heading */}
           <h2 className="text-white text-2xl xl:text-[58px] md:text-[32px] font-bold mb-4">
-            Turn Your Next Track Into A <br className="hidden sm:inline" />
-            Worldwide Release With Amozart
+            Start Your Label Distribution Journey With Amozart
           </h2>
 
           {/* Subheading */}
-          <p className="text-purple-100 text-[18px] xl:text-[20px] md:text-base font-medium opacity-90 mb-6 md:mb-8 ">
-            Submit Your Music Today and Start Growing Your Career Globally
+          <p className="text-purple-100 text-[18px] xl:text-[20px] md:text-base font-medium opacity-90 mb-6 md:mb-8">
+            Join independent artists and labels already releasing music globally. Submit your first track today and grow your career the right way.
           </p>
 
           {/* CTA Button */}
           <button className="bg-white text-[#6A38C2] font-semibold px-8 py-3 rounded-full shadow-md hover:bg-purple-50 transition-all duration-200 text-sm sm:text-base mb-10 md:mb-14">
-            Join Now
+            Get Started Free
           </button>
         </div>
 
