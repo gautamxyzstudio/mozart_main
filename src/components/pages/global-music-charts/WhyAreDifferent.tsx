@@ -30,7 +30,7 @@ const WhyAreDifferent = () => {
 
   return (
     <section className="w-full bg-primary overflow-hidden xl:py-20 md:py-16 py-12 relative">
-      <div className="absolute xl:right-0 xl:-top-5 md:right-0 md:-top-5 select-none pointer-events-none hidden md:block opacity-[0.08] xl:text-[220px] md:text-[130px] font-black text-white leading-none">
+      <div className="absolute xl:right-0 xl:-top-10 md:right-0 md:-top-5 select-none pointer-events-none hidden md:block opacity-[0.08] xl:text-[220px] md:text-[130px] font-black text-white leading-none">
         Amozart
       </div>
 
