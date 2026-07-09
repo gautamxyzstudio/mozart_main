@@ -8,17 +8,20 @@ import PromotionFeatures from "@/src/components/pages/promotion/PromotionFeature
 import WorkSection from "@/src/components/pages/promotion/workSection";
 import MusicPromotionWork from "@/src/components/pages/promotion/MusicPromotionWork";
 import MusicsPromotion from "@/src/components/pages/promotion/MusicsPromotionChoose";
+import WhatIsPromotion from "@/src/components/pages/promotion/WhatIsPromotion";
+
 
 export const metadata: Metadata = {
-  title: "Music Promotion Services | Amozart",
+  title: "Music Promotion Service for Independent Artists | Amozart",
   description:
-    "Promote your music worldwide on Spotify, YouTube, TikTok, Instagram, and major streaming platforms. Reach new listeners and grow your organic fanbase with Amozart.",
+    "Amozart's music promotion service for independent artists covers playlist pitching, social media, paid ads & organic growth — promote your music globally.",
 };
 
 const page = () => {
   return (
     <>
       <PromotionHero />
+      <WhatIsPromotion />
       <WhyChoosePromotion />
       <MusicPromotionWork />
       <PromotionFeatures />

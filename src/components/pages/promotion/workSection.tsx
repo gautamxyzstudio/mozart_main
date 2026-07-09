@@ -5,27 +5,27 @@ import React from "react";
 const WorkSection = () => {
     const labelData = [
         {
-            label: "Upload Music ",
+            label: "Share Your Goals",
             description:
-                "Manage your music on YouTube with advanced Content Management System access. Track performance, manage claims, and protect your content.",
+                "Tell us your release date, target audience, and what you want — more streams, more followers, or playlist placements.",
             image: Images.Dummy,
         },
         {
-            label: "Add Details",
+            label: "We Build Your Plan",
             description:
-                "Take control of your digital rights. Protect your music across streaming platforms and social media channels with our rights management tools.",
+                "Our team creates a custom promotion plan covering playlist pitching, paid ads, social media, and organic outreach — timed around your release.",
             image: Images.Dummy2,
         },
         {
-            label: "Distribute Everywhere ",
+            label: "We Run Everything",
             description:
-                "Set up and manage royalty distribution with customizable split templates. Ensure fair compensation for all contributors to your music.",
+                "We manage every channel while you focus on your music. Pitching, ads, influencer outreach, blog submissions — all handled by our team.",
             image: Images.Dummy3,
         },
         {
-            label: "Earn & Track  ",
+            label: "Track & Grow",
             description:
-                "Set up and manage royalty distribution with customizable split templates. Ensure fair compensation for all contributors to your music.",
+                "Clear reports show streams gained, placements secured, and audience growth — every campaign makes the next one smarter.",
             image: Images.Dummy3,
         },
     ];

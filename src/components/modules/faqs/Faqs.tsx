@@ -14,33 +14,39 @@ export interface FaqItem {
 const defaultFaqData: FaqItem[] = [
   {
     id: "panel1",
-    question: "How do I distribute my music worldwide?",
+    question: "What is a music promotion service?",
     answer:
-      "You can upload your song through our platform, and we deliver it to all major streaming apps like Spotify, Apple Music, JioSaavn, YouTube Music, Amazon Music, and more. We ensure fast delivery and complete metadata accuracy.",
+      "It promotes your music across streaming platforms, social media, blogs, and paid channels — helping independent artists reach more listeners and grow streams without a label's marketing team.",
   },
   {
     id: "panel2",
-    question: "Do I keep 100% rights to my music?",
+    question: "How do I promote music on Spotify and YouTube?",
     answer:
-      "Yes. You always stay the full owner of your music copyrights. We only help you distribute, monetize, and protect your releases across global platforms. ",
+      "Spotify promotion starts with playlist pitching before your release date. YouTube promotion involves targeted ads and influencer outreach. Amozart handles both as part of every campaign.",
   },
   {
     id: "panel3",
-    question: "How does YouTube Content ID help me?",
+    question: "How do I get more streams as an independent artist?",
     answer:
-      "YouTube Content ID scans YouTube for any re-uploads of your music and automatically collects revenue from those videos, making sure you never lose your earnings.",
+      "A combination of playlist pitching, paid ads, social media promotion, and organic engagement drives the most consistent stream growth. Our music promotion campaign for new artists covers all of these in one coordinated release campaign.",
   },
   {
     id: "panel4",
-    question: "When will I receive my royalties?",
+    question: "Do you promote music for Punjabi artists?",
     answer:
-      "Royalty payments depend on the streaming platforms’ payout cycles, typically every 30 to 60 days. You can track earnings with our detailed analytics and transparent dashboard. ",
+      "Yes. Our music promotion service for Punjabi artists targets the platforms and communities Punjabi music reaches — from India to the UK, Canada, and the global Punjabi diaspora.",
   },
   {
     id: "panel5",
-    question: "Can you help promote my music? ",
+    question: "What is the difference between paid and organic promotion?",
     answer:
-      "Yes. We provide music promotion services including playlist pitching, social promotion, campaign planning, and marketing strategies to boost your visibility and streams.",
+      "Paid promotion drives immediate reach through targeted ads. Organic music promotion builds a genuine fanbase over time through playlist visibility and content engagement. The best results come from combining both.",
+  },
+  {
+    id: "panel6",
+    question: "Is your promotion service available in India?",
+    answer:
+      "Yes. Our paid music promotion service India covers Meta, YouTube, and Google ad campaigns alongside regional playlist pitching and social media promotion tailored to Indian audiences.",
   },
 ];
 

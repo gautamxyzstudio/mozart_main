@@ -8,38 +8,43 @@ const WhyChoosePromotion = () => {
   const features = [
     {
       num: "01",
-      title: "PLAYLIST PITCHING",
-      desc: "Get your tracks placed on high-traffic editorial and algorithmic playlists across Spotify, Apple Music, and more.",
+      title: "Playlist Pitching",
+      desc: "We pitch your tracks to Spotify editorial and independent curators before your release date — our playlist pitching service for independent artists gets your music in front of listeners who are actively looking for new songs.",
     },
     {
       num: "02",
-      title: "ONLINE BLOG FEATURES",
-      desc: "We secure features on top music blogs and online publications to build your credibility and online presence.",
+      title: "Social Media Promotion",
+      desc: "Our social media music promotion for independent artists covers Instagram, TikTok, Facebook, and YouTube — consistent content and audience targeting that builds your presence on every platform your fans use.",
     },
     {
       num: "03",
-      title: "SOCIAL MEDIA STRATEGY",
-      desc: "Targeted social campaigns across Instagram, TikTok, and Twitter to grow your fanbase organically.",
+      title: "Music Blog Promotion",
+      desc: "Music blog promotion for independent artists gets your music featured on blogs and online magazines — building credibility and reaching audiences who actively discover new music.",
     },
     {
       num: "04",
-      title: "PAID AD CAMPAIGN",
-      desc: "Precision-targeted ads on Meta, YouTube, and TikTok to drive streams and engagement.",
+      title: "Paid Ads",
+      desc: "Our paid music promotion service India runs targeted ad campaigns on Meta, YouTube, and Google — reaching the exact listeners most likely to stream and follow your music.",
     },
     {
       num: "05",
-      title: "PROMOTIONAL VIDEOS",
-      desc: "Professional lyric videos, visualizers, and short-form content for maximum reach.",
+      title: "Influencer Promotion",
+      desc: "Influencer music promotion for artists connects your music with content creators who share it with their audience — driving organic discovery that feels natural, not forced.",
     },
     {
       num: "06",
-      title: "PROMOTIONAL GRAPHICS",
-      desc: "Premium cover art, social banners, and branded promotional creatives.",
+      title: "Promo Videos & Graphics",
+      desc: "Professional lyric videos, visualisers, and social graphics that make every release look polished across every platform.",
     },
   ];
 
   return (
     <section className="w-full bg-primary overflow-hidden xl:py-[53px] md:py-10 py-6 ">
+      <div className="max-w-[1400px] mx-auto px-8 md:px-10 mb-8 md:mb-12">
+        <h2 className="text-white xl:text-[64px] md:text-[48px] text-[32px] font-bold leading-tight">
+          Six Ways We Promote Your Music
+        </h2>
+      </div>
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start">
         {features.map((feat, idx) => {
           const isOpen = openIndex === idx;

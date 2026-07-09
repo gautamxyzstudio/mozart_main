@@ -35,23 +35,23 @@ const PromotionHero = () => {
       <div className="w-full flex-grow flex flex-col items-center justify-center relative z-10 px-6 pb-12 sm:pb-20 md:pb-32">
         {/* Center Typography & CTA */}
         <div className="w-full flex flex-col items-center text-center max-w-4xl mx-auto z-20">
-          <span className="text-white/80 font-semibold text-[30px] md:text-[42px] xl:text-[64px]  tracking-wide">
-            Let Your Music Be
+          <span className="text-white/80 font-semibold text-[30px] md:text-[42px] xl:text-[60px]  tracking-wide">
+            Music Promotion That Works
           </span>
 
-          <h1 className="text-white font-extrabold text-[36px] md:text-[52px] xl:text-[124px] leading-none tracking-tight mb-2 select-none">
-            Everywhere
+          <h1 className="text-white font-bold text-[36px] md:text-[52px] xl:text-[110px] leading-none tracking-tight mb-2 select-none">
+            for Independent Artists
           </h1>
 
           <p className="text-white/70 text-[15px] md:text-[14px] xl:text-base font-light tracking-wide max-w-xl mx-auto mb-8 md:mb-10 leading-relaxed">
-            Get real streams, real fans, and grow your music career
+            More streams. More fans. More reach — across every platform your audience listens on.
           </p>
 
           <Link
             href={`${process.env.NEXT_PUBLIC_ADMIN_BASE_MAIN_URL}/signup`}
             className="bg-[#6236b0] hover:bg-[#512da8] text-white font-bold py-3.5 px-10 rounded-full shadow-[0_0_25px_rgba(98,54,176,0.6)] transition-all duration-300 transform hover:scale-105 active:scale-95 inline-block text-center whitespace-nowrap"
           >
-            Choose Your Campaign
+            Start Promoting Music
           </Link>
         </div>
 

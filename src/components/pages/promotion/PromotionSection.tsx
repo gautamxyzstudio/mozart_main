@@ -13,32 +13,32 @@ const PromotionSection = () => {
         {
             step: "01",
             icon: <TrackChangesIcon fontSize="medium" />,
-            title: "Industry Expertise ",
-            desc: "We study your genre, sound, and listener behavior to identify the audience most likely to engage with your music, ensuring every campaign starts in the right direction.",
+            title: "Every Channel Covered",
+            desc: "Playlist pitching, social media, paid ads, blogs, and influencer campaigns — all handled by one team under one online music promotion service.",
         },
         {
             step: "02",
             icon: <CampaignIcon fontSize="medium" />,
-            title: "Platform-Based Promotion",
-            desc: "Your music is promoted on key platforms like Spotify, YouTube, Instagram, and more through playlist pitching, social media campaigns, and curated content boosts.",
+            title: "Built for Indian & Punjabi Artists",
+            desc: "We understand the Indian and Punjabi music market — which platforms work, which communities matter, and how to reach both local and global audiences.",
         },
         {
             step: "03",
             icon: <TrendingUpIcon fontSize="medium" />,
-            title: "Performance Optimization",
-            desc: "We monitor streaming and engagement data, then refine strategies to increase visibility, strengthen reach, and maximize overall growth.",
+            title: "Real Data, Real Results",
+            desc: "Every promotion decision is backed by stream analytics and audience insights — not guesswork.",
         },
         {
             step: "04",
             icon: <AnalyticsIcon fontSize="medium" />,
-            title: "Data-Driven Insights",
-            desc: "We provide detailed reports and analytics to help you understand your audience and optimize future campaigns.",
+            title: "Full Transparency",
+            desc: "Clear reports at every stage — streams, placements, ad performance, and audience growth — always.",
         },
         {
             step: "05",
             icon: <AutoGraphIcon fontSize="medium" />,
-            title: "Continuous Growth",
-            desc: "Our long-term strategies ensure that your fan base continues to grow organically even after the campaign ends.",
+            title: "Growth That Lasts",
+            desc: "Our campaigns build momentum that keeps growing long after your release window closes.",
         },
     ];
 

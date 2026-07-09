@@ -49,15 +49,12 @@ const MusicPromotionWork = () => {
 
                 {/* RIGHT COLUMN: Text Content & CTA Button */}
                 <div className="text-left max-w-xl md:pl-8 lg:pl-12 flex flex-col justify-center order-1 md:order-2">
-                    <h2 className="text-white text-[32px] md:text-[40px] lg:text-[64px] font-extrabold tracking-tight mb-6 leading-[1.1]">
-                        Music Promotion
-                        That Works
+                    <h2 className="text-white text-[32px] md:text-[35px] lg:text-[57px] xl:pt-0 md:pt-10 pt-0 font-extrabold tracking-tight mb-6 leading-[1.1]">
+                        How to Get More Streams as an Independent Artist
                     </h2>
 
                     <p className="text-white/70 text-sm md:text-base mb-10 leading-relaxed font-normal max-w-[480px]">
-                        We help artists grow with smart promotion strategies, including playlist pitching,
-                        social media campaigns, and targeted marketing designed to increase your
-                        streams, reach, and visibility.
+                        More streams come from reaching the right audience, at the right time, on the right platform. Amozart pitches your music to playlists before release, runs targeted ads during launch, and uses organic promotion to keep streams growing long after the campaign ends — building a real fanbase, not just a one-day spike.
                     </p>
 
                     <div className="w-full md:w-auto">

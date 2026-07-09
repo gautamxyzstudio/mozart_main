@@ -11,7 +11,7 @@ const MusicsPromotion = () => {
       <div className="w-full flex flex-col items-center xl:space-y-22 md:space-y-8 space-y-6">
         <div className="flex flex-col space-y-4 md:items-center md:text-center md:px-0 px-6">
           <h2 className="xl:text-[64px] xl:leading-18 md:text-[48px] md:leading-13.5 text-[32px] leading-9.5 font-bold text-foreground">
-            Why Artists Choose Us
+            Why Independent Artists Choose Amozart
           </h2>
           <p className="text-black80 xl:text-base text-sm md:w-[70%]">
             We focus on real growth, transparent strategies, and results that help artists build a lasting music career, not just temporary numbers.           </p>
