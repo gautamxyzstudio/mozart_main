@@ -14,25 +14,19 @@ const RoyaltyHeroSection = () => {
       {/* Main Content Grid */}
       <div className="w-full max-w-7xl mx-auto px-6 md:px-12 xl:px-20 flex flex-col md:flex-row items-center justify-between relative z-10 pb-16 md:pb-24">
         {/* Left Column: Typography Content */}
-        <div className="flex flex-col md:items-start items-center md:w-[50%] w-full space-y-3 md:pr-8 md:text-left text-center">
-          <h2 className="text-white font-medium text-[28px] md:text-xl xl:text-[45px]">
-            Turn Every Play Into
-          </h2>
-          <div className="flex flex-col leading-1 ">
-            <h1 className="text-white font-bold text-[44px] md:text-[52px] xl:text-[70px] leading-[1.05] ">
-              Your Pay Your Sound
-            </h1>
-          </div>
-          <p className="text-white/70 text-sm md:text-base xl:text-lg font-light leading-relaxed max-w-md">
-            From streams to global usage, we ensure your rights are protected,
-            and your royalties are collected without missing a beat.{" "}
+        <div className="flex flex-col md:items-start items-center md:w-[50%] w-full space-y-4 md:pr-8 md:text-left text-center">
+          <h1 className="text-white font-bold text-[44px] md:text-[52px] xl:text-[62px] leading-[1.1] tracking-tight">
+            Royalty Rights Management for Independent Artists
+          </h1>
+          <p className="text-white/70 text-sm md:text-base xl:text-lg font-light leading-relaxed max-w-lg pt-2">
+            Collect every rupee your music earns, protect your rights, and track royalties across every platform — all in one place.
           </p>
         <div className="mt-8 w-full flex justify-center md:justify-start">
             <Link
               href="/apply"
-              className="inline-flex w-[85%] md:w-auto items-center justify-center px-8 md:px-15 py-3.5 rounded-full bg-primary text-white font-bold text-base hover:bg-gray-100 transition-colors shadow-lg"
+              className="inline-flex w-[85%] md:w-auto items-center justify-center px-8 md:px-10 py-3.5 rounded-full bg-primary text-white font-bold text-base "
             >
-              Apply Now
+              Start Managing Royalties
             </Link>
           </div>
         </div>

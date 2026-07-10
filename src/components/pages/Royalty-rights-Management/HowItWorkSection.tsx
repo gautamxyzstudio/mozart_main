@@ -5,28 +5,27 @@ import React from "react";
 const HowItWorkSection = () => {
   const labelData = [
     {
-      label: "Upload Your Catalog ",
+      label: "Submit Your Music & Rights Details",
       description:
-        "Start by uploading your music to our platform. You can add your songs, albums, and all important details in one place. This is the first step to making your music ready for royalty tracking and management. ",
+        "Share your track information and ownership details. Accurate information here ensures every royalty is attributed and collected correctly from day one.",
       image: Images.Dummy,
     },
     {
-      label: "Register & Track Rights  ",
+      label: "We Register & Protect Your Rights",
       description:
-        "Once your music is uploaded, we register your rights and organize all important information like ownership, credits, and metadata. We also start tracking where and how your music is being used across different platforms worldwide. ",
+        "We register your music with the right copyright organisations and begin monitoring your catalog across every platform — building complete rights protection from the start.",
       image: Images.Dummy2,
     },
     {
-      label: "Collect Royalties ",
+      label: "We Track Every Royalty",
       description:
-        "We collect your earnings from multiple sources such as streaming platforms, social media, public performances, and more. Our system ensures that every stream and usage is counted so you don’t lose any income. ",
+        "Our streaming royalty tracking monitors your earnings in real time across every platform and territory — so nothing goes uncollected.",
       image: Images.Dummy2,
     },
-
     {
-      label: "Get Paid  ",
+      label: "You Get Paid & Reported Clearly",
       description:
-        "After collecting your royalties, we process and deliver your payments directly to you. You receive clear reports along with your earnings, so you always know how much your music is making. ",
+        "All royalties are paid directly to you on schedule with full reporting — exactly what was earned, where it came from, and when it was paid.",
       image: Images.Dummy3,
     },
   ];
@@ -37,8 +36,8 @@ const HowItWorkSection = () => {
       </span>
       <div className="w-full flex flex-col xl:space-y-13.75 md:space-y-6 space-y-4 xl:px-25 md:px-13 px-6 ">
         <div className="w-full flex flex-col space-y-4">
-          <h2 className="xl:text-[64px] xl:leading-3 md:text-[48px] md:leading-13.5 text-[29px] leading-9.5 font-bold text-white">
-            How It Works
+          <h2 className="xl:text-[64px] xl:leading-17 md:text-[48px] md:leading-13.5 text-[29px] leading-8.5 font-bold text-white">
+            How Our Royalty Rights Management Service Works
           </h2>
           <p className="text-white/30 xl:text-base text-sm xl:w-[60%] md:w-[80%] mt-2">
             Our process is simple and designed to help you earn from your music

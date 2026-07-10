@@ -8,8 +8,8 @@ const WhyChooseRoyalty = () => {
 
       {/* Heading Section with Watermark */}
       <div className="w-full flex flex-col xl:px-0 relative z-10 mx-auto mb-16 md:mb-10">
-        <h2 className="text-white font-extrabold text-center text-3xl md:text-5xl lg:text-[56px] leading-tight tracking-tight -mt-6 md:-mt-1 xl:-mt-1 relative z-10">
-          Benefits
+        <h2 className="text-white font-extrabold text-center text-3xl md:text-5xl lg:text-[56px] leading-tight tracking-tight -mt-6 md:mt-7 xl:mt-10 relative z-10 max-w-4xl mx-auto">
+          Why Artists Trust Amozart for Royalty Rights Management
         </h2>
       </div>
 
@@ -18,28 +18,29 @@ const WhyChooseRoyalty = () => {
         {[
           {
             num: "01",
-            title: "Global Royalty Collection",
-            desc: "We collect your royalties from all major music platforms, countries, and performing rights organizations. No matter where your music is played, streamed, or used, we make sure your money reaches you. ",
+            title: "Complete Collection",
+            desc: "Every type of royalty — streaming, performance, mechanical, and sync — collected from every territory. Nothing missed.",
             offsetClass: "md:translate-y-0",
           },
           {
             num: "02",
-            title: "Transparent Reporting",
-            desc: "You get clear and easy-to-understand reports that show exactly how much your music earned and from which platforms. There are no hidden details or confusing numbers — everything is open and simple to track.",
+            title: "Full Copyright Protection",
+            desc: "Your music is registered, documented, and protected everywhere it is played — always.",
             offsetClass: "md:translate-y-[40px] lg:translate-y-[55px]",
           },
           {
             num: "03",
-            title: "Monthly Payouts",
-            desc: "We pay you on time every month. As soon as your royalties are processed, your earnings are sent directly to you. This gives you a steady and reliable flow of income from your music.",
+            title: "Real Time Tracking",
+            desc: "Live, platform-by-platform earnings breakdown — no delays, no guesswork, complete transparency.",
             offsetClass: "md:translate-y-[40px] lg:translate-y-[55px]",
           },
           {
             num: "04",
-            title: "Data Accuracy",
-            desc: "Our system ensures all your song details, credits, and metadata are correct and updated. Accurate data means your music is properly identified everywhere, which helps you receive every royalty you deserve. ",
+            title: "Built for India & Punjabi Artists",
+            desc: "Deep understanding of the Indian and Punjabi royalty landscape — regional and international platforms covered equally.",
             offsetClass: "md:translate-y-0",
           },
+
         ].map((feat, idx) => (
           <div
             key={idx}
@@ -62,31 +63,34 @@ const WhyChooseRoyalty = () => {
           </div>
         ))}
         {/* Curved Dotted/Dashed SVG ribbon paths */}
-        <svg
-          viewBox="0 0 1000 700"
-          preserveAspectRatio="none"
-          className="absolute  left-0 right-0 lg:-top-[48%] md:top-[10%] w-full h-[700px] pointer-events-none hidden md:block"
-        >
-          {/* Top Curve */}
-          <path
-            d="M -100 90 Q 500 300 1100 90"
-            fill="none"
-            stroke="rgba(255,255,255,0.45)"
-            strokeWidth="1.5"
-            strokeDasharray="8 6"
-            strokeLinecap="round"
-          />
+      <svg
+  viewBox="0 0 1000 700"
+  preserveAspectRatio="none"
+  className="absolute left-0 right-0 lg:-top-[62%] md:-top-[71%] w-full xl:h-[700px] md:h-[650px] pointer-events-none hidden md:block"
+>
+  {/* Top Curve - Bending deep down to 260 */}
+  <path
+    d="M -100 100 Q 500 260 1100 100"
+    fill="none"
+    stroke="rgba(255,255,255,0.45)"
+    strokeWidth="1.5"
+    strokeDasharray="8 6"
+    strokeLinecap="round"
+  />
 
-          {/* Bottom Curve */}
-          <path
-            d="M -100 500 Q 500 700 1100 500"
-            fill="none"
-            stroke="rgba(255,255,255,0.35)"
-            strokeWidth="1.5"
-            strokeDasharray="6 6"
-            strokeLinecap="round"
-          />
-        </svg>
+  {/* Bottom Curve - Bending deep down to 600 */}
+  <path
+    d="M -100 440 Q 500 600 1100 440"
+    fill="none"
+    stroke="rgba(255,255,255,0.35)"
+    strokeWidth="1.5"
+    strokeDasharray="8 6"
+    strokeLinecap="round"
+  />
+</svg>
+
+
+
       </div>
       <span className="w-full flex justify-end mt-16 xl:text-[200px] xl:leading-40 md:text-[124px] md:leading-30 text-[70px] leading-17.5 text-white/10 font-bold">
         Benefits

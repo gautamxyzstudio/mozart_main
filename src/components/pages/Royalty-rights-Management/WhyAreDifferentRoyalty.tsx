@@ -32,11 +32,11 @@ const WhyAreDifferentRoyalty = () => {
     <section className="w-full bg-primary overflow-hidden xl:py-20 md:py-16 py-12 relative">
       <div className="max-w-350 mx-auto px-6 md:px-12 lg:px-16">
         {/* Main Section Heading */}
-        <h2 className="text-white text-3xl md:text-4xl lg:text-[44px] font-bold   flex  xl:mt-20 md:mt-5">
+        <h2 className="text-white text-3xl md:text-4xl lg:text-[44px] font-bold flex ">
           Types of Royalties We Manage
         </h2>
 
-        <p className="text-white/70 text-sm w-160   mt-6 mb-10 md:mb-16">
+        <p className="text-white/70 text-sm w-full md:w-160 max-w-full mt-6 mb-10 md:mb-16">
           We help artists collect different types of royalties that come from
           multiple uses of their music. Each royalty type is important, and we
           make sure you don’t miss any earnings from anywhere. 
