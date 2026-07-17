@@ -397,7 +397,7 @@ const NavBarDrawer: React.FC<INavBarDrawerProps> = ({
         <div className="flex flex-col space-y-8">
           <div className="flex flex-row items-center justify-between w-full py-3.5">
             <Link href={"/"} onClick={onClose}>
-              <Image src={Images.Logo} alt="AMozart" className="w-auto h-6" />
+              <Image src={Images.Logo} alt="Amozart" className="w-auto h-6" />
             </Link>
             <button
               onClick={onClose}
@@ -420,8 +420,8 @@ const NavBarDrawer: React.FC<INavBarDrawerProps> = ({
                           setIsServicesExpanded(!isServicesExpanded)
                         }
                         className={`rounded-full uppercase text-base w-full py-2.5 flex flex-row items-center justify-between cursor-pointer transition-all duration-300 ${isServicesExpanded || pathName.startsWith("/services")
-                            ? " text-primary font-bold"
-                            : "text-foreground"
+                          ? " text-primary font-bold"
+                          : "text-foreground"
                           }`}
                       >
                         <span>{item.label}</span>
@@ -470,8 +470,8 @@ const NavBarDrawer: React.FC<INavBarDrawerProps> = ({
                       href={item.href}
                       onClick={onClose}
                       className={`rounded-2xl uppercase text-base w-full py-2.5 transition-all duration-300 ${pathName === item.href
-                          ? " text-primary font-bold"
-                          : "text-foreground"
+                        ? " text-primary font-bold"
+                        : "text-foreground"
                         }`}
                     >
                       {item.label}

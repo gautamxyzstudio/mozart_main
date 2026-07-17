@@ -36,7 +36,7 @@ const PromotionHero = () => {
         {/* Center Typography & CTA */}
         <div className="w-full flex flex-col items-center text-center max-w-4xl mx-auto z-20">
           <span className="text-white/80 font-semibold text-[30px] md:text-[42px] xl:text-[60px]  tracking-wide">
-            Music Promotion That Works
+            Music Promotion that Works
           </span>
 
           <h1 className="text-white font-bold text-[36px] md:text-[52px] xl:text-[110px] leading-none tracking-tight mb-2 select-none">

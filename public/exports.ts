@@ -71,9 +71,9 @@ import GlobalReach from "./GlobalReach.webp"
 import Royalties from "./royalties.webp"
 import Menztion from "./menztionTool.webp"
 import Vegan2 from "./vegan2.webp"
-import SmartAudience  from "./smartaudience.webp"
+import SmartAudience from "./smartaudience.webp"
 import Algorithm from "./algorithm.webp"
-import Influencer from "./Influencermusic.webp"  
+import Influencer from "./Influencermusic.webp"
 import Organic from "./organic.webp"
 import YouTubeMUsic2 from "./youtubemusic2.webp"
 import ChannelLayout from "./channellayout.webp"
@@ -114,6 +114,7 @@ import YouTubeNav from "./youTubeNav.webp";
 import Mobile from "./Mobile.webp"
 import ComingSoon from "./comingsoon.png"
 import Four from "./fore.webp"
+import Khuraak from "./khuraak.webp";
 
 export const Images = {
   Logo,
@@ -170,35 +171,36 @@ export const Images = {
   AnalystReporting,
   YouTubeContentID,
   Eligible,
-   YouTubeContent,
-   ArtistImg,
-   ArtistImg2,
-   GoodThing,
-   AlbumFour,
-   MusicLabel,
-   Transparent,
-   ReleaseSport,
-   ArtistFriendly,
-   Track,
-   GlobalChartsGlobe,
-   GlobalChart2,
-    Price,
-    RoyaltyImg,
-    ROyalty1,
-    ROyalty2,
-    ROyalty3,
-    ROyalty4,
-    ROyalty5,
-    GlobalImg1,
-    GlobalImg2,
-    GlobalImg3,
-    GlobalImg4,
-    GlobalImg5,
-    Money,
-    YouTubeNav,
-    Mobile,
-    ComingSoon,
-    Four
+  YouTubeContent,
+  ArtistImg,
+  ArtistImg2,
+  GoodThing,
+  AlbumFour,
+  MusicLabel,
+  Transparent,
+  ReleaseSport,
+  ArtistFriendly,
+  Track,
+  GlobalChartsGlobe,
+  GlobalChart2,
+  Price,
+  RoyaltyImg,
+  ROyalty1,
+  ROyalty2,
+  ROyalty3,
+  ROyalty4,
+  ROyalty5,
+  GlobalImg1,
+  GlobalImg2,
+  GlobalImg3,
+  GlobalImg4,
+  GlobalImg5,
+  Money,
+  YouTubeNav,
+  Mobile,
+  ComingSoon,
+  Four,
+  Khuraak
 
 };
 

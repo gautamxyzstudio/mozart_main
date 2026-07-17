@@ -8,7 +8,7 @@ import WhoIsEligible from "@/src/components/pages/youtube-content-id/WhoIsEligib
 import FAQ from "@/src/components/pages/youtube-content-id/FAQ";
 
 export const metadata: Metadata = {
-  title: "YouTube Content ID Protection & Monetization | AMozart",
+  title: "YouTube Content ID Protection & Monetization | Amozart",
   description:
     "Manage, protect, and monetize your music. Use Amozart Content ID to register your songs and capture all YouTube royalties.",
 };

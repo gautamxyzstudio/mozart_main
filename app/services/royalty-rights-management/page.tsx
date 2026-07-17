@@ -51,15 +51,15 @@ const faqData = [
 const page = () => {
   return (
     <>
-    <RoyaltyHeroSection />
-    <WhatIsRoyalty />
-    <WhyChooseRoyalty />
-    <RoyaltyService/>
-    {/* <WhyAreDifferentRoyalty /> */}
-    <ChooseRoyalty />
-    <HowItWorkSection />
-    <Testimonials />
-    <Faqs faqData={faqData} />
+      <RoyaltyHeroSection />
+      <WhatIsRoyalty />
+      <WhyChooseRoyalty />
+      <RoyaltyService />
+      {/* <WhyAreDifferentRoyalty /> */}
+      <ChooseRoyalty />
+      <HowItWorkSection />
+      <Testimonials />
+      <Faqs faqData={faqData} />
     </>
   )
 }

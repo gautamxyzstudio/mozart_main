@@ -16,12 +16,12 @@ export const metadata: Metadata = {
 const Page = () => {
   return (
     <>
-    <main className="bg-[#030008] min-h-screen">
-      <MusicLabelHero />
-      <MusicProcess />
-      <MusicFeatures />
-      <MusicCareer />
-    </main>
+      <main className="bg-[#030008] min-h-screen">
+        <MusicLabelHero />
+        <MusicProcess />
+        <MusicFeatures />
+        <MusicCareer />
+      </main>
       <MusicBanner />
       <MusicFaqs />
     </>

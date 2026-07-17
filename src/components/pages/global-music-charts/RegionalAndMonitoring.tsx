@@ -11,7 +11,7 @@ export default function RegionalAndMonitoring() {
       <div className="absolute bottom-1/3 right-0 w-[400px] h-[400px] bg-[#9b4dff]/10 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-6 md:px-12 xl:px-20 space-y-24 md:space-y-36">
-        
+
         {/* Section 1: India & Punjabi Artists */}
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
           {/* Left Column: Content */}
@@ -25,7 +25,7 @@ export default function RegionalAndMonitoring() {
             <p className="text-gray-400 text-sm md:text-base leading-relaxed font-light">
               Amozart's music chart tracking service India gives Indian and Punjabi artists real time visibility across both local platforms like JioSaavn and Wynk and global charts on Spotify and Apple Music. Our global music charts for Punjabi artists covers every platform where Punjabi music is growing — from Punjab to the UK, Canada, and beyond.
             </p>
-            
+
             {/* Badges of platforms */}
             <div className="flex flex-wrap gap-3 pt-4">
               <span className="bg-white/5 border border-white/10 rounded-full px-4 py-1.5 text-xs font-semibold hover:border-[#7b42f6]/50 transition-colors duration-300">Spotify</span>
@@ -56,7 +56,7 @@ export default function RegionalAndMonitoring() {
                   </div>
                   <span className="text-xs md:text-sm font-semibold text-emerald-400">#1 Trending</span>
                 </div>
-                
+
                 <div className="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/5">
                   <div className="flex items-center gap-3">
                     <span className="font-extrabold text-[#7b42f6]">02</span>
@@ -108,7 +108,7 @@ export default function RegionalAndMonitoring() {
                 </div>
                 <span className="bg-[#7b42f6]/20 text-[#7b42f6] px-3 py-1 rounded-full text-xs font-semibold">+18.4% this week</span>
               </div>
-              
+
               {/* Fake visual bar chart */}
               <div className="mt-8 flex items-end gap-3 h-28">
                 <div className="w-full bg-[#7b42f6]/20 h-[30%] rounded-md hover:bg-[#7b42f6]/50 transition-all duration-300"></div>

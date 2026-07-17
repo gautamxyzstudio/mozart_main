@@ -375,7 +375,7 @@ const MusicCareer = () => {
             Why Amozart Is the Best Distribution for Record Labels in India
           </h2>
           <p className="mt-5 md:mt-7 text-[#9ca3af] text-sm md:text-base xl:text-base max-w-2xl  leading-relaxed font-light">
-          Partnering with Amozart Label gives independent artists the tools, support, and opportunities needed to release music confidently and reach a global audience. 
+            Partnering with Amozart Label gives independent artists the tools, support, and opportunities needed to release music confidently and reach a global audience.
           </p>
         </div>
 
@@ -386,9 +386,8 @@ const MusicCareer = () => {
             return (
               <div
                 key={idx}
-                className={`flex flex-col ${
-                  isEven ? "md:flex-row" : "md:flex-row-reverse"
-                } items-center gap-12 md:gap-16 xl:gap-20 group`}
+                className={`flex flex-col ${isEven ? "md:flex-row" : "md:flex-row-reverse"
+                  } items-center gap-12 md:gap-16 xl:gap-20 group`}
               >
                 {/* Image Side */}
 
@@ -408,9 +407,8 @@ const MusicCareer = () => {
                 <div className="w-full md:w-1/2 flex justify-center relative">
                   {/* Glow behind image */}
                   <div
-                    className={`absolute inset-0 ${
-                      isEven ? "left-50" : "right-40"
-                    } bg-[#6739b7]/60 rounded-full blur-[80px] scale-75 group-hover:scale-90 transition-transform duration-700 pointer-events-none`}
+                    className={`absolute inset-0 ${isEven ? "left-50" : "right-40"
+                      } bg-[#6739b7]/60 rounded-full blur-[80px] scale-75 group-hover:scale-90 transition-transform duration-700 pointer-events-none`}
                   />
 
                   {idx === 0 ? (

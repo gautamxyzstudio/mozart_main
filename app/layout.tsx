@@ -21,19 +21,19 @@ import ClarityTracker from "@/src/components/clarityTracker/ClarityTracker";
 export const metadata: Metadata = {
   metadataBase: new URL("https://amozart.com"),
 
-  title: "Amozart | Global Music Services | Music Distribution",
+  title: "Global Punjabi Music Distribution & Promotion | Amozart",
   description:
-    "Distribute your music worldwide with top music distribution, promotion, YouTube Content ID, royalty management & artist services. Grow your career globally.",
+    "Go global! Distribute Punjabi & indie tracks to Spotify, Apple & 100+ platforms. Secure YouTube Content ID & boost streams with Indian music ads.",
   openGraph: {
     title: "Amozart | Global Music Services | Music Distribution",
     description:
       "Distribute your music worldwide with top music distribution, promotion, YouTube Content ID, royalty management & artist services. Grow your career globally.",
     url: "https://amozart.com",
-    siteName: "AMOZART",
+    siteName: "Amozart",
     type: "website",
     images: [
       {
-        url: "/amozart.png",
+        url: "https://admin.amozart.com/assets/amozart-BugKUjlO.webp",
         width: 1200,
         height: 630,
         alt: "Amozart",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     title: "Amozart | Global Music Services | Music Distribution ",
     description:
       "Distribute your music worldwide with top music distribution, promotion, YouTube Content ID, royalty management & artist services. Grow your career globally.",
-    images: ["/amozart.png"],
+    images: ["https://admin.amozart.com/assets/amozart-BugKUjlO.webp"],
   },
   robots: {
     index: true,
@@ -107,7 +107,7 @@ export default function RootLayout({
           {children}
           <Footer />
           <ToastContainer />
-          
+
         </Providers>
       </body>
     </html>

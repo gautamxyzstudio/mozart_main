@@ -8,9 +8,9 @@ import CampaignIcon from "@mui/icons-material/Campaign";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 
 export const metadata: Metadata = {
-  title: "Artist Guide | AMozart",
+  title: "Independent Artist Guide: Music Industry & Marketing Tips",
   description:
-    "Build Your Music Career with Confidence. This guide helps artists prepare professional releases and understand how Amozart supports long-term growth.",
+    "Step-by-step guides for independent Indian and Punjabi artists. Learn how to pitch playlists, boost streams, and market your music globally. ",
 };
 
 const Page = () => {

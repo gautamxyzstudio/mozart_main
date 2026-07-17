@@ -34,13 +34,13 @@ const WhoIsEligible = () => {
   return (
     <section className="w-full bg-[#111111] py-20 px-6 md:px-12 xl:px-20 font-sans text-white">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
-        
+
         {/* Left Side: Image */}
         <div className="w-full lg:w-1/2 flex justify-center items-center">
           <div className="relative w-full max-w-[500px] rounded-xl overflow-hidden shadow-2xl">
             {/* Using a placeholder image for the eligibility graphic */}
             <Image
-              src={Images.Eligible} 
+              src={Images.Eligible}
               alt="Who is Eligible for Content ID"
               className="w-full h-auto object-cover rounded-xl border border-white/10"
               priority
@@ -69,7 +69,7 @@ const WhoIsEligible = () => {
                     {item.num}
                   </span>
                 </div>
-                
+
                 {/* Text Content */}
                 <div className="flex flex-col pt-1 space-y-1">
                   <h3 className="font-bold text-[18px] md:text-[20px]">

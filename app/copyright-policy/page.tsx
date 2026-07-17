@@ -2,9 +2,9 @@ import React from "react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Copyright Policy | AMozart",
+  title: "Copyright & Intellectual Property Policy | Amozart",
   description:
-    "Amozart respects creators and expects all users to respect intellectual property rights. Learn about our original content policy, complaints, investigation process, and repeat infringement rules.",
+    "Protect your music. Read how Amozart secures YouTube Content ID, manages channel rights, and defends independent artists against copyright theft. ",
 };
 
 const Page = () => {

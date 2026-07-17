@@ -126,16 +126,16 @@ const Header = () => {
             },
           }}
           className={`fixed top-5 left-1/2 w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] xl:max-w-7xl z-999 transition-[background-color,border-color,box-shadow] duration-300 flex flex-row items-center justify-between rounded-full py-2.5 px-6 md:px-8 border ${isServicesOpen
-              ? "bg-[#FCFAFF] border-[#EBE4F9] shadow-[10_15px_35px_rgba(103,57,183,0.18)]"
-              : isLaptop
-                ? isScrolled
-                  ? "bg-[#FCFAFF]/95 backdrop-blur-md border-[#EBE4F9]/100 shadow-[0_15px_35px_-5px_rgba(103,57,183,0.15),_0_8px_20px_-6px_rgba(103,57,183,0.08)]"
-                  : "bg-[#FCFAFF]/85 backdrop-blur-md border-[#EBE4F9]/100 shadow-[0_10px_30px_-8px_rgba(103,57,183,0.08)]"
-                : "bg-[#FCFAFF]/95 backdrop-blur-md border-[#EBE4F9]/100 shadow-[0_15px_35px_-5px_rgba(103,57,183,0.15),_0_8px_20px_-6px_rgba(103,57,183,0.08)]"
+            ? "bg-[#FCFAFF] border-[#EBE4F9] shadow-[10_15px_35px_rgba(103,57,183,0.18)]"
+            : isLaptop
+              ? isScrolled
+                ? "bg-[#FCFAFF]/95 backdrop-blur-md border-[#EBE4F9]/100 shadow-[0_15px_35px_-5px_rgba(103,57,183,0.15),_0_8px_20px_-6px_rgba(103,57,183,0.08)]"
+                : "bg-[#FCFAFF]/85 backdrop-blur-md border-[#EBE4F9]/100 shadow-[0_10px_30px_-8px_rgba(103,57,183,0.08)]"
+              : "bg-[#FCFAFF]/95 backdrop-blur-md border-[#EBE4F9]/100 shadow-[0_15px_35px_-5px_rgba(103,57,183,0.15),_0_8px_20px_-6px_rgba(103,57,183,0.08)]"
             }`}
         >
           <Link href={"/"} className="flex items-center">
-            <Image src={Images.Logo} alt="AMozart" className="lg:w-[250px] md:w-[200px] w-[180px] h-auto" />
+            <Image src={Images.Logo} alt="Amozart" className="lg:w-[250px] md:w-[200px] w-[180px] h-auto" />
           </Link>
           <nav className="xl:flex flex-row items-center gap-x-1 hidden">
             {routes.map((route, idx) => {
@@ -150,8 +150,8 @@ const Header = () => {
                   <Link
                     href={route.href}
                     className={`text-base py-2.5 px-6 rounded-full cursor-pointer hover:text-primary transition ease-in-out duration-500 flex items-center gap-1.5 relative group ${pathName === route.href || (isServices && isServicesOpen)
-                        ? "bg-white shadow-[0_4px_14px_rgba(103,57,183,0.1)] text-primary font-medium"
-                        : "text-[#4B4B4F]"
+                      ? "bg-white shadow-[0_4px_14px_rgba(103,57,183,0.1)] text-primary font-medium"
+                      : "text-[#4B4B4F]"
                       }`}
                   >
                     {route.label}

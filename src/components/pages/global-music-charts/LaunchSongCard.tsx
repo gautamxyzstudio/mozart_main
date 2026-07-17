@@ -9,7 +9,7 @@ const LaunchSongCard = () => {
     <div className="w-full  bg-slate-100 flex items-center justify-center xl:py-34 xl:px-23.25 md:py-20 md:px-10 py-10 px-6">
       {/* Main Card Container */}
       <div className="relative w-full  bg-primary rounded-4xl p-8 md:p-14 flex flex-col md:flex-row md:items-center md:justify-between overflow-hidden shadow-xl">
-        
+
         {/* Background "Charts" Text (Mobile me hide, Desktop me top-left) */}
         <div className="absolute xl:-left-5 xl:-top-5 md:-left-1 md:-top-2  select-none pointer-events-none hidden md:block opacity-[0.08] xl:text-[200px] md:text-[100px] font-black text-white leading-none  ">
           Charts

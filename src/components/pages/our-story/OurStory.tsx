@@ -28,7 +28,7 @@ const OurStory = () => {
             <p className="text-background/70 xl:text-base md:text-sm text-sm leading-relaxed">
               We distribute your music to all major streaming platforms
               including Spotify, Apple Music, YouTube Music, Instagram, and
-              more. Along with distribution, AMozart supports artists with
+              more. Along with distribution, Amozart supports artists with
               promotion, brand building, and digital rights.
             </p>
           </div>

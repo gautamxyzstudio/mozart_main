@@ -70,11 +70,11 @@ const HowItWorks = () => {
                   Step
                 </span>
               </div>
-              
+
               <h3 className="text-[#1a1a1a] font-bold text-[19px] mb-4">
                 {item.title}
               </h3>
-              
+
               <p className="text-gray-500 text-[14px] leading-relaxed">
                 {item.desc}
               </p>

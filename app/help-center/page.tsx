@@ -7,9 +7,9 @@ import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import CampaignIcon from "@mui/icons-material/Campaign";
 
 export const metadata: Metadata = {
-  title: "Help Center | AMozart",
+  title: "Amozart Help Center | Music Distribution & Royalty Support",
   description:
-    "Welcome to the Amozart Help Center. Get answers to common questions about music distribution, YouTube Content ID, royalty management, artist services, and account support.",
+    " Find answers to your questions about Punjabi music distribution, setting up YouTube CMS, tracking music royalties, and managing digital audio rights. ",
 };
 
 const Page = () => {

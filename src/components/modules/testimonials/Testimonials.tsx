@@ -79,7 +79,7 @@ import "swiper/css";
 //   },
 // ];
 
-const testimonialPairs = [ 
+const testimonialPairs = [
 
   {
 
@@ -222,7 +222,7 @@ const testimonialPairs = [
   },
 
 ];
- 
+
 interface Testimonial {
   id: number;
   name: string;
@@ -271,8 +271,8 @@ const Testimonials = () => {
           What Our Client&apos;s Say
         </h2>
         <p className="text-black80 xl:text-base text-sm xl:w-1/2 md:w-[70%]">
-        We help Punjabi artists and creators go global with music
-            distribution, YouTube channel management, paid promotions, and
+          We help Punjabi artists and creators go global with music
+          distribution, YouTube channel management, paid promotions, and
           more.....
         </p>
       </div>

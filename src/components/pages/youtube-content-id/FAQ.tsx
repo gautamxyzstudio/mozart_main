@@ -61,29 +61,26 @@ const FAQ = () => {
             return (
               <div
                 key={idx}
-                className={`w-full rounded-[24px] md:rounded-[32px] overflow-hidden transition-all duration-300 border border-transparent ${
-                  isOpen
+                className={`w-full rounded-[24px] md:rounded-[32px] overflow-hidden transition-all duration-300 border border-transparent ${isOpen
                     ? "bg-primary text-white"
                     : "bg-[#f6f6f9] text-[#111111] hover:bg-[#eaeaea]/50"
-                }`}
+                  }`}
               >
                 <button
                   onClick={() => toggleIndex(idx)}
                   className="w-full flex items-center justify-between text-left px-6 py-5 md:px-10 md:py-6 gap-4 cursor-pointer focus:outline-none"
                 >
                   <span
-                    className={`font-bold text-[15px] md:text-[18px] xl:text-[19px] leading-snug transition-colors duration-300 ${
-                      isOpen ? "text-white" : "text-[#111111]"
-                    }`}
+                    className={`font-bold text-[15px] md:text-[18px] xl:text-[19px] leading-snug transition-colors duration-300 ${isOpen ? "text-white" : "text-[#111111]"
+                      }`}
                   >
                     {item.question}
                   </span>
                   <div
-                    className={`flex-shrink-0 w-10 h-10 md:w-11 md:h-11 rounded-full transition-all duration-300 flex items-center justify-center shadow-lg ${
-                      isOpen
+                    className={`flex-shrink-0 w-10 h-10 md:w-11 md:h-11 rounded-full transition-all duration-300 flex items-center justify-center shadow-lg ${isOpen
                         ? "bg-white text-primary rotate-90"
                         : "bg-primary text-white"
-                    }`}
+                      }`}
                   >
                     <svg
                       width="16"
@@ -103,16 +100,14 @@ const FAQ = () => {
                 </button>
 
                 <div
-                  className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                    isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
-                  }`}
+                  className={`transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+                    }`}
                 >
                   <div
-                    className={`px-6 pb-6 md:px-10 md:pb-8 text-sm md:text-base leading-relaxed  pt-4 transition-colors duration-300 ${
-                      isOpen
+                    className={`px-6 pb-6 md:px-10 md:pb-8 text-sm md:text-base leading-relaxed  pt-4 transition-colors duration-300 ${isOpen
                         ? "text-white/85  "
                         : "text-[#4a4a4a] "
-                    }`}
+                      }`}
                   >
                     {item.answer}
                   </div>

@@ -8,7 +8,7 @@ const QuickLink = () => {
     //   label: "Company",
     //   linkList: [
     //     {
-    //       title: "About AMozart",
+    //       title: "About Amozart",
     //       link: "/about",
     //       icon: undefined,
     //     },

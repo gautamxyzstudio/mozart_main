@@ -2,9 +2,9 @@ import React from "react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Cookies Policy | AMozart",
+  title: "Cookie Policy | Amozart Music Distribution Platform",
   description:
-    "This Cookies Policy explains how Amozart uses cookies and similar technologies to improve your browsing experience.",
+    "Learn how Amozart uses cookies to improve your dashboard user experience, secure royalty tracking tools, and optimize site navigation for artists.",
 };
 
 const Page = () => {

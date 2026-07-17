@@ -2,10 +2,10 @@ import React from "react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | AMozart",
+  title: "Privacy Policy | Amozart Digital Rights Management",
   description:
-    "AMOZART MUSIC INC. Privacy Commitment. We request the minimum amount of information necessary, aiming to collect only what we consider essential within the context of our business relationship.",
-};
+    "Read the Amozart Privacy Policy. Learn how we securely protect your personal information, distribution data, and earnings with total transparency. "
+}
 
 const Page = () => {
   return (
@@ -27,7 +27,7 @@ const Page = () => {
         <div className="max-w-[1000px] text-black80 font-medium text-base md:text-lg leading-7 md:leading-8 space-y-5">
           {/* Document Title */}
           <div>
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground">AMOZART MUSIC INC. Privacy Commitment</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground">Amozart MUSIC INC. Privacy Commitment</h2>
           </div>
 
           {/* Introduction */}
@@ -39,19 +39,19 @@ const Page = () => {
               The objective of this Policy is to make explicit the information we collect and how we will use it. This Policy is divided into three parts:
             </p>
             <div className="space-y-3 pl-4 border-l-2 border-[#6739b7]/80 text-base text-[#414141] font-normal">
-              <p><strong>Part I &ndash; Information that AMOZART MUSIC INC. collects and controls as a Data Controller:</strong> This part covers how AMOZART MUSIC INC. collects and uses information from website visitors, potential customers, users of AMOZART MUSIC INC. products and services, and other individuals who contact AMOZART MUSIC INC. through forms or email addresses published or linked to our websites.</p>
-              <p><strong>Part II &ndash; Data Processors used by AMOZART MUSIC INC.:</strong> This part covers how data processors handle the data you entrust to AMOZART MUSIC INC. when you use our products and services, or when you share any information with us while requesting customer support.</p>
-              <p><strong>Part III &ndash; General:</strong> This part covers various general topics, such as AMOZART MUSIC INC.&rsquo;s security commitments and how we will inform you when we change this Policy.</p>
+              <p><strong>Part I &ndash; Information that Amozart MUSIC INC. collects and controls as a Data Controller:</strong> This part covers how Amozart MUSIC INC. collects and uses information from website visitors, potential customers, users of Amozart MUSIC INC. products and services, and other individuals who contact Amozart MUSIC INC. through forms or email addresses published or linked to our websites.</p>
+              <p><strong>Part II &ndash; Data Processors used by Amozart MUSIC INC.:</strong> This part covers how data processors handle the data you entrust to Amozart MUSIC INC. when you use our products and services, or when you share any information with us while requesting customer support.</p>
+              <p><strong>Part III &ndash; General:</strong> This part covers various general topics, such as Amozart MUSIC INC.&rsquo;s security commitments and how we will inform you when we change this Policy.</p>
             </div>
           </div>
 
           {/* Part I */}
           <div className="space-y-4">
-            <h2 className="text-xl md:text-2xl font-bold text-foreground">Part I &ndash; Information that AMOZART MUSIC INC. collects and controls as a Data Controller</h2>
+            <h2 className="text-xl md:text-2xl font-bold text-foreground">Part I &ndash; Information that Amozart MUSIC INC. collects and controls as a Data Controller</h2>
 
             <h3 className="text-lg font-bold text-foreground mt-4">Who is the Data Controller?</h3>
             <div className="pl-4 border-l-2 border-[#6739b7]/80 text-base text-[#414141] font-normal space-y-1">
-              <p><strong>Entity:</strong> AMOZART MUSIC INC.</p>
+              <p><strong>Entity:</strong> Amozart MUSIC INC.</p>
               <p><strong>Tax ID (CIF):</strong> </p>
               <p>
                 <a
@@ -66,9 +66,9 @@ const Page = () => {
               <p><strong>Email:</strong> <a href="mailto:support@amozart.com" className="text-primary hover:underline">support@amozart.com</a></p>
             </div>
 
-            <h3 className="text-lg font-bold text-foreground mt-6">What information does AMOZART MUSIC INC. collect?</h3>
+            <h3 className="text-lg font-bold text-foreground mt-6">What information does Amozart MUSIC INC. collect?</h3>
             <p className="text-base text-[#414141] font-normal">
-              We collect information about you only if we need it for a legitimate purpose and within the context of our business relationship. AMOZART MUSIC INC. will have information about you only if (a) you have provided the information yourself, (b) AMOZART MUSIC INC. has collected the information automatically, or (c) AMOZART MUSIC INC. has obtained the information from a third party.
+              We collect information about you only if we need it for a legitimate purpose and within the context of our business relationship. Amozart MUSIC INC. will have information about you only if (a) you have provided the information yourself, (b) Amozart MUSIC INC. has collected the information automatically, or (c) Amozart MUSIC INC. has obtained the information from a third party.
             </p>
 
 
@@ -83,7 +83,7 @@ const Page = () => {
             <div className="space-y-3 pl-6 text-base text-[#414141] font-normal">
               <p><strong>i. Account Registration:</strong> When you register for an account to access one or more of our services, you will be asked to use an email address and a password to create the account. Once your account is created, you may also add information such as your name, contact number, email address, company name, and country to complete your profile.</p>
               <p><strong>ii. Payment Processing:</strong> When you begin actively using your account, we ask you to provide your name, contact information, tax identification, and credit card or other related information. In all cases, your credit card information is stored and processed by the Payment Gateway Service Provider of your choice. During payment, they inform you about their privacy and security policies.</p>
-              <p><strong>iii. Interactions with AMOZART MUSIC INC.:</strong> We may record, analyze, and use your interactions with us&mdash;including email, telephone, and chat conversations with our sales and customer support professionals&mdash;to improve our interactions with you and other customers.</p>
+              <p><strong>iii. Interactions with Amozart MUSIC INC.:</strong> We may record, analyze, and use your interactions with us&mdash;including email, telephone, and chat conversations with our sales and customer support professionals&mdash;to improve our interactions with you and other customers.</p>
             </div>
             <p className="text-sm md:text-base text-[#414141]/80 font-normal italic pl-6  ">
               <strong>Legal basis for processing:</strong> The processing is necessary for the performance of the service provision contract
@@ -116,11 +116,11 @@ const Page = () => {
           <div className="space-y-4">
             <h3 className="text-lg font-bold text-foreground mt-4">Information we collect from third parties</h3>
             <p className="text-base text-[#414141] font-normal pl-6">
-              <strong>Registration using OpenID authentication service providers:</strong> You may log in to AMOZART MUSIC INC. Services using supported OpenID authentication service providers such as Soundcloud, Facebook, and Google. These services will authenticate your identity and provide you the option to share certain information with us, such as your name and email address.
+              <strong>Registration using OpenID authentication service providers:</strong> You may log in to Amozart MUSIC INC. Services using supported OpenID authentication service providers such as Soundcloud, Facebook, and Google. These services will authenticate your identity and provide you the option to share certain information with us, such as your name and email address.
             </p>
             <div className="space-y-1 pl-6">
               <p className="text-sm md:text-base text-[#414141]/80 font-normal italic pl-6 border-l-2 border-primary/40">
-                <strong>Legal basis for processing:</strong> Consent. When the user voluntarily decides to use the login function via external authentication providers (OpenID, OAuth, Facebook Login, Google Sign-In), they are granting explicit and informed consent for said providers to share their basic personal information (name, email, user ID) with AMOZART MUSIC INC.. You have the right to withdraw your consent at any time.
+                <strong>Legal basis for processing:</strong> Consent. When the user voluntarily decides to use the login function via external authentication providers (OpenID, OAuth, Facebook Login, Google Sign-In), they are granting explicit and informed consent for said providers to share their basic personal information (name, email, user ID) with Amozart MUSIC INC.. You have the right to withdraw your consent at any time.
               </p>
             </div>
           </div>
@@ -138,7 +138,7 @@ const Page = () => {
               <li>Set up and maintain your account, and do everything else necessary to provide our services, such as enabling collaboration, providing website and mail hosting, and backing up and restoring your data</li>
               <li>Understand how users use our products and services, monitor and prevent problems, and improve our products and services</li>
               <li>Provide customer support and analyze and improve our interactions with customers</li>
-              <li>Detect and prevent fraudulent transactions and other illegal activities, report spam, and protect the rights and interests of AMOZART MUSIC INC., AMOZART MUSIC INC. users, and third parties.</li>
+              <li>Detect and prevent fraudulent transactions and other illegal activities, report spam, and protect the rights and interests of Amozart MUSIC INC., Amozart MUSIC INC. users, and third parties.</li>
               <li>Update, expand, and analyze our records, identify new customers, and provide products and services that may be of interest to you</li>
               <li>Analyze trends, administer our websites, and track visitor navigation on our websites to understand what visitors are looking for and better assist them</li>
               <li>Monitor and improve marketing campaigns and make relevant suggestions to the user.</li>
@@ -162,7 +162,7 @@ const Page = () => {
               We share personal data only in the cases and under the conditions described in this Privacy Policy, exclusively with recipients who adopt appropriate technical and organizational measures to ensure confidentiality, integrity, and security, in accordance with applicable regulations.
             </p>
             <div className="space-y-3 text-base text-[#414141] font-normal pl-6">
-              <p><strong>Employees and independent contractors:</strong> Access to the information mentioned in Part I is limited to employees and independent contractors whose roles require it. It is mandatory for all members of the AMOZART MUSIC INC. group to comply with this Privacy Policy regarding the personal information provided to them.</p>
+              <p><strong>Employees and independent contractors:</strong> Access to the information mentioned in Part I is limited to employees and independent contractors whose roles require it. It is mandatory for all members of the Amozart MUSIC INC. group to comply with this Privacy Policy regarding the personal information provided to them.</p>
               <p><strong>Third-party service providers:</strong> We may share personal information, as well as aggregated or anonymized data, with selected third-party service providers, such as marketing and advertising partners, event organizers, web analytics providers, and payment processors. These providers may use personal information exclusively for the provision of the contracted services.</p>
             </div>
           </div>
@@ -197,7 +197,7 @@ const Page = () => {
 
           {/* Part II */}
           <div className="space-y-4">
-            <h2 className="text-xl md:text-2xl font-bold text-foreground">Part II &ndash; Data Processors used by AMOZART MUSIC INC.</h2>
+            <h2 className="text-xl md:text-2xl font-bold text-foreground">Part II &ndash; Data Processors used by Amozart MUSIC INC.</h2>
 
             <h3 className="text-lg font-bold text-foreground mt-4">Information that independent contractors or providers process on our behalf</h3>
             <p className="text-base text-[#414141] font-normal">
@@ -211,11 +211,11 @@ const Page = () => {
             </p>
           </div>
 
-          {/* Restricted Access by AMOZART MUSIC INC. */}
+          {/* Restricted Access by Amozart MUSIC INC. */}
           <div className="space-y-4">
-            <h3 className="text-lg font-bold text-foreground mt-4">Restricted Access by AMOZART MUSIC INC.</h3>
+            <h3 className="text-lg font-bold text-foreground mt-4">Restricted Access by Amozart MUSIC INC.</h3>
             <p className="text-base text-[#414141] font-normal">
-              We provide restricted and audited access to your service data only to authorized employees and contractors of AMOZART MUSIC INC. to: (i) identify, analyze, and resolve errors; (ii) verify emails to improve spam detection; or (iii) validate identities in submitted scanned images. We also access data shared voluntarily for technical support or imports. All personnel comply with strict internal privacy and security policies, with an indefinite obligation of confidentiality.
+              We provide restricted and audited access to your service data only to authorized employees and contractors of Amozart MUSIC INC. to: (i) identify, analyze, and resolve errors; (ii) verify emails to improve spam detection; or (iii) validate identities in submitted scanned images. We also access data shared voluntarily for technical support or imports. All personnel comply with strict internal privacy and security policies, with an indefinite obligation of confidentiality.
             </p>
           </div>
 
@@ -223,7 +223,7 @@ const Page = () => {
           <div className="space-y-4">
             <h3 className="text-lg font-bold text-foreground mt-4">Third-party Sub-processors</h3>
             <p className="text-base text-[#414141] font-normal">
-              AMOZART MUSIC INC. engages third-party sub-processors for services and technical support, subject to equivalent sub-processing agreements that impose identical data protection obligations as those for processors (Art. 28.4 GDPR).
+              Amozart MUSIC INC. engages third-party sub-processors for services and technical support, subject to equivalent sub-processing agreements that impose identical data protection obligations as those for processors (Art. 28.4 GDPR).
             </p>
           </div>
 
@@ -231,7 +231,7 @@ const Page = () => {
           <div className="space-y-4">
             <h3 className="text-lg font-bold text-foreground mt-4">Third-party Integrations enabled by you</h3>
             <p className="text-base text-[#414141] font-normal">
-              Our products support integrations with third-party services that you activate, potentially allowing them access to your service data and personal information. Always review the privacy policies of those third parties before enabling them, as AMOZART MUSIC INC. is not responsible for their processing activities.
+              Our products support integrations with third-party services that you activate, potentially allowing them access to your service data and personal information. Always review the privacy policies of those third parties before enabling them, as Amozart MUSIC INC. is not responsible for their processing activities.
             </p>
           </div>
 
@@ -255,7 +255,7 @@ const Page = () => {
               Our services are not directed at minors, as established in Article 8 of the GDPR, which sets the minimum age at 16 years, unless applicable national legislation establishes a lower age.
             </p>
             <p className="text-base text-[#414141] font-normal">
-              AMOZART MUSIC INC. does not knowingly collect personal information from minors without the valid consent required by applicable regulations.
+              Amozart MUSIC INC. does not knowingly collect personal information from minors without the valid consent required by applicable regulations.
             </p>
             <p className="text-base text-[#414141] font-normal">
               If it is detected that personal information of a minor has been provided without appropriate consent, immediate steps will be taken to delete such information and any related data.

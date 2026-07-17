@@ -72,9 +72,8 @@ const WhyAreDifferent = () => {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className={`w-4 h-4 text-white transition-transform duration-300 ${
-                      isOpen ? "rotate-180" : ""
-                    }`}
+                    className={`w-4 h-4 text-white transition-transform duration-300 ${isOpen ? "rotate-180" : ""
+                      }`}
                   >
                     <polyline points="6 9 12 15 18 9" />
                   </svg>
@@ -82,11 +81,10 @@ const WhyAreDifferent = () => {
 
                 {/* Description Area */}
                 <div
-                  className={`transition-all duration-500 ease-in-out overflow-hidden ${
-                    isOpen
+                  className={`transition-all duration-500 ease-in-out overflow-hidden ${isOpen
                       ? "max-h-[160px] opacity-100 pb-4"
                       : "max-h-0 opacity-0 pointer-events-none"
-                  }`}
+                    }`}
                 >
                   <p className="text-white/80 text-sm leading-relaxed">
                     {feat.desc}
@@ -98,9 +96,8 @@ const WhyAreDifferent = () => {
 
                 {/* Hover Glow Background */}
                 <div
-                  className={`absolute inset-0 bg-white/3 transition-opacity duration-300 -z-20 ${
-                    isOpen ? "opacity-100" : "opacity-0"
-                  }`}
+                  className={`absolute inset-0 bg-white/3 transition-opacity duration-300 -z-20 ${isOpen ? "opacity-100" : "opacity-0"
+                    }`}
                 />
               </div>
             );

@@ -167,18 +167,16 @@ const BlogDetailPage = ({ slug }: { slug: string }) => {
                         className=" cursor-pointer flex  gap-3"
                       >
                         <div
-                          className={` h-8 w-1 rounded-full shrink-0 transition-colors ${
-                            activeIndex === index
+                          className={` h-8 w-1 rounded-full shrink-0 transition-colors ${activeIndex === index
                               ? "bg-primary"
                               : "bg-transparent "
-                          }`}
+                            }`}
                         />
                         <span
-                          className={`text-sm transition-colors flex items-center ${
-                            activeIndex === index
+                          className={`text-sm transition-colors flex items-center ${activeIndex === index
                               ? "text-primary font-medium"
                               : "text-black hover:text-black"
-                          }`}
+                            }`}
                         >
                           {item.label}
                         </span>
@@ -210,7 +208,7 @@ const BlogDetailPage = ({ slug }: { slug: string }) => {
                         },
                         {
                           icon: Icons.linkedIn2,
-                          link: "https://www.linkedin.com/company/amozart",
+                          link: "https://www.linkedin.com/company/Amozart",
                         },
                         {
                           icon: Icons.Twitter2,

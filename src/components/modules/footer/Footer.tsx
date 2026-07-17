@@ -25,7 +25,7 @@ const Footer = () => {
             <Image
               src={Images.WhiteLogo}
               className="w-auto md:h-10.5 h-4.5"
-              alt="AMozart"
+              alt="Amozart"
             />
           </Link>
           <p className="text-background opacity-70 text-base">
@@ -38,7 +38,7 @@ const Footer = () => {
             {[
               {
                 icon: Icons.Instagram,
-                link: "https://www.instagram.com/amozartglobal",
+                link: "https://www.instagram.com/Amozartglobal",
               },
               {
                 icon: Icons.Facebook,
@@ -46,7 +46,7 @@ const Footer = () => {
               },
               {
                 icon: Icons.LinkedIn,
-                link: "https://www.linkedin.com/company/amozart",
+                link: "https://www.linkedin.com/company/Amozart",
               },
               { icon: Icons.Twitter, link: "https://x.com/AmozartOfficial" },
             ].map((item, idx) => (

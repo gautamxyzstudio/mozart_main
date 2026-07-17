@@ -6,7 +6,7 @@ export default function MusicBanner() {
     <div className="w-full mx-auto xl:px-25 xl:py-38 md:px-12.5 md:py-25 px-6 py-16">
       {/* Main Card Container */}
       <div className="relative bg-primary rounded-3xl overflow-hidden pt-12 md:pt-16 flex flex-col items-center text-center shadow-xl">
-        
+
         {/* === ONLY FOR MOBILE SCREEN (New Big Vector) === */}
         <div className="block md:hidden absolute top-0 left-1/2 -translate-x-1/2 w-full h-auto pointer-events-none z-0 opacity-70">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 327 226" fill="none" className="w-full h-full">
@@ -50,7 +50,7 @@ export default function MusicBanner() {
         {/* Responsive Piano Image Container */}
         <div className="w-full relative mt-auto -mb-1 sm:-mb-2 md:-mb-3 max-w-10xl">
           <Image
-            src={Images.Track}  
+            src={Images.Track}
             alt="Piano Keys"
             width={1300}
             height={300}

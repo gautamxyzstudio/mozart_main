@@ -63,31 +63,31 @@ const WhyChooseRoyalty = () => {
           </div>
         ))}
         {/* Curved Dotted/Dashed SVG ribbon paths */}
-      <svg
-  viewBox="0 0 1000 700"
-  preserveAspectRatio="none"
-  className="absolute left-0 right-0 lg:-top-[62%] md:-top-[71%] w-full xl:h-[700px] md:h-[650px] pointer-events-none hidden md:block"
->
-  {/* Top Curve - Bending deep down to 260 */}
-  <path
-    d="M -100 100 Q 500 260 1100 100"
-    fill="none"
-    stroke="rgba(255,255,255,0.45)"
-    strokeWidth="1.5"
-    strokeDasharray="8 6"
-    strokeLinecap="round"
-  />
+        <svg
+          viewBox="0 0 1000 700"
+          preserveAspectRatio="none"
+          className="absolute left-0 right-0 lg:-top-[62%] md:-top-[71%] w-full xl:h-[700px] md:h-[650px] pointer-events-none hidden md:block"
+        >
+          {/* Top Curve - Bending deep down to 260 */}
+          <path
+            d="M -100 100 Q 500 260 1100 100"
+            fill="none"
+            stroke="rgba(255,255,255,0.45)"
+            strokeWidth="1.5"
+            strokeDasharray="8 6"
+            strokeLinecap="round"
+          />
 
-  {/* Bottom Curve - Bending deep down to 600 */}
-  <path
-    d="M -100 440 Q 500 600 1100 440"
-    fill="none"
-    stroke="rgba(255,255,255,0.35)"
-    strokeWidth="1.5"
-    strokeDasharray="8 6"
-    strokeLinecap="round"
-  />
-</svg>
+          {/* Bottom Curve - Bending deep down to 600 */}
+          <path
+            d="M -100 440 Q 500 600 1100 440"
+            fill="none"
+            stroke="rgba(255,255,255,0.35)"
+            strokeWidth="1.5"
+            strokeDasharray="8 6"
+            strokeLinecap="round"
+          />
+        </svg>
 
 
 

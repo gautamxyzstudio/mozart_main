@@ -14,6 +14,7 @@ const slides = [
   Images.SlideOne,
   Images.SlideTwo,
   Images.AlbumThree,
+  Images.Khuraak,
   Images.SlideTwo,
   Images.SlideOne,
   Images.SlideTwo,

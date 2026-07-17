@@ -15,7 +15,7 @@ const YouTubeHero = () => {
       <div className="w-full max-w-7xl mx-auto px-6 md:px-12 xl:px-20 flex flex-col md:flex-row items-center justify-between relative z-10 pb-16 md:pb-24">
         {/* Left Column: Typography Content */}
         <div className="flex flex-col xl:items-start items-center md:w-[55%] w-full space-y-6 md:pr-8 text-center xl:text-left">
-         
+
 
           <div className="flex flex-col leading-tight items-center md:items-start xl:items-start select-none">
             <h1 className="text-white font-extrabold text-[34px] md:text-[40px] xl:text-[70px] leading-tight">
@@ -29,16 +29,16 @@ const YouTubeHero = () => {
             </h1>
           </div>
 
-        
 
-            {/* Intro Paragraph Section */}
-      <div className="w-full  py-1 relative z-20">
-        <div className="max-w-4xl   ">
-          <p className="text-white/80 text-base md:text-[14px] lg:text-[15px] font-light leading-relaxed ">
-            Growing a music career on YouTube takes more than just uploading songs. Amozart offers complete YouTube channel management for artists who want real, sustainable growth - covering everything from channel setup and video SEO to thumbnail design and audience strategy. We also provide dedicated YouTube channel management for Punjabi artists, helping regional musicians build a global audience without losing their local fanbase. Whether you're starting from zero or already have a channel that needs a clear growth plan, our team manages every detail so your channel keeps moving forward.
-          </p>
-        </div>
-      </div>
+
+          {/* Intro Paragraph Section */}
+          <div className="w-full  py-1 relative z-20">
+            <div className="max-w-4xl   ">
+              <p className="text-white/80 text-base md:text-[14px] lg:text-[15px] font-light leading-relaxed ">
+                Growing a music career on YouTube takes more than just uploading songs. Amozart offers complete YouTube channel management for artists who want real, sustainable growth - covering everything from channel setup and video SEO to thumbnail design and audience strategy. We also provide dedicated YouTube channel management for Punjabi artists, helping regional musicians build a global audience without losing their local fanbase. Whether you're starting from zero or already have a channel that needs a clear growth plan, our team manages every detail so your channel keeps moving forward.
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Right Column: Premium Illustration */}
@@ -104,7 +104,7 @@ const YouTubeHero = () => {
         </div>
       </div>
 
-     
+
     </section>
   );
 };

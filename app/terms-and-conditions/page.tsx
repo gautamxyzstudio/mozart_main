@@ -3,9 +3,9 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Terms of Use | AMozart",
+  title: " Terms & Conditions | Amozart Global Music Distribution",
   description:
-    "Welcome to Amozart. By using our website and services, you agree to follow these Terms of Use.",
+    "Read the official terms and conditions for using Amozart’s global music distribution, promotion, and automated royalty split services.",
 };
 
 const Page = () => {
@@ -43,13 +43,13 @@ const Page = () => {
           {/* Welcome Intro Section */}
           <div className="space-y-4">
             <p className="text-base text-[#414141] font-normal">
-              Thank you very much for choosing AMOZART MUSIC INC. as your Digital Music Distributor. We hope you enjoy our service and achieve great success with your music career. Please, read these Terms of Use very carefully as they constitute a binding agreement between you (in these Terms, the End User or You), and us (in these Terms, AMOZART MUSIC INC., We or Us) and are effective upon the registration on the platform, available at <a href="https://amozart.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://amozart.com</a> (hereinafter, the Platform).
+              Thank you very much for choosing Amozart MUSIC INC. as your Digital Music Distributor. We hope you enjoy our service and achieve great success with your music career. Please, read these Terms of Use very carefully as they constitute a binding agreement between you (in these Terms, the End User or You), and us (in these Terms, Amozart MUSIC INC., We or Us) and are effective upon the registration on the platform, available at <a href="https://amozart.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://amozart.com</a> (hereinafter, the Platform).
             </p>
             <p className="text-base text-[#414141] font-normal">
               Formally, the provider of the service and responsible of the Platform is Amozart Music Inc., which is a limited liability Company constituted and existing under the laws of Canada, with legal address in <Link className="text-primary hover:underline" href="https://maps.google.com/?q=Carrer+de+Trafalgar,+10,+08010+Barcelona,+Spain" target="_blank" rel="noopener noreferrer">Carrer de Trafalgar, 10, 08010 Barcelona, Spain</Link>, Tax ID # and registered at the Commercial Register of Surrey with Company Registration Number . Our contact information can be found in the &quot;Contact&quot; Tab of the &quot;Legal&quot; section in your account.
             </p>
             <p className="text-base text-[#414141] font-normal">
-              The AMOZART MUSIC INC. services shall be provided in accordance with:
+              The Amozart MUSIC INC. services shall be provided in accordance with:
             </p>
             <ul className="list-disc pl-6 space-y-1 text-base text-[#414141] font-normal">
               <li>The Terms of Use set forth in this document.</li>
