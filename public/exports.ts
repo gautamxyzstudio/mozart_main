@@ -115,6 +115,14 @@ import Mobile from "./Mobile.webp"
 import ComingSoon from "./comingsoon.png"
 import Four from "./fore.webp"
 import Khuraak from "./khuraak.webp";
+import shakira  from "./shakira.webp";
+import Rosalía from "./Rosalía.webp";
+import RickyMartin from "./RickyMartin.webp";
+import BebeRexha from "./BebeRexha.webp";
+import ElgrandeManuChao from "./ElgrandeManuChao.webp";
+import AlejandroSanz from "./AlejandroSanz.webp"
+import Mecano from "./Mecano.webp"
+import VeraGRV  from "./VeraGRV.webp"
 
 export const Images = {
   Logo,
@@ -200,7 +208,15 @@ export const Images = {
   Mobile,
   ComingSoon,
   Four,
-  Khuraak
+  Khuraak,
+  shakira,
+  Rosalía,
+  RickyMartin,
+  BebeRexha,
+  ElgrandeManuChao,
+  AlejandroSanz,
+  Mecano,
+  VeraGRV 
 
 };
 

@@ -1,42 +1,48 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
+import { Images } from "@/public/exports";
 
 const artists = [
   {
     id: 1,
-    name: "Artist 1",
-    img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=500",
+    name: "Shakira",
+    img: Images.shakira,
   },
   {
     id: 2,
-    name: "Artist 2",
-    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=500",
+    name: "Rosalía",
+    img: Images.Rosalía,
   },
   {
     id: 3,
-    name: "Artist 3",
-    img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=500",
+    name: "Ricky Martin",
+    img: Images.RickyMartin,
   },
   {
     id: 4,
-    name: "Artist 4",
-    img: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=500",
+    name: "Bebe Rexha",
+    img: Images.BebeRexha,
   },
   {
     id: 5,
-    name: "Artist 5",
-    img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=500",
+    name: "Manu Chao",
+    img: Images.ElgrandeManuChao,
   },
   {
     id: 6,
-    name: "Artist 6",
-    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=500",
+    name: "Alejandro Sanz",
+    img: Images.AlejandroSanz,
   },
   {
     id: 7,
-    name: "Artist 7",
-    img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=500",
+    name: "Mecano",
+    img:  Images.Mecano,
+  },
+  {
+    id: 8,
+    name: "Vera GRV ",
+    img: Images.VeraGRV,
   },
 ];
 
@@ -71,7 +77,7 @@ const ArtistsSection = () => {
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className={`absolute inset-0 object-cover transition-all duration-1000 ease-in-out object-[center_20%] 
      ${activeId === artist.id ? "grayscale-0 scale-100 object-center" : "grayscale scale-105"}
-     md:group-hover:grayscale-0 md:group-hover:scale-100 md:group-hover:object-center
+     md:group-hover:grayscale-0 md:group-hover:scale-100 md:group-hover:object-top
   `}
                 priority={artist.id <= 4}
               />

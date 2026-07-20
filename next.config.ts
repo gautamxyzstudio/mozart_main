@@ -24,9 +24,9 @@ const nextConfig: NextConfig = {
         hostname: "mozart-app.s3.ap-southeast-2.amazonaws.com",  
         pathname: "/**",
       },
-    ],
+    ]
   },
-  allowedDevOrigins: ["192.168.1.33:3000"],
+  allowedDevOrigins: ["192.168.1.10:3000"], 
   async redirects() {
     return [
       {
