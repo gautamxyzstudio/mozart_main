@@ -8,25 +8,25 @@ const WorkSection = () => {
             label: "Share Your Goals",
             description:
                 "Tell us your release date, target audience, and what you want — more streams, more followers, or playlist placements.",
-            image: Images.Dummy,
+            image: Images.HowItWork5,
         },
         {
             label: "We Build Your Plan",
             description:
                 "Our team creates a custom promotion plan covering playlist pitching, paid ads, social media, and organic outreach — timed around your release.",
-            image: Images.Dummy2,
+            image: Images.HowItWork6,
         },
         {
             label: "We Run Everything",
             description:
                 "We manage every channel while you focus on your music. Pitching, ads, influencer outreach, blog submissions — all handled by our team.",
-            image: Images.Dummy3,
+            image: Images.HowItWork7,
         },
         {
             label: "Track & Grow",
             description:
                 "Clear reports show streams gained, placements secured, and audience growth — every campaign makes the next one smarter.",
-            image: Images.Dummy3,
+            image: Images.HowItWork8,
         },
     ];
     return (
@@ -37,7 +37,7 @@ const WorkSection = () => {
             <div className="w-full flex flex-col xl:space-y-13.75 md:space-y-6 space-y-4 xl:px-25 md:px-13 px-6">
                 <div className="w-full flex flex-col space-y-4">
                     <h2 className="xl:text-[64px] xl:leading-18 md:text-[48px] md:leading-13.5 text-[32px] leading-9.5 font-bold text-white">
-                        How It Works
+                        How It Work
                     </h2>
                     <p className="text-white xl:text-base text-sm xl:w-[60%] md:w-[80%]">
 Take Your Music From Release to Reach                    </p>
@@ -71,7 +71,7 @@ Take Your Music From Release to Reach                    </p>
                             </div>
                             <Image
                                 src={item.image}
-                                alt="Dummy"
+                                alt={item.label}
                                 className="w-full h-97 object-cover rounded-xl xl:group-hover:block hidden transition-all duration-500 ease-in-out"
                             />
                         </div>

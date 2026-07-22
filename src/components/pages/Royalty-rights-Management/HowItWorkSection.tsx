@@ -8,25 +8,25 @@ const HowItWorkSection = () => {
       label: "Submit Your Music & Rights Details",
       description:
         "Share your track information and ownership details. Accurate information here ensures every royalty is attributed and collected correctly from day one.",
-      image: Images.Dummy,
+      image: Images.HowItWork9,
     },
     {
       label: "We Register & Protect Your Rights",
       description:
         "We register your music with the right copyright organisations and begin monitoring your catalog across every platform — building complete rights protection from the start.",
-      image: Images.Dummy2,
+      image: Images.HowItWork10,
     },
     {
       label: "We Track Every Royalty",
       description:
         "Our streaming royalty tracking monitors your earnings in real time across every platform and territory — so nothing goes uncollected.",
-      image: Images.Dummy2,
+      image: Images.HowItWork11,
     },
     {
       label: "You Get Paid & Reported Clearly",
       description:
         "All royalties are paid directly to you on schedule with full reporting — exactly what was earned, where it came from, and when it was paid.",
-      image: Images.Dummy3,
+      image: Images.HowItWork12,
     },
   ];
   return (
@@ -74,7 +74,7 @@ const HowItWorkSection = () => {
               </div>
               <Image
                 src={item.image}
-                alt="Dummy"
+                alt={item.label}
                 className="w-full h-97 object-cover rounded-xl xl:group-hover:block hidden transition-all duration-500 ease-in-out"
               />
             </div>

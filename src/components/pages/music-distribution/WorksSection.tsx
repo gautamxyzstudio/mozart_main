@@ -8,25 +8,25 @@ const HomeLabelSection = () => {
             label: "Share Your Music",
             description:
                 "Upload your track, add your artwork, and fill in your release details. Our platform accepts all standard audio formats and walks you through every field so nothing gets rejected by a streaming platform.",
-            image: Images.Dummy,
+            image: Images.HowItWork1,
         },
         {
             label: "Choose Your Platforms",
             description:
                 "Select the platforms you want to release on - from Spotify and Apple Music to JioSaavn, Wynk, Deezer, Tidal, and 150+ others. You can target global audiences or focus on specific regional markets, all from the same dashboard.",
-            image: Images.Dummy2,
+            image: Images.HowItWork2,
         },
         {
             label: "Set Your Release Date",
             description:
                 "Pick a date and let us handle the rest. We submit your music to every selected platform and confirm delivery within 24 to 72 hours. You'll be notified the moment your track goes live.",
-            image: Images.Dummy3,
+            image: Images.HowItWork3,
         },
         {
             label: "Track and Earn",
             description:
                 "Once live, your real-time analytics dashboard shows streams, listener data, and earnings as they come in. All royalties are paid directly to you - 100%, every time, on schedule.",
-            image: Images.Dummy3,
+            image: Images.HowItWork4,
         },
     ];
     return (
@@ -72,7 +72,7 @@ const HomeLabelSection = () => {
                             </div>
                             <Image
                                 src={item.image}
-                                alt="Dummy"
+                                alt={item.label}
                                 className="w-full h-97 object-cover rounded-xl xl:group-hover:block hidden transition-all duration-500 ease-in-out"
                             />
                         </div>

@@ -8,25 +8,25 @@ const GlobalWork = () => {
             label: "Submit Your Music",
             description:
                 "Upload your track with complete metadata through our global music chart submission service. Accurate details ensure your music is correctly identified and ranked from day one.",
-            image: Images.Dummy,
+            image: Images.HowItWork17,
         },
         {
             label: "We Register & Track",
             description:
                 "We register your release across chart systems and begin real time music chart tracking immediately — your dashboard populates with data from the moment your music goes live.",
-            image: Images.Dummy2,
+            image: Images.HowItWork18,
         },
         {
             label: "Monitor Your Performance",
             description:
                 "Watch your worldwide music charts position update in real time — streams, listener locations, platform breakdowns, and chart trends all in one place.",
-            image: Images.Dummy2,
+            image: Images.HowItWork19,
         },
         {
             label: "Improve Your Position",
             description:
                 "Use your music chart analytics data to understand how to improve your music chart position — which markets need more promotion and which strategies are driving the most growth.",
-            image: Images.Dummy3,
+            image: Images.HowItWork20,
         },
     ];
     return (
@@ -69,7 +69,7 @@ const GlobalWork = () => {
                             </div>
                             <Image
                                 src={item.image}
-                                alt="Dummy"
+                                alt={item.label}
                                 className="w-full h-97 object-cover rounded-xl xl:group-hover:block hidden transition-all duration-500 ease-in-out"
                             />
                         </div>

@@ -8,25 +8,25 @@ const YouTubeWorkSection = () => {
             label: "Expert Music Channel Managers",
             description:
                 "Our team understands how YouTube's music ecosystem actually works - what gets songs recommended, what keeps subscribers watching, and what turns casual listeners into fans.",
-            image: Images.Dummy,
+            image: Images.HowItWork13,
         },
         {
             label: "Built for Indian and Punjabi Artists",
             description:
                 "As a YouTube channel management service India relies on for regional growth, we understand exactly how to position Punjabi and Indian music for both local and global audiences.",
-            image: Images.Dummy2,
+            image: Images.HowItWork14,
         },
         {
             label: "Transparent & Simple",
             description:
                 "You always know what we're doing and how your channel is performing - clear reporting, no guesswork, no vague updates.",
-            image: Images.Dummy3,
+            image: Images.HowItWork15,
         },
         {
             label: "Growth-Focused, Not Numbers-Focused",
             description:
                 "We're not chasing the fastest growing YouTube channels through shortcuts. Our approach is built for the kind of best growing channel on YouTube that lasts - real subscribers, real engagement, real career growth.",
-            image: Images.Dummy3,
+            image: Images.HowItWork16,
         },
     ];
     return (
@@ -72,7 +72,7 @@ const YouTubeWorkSection = () => {
                             </div>
                             <Image
                                 src={item.image}
-                                alt="Dummy"
+                                alt={item.label}
                                 className="w-full h-97 object-cover rounded-xl xl:group-hover:block hidden transition-all duration-500 ease-in-out"
                             />
                         </div>

@@ -123,6 +123,26 @@ import ElgrandeManuChao from "./ElgrandeManuChao.webp";
 import AlejandroSanz from "./AlejandroSanz.webp"
 import Mecano from "./Mecano.webp"
 import VeraGRV  from "./VeraGRV.webp"
+import HowItWork1 from "./howitwork1.webp";
+import HowItWork2 from "./howitwork2.webp";
+import HowItWork3 from "./howitwork3.webp";
+import HowItWork4 from "./howitwork4.webp";
+import HowItWork5 from "./howitwork5.webp";
+import HowItWork6 from "./howitwork6.webp";
+import HowItWork7 from "./howitwork7.webp";
+import HowItWork8 from "./howitwork8.webp";
+import HowItWork9 from "./howitwork9.webp";
+import HowItWork10 from "./howitwork10.webp";
+import HowItWork11 from "./howitwork11.webp";
+import HowItWork12 from "./howitwork12.webp";
+import HowItWork13 from "./howitwork13.webp";
+import HowItWork14 from "./howitwork14.webp";
+import HowItWork15 from "./howitwork15.webp";
+import HowItWork16 from "./howitwork16.webp";
+import HowItWork17 from "./howitwork17.webp";
+import HowItWork18 from "./howitwork18.webp";
+import HowItWork19 from "./howitwork19.webp";
+import HowItWork20 from "./howitwork20.webp";
 
 export const Images = {
   Logo,
@@ -216,8 +236,27 @@ export const Images = {
   ElgrandeManuChao,
   AlejandroSanz,
   Mecano,
-  VeraGRV 
-
+  VeraGRV,
+  HowItWork1,
+  HowItWork2,
+  HowItWork3,
+  HowItWork4,
+  HowItWork5,
+  HowItWork6,
+  HowItWork7,
+  HowItWork8,
+  HowItWork9,
+  HowItWork10,
+  HowItWork11,
+  HowItWork12,
+  HowItWork13,
+  HowItWork14,
+  HowItWork15,
+  HowItWork16,
+  HowItWork17,
+  HowItWork18,
+  HowItWork19,
+  HowItWork20
 };
 
 export const Icons = {
