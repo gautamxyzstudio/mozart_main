@@ -74,6 +74,30 @@
             margin: 0;
         }
     }
+
+    table {
+        border-collapse: separate;
+        width: 100%;
+        border-spacing: 0;
+        overflow: hidden;
+        table-layout: fixed;
+        margin-bottom: 20px;
+        border: 1px solid #111;
+
+        tbody {
+            tr {
+                /* border: 1px solid #111; */
+
+                td {
+                    border: 1px solid #111;
+
+                    p {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media (min-width: 744px) and (max-width: 1024px) {
@@ -111,7 +135,6 @@
 }
 
 @media (min-width: 300px) and (max-width: 765px) {
-
     .__html {
 
         h1,
@@ -139,7 +162,6 @@
         ol,
         ul {
             margin-bottom: 20px;
-
         }
 
         ol li,

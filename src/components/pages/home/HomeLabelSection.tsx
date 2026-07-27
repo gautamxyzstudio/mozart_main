@@ -68,7 +68,7 @@ const HomeLabelSection = () => {
               </div>
               <Image
                 src={item.image}
-                alt="Dummy"
+                alt={item.label}
                 className="w-full h-97 object-cover rounded-xl xl:group-hover:block hidden transition-all duration-500 ease-in-out"
               />
             </div>

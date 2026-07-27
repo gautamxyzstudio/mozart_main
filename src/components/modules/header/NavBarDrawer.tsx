@@ -295,7 +295,7 @@ const servicesList = [
         viewBox="0 0 30 30"
         fill="none"
       >
-        <g clip-path="url(#clip0_3053_14019)">
+        <g clipPath="url(#clip0_3053_14019)">
           <path
             d="M13.3326 0.480469C13.315 0.521484 13.2095 1.16602 13.0923 1.9043L12.8755 3.25781L12.3716 3.36328C11.2701 3.58594 9.64116 4.25977 8.66264 4.89258C8.43413 5.03906 8.21147 5.15039 8.17046 5.13281C8.12358 5.12109 7.61382 4.75781 7.02788 4.33594C6.44194 3.91406 5.93218 3.55664 5.89702 3.53906C5.856 3.52734 5.30522 4.03711 4.66069 4.68164L3.49468 5.84766L4.32671 6.99023C4.77788 7.62305 5.15288 8.16211 5.15288 8.19727C5.15288 8.23242 5.02983 8.44336 4.88335 8.67188C4.27397 9.61523 3.60014 11.2617 3.35991 12.3984L3.2603 12.8672L1.84819 13.1016L0.436082 13.3301L0.418503 14.9824C0.406785 16.5176 0.412644 16.6348 0.506394 16.6641C0.564988 16.6758 1.20366 16.7871 1.93608 16.9102L3.25444 17.1211L3.35405 17.6074C3.58257 18.7207 4.25639 20.3555 4.88921 21.334C5.03569 21.5625 5.14702 21.7852 5.12944 21.8262C5.11772 21.8672 4.75444 22.3887 4.32671 22.9805C3.90483 23.5664 3.54741 24.0762 3.53569 24.1113C3.52397 24.1406 4.03374 24.6914 4.67827 25.3359L5.84429 26.502L6.99272 25.6699C7.62554 25.2188 8.1646 24.8438 8.19975 24.8438C8.22905 24.8438 8.42241 24.9492 8.62163 25.084C9.58257 25.7051 11.2466 26.3906 12.3951 26.6367L12.8638 26.7363L13.0982 28.1484L13.3267 29.5605H14.9966H16.6607L16.8892 28.1484L17.1177 26.7363L17.5103 26.6602C18.606 26.4434 20.3638 25.7344 21.3248 25.1133C21.5591 24.9609 21.7818 24.8496 21.8228 24.8672C21.8638 24.8789 22.3853 25.2422 22.9771 25.6699C23.563 26.0918 24.0787 26.4492 24.108 26.4609C24.1431 26.4727 24.688 25.9629 25.3326 25.3184L26.4986 24.1523L25.6666 23.0039C25.2154 22.3711 24.8404 21.832 24.8404 21.7969C24.8404 21.7676 24.9458 21.5742 25.0806 21.375C25.7134 20.4023 26.3814 18.7734 26.6275 17.6016L26.733 17.1328L28.1451 16.8984L29.5572 16.6699V15V13.3301L28.1509 13.1016L26.7388 12.8789L26.6333 12.375C26.4107 11.2734 25.7369 9.64453 25.1099 8.67188C24.9634 8.44336 24.8404 8.23828 24.8404 8.20898C24.8404 8.18555 25.1978 7.66406 25.6373 7.05469C26.0767 6.44531 26.4458 5.92383 26.4576 5.88867C26.4693 5.85938 25.9595 5.30273 25.315 4.66406L24.149 3.49805L23.0005 4.33008C22.3677 4.78125 21.8287 5.15625 21.7935 5.15625C21.7642 5.15625 21.5591 5.03906 21.3423 4.89844C20.2759 4.21289 18.7408 3.5918 17.481 3.33398L17.1177 3.25781L16.8892 1.85156L16.6607 0.439453L15.0083 0.421875C13.7134 0.410156 13.3501 0.421875 13.3326 0.480469ZM16.1685 6.65039C17.7916 6.89648 19.1744 7.52344 20.4517 8.58984C21.8873 9.78516 22.9185 11.584 23.2994 13.5645C23.4341 14.2734 23.4341 15.709 23.2994 16.4473C23.188 17.0449 22.9244 17.9121 22.6958 18.4395C22.2974 19.3418 21.5005 20.4609 20.7857 21.123L20.4166 21.4688L20.3814 20.1504C20.3521 18.9727 20.3345 18.8027 20.2173 18.498C20.0298 18.0176 19.5083 17.4727 19.0279 17.25C18.6705 17.0859 18.6294 17.0801 17.5455 17.0625L16.4322 17.0449L15.6822 18.5508L14.9263 20.0566L14.7974 19.8281C14.7271 19.7051 14.3814 19.0254 14.0298 18.3223L13.3912 17.0449L12.3658 17.0625C11.3462 17.0801 11.3287 17.0801 10.9419 17.2676C10.4439 17.502 10.0572 17.8887 9.8228 18.3867L9.6353 18.7793L9.606 20.127L9.57671 21.4746L8.98491 20.877C7.81889 19.7109 7.05718 18.2754 6.69389 16.582C6.54155 15.8672 6.54741 14.1211 6.69975 13.3887C6.89897 12.4336 7.36772 11.2559 7.83647 10.5234C8.856 8.92969 10.4498 7.6582 12.19 7.04297C12.6763 6.87305 13.6314 6.64453 14.0591 6.60352C14.5865 6.55078 15.6646 6.57422 16.1685 6.65039Z"
             fill="white"
@@ -419,15 +419,17 @@ const NavBarDrawer: React.FC<INavBarDrawerProps> = ({
                         onClick={() =>
                           setIsServicesExpanded(!isServicesExpanded)
                         }
-                        className={`rounded-full uppercase text-base w-full py-2.5 flex flex-row items-center justify-between cursor-pointer transition-all duration-300 ${isServicesExpanded || pathName.startsWith("/services")
-                          ? " text-primary font-bold"
-                          : "text-foreground"
-                          }`}
+                        className={`rounded-full uppercase text-base w-full py-2.5 flex flex-row items-center justify-between cursor-pointer transition-all duration-300 ${
+                          isServicesExpanded || pathName.startsWith("/services")
+                            ? " text-primary font-bold"
+                            : "text-foreground"
+                        }`}
                       >
                         <span>{item.label}</span>
                         <svg
-                          className={`w-4 h-4 transition-transform duration-300 ${isServicesExpanded ? "rotate-180" : ""
-                            }`}
+                          className={`w-4 h-4 transition-transform duration-300 ${
+                            isServicesExpanded ? "rotate-180" : ""
+                          }`}
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
@@ -469,10 +471,11 @@ const NavBarDrawer: React.FC<INavBarDrawerProps> = ({
                     <Link
                       href={item.href}
                       onClick={onClose}
-                      className={`rounded-2xl uppercase text-base w-full py-2.5 transition-all duration-300 ${pathName === item.href
-                        ? " text-primary font-bold"
-                        : "text-foreground"
-                        }`}
+                      className={`rounded-2xl uppercase text-base w-full py-2.5 transition-all duration-300 ${
+                        pathName === item.href
+                          ? " text-primary font-bold"
+                          : "text-foreground"
+                      }`}
                     >
                       {item.label}
                     </Link>
@@ -498,7 +501,7 @@ const NavBarDrawer: React.FC<INavBarDrawerProps> = ({
           <Link
             href={`${process.env.NEXT_PUBLIC_ADMIN_BASE_MAIN_URL}`}
             onClick={onClose}
-            className="bg-gradient-to-r from-[#9053F6] to-[#6739b7] text-white text-base font-bold py-2.5 px-6 rounded-full shadow-[0_8px_20px_rgba(103,57,183,0.35)] hover:shadow-[0_12px_28px_rgba(103,57,183,0.5)] hover:translate-y-[-1px] transition-all duration-300 text-center"
+            className="bg-linear-to-r from-[#9053F6] to-[#6739b7] text-white text-base font-bold py-2.5 px-6 rounded-full shadow-[0_8px_20px_rgba(103,57,183,0.35)] hover:shadow-[0_12px_28px_rgba(103,57,183,0.5)] hover:-translate-y-px transition-all duration-300 text-center"
           >
             Release Now
           </Link>

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { Icons, Images } from "@/public/exports";
 import { useGetBlog, useGetBlogDetailsBySlug } from "@/src/hooks/useBlog";
@@ -8,11 +9,16 @@ import dayjs from "dayjs";
 import CustomButton from "../../atom/button/CustomButton";
 import { useRouter } from "next/navigation";
 import { TransformedBlog } from "@/src/api/blog/blogApi";
+import Faqs, { FaqItem } from "../../modules/faqs/Faqs";
+import { extractFaqsFromBlog } from ".";
 
 interface TOCItem {
   label: string;
   id: string;
 }
+
+const jsonLdRegex =
+  /(?:<p[^>]*>\s*)?(?:&lt;script|<script)[^>]*type=["']application\/ld\+json["'][^>]*(?:&gt;|>)([\s\S]*?)(?:&lt;\/script&gt;|<\/script>)(?:\s*<\/p>)?/gi;
 
 const BlogCard = ({ props }: { props: TransformedBlog }) => {
   return (
@@ -54,12 +60,20 @@ const BlogDetailPage = ({ slug }: { slug: string }) => {
   const blogData = data?.blogData;
 
   const { tocItems, processedContent } = useMemo(() => {
-    if (typeof window === "undefined" || !blogData) {
-      return { tocItems: [], processedContent: blogData || "" };
+    if (!blogData) {
+      return { tocItems: [], processedContent: "" };
+    }
+
+    const cleanHtml = blogData
+      .replace(jsonLdRegex, "")
+      .replace(/<p[^>]*>\s*&lt;script[\s\S]*?&lt;\/script&gt;\s*<\/p>/gi, "");
+
+    if (typeof window === "undefined") {
+      return { tocItems: [], processedContent: cleanHtml };
     }
 
     const parser = new DOMParser();
-    const doc = parser.parseFromString(blogData, "text/html");
+    const doc = parser.parseFromString(cleanHtml, "text/html");
     const headings = doc.querySelectorAll("h2, h3");
     const items: TOCItem[] = [];
 
@@ -90,8 +104,152 @@ const BlogDetailPage = ({ slug }: { slug: string }) => {
     (item) => String(item.id) !== String(data?.id),
   );
 
+  const decodeHtml = (html: string = "") => {
+    return html
+      .replace(/&lt;/g, "<")
+      .replace(/&gt;/g, ">")
+      .replace(/&quot;/g, '"')
+      .replace(/&#039;/g, "'")
+      .replace(/&amp;/g, "&")
+      .replace(/&nbsp;/g, " ");
+  };
+
+  const stripHtmlTags = (html: string = "") => {
+    return html.replace(/<[^>]*>/g, "").trim();
+  };
+
+  const blogHtml = data?.blogData || "";
+  const decodedBlogHtml = decodeHtml(blogHtml);
+
+  const jsonLdMatches = [
+    ...blogHtml.matchAll(jsonLdRegex),
+    ...decodedBlogHtml.matchAll(jsonLdRegex),
+  ];
+
+  const rawSchemas = jsonLdMatches
+    .map((match) => {
+      try {
+        const cleanedJson = stripHtmlTags(decodeHtml(match[1]))
+          .replace(/<br\s*\/?>/gi, "\n")
+          .replace(/\u00a0/g, " ")
+          .replace(/&nbsp;/gi, " ")
+          .replace(/,\s*]/g, "]")
+          .replace(/,\s*}/g, "}")
+          .trim();
+
+        return JSON.parse(cleanedJson);
+      } catch (error) {
+        console.log("JSON-LD parse error:", error);
+        return null;
+      }
+    })
+    .filter(Boolean);
+
+  const schemas = rawSchemas.flatMap((s: any) => {
+    if (s && Array.isArray(s["@graph"])) {
+      return s["@graph"];
+    }
+    if (Array.isArray(s)) {
+      return s;
+    }
+    return s;
+  });
+
+  const faqSchema = schemas.find(
+    (schema: any) => schema?.["@type"] === "FAQPage",
+  );
+
+  const blogPostingSchema = schemas.find(
+    (schema: any) => schema?.["@type"] === "BlogPosting",
+  );
+
+  const extractedFaqs = extractFaqsFromBlog(blogData || "");
+
+  const faqsFromSchema: FaqItem[] = Array.isArray(faqSchema?.mainEntity)
+    ? faqSchema.mainEntity
+        .map((item: any, idx: number) => ({
+          id: `panel${idx + 1}`,
+          question: item.name || item.question || "",
+          answer: item.acceptedAnswer?.text || item.answer || "",
+        }))
+        .filter((item: FaqItem) => item.question && item.answer)
+    : [];
+
+  const faqs: FaqItem[] =
+    extractedFaqs.length > 0
+      ? extractedFaqs.map((f: any, idx: number) => ({
+          id: f.id || `panel${idx + 1}`,
+          question: f.question || f.title || "",
+          answer: f.answer || f.desc || "",
+        }))
+      : faqsFromSchema;
+
+  const finalFaqSchema =
+    faqSchema ||
+    (faqs.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((faq) => ({
+            "@type": "Question",
+            name: faq.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: faq.answer,
+            },
+          })),
+        }
+      : null);
+
+  const defaultBlogPostingSchema = data
+    ? {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id":
+            typeof window !== "undefined"
+              ? window.location.href
+              : `https://amozart.com/blog/${data.blogSlug || slug}`,
+        },
+        headline: data.title,
+        description: data.metaDescr || data.title,
+        image: data.banner
+          ? [data.banner]
+          : data.smallBanner
+          ? [data.smallBanner]
+          : [],
+        datePublished: data.publishedAt || data.blogDate || data.createdAt,
+        dateModified:
+          data.updatedAt || data.publishedAt || data.blogDate || data.createdAt,
+        author: {
+          "@type": "Organization",
+          name: "Amozart",
+          url: "https://amozart.com",
+        },
+        publisher: {
+          "@type": "Organization",
+          name: "Amozart",
+          logo: {
+            "@type": "ImageObject",
+            url: "https://amozart.com/logo.png",
+          },
+        },
+      }
+    : null;
+
+  const finalBlogPostingSchema = blogPostingSchema || defaultBlogPostingSchema;
+
   return (
     <>
+      {finalBlogPostingSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(finalBlogPostingSchema),
+          }}
+        />
+      )}
       <section className="xl:max-w-screen-2xl mx-auto px-6 xl:px-25 md:px-13 py-12 lg:py-20 ">
         <div className="w-full">
           <nav className="mb-8 md:mt-14 mt-5 ">
@@ -115,7 +273,7 @@ const BlogDetailPage = ({ slug }: { slug: string }) => {
             ) : (
               <Image
                 src={data?.banner || data?.smallBanner || ""}
-                alt="AI DJ Mixer"
+                alt={data?.title || "Blog cover image"}
                 width={1400}
                 height={1400}
                 className="rounded-xl w-[90%] h-[70%] shadow-[0px_0px_5px_0px_rgba(0,0,0,0.25)]"
@@ -167,16 +325,18 @@ const BlogDetailPage = ({ slug }: { slug: string }) => {
                         className=" cursor-pointer flex  gap-3"
                       >
                         <div
-                          className={` h-8 w-1 rounded-full shrink-0 transition-colors ${activeIndex === index
+                          className={` h-8 w-1 rounded-full shrink-0 transition-colors ${
+                            activeIndex === index
                               ? "bg-primary"
                               : "bg-transparent "
-                            }`}
+                          }`}
                         />
                         <span
-                          className={`text-sm transition-colors flex items-center ${activeIndex === index
+                          className={`text-sm transition-colors flex items-center ${
+                            activeIndex === index
                               ? "text-primary font-medium"
                               : "text-black hover:text-black"
-                            }`}
+                          }`}
                         >
                           {item.label}
                         </span>
@@ -231,8 +391,9 @@ const BlogDetailPage = ({ slug }: { slug: string }) => {
           </div>
         </div>
       </section>
+      {faqs.length > 0 && <Faqs faqData={faqs} />}
       {recentBlogs.length > 0 && (
-        <div className="mt-10 md:mt-16 xl:mt-25 overflow-hidden lg:mx-0 bg-secondary xl:px-25 xl:py-31 md:px-16 md:py-20 px-6 py-10">
+        <div className="overflow-hidden lg:mx-0 bg-secondary xl:px-25 xl:py-31 md:px-16 md:py-20 px-6 py-10">
           <div className="flex flex-row items-center justify-between w-full mb-8 md:mb-14">
             <h3 className="xl:text-[64px] md:text-5xl text-2xl font-semibold">
               Latest Blog
@@ -261,6 +422,14 @@ const BlogDetailPage = ({ slug }: { slug: string }) => {
 
           <div className="w-full flex justify-center mt-6 md:mt-12 lg:mt-16 px-6"></div>
         </div>
+      )}
+      {finalFaqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(finalFaqSchema),
+          }}
+        />
       )}
     </>
   );

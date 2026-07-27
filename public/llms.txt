@@ -1,0 +1,34 @@
+# Amozart
+
+> Amozart is an all-in-one music distribution, publishing, YouTube content management, royalty tracking, and artist promotion platform empowering independent artists, record labels, and managers worldwide.
+
+Amozart provides digital music distribution, global publishing administration, YouTube Content ID rights protection, transparent royalty accounting, and artist promotion tools. Below is an index of key service pages, resources, and legal policy documents available on the platform.
+
+## Core Services
+
+- [Music Distribution](https://amozart.com/services/music-distribution): Distribute tracks globally to 150+ digital streaming platforms including Spotify, Apple Music, YouTube Music, Amazon Music, and JioSaavn.
+- [Label Distribution](https://amozart.com/services/label-distribution): Comprehensive label services, multi-artist catalog management, automated royalty splits, and sub-label support.
+- [Music Promotion](https://amozart.com/services/music-promotion): Digital ad campaigns, playlist pitching, influencer outreach, and organic audience growth strategies.
+- [YouTube Content ID](https://amozart.com/services/youtube-content-id): Automated digital rights protection, copyright monitoring, and monetization across YouTube.
+- [YouTube Channel Management](https://amozart.com/services/youtube-channel-management): Video SEO, channel optimization, release strategy, and Official Artist Channel setup.
+- [Artists Management](https://amozart.com/services/artists-management): Strategic career planning, contract support, sync licensing, and brand deal placement for independent talent.
+- [Global Music Charts](https://amozart.com/services/global-music-charts): Real-time analytics, playlist placement tracking, and chart performance reporting across global markets.
+- [Royalty & Rights Management](https://amozart.com/services/royalty-rights-management): Transparent royalty accounting, master & publishing split management, and global collection.
+
+## Key Pages & Resources
+
+- [Home](https://amozart.com/): Official homepage for Amozart music services and artist ecosystem.
+- [About Us](https://amozart.com/about): Learn about Amozart's mission to reshape music distribution for independent creators.
+- [Our Story](https://amozart.com/our-story): The history and vision driving our artist-first platform.
+- [Our Vision](https://amozart.com/our-vision): Our commitment to transparent rights management and global music access.
+- [Artist Guide](https://amozart.com/artist-guide): Step-by-step guides for music releases, metadata optimization, and stream growth.
+- [Blog](https://amozart.com/blog): Industry insights, music marketing tips, release checklists, and platform news.
+- [Help Center](https://amozart.com/help-center): FAQs, release guidelines, audio format specifications, and support articles.
+- [Contact Us](https://amozart.com/contact): Get in touch with our artist support and distribution team.
+
+## Legal & Compliance
+
+- [Terms and Conditions](https://amozart.com/terms-and-conditions): Terms of service governing distribution and platform usage.
+- [Privacy Policy](https://amozart.com/privacy-policy): Data privacy, collection, and storage practices.
+- [Copyright Policy](https://amozart.com/copyright-policy): Copyright infringement claims, DMCA policies, and content protection.
+- [Cookie Policy](https://amozart.com/cookie-policy): Information on cookies and tracking technologies used on the platform.

@@ -50,7 +50,7 @@ const HomeTopSection = () => {
             <span className="text-2xl font-medium md:text-[48px] xl:text-[64px] leading-[1.1] tracking-tight">
               Distribute your music
             </span>
-            <span className="text-4xl font-semibold md:text-[64px] xl:text-[100px] leading-[1.0] mt-1 md:mt-2">
+            <span className="text-4xl font-semibold md:text-[64px] xl:text-[100px] leading-none mt-1 md:mt-2">
               to <span className="text-primary italic">the world</span>
             </span>
           </div>

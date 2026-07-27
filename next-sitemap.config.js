@@ -1,5 +1,5 @@
 /** @type {import('next-sitemap').IConfig} */
-const siteUrl = process.env.NEXT_PUBLIC_BASE_MAIN_URL;
+const siteUrl = process.env.NEXT_PUBLIC_BASE_MAIN_URL || "https://amozart.com";
 
 module.exports = {
   siteUrl,

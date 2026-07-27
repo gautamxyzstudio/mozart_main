@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "name": "Amozart",
+  "description": "Amozart is an all-in-one music distribution, publishing, YouTube content management, royalty tracking, and artist promotion platform.",
+  "url": "https://amozart.com",
+  "documentation": "https://amozart.com/llms.txt",
+  "sitemap": "https://amozart.com/page-sitemap.xml",
+  "contact": "support@amozart.com",
+  "capabilities": [
+    "music_distribution",
+    "label_services",
+    "music_promotion",
+    "youtube_content_id",
+    "youtube_channel_management",
+    "artist_management",
+    "global_music_charts",
+    "royalty_rights_management",
+    "search",
+    "contact"
+  ],
+  "services": [
+    {
+      "name": "Music Distribution",
+      "url": "https://amozart.com/services/music-distribution",
+      "description": "Distribute tracks to 150+ digital streaming platforms like Spotify, Apple Music, YouTube Music, and JioSaavn."
+    },
+    {
+      "name": "Label Distribution",
+      "url": "https://amozart.com/services/label-distribution",
+      "description": "Multi-artist catalog management, automated royalty splits, and sub-label support."
+    },
+    {
+      "name": "Music Promotion",
+      "url": "https://amozart.com/services/music-promotion",
+      "description": "Digital ad campaigns, playlist pitching, influencer outreach, and organic audience growth."
+    },
+    {
+      "name": "YouTube Content ID",
+      "url": "https://amozart.com/services/youtube-content-id",
+      "description": "Digital rights protection, copyright monitoring, and automated revenue collection on YouTube."
+    },
+    {
+      "name": "YouTube Channel Management",
+      "url": "https://amozart.com/services/youtube-channel-management",
+      "description": "Video SEO, channel optimization, release strategy, and Official Artist Channel setup."
+    },
+    {
+      "name": "Artists Management",
+      "url": "https://amozart.com/services/artists-management",
+      "description": "Strategic career guidance, contract support, sync licensing, and brand placement."
+    },
+    {
+      "name": "Global Music Charts",
+      "url": "https://amozart.com/services/global-music-charts",
+      "description": "Real-time stream analytics, playlist tracking, and market performance reporting."
+    },
+    {
+      "name": "Royalty & Rights Management",
+      "url": "https://amozart.com/services/royalty-rights-management",
+      "description": "Transparent royalty accounting, master & publishing split management, and global collection."
+    }
+  ],
+  "endpoints": {
+    "contact": {
+      "url": "https://amozart.com/api/contact",
+      "method": "POST",
+      "description": "Submit artist inquiry or contact request"
+    },
+    "newsletter": {
+      "url": "https://amozart.com/api/newsletter",
+      "method": "POST",
+      "description": "Subscribe to music industry newsletter"
+    }
+  }
+}

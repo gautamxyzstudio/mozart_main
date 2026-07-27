@@ -74,14 +74,15 @@ const Faqs: React.FC<FaqsProps> = ({ faqData = defaultFaqData }) => {
         </h2>
 
         <div className="flex flex-col gap-y-6.5 w-full">
-          {faqData.map((faq) => {
-            const isCurrentExpanded = expanded === faq.id;
+          {faqData.map((faq, idx) => {
+            const panelId = faq.id || `panel${idx}`;
+            const isCurrentExpanded = expanded === panelId;
 
             return (
               <Accordion
-                key={faq.id}
+                key={panelId}
                 expanded={isCurrentExpanded}
-                onChange={handleChange(faq.id)}
+                onChange={handleChange(panelId)}
                 disableGutters
                 elevation={0}
                 sx={{
