@@ -54,7 +54,7 @@ export default function AlbumSlider() {
               <div className="slideCard xl:rounded-2xl rounded-lg overflow-clip">
                 <Image
                   src={img}
-                  alt={`${img}`}
+                  alt="poster"
                   className="w-full h-full xl:rounded-2xl rounded-lg object-cover object-top"
                 />
               </div>

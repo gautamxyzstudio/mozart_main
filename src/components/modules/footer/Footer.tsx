@@ -38,22 +38,29 @@ const Footer = () => {
             {[
               {
                 icon: Icons.Instagram,
+                label: "Instagram",
                 link: "https://www.instagram.com/Amozartglobal",
               },
               {
                 icon: Icons.Facebook,
+                label: "Facebook",
                 link: "https://www.facebook.com/people/Amozart-Official/61578529725247",
               },
               {
                 icon: Icons.LinkedIn,
+                label: "LinkedIn",
                 link: "https://www.linkedin.com/company/Amozart",
               },
-              { icon: Icons.Twitter, link: "https://x.com/AmozartOfficial" },
+              {
+                icon: Icons.Twitter,
+                label: "X",
+                link: "https://x.com/AmozartOfficial",
+              },
             ].map((item, idx) => (
               <Link href={item.link} target="_blank" key={idx}>
                 <Image
                   src={item.icon}
-                  alt={item.link + idx}
+                  alt={item.label}
                   className="border border-background rounded-full xl:w-9 xl:h-9 xl:p-1.5 w-7.5 h-7.5 p-1.25"
                 />
               </Link>
@@ -65,19 +72,8 @@ const Footer = () => {
 
         <div className="w-full border-t border-primary20 xl:py-6 py-4 flex md:flex-row flex-col gap-y-3 justify-between md:items-center xl:mt-0 md:mt-2">
           <span className="text-background xl:text-base md:text-xs text-[10px] leading-3.5">
-            &copy; {new Date().getFullYear()} Amozart. All Rights
-            Reserved
+            &copy; {new Date().getFullYear()} Amozart. All Rights Reserved
           </span>
-          {/* <span className="text-background xl:text-base md:text-xs text-[10px] leading-3.5">
-            Designed & Developed by{" "}
-            <Link
-              href={"https://www.xyz.studio/"}
-              title="Xyz Studio"
-              className="font-medium"
-            >
-              XYZ Studio
-            </Link>
-          </span> */}
         </div>
       </div>
     </footer>

@@ -205,7 +205,7 @@ const BlogDetailPage = ({ slug }: { slug: string }) => {
     ? {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
-        "mainEntityOfPage": {
+        mainEntityOfPage: {
           "@type": "WebPage",
           "@id":
             typeof window !== "undefined"
@@ -217,8 +217,8 @@ const BlogDetailPage = ({ slug }: { slug: string }) => {
         image: data.banner
           ? [data.banner]
           : data.smallBanner
-          ? [data.smallBanner]
-          : [],
+            ? [data.smallBanner]
+            : [],
         datePublished: data.publishedAt || data.blogDate || data.createdAt,
         dateModified:
           data.updatedAt || data.publishedAt || data.blogDate || data.createdAt,
@@ -364,21 +364,24 @@ const BlogDetailPage = ({ slug }: { slug: string }) => {
                       {[
                         {
                           icon: Icons.Facebook2,
+                          label: "Facebook",
                           link: "https://www.facebook.com/people/Amozart-Official/61578529725247",
                         },
                         {
                           icon: Icons.linkedIn2,
+                          label: "LinkedIn",
                           link: "https://www.linkedin.com/company/Amozart",
                         },
                         {
                           icon: Icons.Twitter2,
+                          label: "X",
                           link: "https://x.com/AmozartOfficial",
                         },
                       ].map((item, idx) => (
                         <Link href={item.link} key={idx}>
                           <Image
                             src={item.icon}
-                            alt={item.link + idx}
+                            alt={item.label}
                             className="w-full h-full"
                           />
                         </Link>
