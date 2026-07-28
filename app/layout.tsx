@@ -17,6 +17,7 @@ import "swiper/css/effect-creative";
 import "swiper/css/effect-coverflow";
 import Script from "next/script";
 import ClarityTracker from "@/src/components/clarityTracker/ClarityTracker";
+import HelpSupportWidget from "@/src/components/support/HelpSupportWidget";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://amozart.com"),
@@ -87,7 +88,7 @@ export default function RootLayout({
              gtag('js', new Date());
              gtag('config', '${process.env.NEXT_PUBLIC_GA_TRACKING_ID}', {
                  page_path: window.location.pathname,
-               }); `,
+                }); `,
           }}
         />
         <meta
@@ -107,6 +108,7 @@ export default function RootLayout({
           {children}
           <Footer />
           <ToastContainer />
+          <HelpSupportWidget />
 
         </Providers>
       </body>
