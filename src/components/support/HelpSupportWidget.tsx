@@ -13,8 +13,6 @@ export type ViewType =
   | "ai_chat"
   | "live_chat"
   | "article_detail"
-  | "raise_ticket"
-  | "schedule_call"
   | "email_support";
 
 export interface ArticleItem {
@@ -41,6 +39,27 @@ export interface TeamAvatar {
   name: string;
   src: any;
 }
+
+export interface ChatSession {
+  id: string;
+  title: string;
+  updatedAt: string;
+  messages: MessageItem[];
+}
+
+const DEFAULT_INITIAL_SESSION: ChatSession = {
+  id: "session-initial",
+  title: "Amozart Support Assistant",
+  updatedAt: "Just now",
+  messages: [
+    {
+      id: "1",
+      sender: "ai",
+      text: "👋 Welcome to Amozart Support! How can I help you today?",
+      time: "Just now",
+    },
+  ],
+};
 
 // --- CONSTANTS ---
 const TEAM_AVATARS: TeamAvatar[] = [
@@ -237,11 +256,10 @@ const EmojiPickerPopover: React.FC<EmojiPickerPopoverProps> = ({
             key={tab.id}
             type="button"
             onClick={() => onTabChange(tab.id as any)}
-            className={`p-1.5 rounded-lg transition cursor-pointer ${
-              activeTab === tab.id
+            className={`p-1.5 rounded-lg transition cursor-pointer ${activeTab === tab.id
                 ? "bg-primary/15 text-primary scale-110"
                 : "text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800"
-            }`}
+              }`}
           >
             {tab.icon}
           </button>
@@ -280,8 +298,18 @@ export default function HelpSupportWidget() {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
 
   // Email Validation & First Time Card State
-  const [userEmail, setUserEmail] = useState<string>("");
-  const [isEmailSaved, setIsEmailSaved] = useState<boolean>(false);
+  const [userEmail, setUserEmail] = useState<string>(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("amozart_support_user_email") || "";
+    }
+    return "";
+  });
+  const [isEmailSaved, setIsEmailSaved] = useState<boolean>(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("amozart_support_email_saved") === "true";
+    }
+    return false;
+  });
   const [emailError, setEmailError] = useState<string>("");
 
   // Media & Attachment State
@@ -301,38 +329,244 @@ export default function HelpSupportWidget() {
   const [isRecording, setIsRecording] = useState<boolean>(false);
   const [recordingSeconds, setRecordingSeconds] = useState<number>(0);
 
-  // Form States for Ticket & Schedule Call
-  const [ticketForm, setTicketForm] = useState({
-    name: "",
-    email: "",
-    category: "distribution",
-    description: "",
-    priority: "normal",
+  // Multiple Chat Sessions State with localStorage persistence
+  const [sessions, setSessions] = useState<ChatSession[]>(() => {
+    if (typeof window !== "undefined") {
+      try {
+        const saved = localStorage.getItem("amozart_support_sessions");
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            return parsed;
+          }
+        }
+      } catch (err) {
+        console.error("Failed to load saved chat sessions", err);
+      }
+    }
+    return [DEFAULT_INITIAL_SESSION];
   });
-  const [ticketSubmitted, setTicketSubmitted] = useState<boolean>(false);
 
-  const [scheduleForm, setScheduleForm] = useState({
-    topic: "Catalog Onboarding",
-    date: "",
-    time: "11:00 AM",
-    phone: "",
+  const [activeSessionId, setActiveSessionId] = useState<string>(() => {
+    if (typeof window !== "undefined") {
+      const savedId = localStorage.getItem("amozart_support_active_session");
+      if (savedId) return savedId;
+    }
+    return "session-initial";
   });
-  const [callScheduled, setCallScheduled] = useState<boolean>(false);
 
-  // Initial Chat Messages Array
-  const [chatMessages, setChatMessages] = useState<MessageItem[]>([
-    {
-      id: "1",
-      sender: "ai",
-      text: "👋 Hi! I'm Amozart AI Assistant. How can I help you with music distribution, royalties, or Content ID today?",
-      time: "Just now",
-    },
-  ]);
   const [isTyping, setIsTyping] = useState<boolean>(false);
   const [aiInput, setAiInput] = useState<string>("");
+  const [articleFeedback, setArticleFeedback] = useState<Record<string, boolean>>({});
 
   const chatEndRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  // Derived current active session & messages
+  const activeSession = useMemo(() => {
+    return sessions.find((s) => s.id === activeSessionId) || sessions[0] || DEFAULT_INITIAL_SESSION;
+  }, [sessions, activeSessionId]);
+
+  const chatMessages = activeSession.messages;
+
+  // Saved sessions are ONLY those where the user has actually sent at least 1 message
+  const savedSessions = useMemo(() => {
+    return sessions.filter((s) => s.messages.some((m) => m.sender === "user"));
+  }, [sessions]);
+
+  // Save ONLY active sessions with user interaction to localStorage
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      try {
+        const activeUserSessions = sessions.filter((s) => s.messages.some((m) => m.sender === "user"));
+        if (activeUserSessions.length > 0) {
+          localStorage.setItem("amozart_support_sessions", JSON.stringify(activeUserSessions));
+        } else {
+          localStorage.removeItem("amozart_support_sessions");
+        }
+      } catch (err) {
+        console.error("Failed to save sessions", err);
+      }
+    }
+  }, [sessions]);
+
+  // Save activeSessionId to localStorage whenever updated
+  useEffect(() => {
+    if (typeof window !== "undefined" && activeSessionId) {
+      try {
+        localStorage.setItem("amozart_support_active_session", activeSessionId);
+      } catch (err) {
+        console.error("Failed to save active session ID", err);
+      }
+    }
+  }, [activeSessionId]);
+
+  // Helper to append a message to current active session
+  const appendMessageToActiveSession = (newMsg: MessageItem) => {
+    setSessions((prevSessions) =>
+      prevSessions.map((session) => {
+        if (session.id === activeSessionId) {
+          const updatedMsgs = [...session.messages, newMsg];
+          const timeNow = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+          let newTitle = session.title;
+          if (newMsg.sender === "user" && (session.title === "New Conversation" || session.title === "Amozart Support Assistant")) {
+            newTitle = newMsg.text.length > 28 ? newMsg.text.slice(0, 28) + "..." : newMsg.text;
+          }
+          return {
+            ...session,
+            title: newTitle,
+            updatedAt: timeNow,
+            messages: updatedMsgs,
+          };
+        }
+        return session;
+      })
+    );
+  };
+
+  // Helper to start a brand new conversation without deleting past ones
+  const handleCreateNewChat = () => {
+    // If there is already an existing session with NO user messages (unsaved draft), reuse it!
+    const existingEmpty = sessions.find((s) => !s.messages.some((m) => m.sender === "user"));
+    if (existingEmpty) {
+      setActiveSessionId(existingEmpty.id);
+      setCurrentView("ai_chat");
+      return;
+    }
+
+    const newId = "session-" + Date.now();
+    const timeNow = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+    const newSession: ChatSession = {
+      id: newId,
+      title: "New Conversation",
+      updatedAt: timeNow,
+      messages: [
+        {
+          id: Date.now().toString(),
+          sender: "ai",
+          text: "👋 Welcome to Amozart Support! How can I help you with your music distribution, royalties, or Content ID today?",
+          time: timeNow,
+        },
+      ],
+    };
+    setSessions((prev) => [newSession, ...prev]);
+    setActiveSessionId(newId);
+    setCurrentView("ai_chat");
+  };
+
+  // Helper to clear all sessions
+  const handleClearHistory = () => {
+    setSessions([DEFAULT_INITIAL_SESSION]);
+    setActiveSessionId("session-initial");
+    try {
+      localStorage.removeItem("amozart_support_sessions");
+      localStorage.removeItem("amozart_support_active_session");
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  // Article feedback handlers
+  const handleArticleHelpful = (articleId: string) => {
+    setArticleFeedback((prev) => ({ ...prev, [articleId]: true }));
+    setTimeout(() => {
+      setCurrentView("main");
+    }, 1500);
+  };
+
+  const handleArticleNeedHelp = (articleTitle: string) => {
+    const newId = "session-" + Date.now();
+    const timeNow = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+    const promptText = `I need more help regarding the article: "${articleTitle}"`;
+
+    const userMsg: MessageItem = {
+      id: Date.now().toString(),
+      sender: "user",
+      text: promptText,
+      time: timeNow,
+    };
+
+    const newSession: ChatSession = {
+      id: newId,
+      title: articleTitle.length > 25 ? articleTitle.slice(0, 25) + "..." : articleTitle,
+      updatedAt: timeNow,
+      messages: [
+        {
+          id: (Date.now() - 1).toString(),
+          sender: "ai",
+          text: "👋 Welcome to Amozart Support! How can I help you with your music distribution, royalties, or Content ID today?",
+          time: timeNow,
+        },
+        userMsg,
+      ],
+    };
+
+    setSessions((prev) => [newSession, ...prev]);
+    setActiveSessionId(newId);
+    setCurrentView("ai_chat");
+    setIsTyping(true);
+
+    fetch("/api/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        message: promptText,
+        history: [],
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        const aiReply = data.reply || "Thank you for reaching out! Our team is reviewing your query.";
+        const aiMsg: MessageItem = {
+          id: (Date.now() + 1).toString(),
+          sender: "ai",
+          text: aiReply,
+          time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+        };
+        setSessions((prevSessions) =>
+          prevSessions.map((session) => {
+            if (session.id === newId) {
+              return {
+                ...session,
+                messages: [...session.messages, aiMsg],
+              };
+            }
+            return session;
+          })
+        );
+      })
+      .catch((err) => {
+        console.error(err);
+        const fallbackMsg: MessageItem = {
+          id: (Date.now() + 1).toString(),
+          sender: "ai",
+          text: `I received your question about "${articleTitle}". Amozart support team is here to assist you. What specific question do you have?`,
+          time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+        };
+        setSessions((prevSessions) =>
+          prevSessions.map((session) => {
+            if (session.id === newId) {
+              return {
+                ...session,
+                messages: [...session.messages, fallbackMsg],
+              };
+            }
+            return session;
+          })
+        );
+      })
+      .finally(() => {
+        setIsTyping(false);
+      });
+  };
+
+  // Persist userEmail to localStorage whenever updated
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      if (userEmail) localStorage.setItem("amozart_support_user_email", userEmail);
+      localStorage.setItem("amozart_support_email_saved", isEmailSaved ? "true" : "false");
+    }
+  }, [userEmail, isEmailSaved]);
 
   // Voice recording timer effect
   useEffect(() => {
@@ -376,7 +610,7 @@ export default function HelpSupportWidget() {
       attachmentUrl: url,
       attachmentName: title,
     };
-    setChatMessages((prev) => [...prev, gifMsg]);
+    appendMessageToActiveSession(gifMsg);
     setShowGifPicker(false);
     setIsTyping(true);
 
@@ -387,7 +621,7 @@ export default function HelpSupportWidget() {
         text: `Awesome GIF! 🎵 Love the vibe. How else can I assist with your release catalog?`,
         time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
       };
-      setChatMessages((prev) => [...prev, aiResponse]);
+      appendMessageToActiveSession(aiResponse);
       setIsTyping(false);
     }, 1000);
   };
@@ -403,7 +637,7 @@ export default function HelpSupportWidget() {
       attachmentType: "voice",
       attachmentName: `Voice Message (${secs}s)`,
     };
-    setChatMessages((prev) => [...prev, voiceMsg]);
+    appendMessageToActiveSession(voiceMsg);
     setIsTyping(true);
 
     setTimeout(() => {
@@ -413,7 +647,7 @@ export default function HelpSupportWidget() {
         text: "I received your voice note! Processing audio transcript... How else can I assist you with your Amozart account?",
         time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
       };
-      setChatMessages((prev) => [...prev, aiMsg]);
+      appendMessageToActiveSession(aiMsg);
       setIsTyping(false);
     }, 1200);
   };
@@ -473,7 +707,7 @@ export default function HelpSupportWidget() {
       attachmentName: selectedFile?.name,
     };
 
-    setChatMessages((prev) => [...prev, userMsg]);
+    appendMessageToActiveSession(userMsg);
     if (!customText) setAiInput("");
     setSelectedFile(null);
 
@@ -498,7 +732,7 @@ export default function HelpSupportWidget() {
         text: aiReply,
         time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
       };
-      setChatMessages((prev) => [...prev, aiMsg]);
+      appendMessageToActiveSession(aiMsg);
     } catch (err) {
       console.error(err);
       const fallbackMsg: MessageItem = {
@@ -507,7 +741,7 @@ export default function HelpSupportWidget() {
         text: "I received your request! Amozart support team will send a detailed follow-up to your email shortly.",
         time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
       };
-      setChatMessages((prev) => [...prev, fallbackMsg]);
+      appendMessageToActiveSession(fallbackMsg);
     } finally {
       setIsTyping(false);
     }
@@ -518,15 +752,7 @@ export default function HelpSupportWidget() {
     setCurrentView("article_detail");
   };
 
-  const handleTicketSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setTicketSubmitted(true);
-  };
 
-  const handleScheduleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setCallScheduled(true);
-  };
 
   const renderArticleIcon = (articleId: string) => {
     switch (articleId) {
@@ -547,6 +773,36 @@ export default function HelpSupportWidget() {
           <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        );
+      case "art-4":
+        return (
+          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+        );
+      case "art-5":
+        return (
+          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+          </svg>
+        );
+      case "art-6":
+        return (
+          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+        );
+      case "art-7":
+        return (
+          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+          </svg>
+        );
+      case "art-8":
+        return (
+          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
           </svg>
         );
       default:
@@ -576,10 +832,6 @@ export default function HelpSupportWidget() {
             <svg className="w-6 h-6 group-hover:rotate-12 transition duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
             </svg>
-            <span className="absolute -top-1 -right-1 flex h-4 w-4">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-4 w-4 bg-emerald-500 border-2 border-white"></span>
-            </span>
           </motion.button>
         )}
       </AnimatePresence>
@@ -592,11 +844,10 @@ export default function HelpSupportWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: "spring", stiffness: 350, damping: 28 }}
-            className={`w-[92vw] sm:w-[410px] h-[640px] max-h-[88vh] rounded-[28px] shadow-2xl border flex flex-col overflow-hidden relative backdrop-blur-xl ${
-              isDarkMode
+            className={`w-[92vw] sm:w-[410px] h-[640px] max-h-[88vh] rounded-[28px] shadow-2xl border flex flex-col overflow-hidden relative backdrop-blur-xl ${isDarkMode
                 ? "bg-slate-950/95 border-slate-800 text-white shadow-black/80"
                 : "bg-white/95 border-slate-200/90 text-slate-900 shadow-purple-950/20"
-            }`}
+              }`}
           >
             {/* SUPPORT HEADER */}
             <div className="relative bg-primary text-white p-4 sm:p-5 border-b border-white/15 shrink-0 overflow-hidden shadow-lg">
@@ -666,16 +917,12 @@ export default function HelpSupportWidget() {
                         {currentView === "ai_chat" && "AI Assistant"}
                         {currentView === "live_chat" && "Live Agent Support"}
                         {currentView === "article_detail" && (selectedArticle?.title || "Help Article")}
-                        {currentView === "raise_ticket" && "Raise a Ticket"}
-                        {currentView === "schedule_call" && "Schedule a Call"}
                         {currentView === "email_support" && "Email Support"}
                       </h4>
                       <p className="text-xs text-slate-300/80 mt-0.5">
                         {currentView === "ai_chat" && "Instant automated answers 24/7"}
                         {currentView === "live_chat" && "Connected with Sarah • Typically replies in 2m"}
                         {currentView === "article_detail" && "Knowledge Base Guide"}
-                        {currentView === "raise_ticket" && "Get priority assistance from our team"}
-                        {currentView === "schedule_call" && "Pick a convenient time for a call"}
                         {currentView === "email_support" && "Send a direct message to our inbox"}
                       </p>
                     </div>
@@ -706,7 +953,7 @@ export default function HelpSupportWidget() {
             </div> */}
 
             {/* WIDGET CONTENT BODY */}
-            <div className="flex-1 p-4 overflow-y-auto space-y-4 relative [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-primary/30 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-primary/60 [scrollbar-width:thin] [scrollbar-color:rgba(103,57,183,0.3)_transparent]">
+            <div className="flex-1 p-4 overflow-y-auto space-y-4 relative [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
               {/* HOME VIEW (Main Dashboard + Articles + Tabs) */}
               {currentView === "main" && (
                 <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="space-y-4">
@@ -718,11 +965,10 @@ export default function HelpSupportWidget() {
                           whileHover={{ scale: 1.01, y: -2 }}
                           whileTap={{ scale: 0.98 }}
                           onClick={() => setCurrentView("ai_chat")}
-                          className={`p-3.5 rounded-[20px] border transition-all duration-300 cursor-pointer flex items-center justify-between group shadow-sm ${
-                            isDarkMode
+                          className={`p-3.5 rounded-[20px] border transition-all duration-300 cursor-pointer flex items-center justify-between group shadow-sm ${isDarkMode
                               ? "bg-slate-900/90 border-slate-800 hover:border-primary/60 hover:bg-slate-800/80 shadow-black/40"
                               : "bg-white border-slate-200/80 hover:border-primary/50 hover:shadow-md hover:shadow-purple-900/5"
-                          }`}
+                            }`}
                         >
                           <div className="flex items-center gap-3">
                             <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-primary to-indigo-500 text-white flex items-center justify-center shadow-md shadow-purple-500/20 group-hover:scale-110 transition duration-300">
@@ -776,42 +1022,7 @@ export default function HelpSupportWidget() {
                         </motion.div> */}
                       </div>
 
-                      {/* SECONDARY QUICK ACTIONS */}
-                      <div className="grid grid-cols-2 gap-2.5">
-                        <button
-                          onClick={() => setCurrentView("schedule_call")}
-                          className={`p-3 rounded-2xl border text-left transition duration-200 cursor-pointer flex flex-col justify-between group ${
-                            isDarkMode ? "bg-slate-900/60 border-slate-800 hover:border-blue-500/50" : "bg-slate-50 border-slate-200/80 hover:border-blue-500/40"
-                          }`}
-                        >
-                          <div className="p-2 rounded-xl bg-blue-500/10 text-blue-500 w-fit mb-2 group-hover:scale-110 transition">
-                            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                            </svg>
-                          </div>
-                          <div>
-                            <span className={`text-xs font-bold block ${isDarkMode ? "text-white" : "text-slate-900"}`}>Schedule Call</span>
-                            <span className="text-[10px] text-slate-400 font-medium">Pick date & time slot</span>
-                          </div>
-                        </button>
 
-                        <button
-                          onClick={() => setCurrentView("raise_ticket")}
-                          className={`p-3 rounded-2xl border text-left transition duration-200 cursor-pointer flex flex-col justify-between group ${
-                            isDarkMode ? "bg-slate-900/60 border-slate-800 hover:border-amber-500/50" : "bg-slate-50 border-slate-200/80 hover:border-amber-500/40"
-                          }`}
-                        >
-                          <div className="p-2 rounded-xl bg-amber-500/10 text-amber-500 w-fit mb-2 group-hover:scale-110 transition">
-                            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" />
-                            </svg>
-                          </div>
-                          <div>
-                            <span className={`text-xs font-bold block ${isDarkMode ? "text-white" : "text-slate-900"}`}>Raise Ticket</span>
-                            <span className="text-[10px] text-slate-400 font-medium">Detailed issue report</span>
-                          </div>
-                        </button>
-                      </div>
                     </div>
                   )}
 
@@ -829,11 +1040,10 @@ export default function HelpSupportWidget() {
                           value={searchQuery}
                           onChange={(e) => setSearchQuery(e.target.value)}
                           placeholder="Search help articles (e.g., payouts, Spotify)..."
-                          className={`w-full pl-10 pr-9 py-2.5 rounded-2xl text-xs sm:text-sm font-medium border outline-none transition duration-200 ${
-                            isDarkMode
+                          className={`w-full pl-10 pr-9 py-2.5 rounded-2xl text-xs sm:text-sm font-medium border outline-none transition duration-200 ${isDarkMode
                               ? "bg-slate-900 border-slate-800 text-white placeholder-slate-500 focus:border-primary focus:ring-2 focus:ring-primary/20"
                               : "bg-slate-100/90 border-slate-200 text-slate-900 placeholder-slate-400 focus:border-primary focus:ring-2 focus:ring-primary/20"
-                          }`}
+                            }`}
                         />
                         {searchQuery && (
                           <button
@@ -861,11 +1071,10 @@ export default function HelpSupportWidget() {
                                 whileHover={{ scale: 1.01, x: 2 }}
                                 whileTap={{ scale: 0.99 }}
                                 onClick={() => handleOpenArticle(article)}
-                                className={`p-3 rounded-[16px] border transition duration-200 cursor-pointer flex items-center justify-between gap-3 group ${
-                                  isDarkMode
+                                className={`p-3 rounded-[16px] border transition duration-200 cursor-pointer flex items-center justify-between gap-3 group ${isDarkMode
                                     ? "bg-slate-900/60 border-slate-800/80 hover:bg-slate-900 hover:border-slate-700"
                                     : "bg-white border-slate-200/80 hover:border-slate-300 hover:shadow-sm"
-                                }`}
+                                  }`}
                               >
                                 <div className="flex items-center gap-3 truncate">
                                   <div className="p-2 rounded-xl bg-primary/10 text-primary group-hover:scale-105 transition">
@@ -897,26 +1106,105 @@ export default function HelpSupportWidget() {
 
                   {/* MESSAGES TAB LIST */}
                   {activeTab === "messages" && (
-                    <div className="space-y-3 pt-1">
-                      <div className="px-1 flex items-center justify-between">
-                        <h5 className="text-xs font-bold uppercase tracking-wider text-slate-400">Recent Conversations</h5>
-                      </div>
-                      <div
-                        onClick={() => setCurrentView("ai_chat")}
-                        className={`p-3.5 rounded-[20px] border transition duration-200 cursor-pointer flex items-center justify-between gap-3 ${
-                          isDarkMode
-                            ? "bg-slate-900 border-slate-800 hover:border-primary/60"
-                            : "bg-white border-slate-200/80 hover:border-primary/50 shadow-sm"
-                        }`}
-                      >
-                        <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-full bg-primary/20 text-primary flex items-center justify-center font-bold text-sm shrink-0">🤖</div>
-                          <div>
-                            <h6 className={`font-bold text-xs sm:text-sm ${isDarkMode ? "text-white" : "text-slate-900"}`}>Amozart AI Assistant</h6>
-                            <p className="text-xs text-slate-400 truncate max-w-[200px]">Active session • Tap to resume chat</p>
+                    <div className="space-y-4 pt-1 pb-2">
+                      <div className="space-y-3">
+                        {savedSessions.length > 0 && (
+                          <div className="px-1 flex items-center justify-between">
+                            <h5 className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                              Recent Conversations ({savedSessions.length})
+                            </h5>
+                            <button
+                              onClick={handleClearHistory}
+                              className="text-[10px] text-rose-500 hover:text-rose-600 font-semibold cursor-pointer transition"
+                            >
+                              Clear All
+                            </button>
                           </div>
-                        </div>
-                        <span className="text-[10px] text-emerald-500 font-bold px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20">Active</span>
+                        )}
+
+                        {/* Saved Conversations List OR Beautiful Hero Illustration if Empty */}
+                        {savedSessions.length > 0 ? (
+                          <div className="space-y-2.5 max-h-[380px] overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden px-1.5 py-1">
+                            {savedSessions.map((session) => {
+                              const lastMsg = session.messages[session.messages.length - 1];
+                              const isCurrentActive = session.id === activeSessionId;
+                              return (
+                                <motion.div
+                                  key={session.id}
+                                  whileHover={{ y: -1.5 }}
+                                  whileTap={{ scale: 0.99 }}
+                                  onClick={() => {
+                                    setActiveSessionId(session.id);
+                                    setCurrentView("ai_chat");
+                                  }}
+                                  className={`p-3.5 rounded-[22px] border transition duration-200 cursor-pointer flex items-start justify-between gap-3 shadow-sm ${isCurrentActive
+                                      ? isDarkMode
+                                        ? "bg-slate-900 border-primary/70 ring-1 ring-primary/40 shadow-purple-900/20"
+                                        : "bg-white border-primary/60 ring-1 ring-primary/30 shadow-md shadow-purple-900/10"
+                                      : isDarkMode
+                                        ? "bg-slate-900/70 border-slate-800/80 hover:border-primary/40 hover:bg-slate-900"
+                                        : "bg-white border-slate-200/90 hover:border-primary/40 hover:shadow-sm"
+                                    }`}
+                                >
+                                  <div className="flex items-start gap-3 min-w-0 flex-1">
+                                    <div className="w-9 h-9 rounded-2xl bg-gradient-to-tr from-primary to-purple-600 text-white flex items-center justify-center font-bold text-sm shrink-0 shadow-md shadow-purple-500/20">
+                                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                      </svg>
+                                    </div>
+                                    <div className="min-w-0 flex-1">
+                                      <div className="flex items-center justify-between gap-2 mb-0.5">
+                                        <h6 className={`font-bold text-xs sm:text-sm truncate ${isDarkMode ? "text-white" : "text-slate-900"}`}>
+                                          {session.title}
+                                        </h6>
+                                        <span className="text-[10px] text-slate-400 shrink-0 font-medium">
+                                          {session.updatedAt}
+                                        </span>
+                                      </div>
+                                      <p className="text-xs text-slate-400 truncate leading-relaxed">
+                                        {lastMsg?.text || "No messages yet."}
+                                      </p>
+                                    </div>
+                                  </div>
+                                </motion.div>
+                              );
+                            })}
+                          </div>
+                        ) : (
+                          <div className="py-8 px-4 text-center space-y-3.5 my-2">
+                            <div className="relative w-16 h-16 mx-auto flex items-center justify-center">
+                              <div className="absolute inset-0 rounded-3xl bg-primary/15 blur-xl animate-pulse"></div>
+                              <div className="relative w-16 h-16 rounded-3xl bg-gradient-to-tr from-primary via-purple-600 to-indigo-500 text-white flex items-center justify-center shadow-xl shadow-purple-500/25">
+                                <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                </svg>
+                              </div>
+                            </div>
+                            <div className="space-y-1">
+                              <h6 className={`font-bold text-sm sm:text-base ${isDarkMode ? "text-white" : "text-slate-900"}`}>
+                                Start a Conversation
+                              </h6>
+                              <p className="text-xs text-slate-400 max-w-[240px] mx-auto leading-relaxed">
+                                Our AI assistant is ready 24/7 to answer your queries on music distribution, payouts & Content ID.
+                              </p>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+
+                      {/* 'Ask a question' pill button -> Creates NEW Chat session without deleting old ones */}
+                      <div className="pt-2 flex justify-center">
+                        <motion.button
+                          whileHover={{ scale: 1.04 }}
+                          whileTap={{ scale: 0.96 }}
+                          onClick={handleCreateNewChat}
+                          className="px-6 py-2.5 rounded-full bg-primary hover:bg-primary/90 text-white font-bold text-xs shadow-lg shadow-purple-600/30 flex items-center gap-2 cursor-pointer transition"
+                        >
+                          <span>Ask a question</span>
+                          <span className="w-5 h-5 rounded-full bg-white/20 text-white flex items-center justify-center text-[10px] font-black">
+                            ?
+                          </span>
+                        </motion.button>
                       </div>
                     </div>
                   )}
@@ -926,7 +1214,20 @@ export default function HelpSupportWidget() {
               {/* CHAT INTERFACE VIEW */}
               {(currentView === "ai_chat" || currentView === "live_chat") && (
                 <motion.div initial={{ opacity: 0, scale: 0.98 }} animate={{ opacity: 1, scale: 1 }} className="flex flex-col h-full space-y-3">
-                  <div className="flex-1 space-y-3 overflow-y-auto pr-1 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-primary/30 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-primary/60 [scrollbar-width:thin] [scrollbar-color:rgba(103,57,183,0.3)_transparent]">
+                  <div className="flex-1 space-y-3 overflow-y-auto pr-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+                    {chatMessages.length === 0 && (
+                      <div className="text-center space-y-2 py-8 px-4">
+                        <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mx-auto shadow-sm text-xl font-bold">
+                          🤖
+                        </div>
+                        <h5 className={`font-bold text-sm ${isDarkMode ? "text-white" : "text-slate-800"}`}>
+                          How can I help you today?
+                        </h5>
+                        <p className="text-xs text-slate-400 max-w-xs mx-auto">
+                          Ask me anything about music distribution, royalties, Spotify verification, or Content ID.
+                        </p>
+                      </div>
+                    )}
                     {chatMessages.map((msg) => (
                       <div key={msg.id} className={`flex gap-2.5 ${msg.sender === "user" ? "justify-end" : "justify-start"}`}>
                         {msg.sender !== "user" && (
@@ -938,13 +1239,12 @@ export default function HelpSupportWidget() {
                         )}
                         <div className="flex flex-col">
                           <div
-                            className={`max-w-[85%] p-3.5 rounded-[18px] text-xs sm:text-sm leading-relaxed ${
-                              msg.sender === "user"
+                            className={`max-w-[85%] p-3.5 rounded-[18px] text-xs sm:text-sm leading-relaxed ${msg.sender === "user"
                                 ? "bg-primary text-white rounded-br-none shadow-md shadow-primary/20 self-end"
                                 : isDarkMode
-                                ? "bg-slate-900 border border-slate-800 text-slate-200 rounded-bl-none"
-                                : "bg-slate-100/90 border border-slate-200/60 text-slate-800 rounded-bl-none"
-                            }`}
+                                  ? "bg-slate-900 border border-slate-800 text-slate-200 rounded-bl-none"
+                                  : "bg-slate-100/90 border border-slate-200/60 text-slate-800 rounded-bl-none"
+                              }`}
                           >
                             {msg.text}
 
@@ -968,7 +1268,7 @@ export default function HelpSupportWidget() {
                             )}
                           </div>
                           <span className={`text-[10px] text-slate-400 mt-1 px-1 ${msg.sender === "user" ? "text-right" : "text-left"}`}>
-                            {msg.sender === "user" ? "You" : "Amozart Support • AI Agent"} • {msg.time}
+                            {msg.sender === "user" ? "You" : "Amozart Support • Smart Agent"} • {msg.time}
                           </span>
                         </div>
                       </div>
@@ -999,11 +1299,10 @@ export default function HelpSupportWidget() {
                           whileHover={{ scale: 1.04, y: -1 }}
                           whileTap={{ scale: 0.96 }}
                           onClick={() => handleSendAiMessage(item.text)}
-                          className={`text-[11px] font-semibold px-3.5 py-1.5 rounded-full border whitespace-nowrap transition-all duration-200 flex items-center gap-1.5 cursor-pointer shrink-0 ${
-                            isDarkMode
+                          className={`text-[11px] font-semibold px-3.5 py-1.5 rounded-full border whitespace-nowrap transition-all duration-200 flex items-center gap-1.5 cursor-pointer shrink-0 ${isDarkMode
                               ? "bg-slate-900/90 border-slate-800 text-slate-200 hover:border-primary hover:bg-primary/15 hover:text-white"
                               : "bg-white border-slate-200/90 text-slate-700 hover:border-primary hover:bg-primary/5 hover:text-primary shadow-sm shadow-slate-200/50"
-                          }`}
+                            }`}
                         >
                           <span className="text-xs">{item.icon}</span>
                           <span>{item.text}</span>
@@ -1030,11 +1329,10 @@ export default function HelpSupportWidget() {
                         />
 
                         <div
-                          className={`w-full rounded-[24px] border transition-all duration-300 p-3 sm:p-3.5 flex flex-col justify-between shadow-xl shadow-purple-950/5 ${
-                            isDarkMode
+                          className={`w-full rounded-[24px] border transition-all duration-300 p-3 sm:p-3.5 flex flex-col justify-between shadow-xl shadow-purple-950/5 ${isDarkMode
                               ? "bg-slate-900/90 border-slate-800 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 shadow-black/40"
                               : "bg-white border-slate-200/90 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20"
-                          }`}
+                            }`}
                         >
                           {selectedFile && (
                             <div className="mb-1.5 p-1.5 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-between text-xs text-primary font-medium">
@@ -1059,9 +1357,8 @@ export default function HelpSupportWidget() {
                                 if (emailError && isValidEmail(val)) setEmailError("");
                               }}
                               placeholder="email@example.com"
-                              className={`w-full text-xs sm:text-sm font-medium bg-transparent outline-none ${
-                                isDarkMode ? "text-white placeholder-slate-500" : "text-slate-900 placeholder-slate-400"
-                              }`}
+                              className={`w-full text-xs sm:text-sm font-medium bg-transparent outline-none ${isDarkMode ? "text-white placeholder-slate-500" : "text-slate-900 placeholder-slate-400"
+                                }`}
                             />
                           </div>
 
@@ -1077,9 +1374,8 @@ export default function HelpSupportWidget() {
                               }}
                               placeholder={isRecording ? `Recording voice note (${recordingSeconds}s)...` : "Ask a question..."}
                               rows={1}
-                              className={`w-full text-xs sm:text-sm font-medium bg-transparent outline-none resize-none leading-relaxed ${
-                                isDarkMode ? "text-white placeholder-slate-500" : "text-slate-900 placeholder-slate-400"
-                              }`}
+                              className={`w-full text-xs sm:text-sm font-medium bg-transparent outline-none resize-none leading-relaxed ${isDarkMode ? "text-white placeholder-slate-500" : "text-slate-900 placeholder-slate-400"
+                                }`}
                             />
                           </div>
 
@@ -1117,11 +1413,10 @@ export default function HelpSupportWidget() {
                                   setShowGifPicker((prev) => !prev);
                                   setShowEmojiPicker(false);
                                 }}
-                                className={`px-1 py-0.5 rounded text-[9px] font-bold border transition cursor-pointer leading-none ${
-                                  showGifPicker
+                                className={`px-1 py-0.5 rounded text-[9px] font-bold border transition cursor-pointer leading-none ${showGifPicker
                                     ? "border-primary bg-primary text-white"
                                     : "border-slate-300 dark:border-slate-700 hover:border-primary hover:text-primary"
-                                }`}
+                                  }`}
                                 title="Insert GIF"
                               >
                                 GIF
@@ -1147,11 +1442,10 @@ export default function HelpSupportWidget() {
                               whileTap={{ scale: 0.92 }}
                               onClick={() => handleSendAiMessage()}
                               disabled={(!aiInput.trim() && !selectedFile) || !isValidEmail(userEmail)}
-                              className={`w-8 h-8 rounded-full transition-all duration-200 flex items-center justify-center shrink-0 ${
-                                (aiInput.trim() || selectedFile) && isValidEmail(userEmail)
+                              className={`w-8 h-8 rounded-full transition-all duration-200 flex items-center justify-center shrink-0 ${(aiInput.trim() || selectedFile) && isValidEmail(userEmail)
                                   ? "bg-primary text-white shadow-md shadow-purple-600/40 cursor-pointer"
                                   : "bg-slate-200 dark:bg-slate-800 text-slate-400 cursor-not-allowed"
-                              }`}
+                                }`}
                             >
                               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 19V5m0 0l-7 7m7-7l7 7" />
@@ -1177,11 +1471,10 @@ export default function HelpSupportWidget() {
                         />
 
                         <div
-                          className={`w-full rounded-[24px] border transition-all duration-300 p-3 sm:p-3.5 flex flex-col justify-between ${
-                            isDarkMode
+                          className={`w-full rounded-[24px] border transition-all duration-300 p-3 sm:p-3.5 flex flex-col justify-between ${isDarkMode
                               ? "bg-slate-900/90 border-slate-800 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 shadow-lg shadow-black/40"
                               : "bg-white border-slate-200/90 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 shadow-xl shadow-purple-900/5"
-                          }`}
+                            }`}
                         >
                           {selectedFile && (
                             <div className="mb-1.5 p-1.5 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-between text-xs text-primary font-medium">
@@ -1198,15 +1491,14 @@ export default function HelpSupportWidget() {
                             onChange={(e) => setAiInput(e.target.value)}
                             onKeyDown={(e) => {
                               if (e.key === "Enter" && !e.shiftKey) {
-                                  e.preventDefault();
-                                  handleSendAiMessage();
+                                e.preventDefault();
+                                handleSendAiMessage();
                               }
                             }}
                             placeholder={isRecording ? `Recording voice note (${recordingSeconds}s)...` : "Message..."}
                             rows={1}
-                            className={`w-full text-xs sm:text-sm bg-transparent outline-none resize-none leading-relaxed font-medium ${
-                              isDarkMode ? "text-white placeholder-slate-400" : "text-slate-900 placeholder-slate-400"
-                            }`}
+                            className={`w-full text-xs sm:text-sm bg-transparent outline-none resize-none leading-relaxed font-medium ${isDarkMode ? "text-white placeholder-slate-400" : "text-slate-900 placeholder-slate-400"
+                              }`}
                           />
 
                           <div className="flex items-center justify-between pt-1">
@@ -1237,11 +1529,10 @@ export default function HelpSupportWidget() {
                                   setShowGifPicker((prev) => !prev);
                                   setShowEmojiPicker(false);
                                 }}
-                                className={`px-1 py-0.5 rounded text-[9px] font-bold border transition cursor-pointer leading-none ${
-                                  showGifPicker
+                                className={`px-1 py-0.5 rounded text-[9px] font-bold border transition cursor-pointer leading-none ${showGifPicker
                                     ? "border-primary bg-primary text-white"
                                     : "border-slate-300 dark:border-slate-700 hover:border-primary hover:text-primary"
-                                }`}
+                                  }`}
                                 title="Insert GIF"
                               >
                                 GIF
@@ -1267,11 +1558,10 @@ export default function HelpSupportWidget() {
                               whileTap={{ scale: 0.92 }}
                               onClick={() => handleSendAiMessage()}
                               disabled={!aiInput.trim() && !selectedFile}
-                              className={`w-8 h-8 rounded-full transition-all duration-200 flex items-center justify-center shrink-0 ${
-                                aiInput.trim() || selectedFile
+                              className={`w-8 h-8 rounded-full transition-all duration-200 flex items-center justify-center shrink-0 ${aiInput.trim() || selectedFile
                                   ? "bg-primary text-white shadow-md shadow-purple-600/40 cursor-pointer"
                                   : "bg-slate-200 dark:bg-slate-800 text-slate-400 cursor-not-allowed"
-                              }`}
+                                }`}
                             >
                               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 19V5m0 0l-7 7m7-7l7 7" />
@@ -1300,161 +1590,42 @@ export default function HelpSupportWidget() {
                       <p key={idx} className={isDarkMode ? "text-slate-300" : "text-slate-700"}>{paragraph}</p>
                     ))}
                   </div>
-                  <div className={`p-4 rounded-2xl border text-center space-y-2.5 ${isDarkMode ? "bg-slate-900/80 border-slate-800" : "bg-slate-50 border-slate-200"}`}>
-                    <span className="text-xs font-bold block text-slate-400">Was this article helpful?</span>
-                    <div className="flex justify-center gap-3">
-                      <button className="px-4 py-1.5 rounded-xl bg-emerald-500/10 text-emerald-500 hover:bg-emerald-500 hover:text-white font-bold text-xs transition cursor-pointer">👍 Yes, thanks!</button>
-                      <button onClick={() => setCurrentView("ai_chat")} className="px-4 py-1.5 rounded-xl bg-slate-500/10 text-slate-400 hover:bg-slate-500 hover:text-white font-bold text-xs transition cursor-pointer">💬 Still need help</button>
-                    </div>
+                  <div className={`p-4 rounded-2xl border text-center space-y-2.5 transition duration-300 ${isDarkMode ? "bg-slate-900/80 border-slate-800" : "bg-slate-50 border-slate-200"}`}>
+                    {articleFeedback[selectedArticle.id] ? (
+                      <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="flex items-center justify-center gap-2 text-emerald-500 font-bold text-xs py-1">
+                        <span>🎉 Glad this was helpful! Returning to home...</span>
+                      </motion.div>
+                    ) : (
+                      <>
+                        <span className="text-xs font-bold block text-slate-400">Was this article helpful?</span>
+                        <div className="flex justify-center gap-3">
+                          <motion.button
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            onClick={() => handleArticleHelpful(selectedArticle.id)}
+                            className="px-4 py-2 rounded-xl bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500 hover:text-white font-bold text-xs transition cursor-pointer flex items-center gap-1.5 shadow-sm"
+                          >
+                            <span>👍</span>
+                            <span>Yes, thanks!</span>
+                          </motion.button>
+
+                          <motion.button
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            onClick={() => handleArticleNeedHelp(selectedArticle.title)}
+                            className="px-4 py-2 rounded-xl bg-primary/10 text-primary hover:bg-primary hover:text-white font-bold text-xs transition cursor-pointer flex items-center gap-1.5 shadow-sm"
+                          >
+                            <span>💬</span>
+                            <span>Still need help</span>
+                          </motion.button>
+                        </div>
+                      </>
+                    )}
                   </div>
                 </motion.div>
               )}
 
-              {/* RAISE TICKET FORM VIEW */}
-              {currentView === "raise_ticket" && (
-                <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="space-y-4">
-                  {ticketSubmitted ? (
-                    <div className="text-center space-y-3 py-6">
-                      <div className="w-14 h-14 bg-emerald-500/20 text-emerald-500 rounded-full flex items-center justify-center mx-auto text-2xl animate-bounce">✓</div>
-                      <h4 className={`text-lg font-bold ${isDarkMode ? "text-white" : "text-slate-900"}`}>Ticket Submitted Successfully!</h4>
-                      <p className="text-xs text-slate-400 max-w-xs mx-auto">
-                        Your support ticket <span className="font-mono font-bold text-primary">#AMZ-8924</span> has been created. Our technical team will reply to <span className="font-semibold">{ticketForm.email}</span> within 2 hours.
-                      </p>
-                      <button onClick={() => setCurrentView("main")} className="px-5 py-2 rounded-xl bg-primary text-white font-bold text-xs transition shadow-md cursor-pointer">Back to Help Center</button>
-                    </div>
-                  ) : (
-                    <form onSubmit={handleTicketSubmit} className="space-y-3">
-                      <div>
-                        <label className="text-xs font-bold block mb-1 text-slate-400">Full Name</label>
-                        <input
-                          required
-                          type="text"
-                          value={ticketForm.name}
-                          onChange={(e) => setTicketForm({ ...ticketForm, name: e.target.value })}
-                          placeholder="Your name"
-                          className={`w-full p-2.5 rounded-xl text-xs border outline-none font-medium ${isDarkMode ? "bg-slate-900 border-slate-800 text-white" : "bg-white border-slate-200 text-slate-900"}`}
-                        />
-                      </div>
-                      <div>
-                        <label className="text-xs font-bold block mb-1 text-slate-400">Email Address</label>
-                        <input
-                          required
-                          type="email"
-                          value={ticketForm.email}
-                          onChange={(e) => setTicketForm({ ...ticketForm, email: e.target.value })}
-                          placeholder="you@domain.com"
-                          className={`w-full p-2.5 rounded-xl text-xs border outline-none font-medium ${isDarkMode ? "bg-slate-900 border-slate-800 text-white" : "bg-white border-slate-200 text-slate-900"}`}
-                        />
-                      </div>
-                      <div className="grid grid-cols-2 gap-2">
-                        <div>
-                          <label className="text-xs font-bold block mb-1 text-slate-400">Category</label>
-                          <select
-                            value={ticketForm.category}
-                            onChange={(e) => setTicketForm({ ...ticketForm, category: e.target.value })}
-                            className={`w-full p-2.5 rounded-xl text-xs border outline-none font-medium ${isDarkMode ? "bg-slate-900 border-slate-800 text-white" : "bg-white border-slate-200 text-slate-900"}`}
-                          >
-                            <option value="distribution">Distribution</option>
-                            <option value="royalties">Royalties & Payouts</option>
-                            <option value="content_id">Content ID</option>
-                            <option value="account">Account Access</option>
-                          </select>
-                        </div>
-                        <div>
-                          <label className="text-xs font-bold block mb-1 text-slate-400">Priority</label>
-                          <select
-                            value={ticketForm.priority}
-                            onChange={(e) => setTicketForm({ ...ticketForm, priority: e.target.value })}
-                            className={`w-full p-2.5 rounded-xl text-xs border outline-none font-medium ${isDarkMode ? "bg-slate-900 border-slate-800 text-white" : "bg-white border-slate-200 text-slate-900"}`}
-                          >
-                            <option value="normal">Normal</option>
-                            <option value="urgent">Urgent</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div>
-                        <label className="text-xs font-bold block mb-1 text-slate-400">Description</label>
-                        <textarea
-                          required
-                          rows={3}
-                          value={ticketForm.description}
-                          onChange={(e) => setTicketForm({ ...ticketForm, description: e.target.value })}
-                          placeholder="Describe your issue in detail..."
-                          className={`w-full p-2.5 rounded-xl text-xs border outline-none font-medium resize-none ${isDarkMode ? "bg-slate-900 border-slate-800 text-white" : "bg-white border-slate-200 text-slate-900"}`}
-                        />
-                      </div>
-                      <button type="submit" className="w-full py-3 rounded-xl bg-primary text-white font-bold text-xs shadow-lg shadow-purple-600/30 hover:bg-primary/90 transition cursor-pointer">Submit Support Ticket</button>
-                    </form>
-                  )}
-                </motion.div>
-              )}
 
-              {/* SCHEDULE CALL VIEW */}
-              {currentView === "schedule_call" && (
-                <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="space-y-4">
-                  {callScheduled ? (
-                    <div className="text-center space-y-3 py-6">
-                      <div className="w-14 h-14 bg-blue-500/20 text-blue-500 rounded-full flex items-center justify-center mx-auto text-2xl animate-bounce">📞</div>
-                      <h4 className={`text-lg font-bold ${isDarkMode ? "text-white" : "text-slate-900"}`}>Call Scheduled!</h4>
-                      <p className="text-xs text-slate-400 max-w-xs mx-auto">
-                        Our distribution expert will call you on <span className="font-bold text-blue-500">{scheduleForm.phone}</span> on <span className="font-semibold">{scheduleForm.date} at {scheduleForm.time}</span>.
-                      </p>
-                      <button onClick={() => setCurrentView("main")} className="px-5 py-2 rounded-xl bg-blue-600 text-white font-bold text-xs transition shadow-md cursor-pointer">Back to Home</button>
-                    </div>
-                  ) : (
-                    <form onSubmit={handleScheduleSubmit} className="space-y-3">
-                      <div>
-                        <label className="text-xs font-bold block mb-1 text-slate-400">Phone Number</label>
-                        <input
-                          required
-                          type="tel"
-                          value={scheduleForm.phone}
-                          onChange={(e) => setScheduleForm({ ...scheduleForm, phone: e.target.value })}
-                          placeholder="+91 98765 43210"
-                          className={`w-full p-2.5 rounded-xl text-xs border outline-none font-medium ${isDarkMode ? "bg-slate-900 border-slate-800 text-white" : "bg-white border-slate-200 text-slate-900"}`}
-                        />
-                      </div>
-                      <div>
-                        <label className="text-xs font-bold block mb-1 text-slate-400">Call Topic</label>
-                        <select
-                          value={scheduleForm.topic}
-                          onChange={(e) => setScheduleForm({ ...scheduleForm, topic: e.target.value })}
-                          className={`w-full p-2.5 rounded-xl text-xs border outline-none font-medium ${isDarkMode ? "bg-slate-900 border-slate-800 text-white" : "bg-white border-slate-200 text-slate-900"}`}
-                        >
-                          <option value="Catalog Onboarding">Catalog Onboarding & Migration</option>
-                          <option value="Royalty Payouts">Custom Royalty Payout Setup</option>
-                          <option value="Label Partnership">Label Partnership</option>
-                        </select>
-                      </div>
-                      <div className="grid grid-cols-2 gap-2">
-                        <div>
-                          <label className="text-xs font-bold block mb-1 text-slate-400">Preferred Date</label>
-                          <input
-                            required
-                            type="date"
-                            value={scheduleForm.date}
-                            onChange={(e) => setScheduleForm({ ...scheduleForm, date: e.target.value })}
-                            className={`w-full p-2.5 rounded-xl text-xs border outline-none font-medium ${isDarkMode ? "bg-slate-900 border-slate-800 text-white" : "bg-white border-slate-200 text-slate-900"}`}
-                          />
-                        </div>
-                        <div>
-                          <label className="text-xs font-bold block mb-1 text-slate-400">Time Slot</label>
-                          <select
-                            value={scheduleForm.time}
-                            onChange={(e) => setScheduleForm({ ...scheduleForm, time: e.target.value })}
-                            className={`w-full p-2.5 rounded-xl text-xs border outline-none font-medium ${isDarkMode ? "bg-slate-900 border-slate-800 text-white" : "bg-white border-slate-200 text-slate-900"}`}
-                          >
-                            <option value="11:00 AM">11:00 AM IST</option>
-                            <option value="02:30 PM">02:30 PM IST</option>
-                            <option value="05:00 PM">05:00 PM IST</option>
-                          </select>
-                        </div>
-                      </div>
-                      <button type="submit" className="w-full py-3 rounded-xl bg-blue-600 text-white font-bold text-xs shadow-lg shadow-blue-600/30 hover:bg-blue-700 transition cursor-pointer">Confirm Call Reservation</button>
-                    </form>
-                  )}
-                </motion.div>
-              )}
             </div>
 
             {/* BOTTOM TABBAR NAVIGATION */}
@@ -1494,9 +1665,8 @@ export default function HelpSupportWidget() {
                     <button
                       key={tab.id}
                       onClick={() => setActiveTab(tab.id as TabType)}
-                      className={`relative flex flex-col items-center justify-center py-1.5 px-6 rounded-2xl transition duration-200 cursor-pointer ${
-                        isActive ? "text-primary font-bold" : "text-slate-400 hover:text-slate-600 font-medium"
-                      }`}
+                      className={`relative flex flex-col items-center justify-center py-1.5 px-6 rounded-2xl transition duration-200 cursor-pointer ${isActive ? "text-primary font-bold" : "text-slate-400 hover:text-slate-600 font-medium"
+                        }`}
                     >
                       {tab.renderIcon(isActive)}
                       <span className="text-[11px] tracking-tight">{tab.label}</span>

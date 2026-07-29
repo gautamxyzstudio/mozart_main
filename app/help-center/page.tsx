@@ -245,7 +245,9 @@ const Page = () => {
               </p>
               <div className="flex flex-wrap gap-4">
                 <a
-                  href="mailto:support@amozart.com"
+                  href="mailto:support@amozart.com?subject=Support%20Inquiry%20-%20Amozart&body=Hello%20Amozart%20Support%20Team%2C%0A%0AI%20have%20a%20question%20regarding%3A%0A%0AThank%20you."
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-white text-primary hover:bg-[#f8f8f8] font-bold px-6 py-3.5 md:px-8 md:py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.02]"
                 >
                   <svg

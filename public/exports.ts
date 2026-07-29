@@ -8,6 +8,7 @@ import Instagram from "./instagram.svg";
 import Facebook from "./facebook.svg";
 import LinkedIn from "./linkedIn.svg";
 import Twitter from "./twitter.svg";
+import YouTube from "./youtube.svg";
 import NotFound from "./notfound.webp";
 import QuickContact from "./contactIcon.svg";
 import PhoneNumber from "./phone-call.svg";
@@ -266,6 +267,7 @@ export const Icons = {
   Facebook,
   LinkedIn,
   Twitter,
+  YouTube,
   QuickContact,
   PhoneNumber,
   LeftArrow,

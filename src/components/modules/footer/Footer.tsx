@@ -47,6 +47,11 @@ const Footer = () => {
                 link: "https://www.facebook.com/people/Amozart-Official/61578529725247",
               },
               {
+                icon: Icons.YouTube,
+                label: "YouTube",
+                link: "https://www.youtube.com/@AmozartIndia",
+              },
+              {
                 icon: Icons.LinkedIn,
                 label: "LinkedIn",
                 link: "https://www.linkedin.com/company/Amozart",
