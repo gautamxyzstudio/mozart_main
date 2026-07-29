@@ -290,7 +290,7 @@ const EmojiPickerPopover: React.FC<EmojiPickerPopoverProps> = ({
 
 // --- MAIN WIDGET COMPONENT ---
 export default function HelpSupportWidget() {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(true);
   const [activeTab, setActiveTab] = useState<TabType>("home");
   const [currentView, setCurrentView] = useState<ViewType>("main");
   const [selectedArticle, setSelectedArticle] = useState<ArticleItem | null>(null);
