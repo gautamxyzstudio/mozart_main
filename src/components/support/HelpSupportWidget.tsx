@@ -816,13 +816,14 @@ export default function HelpSupportWidget() {
 
   return (
     <div className="fixed bottom-5 right-5 z-[999] font-sans">
-      {/* FLOATING ACTION LAUNCHER BUTTON */}
-      <AnimatePresence>
-        {!isOpen && (
+      <AnimatePresence mode="wait">
+        {!isOpen ? (
           <motion.button
+            key="launcher-button"
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0, opacity: 0 }}
+            transition={{ duration: 0.15 }}
             whileHover={{ scale: 1.08 }}
             whileTap={{ scale: 0.94 }}
             onClick={() => setIsOpen(true)}
@@ -833,18 +834,15 @@ export default function HelpSupportWidget() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
             </svg>
           </motion.button>
-        )}
-      </AnimatePresence>
-
-      {/* MAIN EXPANDABLE SUPPORT WIDGET PANEL */}
-      <AnimatePresence>
-        {isOpen && (
+        ) : (
           <motion.div
-            initial={{ opacity: 0, y: 20, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 350, damping: 28 }}
-            className={`w-[92vw] sm:w-[410px] h-[640px] max-h-[88vh] rounded-[28px] shadow-2xl border flex flex-col overflow-hidden relative backdrop-blur-xl ${isDarkMode
+            key="support-panel"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            style={{ transformOrigin: "bottom right" }}
+            className={`w-[92vw] sm:w-[410px] h-[640px] max-h-[88vh] rounded-[28px] shadow-2xl border flex flex-col overflow-hidden relative backdrop-blur-xl origin-bottom-right ${isDarkMode
                 ? "bg-slate-950/95 border-slate-800 text-white shadow-black/80"
                 : "bg-white/95 border-slate-200/90 text-slate-900 shadow-purple-950/20"
               }`}
@@ -956,13 +954,13 @@ export default function HelpSupportWidget() {
             <div className="flex-1 p-4 overflow-y-auto space-y-4 relative [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
               {/* HOME VIEW (Main Dashboard + Articles + Tabs) */}
               {currentView === "main" && (
-                <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="space-y-4">
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-4">
                   {activeTab === "home" && (
                     <div className="space-y-3.5">
                       <div className="grid grid-cols-1 gap-2.5">
                         {/* Card 1: AI Assistant */}
                         <motion.div
-                          whileHover={{ scale: 1.01, y: -2 }}
+                          whileHover={{ scale: 1.01 }}
                           whileTap={{ scale: 0.98 }}
                           onClick={() => setCurrentView("ai_chat")}
                           className={`p-3.5 rounded-[20px] border transition-all duration-300 cursor-pointer flex items-center justify-between group shadow-sm ${isDarkMode
@@ -1131,7 +1129,7 @@ export default function HelpSupportWidget() {
                               return (
                                 <motion.div
                                   key={session.id}
-                                  whileHover={{ y: -1.5 }}
+                                  whileHover={{ scale: 1.01 }}
                                   whileTap={{ scale: 0.99 }}
                                   onClick={() => {
                                     setActiveSessionId(session.id);
@@ -1296,7 +1294,7 @@ export default function HelpSupportWidget() {
                       ].map((item, idx) => (
                         <motion.button
                           key={idx}
-                          whileHover={{ scale: 1.04, y: -1 }}
+                          whileHover={{ scale: 1.04 }}
                           whileTap={{ scale: 0.96 }}
                           onClick={() => handleSendAiMessage(item.text)}
                           className={`text-[11px] font-semibold px-3.5 py-1.5 rounded-full border whitespace-nowrap transition-all duration-200 flex items-center gap-1.5 cursor-pointer shrink-0 ${isDarkMode
@@ -1577,7 +1575,7 @@ export default function HelpSupportWidget() {
 
               {/* ARTICLE DETAIL VIEW */}
               {currentView === "article_detail" && selectedArticle && (
-                <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="space-y-4 text-xs sm:text-sm">
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-4 text-xs sm:text-sm">
                   <div className={`flex items-center gap-3 p-3.5 rounded-2xl border ${isDarkMode ? "bg-primary/10 border-primary/20" : "bg-primary/5 border-primary/15"}`}>
                     {renderArticleIcon(selectedArticle.id)}
                     <div>
