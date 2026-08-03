@@ -15,13 +15,21 @@ export type ViewType =
   | "article_detail"
   | "email_support";
 
+  export interface ArticleStep {
+  stepTitle?: string;
+  description?: string;
+  image?: any;
+  bullets?: string[];
+}
+
 export interface ArticleItem {
   id: string;
   title: string;
   category: string;
   readTime: string;
-  excerpt: string;
-  content: string[];
+  excerpt: string; 
+  content?: string[];
+  steps?: ArticleStep[];
 }
 
 export interface MessageItem {
@@ -88,30 +96,182 @@ const EMOJI_CATEGORIES = {
 const HELP_ARTICLES: ArticleItem[] = [
   {
     id: "art-1",
-    title: "How Music Distribution Works on Amozart",
-    category: "Distribution",
-    readTime: "3 min read",
-    excerpt: "Learn how your tracks are delivered to Spotify, Apple Music, YouTube Music, and 150+ global stores within 24-48 hours.",
-    content: [
-      "Amozart delivers your music directly to over 150 digital service providers (DSPs) worldwide including Spotify, Apple Music, Amazon Music, Tidal, and Instagram Reels.",
-      "Once you submit a release, our automated quality check team verifies cover art dimensions (min 3000x3000px, RGB), audio file format (16-bit 44.1kHz WAV), and metadata compliance.",
-      "After approval, standard delivery takes 24 to 48 hours for major streaming platforms. Pre-order setups and scheduled release dates are recommended 10 days in advance.",
+    title: "How to Upload & Distribute Your Music (Steps 1 to 5)",
+    category: "Music Distribution",
+    readTime: "6 min read",
+    excerpt: "Complete step-by-step guide on creating a release, uploading artwork, setting metadata, choosing delivery options, and finalizing distribution.",
+    steps: [
+      {
+        stepTitle: "Step 1: Start the Upload",
+        description: "Log into your dashboard. You can start a new release using either of these two methods:",
+        image: Images.Article2,
+      },
+      {
+        stepTitle: "Option A: On the main Dashboard, click the '+ Upload' button inside the 'Upload New Release' box.",
+        bullets: [
+          "Locate the 'Upload New Release' box on your main Dashboard overview.",
+          "Click the '+ Upload' button inside the box to start a new release."
+        ],
+        image: Images.Article3,
+      },
+      {
+        stepTitle: "Option B: Click Catalogue on the left-side navigation menu, then click the Start button.",
+        bullets: [
+          "Click 'Catalogue' on the left-side navigation sidebar menu.",
+          "Click the 'Start' button to begin creating a new music release."
+        ],
+        image: Images.Article4,
+      },
+      {
+        stepTitle: "Step 2: Fill out Release Information & Cover Art",
+        description: "Follow the platform's linear timeline visible at the top of your catalogue page to complete track metadata and upload artwork:",
+        bullets: [
+          "Release Info: Enter your song title, select if it's a 'Single', 'EP' or an 'Album', pick your primary genre, and set the primary language.",
+          "Cover Art: Upload your release artwork. It must be a high-resolution, perfect square (minimum 3000 x 3000 pixels) with no ads or promotional links."
+        ],
+        image: Images.Article5,
+      },
+      {
+        stepTitle: "Step 3: Configure the Track List & Guidelines",
+        description: "Move to the Track List section to upload your audio file and configure streaming filters:",
+        bullets: [
+          "Explicit Content Check: Select whether the lyrics are appropriate for all audiences or contain explicit/offensive language.",
+          "Enter ISRC Code: It is mandatory to submit an ISRC (International Standard Recording Code). You must type in your pre-existing 12-digit alphanumeric code or check the box to Request A New ISRC code from the system.",
+          "ISWC (Optional): If available, you can optionally input your ISWC musical work code."
+        ],
+        image: Images.Article6,
+      },
+      {
+        stepTitle: "Step 4: Choose Your Delivery Options",
+        description: "Move to the Delivery Options tab to schedule when and where your music goes live:",
+        bullets: [
+          "Time Zone: Set your reference time zone (e.g., Asia/Calcutta).",
+          "Dates & Times: Enter your Original Release Date, Digital Release Date, and precise Release Time.",
+          "Select Territories & Stores: Choose your target countries (e.g., Selected world) and select your music stores (Choose Platform).",
+          "Choose a Delivery Speed & Price Tier: Standard (10 Days+ included at no extra charge) vs Priority (+₹1099 INR, process within 24 hours).",
+          "Price Category: Select your budget/pricing band (options include Budget, Mid, Full, or Premium)."
+        ],
+        image: Images.Article7,
+      },
+      {
+        stepTitle: "Priority Release Option",
+        description: "For +₹1099 INR, your music skips the queue to go out fast on any date within 24 hours, giving you more immediate deployment or extra time to pitch for playlists.",
+        bullets: [
+          "Select Priority Tier: Click the 'Priority' card under Delivery Speed.",
+          "Custom Calendar Date: Select any release date within 24 hours from the calendar picker."
+        ],
+        image: Images.Article8,
+      },
+      {
+        stepTitle: "Standard Release Option",
+        description: "Your music is processed and sent to stores in 10 Days+ from the current date (Included at no extra charge).",
+        bullets: [
+          "Select Standard Tier: Click the 'Standard' card (Included at no extra charge).",
+          "Default Release Date: Pick a release date scheduled 10 Days+ from the current date."
+        ],
+        image: Images.Article9,
+      },
+      {
+        stepTitle: "Step 5: Review and Distribute",
+        description: "Proceed to the final Review tab. Check all your summarized project information - including artwork, tracks, genres, copyright year, and release dates - to make sure everything is completely error-free. If everything looks right, click the Distribute button at the bottom.",
+        bullets: [
+          "Check summarized project information - including artwork, tracks, genres, copyright year, and release dates - to make sure everything is completely error-free.",
+          "Click the 'Distribute' button at the bottom once verified."
+        ],
+        image: Images.Article10,
+      },
+      {
+        stepTitle: "Confirmation Pop-up",
+        description: "A confirmation pop-up window will appear titled 'Ready To Distribute Your Track?'. Review your final delivery choice, confirm payment summary (e.g., Pay ₹1099 INR if Priority was selected), and click to finalize the distribution.",
+        bullets: [
+          "Modal Title: A confirmation pop-up window will appear titled 'Ready To Distribute Your Track?'.",
+          "Payment Summary: Review your final delivery choice, confirm payment summary (e.g., Pay ₹1099 INR if Priority was selected).",
+          "Finalize: Click the 'Pay ₹1099 INR' button to proceed to payment checkout."
+        ],
+        image: Images.Article11,
+      },
+      {
+        stepTitle: "Payment Checkout",
+        description: "Complete your secure payment on the payment gateway checkout screen:",
+        bullets: [
+          "Enter your card details or use Apple Pay / supported payment methods.",
+          "Click 'Pay' to complete your order transaction."
+        ],
+        image: Images.Article12,
+      },
+      {
+        stepTitle: "In Progress & Complete Track Status",
+        description: "Track your release status in real-time under Catalogue > My Release:",
+        bullets: [
+          "In Progress: Your release will show an 'In-Progress' yellow status badge while being reviewed and delivered to stores.",
+          "Complete: Once approved and delivered to all DSPs (Spotify, Apple Music, YouTube, etc.), your track status changes to 'Completed'."
+        ],
+        image: Images.Article13,
+      },
     ],
   },
   {
     id: "art-2",
-    title: "Royalty Payout Schedule & Payment Methods",
-    category: "Royalties",
+    title: "How to Check Your Analytics & Growth Trends",
+    category: "Analytics & Growth",
     readTime: "4 min read",
-    excerpt: "Understand monthly payout timelines, threshold requirements, and supported payment methods like Bank Transfer, UPI, and PayPal.",
-    content: [
-      "Amozart processes streaming and store royalty payments on a monthly basis. Most DSPs report earnings 45-60 days after the close of the sales month.",
-      "You can withdraw earnings anytime once your balance exceeds the $10 / ₹500 minimum payout threshold.",
-      "Supported payout methods include Direct Local Bank Transfer (NEFT/RTGS/IMPS), UPI (India), PayPal, and International Wire Transfer.",
+    excerpt: "Track daily stream growth, monitor best performing countries and stores, and generate custom sales reports.",
+    steps: [
+      {
+        stepTitle: "View Daily Trends",
+        description: "Gain deep insights into how your tracks are performing across global platforms:",
+        bullets: [
+          "Track Daily Growth: This shows a visual line graph of your day-to-day streams over a selectable timeframe (7 Days, 14 Days, or 30 Days).",
+          "Check Totals: View your overall streaming metric under Total Streams (e.g., 10.7K).",
+          "Best Performing Countries: A map and interactive bar chart reveal exactly where your top listeners are located by country (such as IN, CA, US).",
+          "Best Performing Stores: A circular pie chart breaks down your streams by platform so you can track your numbers across platforms like Spotify, YouTube Art Tracks, and Apple Music."
+        ],
+        image: Images.Article14,
+      },
+      {
+        stepTitle: "View and Download Sales Reports",
+        description: "Generate and download detailed financial and streaming reports:",
+        bullets: [
+          "Click the Sales Report tab at the top of the page.",
+          "Select custom macro filters (1 Month, 3 Months, or 6 Months) to view your long-term streaming data (e.g., 4.4M Total Streams across platforms like Meta, Spotify, YouTube Music, and Apple Music).",
+          "Download Reports: Scroll down to the Sales Reports section, input your desired date range using the FROM and TO dropdown calendar menus, and click the Request Report button. Once generated, click the Download button next to any past month statement to save it directly to your device."
+        ],
+        image: Images.Article14,
+      },
     ],
   },
   {
     id: "art-3",
+    title: "How to Manage Royalties & Request Bank Payouts",
+    category: "Royalties & Payouts",
+    readTime: "3 min read",
+    excerpt: "Review your total earnings history, check withdrawable funds, and submit direct bank payout requests.",
+    steps: [
+      {
+        stepTitle: "Review Total Monthly Earnings & Available Balance",
+        description: "Track your accumulated music royalties over historical periods:",
+        bullets: [
+          "Earnings Chart: Main graph displays your historical monthly earnings data line (filter by 1M, 3M, or 6M timeframes).",
+          "Total Earnings & Available Balance: View lifetime earnings and Available To Withdraw balance bar. Click Request Payout when ready."
+        ],
+        image: Images.Article15,
+      },
+      {
+        stepTitle: "Submit Withdraw Request Pop-up",
+        description: "Complete your bank payout details in the modal pop-up window:",
+        bullets: [
+          "Modal Title: A pop-up window titled 'Withdraw Request' will appear.",
+          "Minimum Payout Threshold: Review your available balance and confirm it meets the Minimum Payout of $50.00.",
+          "Select Bank Account: Select your linked Bank Account from the dropdown menu (e.g., HDFC BANK).",
+          "Enter Amount: Type your desired cashout amount in the 'Amount' field.",
+          "Finalize: Click the 'Submit Request' button to finalize your bank payout."
+        ],
+        image: Images.Article16,
+      },
+    ],
+  },
+  {
+    id: "art-4",
     title: "YouTube Content ID & Official Artist Channel (OAC)",
     category: "Copyright & Content ID",
     readTime: "3 min read",
@@ -123,7 +283,7 @@ const HELP_ARTICLES: ArticleItem[] = [
     ],
   },
   {
-    id: "art-4",
+    id: "art-5",
     title: "Cover Art Requirements & Image Guidelines",
     category: "Release Guidelines",
     readTime: "2 min read",
@@ -135,7 +295,7 @@ const HELP_ARTICLES: ArticleItem[] = [
     ],
   },
   {
-    id: "art-5",
+    id: "art-6",
     title: "Claiming Spotify for Artists & Apple Music for Artists",
     category: "Artist Verification",
     readTime: "3 min read",
@@ -147,7 +307,7 @@ const HELP_ARTICLES: ArticleItem[] = [
     ],
   },
   {
-    id: "art-6",
+    id: "art-7",
     title: "Managing Collaborators & Royalty Splits",
     category: "Royalties & Splits",
     readTime: "2 min read",
@@ -159,7 +319,7 @@ const HELP_ARTICLES: ArticleItem[] = [
     ],
   },
   {
-    id: "art-7",
+    id: "art-8",
     title: "Social Media Monetization: Instagram, TikTok & Facebook",
     category: "Social Audio",
     readTime: "3 min read",
@@ -171,7 +331,7 @@ const HELP_ARTICLES: ArticleItem[] = [
     ],
   },
   {
-    id: "art-8",
+    id: "art-9",
     title: "Takedowns, Metadata Edits & Release Cancellations",
     category: "Catalog Management",
     readTime: "2 min read",
@@ -296,6 +456,8 @@ export default function HelpSupportWidget() {
   const [selectedArticle, setSelectedArticle] = useState<ArticleItem | null>(null);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+    const [previewImage, setPreviewImage] = useState<{ src: any; title: string } | null>(null);
+
 
   // Email Validation & First Time Card State
   const [userEmail, setUserEmail] = useState<string>(() => {
@@ -659,17 +821,21 @@ export default function HelpSupportWidget() {
     }
   }, [chatMessages, isTyping, currentView]);
 
-  // Filtered Articles based on search query
+  // Filtered Articles based on activeTab (Home shows 3 new user articles, Help shows all articles) and search query
   const filteredArticles = useMemo(() => {
-    if (!searchQuery.trim()) return HELP_ARTICLES;
+   let list = HELP_ARTICLES;
+    if (activeTab === "home") {
+      list = HELP_ARTICLES.filter((art) => ["art-1", "art-2", "art-3"].includes(art.id));
+    }
+    if (!searchQuery.trim()) return list;
     const q = searchQuery.toLowerCase();
-    return HELP_ARTICLES.filter(
+    return list.filter(
       (art) =>
         art.title.toLowerCase().includes(q) ||
         art.category.toLowerCase().includes(q) ||
         art.excerpt.toLowerCase().includes(q)
     );
-  }, [searchQuery]);
+  }, [searchQuery, activeTab]);
 
   // Helper for strict real email format validation
   const isValidEmail = (email: string) => {
@@ -800,6 +966,12 @@ export default function HelpSupportWidget() {
           </svg>
         );
       case "art-8":
+        return (
+          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+          </svg>
+        );
+      case "art-9":
         return (
           <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
@@ -1583,11 +1755,81 @@ export default function HelpSupportWidget() {
                       <h4 className={`font-bold text-sm sm:text-base ${isDarkMode ? "text-white" : "text-slate-900"}`}>{selectedArticle.title}</h4>
                     </div>
                   </div>
-                  <div className="space-y-2.5 leading-relaxed">
-                    {selectedArticle.content.map((paragraph, idx) => (
-                      <p key={idx} className={isDarkMode ? "text-slate-300" : "text-slate-700"}>{paragraph}</p>
-                    ))}
-                  </div>
+                  {selectedArticle.content && selectedArticle.content.length > 0 && (
+                    <div className="space-y-2.5 leading-relaxed">
+                      {selectedArticle.content.map((paragraph, idx) => (
+                        <p key={idx} className={isDarkMode ? "text-slate-300" : "text-slate-700"}>{paragraph}</p>
+                      ))}
+                    </div>
+                  )}
+
+                  {selectedArticle.steps && selectedArticle.steps.length > 0 && (
+                    <div className="space-y-4 pt-1">
+                      {selectedArticle.steps.map((step, idx) => (
+                        <div
+                          key={idx}
+                          className={`p-3.5 rounded-2xl border space-y-2.5 transition duration-200 ${
+                            isDarkMode
+                              ? "bg-slate-900/80 border-slate-800 text-slate-200"
+                              : "bg-slate-50/90 border-slate-200/80 text-slate-800"
+                          }`}
+                        >
+                          {step.stepTitle && (
+                            <h5 className={`font-bold text-xs sm:text-sm flex items-center gap-2 ${isDarkMode ? "text-white" : "text-slate-900"}`}>
+                              {step.stepTitle.toLowerCase().startsWith("step") ? (
+                                <span className="w-5 h-5 rounded-full bg-primary text-white text-[10px] flex items-center justify-center font-extrabold shrink-0 shadow-sm">
+                                  {step.stepTitle.match(/\d+/)?.[0] || idx + 1}
+                                </span>
+                              ) : (
+                                <span className="w-5 h-5 rounded-full bg-primary/15 text-primary flex items-center justify-center shrink-0">
+                                  <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                  </svg>
+                                </span>
+                              )}
+                              <span>{step.stepTitle}</span>
+                            </h5>
+                          )}
+
+                          {step.description && (
+                            <p className={`text-xs leading-relaxed ${isDarkMode ? "text-slate-300" : "text-slate-600"}`}>
+                              {step.description}
+                            </p>
+                          )}
+
+                          {step.bullets && step.bullets.length > 0 && (
+                            <ul className="space-y-1.5 pl-1 text-xs">
+                              {step.bullets.map((bullet, bIdx) => (
+                                <li key={bIdx} className={`flex items-start gap-2 ${isDarkMode ? "text-slate-300" : "text-slate-700"}`}>
+                                  <span className="text-primary font-bold text-sm leading-none mt-0.5">•</span>
+                                  <span className="leading-snug">{bullet}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+
+                          {step.image && (
+                            <div
+                              onClick={() => setPreviewImage({ src: step.image, title: step.stepTitle || selectedArticle.title })}
+                              className="mt-2 relative rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 group cursor-pointer shadow-sm bg-slate-950/20"
+                            >
+                              <Image
+                                src={step.image}
+                                alt={step.stepTitle || "Step image"}
+                                className="w-full h-auto object-cover group-hover:scale-102 transition duration-300 max-h-[300px]"
+                              />
+                              <div className="absolute inset-0 bg-slate-950/30 opacity-0 group-hover:opacity-100 transition duration-200 flex items-center justify-center gap-1.5 text-white text-xs font-bold backdrop-blur-[2px]">
+                                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+                                </svg>
+                                <span>Click to Expand</span>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
                   <div className={`p-4 rounded-2xl border text-center space-y-2.5 transition duration-300 ${isDarkMode ? "bg-slate-900/80 border-slate-800" : "bg-slate-50 border-slate-200"}`}>
                     {articleFeedback[selectedArticle.id] ? (
                       <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="flex items-center justify-center gap-2 text-emerald-500 font-bold text-xs py-1">
@@ -1680,6 +1922,52 @@ export default function HelpSupportWidget() {
                 })}
               </div>
             )}
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+       {/* FULLSCREEN IMAGE LIGHTBOX / ZOOM MODAL */}
+      <AnimatePresence>
+        {previewImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setPreviewImage(null)}
+            className="fixed inset-0 z-[999999] bg-black/85 backdrop-blur-md flex flex-col items-center justify-center p-3 sm:p-6"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative max-w-[95vw] max-h-[94vh] bg-slate-900 border border-slate-700/80 rounded-3xl overflow-hidden shadow-2xl flex flex-col items-center p-3.5"
+            >
+              <div className="w-full flex items-center justify-between px-3 py-2 border-b border-slate-800 mb-2.5">
+                <h4 className="text-xs sm:text-sm font-bold text-white truncate max-w-[80%] flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-primary animate-pulse shrink-0"></span>
+                  <span className="truncate">{previewImage.title}</span>
+                </h4>
+                <button
+                  type="button"
+                  onClick={() => setPreviewImage(null)}
+                  className="px-3 py-1 rounded-full bg-slate-800 hover:bg-rose-600 text-slate-200 hover:text-white transition font-extrabold text-xs cursor-pointer flex items-center gap-1 border border-slate-700"
+                >
+                  <span>✕</span>
+                  <span>Close</span>
+                </button>
+              </div>
+              <div className="overflow-auto max-h-[84vh] w-full flex items-center justify-center p-1 no-scrollbar">
+                <Image
+                  src={previewImage.src}
+                  alt={previewImage.title}
+                  width={1400}
+                  height={900}
+                  className="w-full h-auto object-contain max-h-[80vh] rounded-2xl shadow-2xl"
+                  priority
+                />
+              </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

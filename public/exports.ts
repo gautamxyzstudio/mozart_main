@@ -144,6 +144,24 @@ import HowItWork17 from "./howitwork17.webp";
 import HowItWork18 from "./howitwork18.webp";
 import HowItWork19 from "./howitwork19.webp";
 import HowItWork20 from "./howitwork20.webp";
+import Article1 from "./article1.png";
+import Article2 from "./article2.png";
+import Article3 from "./article3.png";
+import Article4 from "./article4.png";
+import Article5 from "./article5.png";
+import Article6 from "./article6.png";
+import Article7 from "./article7.png";
+import Article8 from "./article8.png";
+import Article9 from "./article9.png";
+import Article10 from "./article10.png";
+import Article11 from "./article11.png";
+import Article12 from "./article12.png";
+import Article13 from "./article13.png";
+import Article14 from "./article14.png";
+import Article15 from "./article15.png";
+import Article16 from "./article16.png";
+import Article17 from "./article17.png";
+import Article18 from "./article18.png";
 
 export const Images = {
   Logo,
@@ -257,7 +275,25 @@ export const Images = {
   HowItWork17,
   HowItWork18,
   HowItWork19,
-  HowItWork20
+  HowItWork20,
+  Article1,
+  Article2,
+  Article3,
+  Article4,
+  Article5,
+  Article6,
+  Article7,
+  Article8,
+  Article9,
+  Article10,
+  Article11,
+  Article12,
+  Article13,
+  Article14,
+  Article15,
+  Article16,
+  Article17,
+  Article18,
 };
 
 export const Icons = {
