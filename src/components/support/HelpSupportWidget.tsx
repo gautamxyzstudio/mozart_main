@@ -15,7 +15,7 @@ export type ViewType =
   | "article_detail"
   | "email_support";
 
-  export interface ArticleStep {
+export interface ArticleStep {
   stepTitle?: string;
   description?: string;
   image?: any;
@@ -27,7 +27,7 @@ export interface ArticleItem {
   title: string;
   category: string;
   readTime: string;
-  excerpt: string; 
+  excerpt: string;
   content?: string[];
   steps?: ArticleStep[];
 }
@@ -200,13 +200,20 @@ const HELP_ARTICLES: ArticleItem[] = [
         image: Images.Article12,
       },
       {
-        stepTitle: "In Progress & Complete Track Status",
+        stepTitle: "In-Progress Track Status",
         description: "Track your release status in real-time under Catalogue > My Release:",
         bullets: [
-          "In Progress: Your release will show an 'In-Progress' yellow status badge while being reviewed and delivered to stores.",
-          "Complete: Once approved and delivered to all DSPs (Spotify, Apple Music, YouTube, etc.), your track status changes to 'Completed'."
+          "In Progress: Your release will show an 'In-Progress' yellow status badge while being reviewed and delivered to stores."
         ],
         image: Images.Article13,
+      },
+      {
+        stepTitle: "Completed Track Status",
+        description: "Once your track has been reviewed and delivered to all platforms:",
+        bullets: [
+          "Complete: Once approved and delivered to all DSPs (Spotify, Apple Music, YouTube, etc.), your track status changes to 'Completed'."
+        ],
+        image: Images.Article14,
       },
     ],
   },
@@ -226,7 +233,7 @@ const HELP_ARTICLES: ArticleItem[] = [
           "Best Performing Countries: A map and interactive bar chart reveal exactly where your top listeners are located by country (such as IN, CA, US).",
           "Best Performing Stores: A circular pie chart breaks down your streams by platform so you can track your numbers across platforms like Spotify, YouTube Art Tracks, and Apple Music."
         ],
-        image: Images.Article14,
+        image: Images.Article17,
       },
       {
         stepTitle: "View and Download Sales Reports",
@@ -236,7 +243,7 @@ const HELP_ARTICLES: ArticleItem[] = [
           "Select custom macro filters (1 Month, 3 Months, or 6 Months) to view your long-term streaming data (e.g., 4.4M Total Streams across platforms like Meta, Spotify, YouTube Music, and Apple Music).",
           "Download Reports: Scroll down to the Sales Reports section, input your desired date range using the FROM and TO dropdown calendar menus, and click the Request Report button. Once generated, click the Download button next to any past month statement to save it directly to your device."
         ],
-        image: Images.Article14,
+        image: Images.Article18,
       },
     ],
   },
@@ -417,8 +424,8 @@ const EmojiPickerPopover: React.FC<EmojiPickerPopoverProps> = ({
             type="button"
             onClick={() => onTabChange(tab.id as any)}
             className={`p-1.5 rounded-lg transition cursor-pointer ${activeTab === tab.id
-                ? "bg-primary/15 text-primary scale-110"
-                : "text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800"
+              ? "bg-primary/15 text-primary scale-110"
+              : "text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800"
               }`}
           >
             {tab.icon}
@@ -456,7 +463,19 @@ export default function HelpSupportWidget() {
   const [selectedArticle, setSelectedArticle] = useState<ArticleItem | null>(null);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
-    const [previewImage, setPreviewImage] = useState<{ src: any; title: string } | null>(null);
+  const [previewImage, setPreviewImage] = useState<{ src: any; title: string } | null>(null);
+
+  // Lock background page body scroll when image lightbox modal is open
+  useEffect(() => {
+    if (previewImage) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [previewImage]);
 
 
   // Email Validation & First Time Card State
@@ -823,7 +842,7 @@ export default function HelpSupportWidget() {
 
   // Filtered Articles based on activeTab (Home shows 3 new user articles, Help shows all articles) and search query
   const filteredArticles = useMemo(() => {
-   let list = HELP_ARTICLES;
+    let list = HELP_ARTICLES;
     if (activeTab === "home") {
       list = HELP_ARTICLES.filter((art) => ["art-1", "art-2", "art-3"].includes(art.id));
     }
@@ -968,7 +987,7 @@ export default function HelpSupportWidget() {
       case "art-8":
         return (
           <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
           </svg>
         );
       case "art-9":
@@ -1014,7 +1033,10 @@ export default function HelpSupportWidget() {
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
             style={{ transformOrigin: "bottom right" }}
-            className={`w-[92vw] sm:w-[410px] h-[640px] max-h-[88vh] rounded-[28px] shadow-2xl border flex flex-col overflow-hidden relative backdrop-blur-xl origin-bottom-right ${isDarkMode
+            className={`transition-all duration-300 rounded-[28px] shadow-2xl border flex flex-col overflow-hidden relative backdrop-blur-xl origin-bottom-right ${currentView === "article_detail"
+                ? "w-[94vw] sm:w-[680px] h-[720px] max-h-[90vh]"
+                : "w-[92vw] sm:w-[410px] h-[640px] max-h-[88vh]"
+              } ${isDarkMode
                 ? "bg-slate-950/95 border-slate-800 text-white shadow-black/80"
                 : "bg-white/95 border-slate-200/90 text-slate-900 shadow-purple-950/20"
               }`}
@@ -1111,16 +1133,6 @@ export default function HelpSupportWidget() {
               )}
             </div>
 
-            {/* DARK MODE TOGGLE PIN */}
-            {/* <div className="absolute top-4 right-14 z-20">
-              <button
-                onClick={() => setIsDarkMode(!isDarkMode)}
-                className="p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs transition cursor-pointer"
-                title={isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
-              >
-                {isDarkMode ? "☀️" : "🌙"}
-              </button>
-            </div> */}
 
             {/* WIDGET CONTENT BODY */}
             <div className="flex-1 p-4 overflow-y-auto space-y-4 relative [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
@@ -1136,8 +1148,8 @@ export default function HelpSupportWidget() {
                           whileTap={{ scale: 0.98 }}
                           onClick={() => setCurrentView("ai_chat")}
                           className={`p-3.5 rounded-[20px] border transition-all duration-300 cursor-pointer flex items-center justify-between group shadow-sm ${isDarkMode
-                              ? "bg-slate-900/90 border-slate-800 hover:border-primary/60 hover:bg-slate-800/80 shadow-black/40"
-                              : "bg-white border-slate-200/80 hover:border-primary/50 hover:shadow-md hover:shadow-purple-900/5"
+                            ? "bg-slate-900/90 border-slate-800 hover:border-primary/60 hover:bg-slate-800/80 shadow-black/40"
+                            : "bg-white border-slate-200/80 hover:border-primary/50 hover:shadow-md hover:shadow-purple-900/5"
                             }`}
                         >
                           <div className="flex items-center gap-3">
@@ -1211,8 +1223,8 @@ export default function HelpSupportWidget() {
                           onChange={(e) => setSearchQuery(e.target.value)}
                           placeholder="Search help articles (e.g., payouts, Spotify)..."
                           className={`w-full pl-10 pr-9 py-2.5 rounded-2xl text-xs sm:text-sm font-medium border outline-none transition duration-200 ${isDarkMode
-                              ? "bg-slate-900 border-slate-800 text-white placeholder-slate-500 focus:border-primary focus:ring-2 focus:ring-primary/20"
-                              : "bg-slate-100/90 border-slate-200 text-slate-900 placeholder-slate-400 focus:border-primary focus:ring-2 focus:ring-primary/20"
+                            ? "bg-slate-900 border-slate-800 text-white placeholder-slate-500 focus:border-primary focus:ring-2 focus:ring-primary/20"
+                            : "bg-slate-100/90 border-slate-200 text-slate-900 placeholder-slate-400 focus:border-primary focus:ring-2 focus:ring-primary/20"
                             }`}
                         />
                         {searchQuery && (
@@ -1242,8 +1254,8 @@ export default function HelpSupportWidget() {
                                 whileTap={{ scale: 0.99 }}
                                 onClick={() => handleOpenArticle(article)}
                                 className={`p-3 rounded-[16px] border transition duration-200 cursor-pointer flex items-center justify-between gap-3 group ${isDarkMode
-                                    ? "bg-slate-900/60 border-slate-800/80 hover:bg-slate-900 hover:border-slate-700"
-                                    : "bg-white border-slate-200/80 hover:border-slate-300 hover:shadow-sm"
+                                  ? "bg-slate-900/60 border-slate-800/80 hover:bg-slate-900 hover:border-slate-700"
+                                  : "bg-white border-slate-200/80 hover:border-slate-300 hover:shadow-sm"
                                   }`}
                               >
                                 <div className="flex items-center gap-3 truncate">
@@ -1308,12 +1320,12 @@ export default function HelpSupportWidget() {
                                     setCurrentView("ai_chat");
                                   }}
                                   className={`p-3.5 rounded-[22px] border transition duration-200 cursor-pointer flex items-start justify-between gap-3 shadow-sm ${isCurrentActive
-                                      ? isDarkMode
-                                        ? "bg-slate-900 border-primary/70 ring-1 ring-primary/40 shadow-purple-900/20"
-                                        : "bg-white border-primary/60 ring-1 ring-primary/30 shadow-md shadow-purple-900/10"
-                                      : isDarkMode
-                                        ? "bg-slate-900/70 border-slate-800/80 hover:border-primary/40 hover:bg-slate-900"
-                                        : "bg-white border-slate-200/90 hover:border-primary/40 hover:shadow-sm"
+                                    ? isDarkMode
+                                      ? "bg-slate-900 border-primary/70 ring-1 ring-primary/40 shadow-purple-900/20"
+                                      : "bg-white border-primary/60 ring-1 ring-primary/30 shadow-md shadow-purple-900/10"
+                                    : isDarkMode
+                                      ? "bg-slate-900/70 border-slate-800/80 hover:border-primary/40 hover:bg-slate-900"
+                                      : "bg-white border-slate-200/90 hover:border-primary/40 hover:shadow-sm"
                                     }`}
                                 >
                                   <div className="flex items-start gap-3 min-w-0 flex-1">
@@ -1410,10 +1422,10 @@ export default function HelpSupportWidget() {
                         <div className="flex flex-col">
                           <div
                             className={`max-w-[85%] p-3.5 rounded-[18px] text-xs sm:text-sm leading-relaxed ${msg.sender === "user"
-                                ? "bg-primary text-white rounded-br-none shadow-md shadow-primary/20 self-end"
-                                : isDarkMode
-                                  ? "bg-slate-900 border border-slate-800 text-slate-200 rounded-bl-none"
-                                  : "bg-slate-100/90 border border-slate-200/60 text-slate-800 rounded-bl-none"
+                              ? "bg-primary text-white rounded-br-none shadow-md shadow-primary/20 self-end"
+                              : isDarkMode
+                                ? "bg-slate-900 border border-slate-800 text-slate-200 rounded-bl-none"
+                                : "bg-slate-100/90 border border-slate-200/60 text-slate-800 rounded-bl-none"
                               }`}
                           >
                             {msg.text}
@@ -1470,8 +1482,8 @@ export default function HelpSupportWidget() {
                           whileTap={{ scale: 0.96 }}
                           onClick={() => handleSendAiMessage(item.text)}
                           className={`text-[11px] font-semibold px-3.5 py-1.5 rounded-full border whitespace-nowrap transition-all duration-200 flex items-center gap-1.5 cursor-pointer shrink-0 ${isDarkMode
-                              ? "bg-slate-900/90 border-slate-800 text-slate-200 hover:border-primary hover:bg-primary/15 hover:text-white"
-                              : "bg-white border-slate-200/90 text-slate-700 hover:border-primary hover:bg-primary/5 hover:text-primary shadow-sm shadow-slate-200/50"
+                            ? "bg-slate-900/90 border-slate-800 text-slate-200 hover:border-primary hover:bg-primary/15 hover:text-white"
+                            : "bg-white border-slate-200/90 text-slate-700 hover:border-primary hover:bg-primary/5 hover:text-primary shadow-sm shadow-slate-200/50"
                             }`}
                         >
                           <span className="text-xs">{item.icon}</span>
@@ -1500,8 +1512,8 @@ export default function HelpSupportWidget() {
 
                         <div
                           className={`w-full rounded-[24px] border transition-all duration-300 p-3 sm:p-3.5 flex flex-col justify-between shadow-xl shadow-purple-950/5 ${isDarkMode
-                              ? "bg-slate-900/90 border-slate-800 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 shadow-black/40"
-                              : "bg-white border-slate-200/90 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20"
+                            ? "bg-slate-900/90 border-slate-800 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 shadow-black/40"
+                            : "bg-white border-slate-200/90 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20"
                             }`}
                         >
                           {selectedFile && (
@@ -1584,8 +1596,8 @@ export default function HelpSupportWidget() {
                                   setShowEmojiPicker(false);
                                 }}
                                 className={`px-1 py-0.5 rounded text-[9px] font-bold border transition cursor-pointer leading-none ${showGifPicker
-                                    ? "border-primary bg-primary text-white"
-                                    : "border-slate-300 dark:border-slate-700 hover:border-primary hover:text-primary"
+                                  ? "border-primary bg-primary text-white"
+                                  : "border-slate-300 dark:border-slate-700 hover:border-primary hover:text-primary"
                                   }`}
                                 title="Insert GIF"
                               >
@@ -1613,8 +1625,8 @@ export default function HelpSupportWidget() {
                               onClick={() => handleSendAiMessage()}
                               disabled={(!aiInput.trim() && !selectedFile) || !isValidEmail(userEmail)}
                               className={`w-8 h-8 rounded-full transition-all duration-200 flex items-center justify-center shrink-0 ${(aiInput.trim() || selectedFile) && isValidEmail(userEmail)
-                                  ? "bg-primary text-white shadow-md shadow-purple-600/40 cursor-pointer"
-                                  : "bg-slate-200 dark:bg-slate-800 text-slate-400 cursor-not-allowed"
+                                ? "bg-primary text-white shadow-md shadow-purple-600/40 cursor-pointer"
+                                : "bg-slate-200 dark:bg-slate-800 text-slate-400 cursor-not-allowed"
                                 }`}
                             >
                               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -1642,8 +1654,8 @@ export default function HelpSupportWidget() {
 
                         <div
                           className={`w-full rounded-[24px] border transition-all duration-300 p-3 sm:p-3.5 flex flex-col justify-between ${isDarkMode
-                              ? "bg-slate-900/90 border-slate-800 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 shadow-lg shadow-black/40"
-                              : "bg-white border-slate-200/90 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 shadow-xl shadow-purple-900/5"
+                            ? "bg-slate-900/90 border-slate-800 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 shadow-lg shadow-black/40"
+                            : "bg-white border-slate-200/90 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 shadow-xl shadow-purple-900/5"
                             }`}
                         >
                           {selectedFile && (
@@ -1700,8 +1712,8 @@ export default function HelpSupportWidget() {
                                   setShowEmojiPicker(false);
                                 }}
                                 className={`px-1 py-0.5 rounded text-[9px] font-bold border transition cursor-pointer leading-none ${showGifPicker
-                                    ? "border-primary bg-primary text-white"
-                                    : "border-slate-300 dark:border-slate-700 hover:border-primary hover:text-primary"
+                                  ? "border-primary bg-primary text-white"
+                                  : "border-slate-300 dark:border-slate-700 hover:border-primary hover:text-primary"
                                   }`}
                                 title="Insert GIF"
                               >
@@ -1729,8 +1741,8 @@ export default function HelpSupportWidget() {
                               onClick={() => handleSendAiMessage()}
                               disabled={!aiInput.trim() && !selectedFile}
                               className={`w-8 h-8 rounded-full transition-all duration-200 flex items-center justify-center shrink-0 ${aiInput.trim() || selectedFile
-                                  ? "bg-primary text-white shadow-md shadow-purple-600/40 cursor-pointer"
-                                  : "bg-slate-200 dark:bg-slate-800 text-slate-400 cursor-not-allowed"
+                                ? "bg-primary text-white shadow-md shadow-purple-600/40 cursor-pointer"
+                                : "bg-slate-200 dark:bg-slate-800 text-slate-400 cursor-not-allowed"
                                 }`}
                             >
                               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -1747,16 +1759,25 @@ export default function HelpSupportWidget() {
 
               {/* ARTICLE DETAIL VIEW */}
               {currentView === "article_detail" && selectedArticle && (
-                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-4 text-xs sm:text-sm">
-                  <div className={`flex items-center gap-3 p-3.5 rounded-2xl border ${isDarkMode ? "bg-primary/10 border-primary/20" : "bg-primary/5 border-primary/15"}`}>
-                    {renderArticleIcon(selectedArticle.id)}
+                <motion.div initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.25 }} className="space-y-4 text-xs sm:text-sm">
+                  {/* Premium Header Card */}
+                  <div className={`flex items-center gap-3.5 p-4 rounded-2xl border backdrop-blur-md shadow-sm transition duration-300 ${isDarkMode
+                      ? "bg-gradient-to-r from-primary/20 via-indigo-950/40 to-slate-900 border-primary/30 text-white"
+                      : "bg-gradient-to-r from-primary/10 via-purple-50/60 to-white border-primary/20 text-slate-900"
+                    }`}>
+                    <div className="p-3 rounded-xl bg-primary text-white shadow-md shadow-purple-500/30 shrink-0">
+                      {renderArticleIcon(selectedArticle.id)}
+                    </div>
                     <div>
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-primary">{selectedArticle.category} • {selectedArticle.readTime}</span>
-                      <h4 className={`font-bold text-sm sm:text-base ${isDarkMode ? "text-white" : "text-slate-900"}`}>{selectedArticle.title}</h4>
+                      <span className="text-[10px] font-extrabold uppercase tracking-wider text-primary bg-primary/15 px-2 py-0.5 rounded-md border border-primary/20 inline-block">
+                        {selectedArticle.category} • {selectedArticle.readTime}
+                      </span>
+                      <h4 className="font-bold text-sm sm:text-base mt-1 leading-snug">{selectedArticle.title}</h4>
                     </div>
                   </div>
+
                   {selectedArticle.content && selectedArticle.content.length > 0 && (
-                    <div className="space-y-2.5 leading-relaxed">
+                    <div className="space-y-2.5 leading-relaxed px-1">
                       {selectedArticle.content.map((paragraph, idx) => (
                         <p key={idx} className={isDarkMode ? "text-slate-300" : "text-slate-700"}>{paragraph}</p>
                       ))}
@@ -1768,16 +1789,15 @@ export default function HelpSupportWidget() {
                       {selectedArticle.steps.map((step, idx) => (
                         <div
                           key={idx}
-                          className={`p-3.5 rounded-2xl border space-y-2.5 transition duration-200 ${
-                            isDarkMode
-                              ? "bg-slate-900/80 border-slate-800 text-slate-200"
-                              : "bg-slate-50/90 border-slate-200/80 text-slate-800"
-                          }`}
+                          className={`p-4 rounded-2xl border space-y-3 transition-all duration-200 shadow-sm ${isDarkMode
+                              ? "bg-slate-900/90 border-slate-800 text-slate-200 hover:border-slate-700"
+                              : "bg-white border-slate-200/90 text-slate-800 hover:border-slate-300 hover:shadow-md"
+                            }`}
                         >
                           {step.stepTitle && (
-                            <h5 className={`font-bold text-xs sm:text-sm flex items-center gap-2 ${isDarkMode ? "text-white" : "text-slate-900"}`}>
+                            <h5 className={`font-bold text-xs sm:text-sm flex items-center gap-2.5 ${isDarkMode ? "text-white" : "text-slate-900"}`}>
                               {step.stepTitle.toLowerCase().startsWith("step") ? (
-                                <span className="w-5 h-5 rounded-full bg-primary text-white text-[10px] flex items-center justify-center font-extrabold shrink-0 shadow-sm">
+                                <span className="w-5 h-5 rounded-full bg-primary text-white text-[10px] flex items-center justify-center font-extrabold shrink-0 shadow-md shadow-purple-500/30">
                                   {step.stepTitle.match(/\d+/)?.[0] || idx + 1}
                                 </span>
                               ) : (
@@ -1811,18 +1831,21 @@ export default function HelpSupportWidget() {
                           {step.image && (
                             <div
                               onClick={() => setPreviewImage({ src: step.image, title: step.stepTitle || selectedArticle.title })}
-                              className="mt-2 relative rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 group cursor-pointer shadow-sm bg-slate-950/20"
+                              className="mt-3 relative rounded-2xl overflow-hidden border border-slate-200/80 dark:border-slate-800 group cursor-pointer shadow-md bg-slate-950/20 transition-all duration-300 hover:border-primary/60 hover:shadow-xl"
                             >
                               <Image
                                 src={step.image}
                                 alt={step.stepTitle || "Step image"}
-                                className="w-full h-auto object-cover group-hover:scale-102 transition duration-300 max-h-[300px]"
+                                className="w-full h-auto object-cover group-hover:scale-[1.015] transition duration-300 max-h-[380px]"
                               />
-                              <div className="absolute inset-0 bg-slate-950/30 opacity-0 group-hover:opacity-100 transition duration-200 flex items-center justify-center gap-1.5 text-white text-xs font-bold backdrop-blur-[2px]">
-                                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                                  <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
-                                </svg>
-                                <span>Click to Expand</span>
+                              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end justify-between p-3">
+                                <span className="text-white text-xs font-semibold drop-shadow">Click to view image</span>
+                                <span className="px-3 py-1.5 rounded-full bg-primary/95 backdrop-blur-md text-white text-xs font-bold flex items-center gap-1.5 shadow-lg border border-white/20">
+                                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+                                  </svg>
+                                  <span>Full View</span>
+                                </span>
                               </div>
                             </div>
                           )}
@@ -1830,30 +1853,41 @@ export default function HelpSupportWidget() {
                       ))}
                     </div>
                   )}
-                  <div className={`p-4 rounded-2xl border text-center space-y-2.5 transition duration-300 ${isDarkMode ? "bg-slate-900/80 border-slate-800" : "bg-slate-50 border-slate-200"}`}>
+
+                  {/* Ultra-Premium Feedback Card */}
+                  <div className={`p-5 rounded-2xl border text-center space-y-3 transition duration-300 shadow-sm relative overflow-hidden ${isDarkMode
+                      ? "bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 border-slate-800 text-white"
+                      : "bg-gradient-to-br from-slate-50 via-white to-purple-50/40 border-slate-200/90 text-slate-800 shadow-md shadow-purple-900/5"
+                    }`}>
+                    <div className="absolute -top-10 -right-10 w-24 h-24 bg-primary/10 rounded-full blur-2xl pointer-events-none" />
                     {articleFeedback[selectedArticle.id] ? (
                       <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="flex items-center justify-center gap-2 text-emerald-500 font-bold text-xs py-1">
                         <span>🎉 Glad this was helpful! Returning to home...</span>
                       </motion.div>
                     ) : (
                       <>
-                        <span className="text-xs font-bold block text-slate-400">Was this article helpful?</span>
-                        <div className="flex justify-center gap-3">
+                        <div className="space-y-0.5">
+                          <h5 className={`font-bold text-xs sm:text-sm tracking-tight ${isDarkMode ? "text-white" : "text-slate-800"}`}>
+                            Was this article helpful?
+                          </h5>
+                          <p className="text-[11px] text-slate-400">Let us know if this guide answered your questions</p>
+                        </div>
+                        <div className="flex justify-center gap-3 pt-1">
                           <motion.button
-                            whileHover={{ scale: 1.05 }}
+                            whileHover={{ scale: 1.05, y: -1 }}
                             whileTap={{ scale: 0.95 }}
                             onClick={() => handleArticleHelpful(selectedArticle.id)}
-                            className="px-4 py-2 rounded-xl bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500 hover:text-white font-bold text-xs transition cursor-pointer flex items-center gap-1.5 shadow-sm"
+                            className="px-5 py-2.5 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xs transition cursor-pointer flex items-center gap-2 shadow-md shadow-emerald-500/20"
                           >
                             <span>👍</span>
                             <span>Yes, thanks!</span>
                           </motion.button>
 
                           <motion.button
-                            whileHover={{ scale: 1.05 }}
+                            whileHover={{ scale: 1.05, y: -1 }}
                             whileTap={{ scale: 0.95 }}
                             onClick={() => handleArticleNeedHelp(selectedArticle.title)}
-                            className="px-4 py-2 rounded-xl bg-primary/10 text-primary hover:bg-primary hover:text-white font-bold text-xs transition cursor-pointer flex items-center gap-1.5 shadow-sm"
+                            className="px-5 py-2.5 rounded-full bg-primary hover:bg-primary/90 text-white font-bold text-xs transition cursor-pointer flex items-center gap-2 shadow-md shadow-purple-500/25"
                           >
                             <span>💬</span>
                             <span>Still need help</span>
@@ -1926,7 +1960,6 @@ export default function HelpSupportWidget() {
         )}
       </AnimatePresence>
 
-       {/* FULLSCREEN IMAGE LIGHTBOX / ZOOM MODAL */}
       <AnimatePresence>
         {previewImage && (
           <motion.div
@@ -1934,30 +1967,29 @@ export default function HelpSupportWidget() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setPreviewImage(null)}
-            className="fixed inset-0 z-[999999] bg-black/85 backdrop-blur-md flex flex-col items-center justify-center p-3 sm:p-6"
+            className="fixed inset-0 z-[999999] bg-black/80 backdrop-blur-md flex flex-col items-center justify-center p-3 sm:p-6"
           >
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative max-w-[95vw] max-h-[94vh] bg-slate-900 border border-slate-700/80 rounded-3xl overflow-hidden shadow-2xl flex flex-col items-center p-3.5"
+              className="relative max-w-[95vw] max-h-[94vh] bg-primary rounded-3xl overflow-hidden shadow-2xl flex flex-col items-center p-3 sm:p-4 text-white"
             >
-              <div className="w-full flex items-center justify-between px-3 py-2 border-b border-slate-800 mb-2.5">
+              <div className="w-full flex items-center justify-between px-2 py-1.5 mb-2">
                 <h4 className="text-xs sm:text-sm font-bold text-white truncate max-w-[80%] flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-primary animate-pulse shrink-0"></span>
                   <span className="truncate">{previewImage.title}</span>
                 </h4>
                 <button
                   type="button"
                   onClick={() => setPreviewImage(null)}
-                  className="px-3 py-1 rounded-full bg-slate-800 hover:bg-rose-600 text-slate-200 hover:text-white transition font-extrabold text-xs cursor-pointer flex items-center gap-1 border border-slate-700"
+                  className="px-3.5 py-1.5 rounded-full bg-white/20 hover:bg-white/30 text-white transition font-extrabold text-xs cursor-pointer flex items-center gap-1 shadow-sm"
                 >
                   <span>✕</span>
                   <span>Close</span>
                 </button>
               </div>
-              <div className="overflow-auto max-h-[84vh] w-full flex items-center justify-center p-1 no-scrollbar">
+              <div className="overflow-auto max-h-[84vh] w-full flex items-center justify-center no-scrollbar">
                 <Image
                   src={previewImage.src}
                   alt={previewImage.title}

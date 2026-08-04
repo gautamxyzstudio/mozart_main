@@ -144,7 +144,6 @@ import HowItWork17 from "./howitwork17.webp";
 import HowItWork18 from "./howitwork18.webp";
 import HowItWork19 from "./howitwork19.webp";
 import HowItWork20 from "./howitwork20.webp";
-import Article1 from "./article1.png";
 import Article2 from "./article2.png";
 import Article3 from "./article3.png";
 import Article4 from "./article4.png";
@@ -276,7 +275,6 @@ export const Images = {
   HowItWork18,
   HowItWork19,
   HowItWork20,
-  Article1,
   Article2,
   Article3,
   Article4,
