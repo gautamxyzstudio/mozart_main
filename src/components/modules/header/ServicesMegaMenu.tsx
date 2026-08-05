@@ -629,7 +629,7 @@ const ServicesMegaMenu: React.FC<ServicesMegaMenuProps> = ({ onClose }) => {
             </div>
             <div className="flex flex-col gap-0.5">
               <h4 className="text-base font-medium group-hover:text-[#6739b7] transition-colors duration-300">
-                Artist management
+                Artist Management
               </h4>
               <p className="text-[12px] text-[#414141] font-medium leading-relaxed">
                 Complete support for branding and career strategies.
