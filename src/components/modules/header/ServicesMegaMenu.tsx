@@ -392,7 +392,7 @@ const ServicesMegaMenu: React.FC<ServicesMegaMenuProps> = ({ onClose }) => {
             </div>
             <div className="flex flex-col gap-0.5">
               <h4 className="text-base font-medium group-hover:text-[#6739b7] transition-colors duration-300">
-            Label distribution
+            Label Distribution
               </h4>
               <p className="text-[12px] text-[#414141] font-medium leading-relaxed">
                 Professional label distribution and catalog administration.
@@ -648,7 +648,7 @@ const ServicesMegaMenu: React.FC<ServicesMegaMenuProps> = ({ onClose }) => {
           >
             <div className="flex flex-col gap-2 z-10">
               <h3 className="text-base font-medium group-hover:text-[#6739b7] transition-colors duration-300">
-                Royalty Rights management
+                Royalty Rights Management
               </h3>
               <p className="text-[12px] text-[#414141] font-medium leading-relaxed">
                 Protect music rights and manage royalties from global platforms.
