@@ -697,7 +697,7 @@ export default function HelpSupportWidget() {
     })
       .then((res) => res.json())
       .then((data) => {
-        const aiReply = data.reply || "Thank you for reaching out! Our team is reviewing your query.";
+        const aiReply = data.reply || data.error || "Unable to reach AI assistant at the moment.";
         const aiMsg: MessageItem = {
           id: (Date.now() + 1).toString(),
           sender: "ai",
@@ -721,7 +721,7 @@ export default function HelpSupportWidget() {
         const fallbackMsg: MessageItem = {
           id: (Date.now() + 1).toString(),
           sender: "ai",
-          text: `I received your question about "${articleTitle}". Amozart support team is here to assist you. What specific question do you have?`,
+          text: "Connection issue. Unable to process AI response.",
           time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
         };
         setSessions((prevSessions) =>
@@ -909,7 +909,7 @@ export default function HelpSupportWidget() {
       });
 
       const data = await res.json();
-      const aiReply = data.reply || "Thank you for reaching out! Our team is reviewing your query.";
+      const aiReply = data.reply || data.error || "Unable to process AI response.";
 
       const aiMsg: MessageItem = {
         id: (Date.now() + 1).toString(),
@@ -923,7 +923,7 @@ export default function HelpSupportWidget() {
       const fallbackMsg: MessageItem = {
         id: (Date.now() + 1).toString(),
         sender: "ai",
-        text: "I received your request! Amozart support team will send a detailed follow-up to your email shortly.",
+        text: "Network error. Failed to reach AI service.",
         time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
       };
       appendMessageToActiveSession(fallbackMsg);

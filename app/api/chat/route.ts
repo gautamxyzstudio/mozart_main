@@ -1,10 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import Groq from "groq-sdk";
 
-const groq = new Groq({
-  apiKey: process.env.NEXT_PUBLIC_GROQ_API_KEY,
-});
-
 const SYSTEM_PROMPT = `You are Amozart's AI Support Assistant — a helpful, friendly, and knowledgeable assistant for the Amozart music distribution platform.
 
 You help music artists and creators with:
@@ -12,17 +8,14 @@ You help music artists and creators with:
 - Royalty payments and earnings tracking
 - YouTube Content ID and monetization
 - Spotify, Apple Music, and other DSP distribution
-- Release scheduling and metadata
-- ISRC and UPC codes
-- Amozart platform account and settings issues
-- General music industry questions
+- Release scheduling, cover art requirements, ISRC/UPC codes, metadata edits, and takedowns
 
 Guidelines:
 - Keep responses concise, clear, and helpful (2-4 sentences max unless detailed explanation needed)
 - Be friendly and encouraging to artists
-- If you don't know something specific about Amozart's internal systems, suggest contacting human support
-- LANGUAGE MANDATE: ALWAYS respond in English by default. Only respond in Hindi (or Hinglish) if the user explicitly asks or instructs you to reply/speak in Hindi (e.g., "reply in Hindi", "Hindi me batao", "in Hindi", etc.).
-- Don't make up specific pricing, dates, or platform-specific data you're unsure about`;
+- LANGUAGE MANDATE: Respond in English by default. ONLY respond in Hindi (or Hinglish) if the user writes or asks in Hindi/Hinglish.
+- Always provide natural, intelligent, real AI answers to the user's specific questions.
+- DO NOT output any <think> tags or internal thinking process. Respond ONLY with the final response text directly.`;
 
 export async function POST(req: NextRequest) {
   try {
@@ -35,12 +28,22 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Build conversation history for context
+    const apiKey = process.env.GROQ_API_KEY || process.env.NEXT_PUBLIC_GROQ_API_KEY;
+
+    if (!apiKey) {
+      return NextResponse.json(
+        { error: "Groq API Key is not configured in .env.local" },
+        { status: 500 }
+      );
+    }
+
+    const groq = new Groq({ apiKey });
+
+    // Build conversation messages for Groq LLM
     const messages: Groq.Chat.ChatCompletionMessageParam[] = [
       { role: "system", content: SYSTEM_PROMPT },
     ];
 
-    // Add previous conversation history (last 10 messages for context)
     if (Array.isArray(history)) {
       const recentHistory = history.slice(-10);
       for (const msg of recentHistory) {
@@ -52,38 +55,55 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    // Add current user message
     messages.push({ role: "user", content: message });
 
-    const completion = await groq.chat.completions.create({
-      model: "llama-3.3-70b-versatile",
-      messages,
-      max_tokens: 512,
-      temperature: 0.7,
-    });
+    // Priority list of active models on Groq
+    const models = [
+      "qwen/qwen3.6-27b",
+      "groq/compound",
+      "openai/gpt-oss-120b",
+      "groq/compound-mini",
+      "qwen/qwen3.8-27b",
+      "llama-3.3-70b-versatile",
+    ];
 
-    const reply = completion.choices[0]?.message?.content;
+    let reply: string | null | undefined = null;
+    let lastError: any = null;
+
+    for (const model of models) {
+      try {
+        const completion = await groq.chat.completions.create({
+          model,
+          messages,
+          max_tokens: 512,
+          temperature: 0.7,
+        });
+
+        reply = completion.choices[0]?.message?.content;
+        if (reply) {
+          // Remove internal reasoning/thinking blocks from models like Qwen/DeepSeek
+          reply = reply.replace(/<think>[\s\S]*?<\/think>/gi, "").trim();
+          if (reply) break;
+        }
+      } catch (err) {
+        lastError = err;
+        console.warn(`Groq model ${model} failed, trying next model...`);
+      }
+    }
 
     if (!reply) {
+      console.error("Groq API Error:", lastError);
       return NextResponse.json(
-        { error: "No response from AI" },
+        { error: lastError?.message || "AI failed to generate a response." },
         { status: 500 }
       );
     }
 
     return NextResponse.json({ reply });
-  } catch (error: unknown) {
-    console.error("Groq API Error:", error);
-
-    if (error instanceof Groq.APIError) {
-      return NextResponse.json(
-        { error: `AI service error: ${error.message}` },
-        { status: error.status || 500 }
-      );
-    }
-
+  } catch (error: any) {
+    console.error("Chat API Route Error:", error);
     return NextResponse.json(
-      { error: "Failed to get AI response. Please try again." },
+      { error: error?.message || "Failed to get response from AI." },
       { status: 500 }
     );
   }
