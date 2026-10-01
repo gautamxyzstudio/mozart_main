@@ -15,30 +15,32 @@ const YouTubeContentIdHero = () => {
       <div className="w-full max-w-78rem mx-auto px-6 md:px-12 xl:px-26 flex flex-col md:flex-row items-center justify-between relative z-10 pb-16 md:pb-24">
         {/* Left Column: Typography Content */}
         <div className="flex flex-col items-center md:items-start md:w-[50%] w-full   md:pr-1 text-center md:text-left">
-          <span className="text-white font-medium text-[24px] md:text-[24px] xl:text-[48px]">
-            YouTube Content ID
-          </span>
+          <h1 className="flex flex-col items-center md:items-start w-full">
+            <span className="text-white font-medium text-[24px] md:text-[24px] xl:text-[48px] hidden md:block">
+              YouTube Content ID
+            </span>
 
-          <div className="flex flex-col leading-[1.15] items-center md:items-start w-full">
-            {/* Desktop Heading */}
-            <div className="hidden md:flex flex-col space-y-2">
-              <h1 className="text-white font-bold text-[40px] xl:text-[71px] md:text-[40px] tracking-tight">
-                for Independent
-              </h1>
+            <span className="flex flex-col leading-[1.15] items-center md:items-start w-full">
+              {/* Desktop Heading */}
+              <span className="hidden md:flex flex-col space-y-2">
+                <span className="text-white font-bold text-[40px] xl:text-[71px] md:text-[40px] tracking-tight">
+                  for Independent
+                </span>
 
-              <h1 className="text-[#7e4bc8] font-bold text-[52px] xl:text-[75px] tracking-tight">
-                Artists
-              </h1>
-            </div>
+                <span className="text-[#7e4bc8] font-bold text-[52px] xl:text-[75px] tracking-tight">
+                  Artists
+                </span>
+              </span>
 
-            {/* Mobile Heading */}
-            <div className="flex md:hidden flex-col items-center text-center">
-              <h1 className="text-white font-medium text-[38px] tracking-tight leading-[1.25]">
-                YouTube Content ID <br />
-                for <span className="text-[#7e4bc8] font-medium">Independent Artists</span>
-              </h1>
-            </div>
-          </div>
+              {/* Mobile Heading */}
+              <span className="flex md:hidden flex-col items-center text-center">
+                <span className="text-white font-medium text-[38px] tracking-tight leading-[1.25]">
+                  YouTube Content ID <br />
+                  for <span className="text-[#7e4bc8] font-medium">Independent Artists</span>
+                </span>
+              </span>
+            </span>
+          </h1>
 
           <p className="text-white/70 text-[15px] md:text-[14px] xl:text-[14px] font-light leading-relaxed max-w-lg px-2 md:px-0">
             Register your music with YouTube Content ID and turn every reupload, cover, and use of your song into a revenue stream -automatically.

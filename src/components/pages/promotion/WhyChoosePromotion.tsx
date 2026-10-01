@@ -57,9 +57,9 @@ const WhyChoosePromotion = () => {
               className="relative px-8 md:px-10 pt-8 pb-2 md:pt-10 md:pb-4 cursor-pointer group transition-all duration-300 flex flex-col justify-start"
             >
               {/* Big Number */}
-              <h1 className="text-[70px] md:text-[82px] font-black leading-none text-white/10 select-none">
+              <span className="block text-[70px] md:text-[82px] font-black leading-none text-white/10 select-none">
                 {feat.num}
-              </h1>
+              </span>
 
               {/* Title Content Area */}
               <div className="mt-2 flex items-center justify-between pb-3">

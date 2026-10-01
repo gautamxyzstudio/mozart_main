@@ -430,14 +430,15 @@ const MusicDistribution = () => {
           Music Distribution
         </span>
 
-        <h1 className="text-white font-extrabold text-[28px] leading-tight md:text-6xl xl:text-[76px] xl:leading-[86px] tracking-tight">
-          That Reaches
-        </h1>
-
-        <h1 className="text-white font-extrabold text-[34px] leading-tight md:text-6xl xl:text-[76px] xl:leading-[86px] tracking-tight mb-4 md:mb-7">
-          Every{" "}
-          <span className="text-[#8c52ff] bg-linear-to-r from-[#8c52ff] to-[#a273ff] bg-clip-text">
-            Platform
+        <h1 className="flex flex-col items-center text-center">
+          <span className="text-white font-extrabold text-[28px] leading-tight md:text-6xl xl:text-[76px] xl:leading-[86px] tracking-tight">
+            That Reaches
+          </span>
+          <span className="text-white font-extrabold text-[34px] leading-tight md:text-6xl xl:text-[76px] xl:leading-[86px] tracking-tight mb-4 md:mb-7">
+            Every{" "}
+            <span className="text-[#8c52ff] bg-linear-to-r from-[#8c52ff] to-[#a273ff] bg-clip-text">
+              Platform
+            </span>
           </span>
         </h1>
 

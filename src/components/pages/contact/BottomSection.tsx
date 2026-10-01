@@ -58,9 +58,9 @@ export const BottomSection = () => {
   return (
     <section className="relative bg-white pb-20 overflow-hidden">
       {/* Background Large Text */}
-      <h1 className="text-[#111] opacity-[0.1] lg:text-[12rem] lg:leading-80 font-bold md:text-[124px] md:leading-40 text-[70px] leading-20">
+      <span className="block text-[#111] opacity-[0.1] lg:text-[12rem] lg:leading-80 font-bold md:text-[124px] md:leading-40 text-[70px] leading-20">
         Get In Touch
-      </h1>
+      </span>
 
       <div className="px-6 flex flex-row items-center gap-10 w-full md:mt-0 mt-10">
         <Image

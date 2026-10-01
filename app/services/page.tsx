@@ -6,7 +6,7 @@ import { ServicesTopSection } from "@/src/components/pages/services/ServicesTopS
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Music Distribution, YouTube CMS & Promotion for Punjabi Artists",
+  title: "Music Services for Artists & Labels | Amozart",
   description:
     "Explore global distribution, dedicated artist management, advanced YouTube CMS access , and targeted digital music promotion built for Indian audiences.",
 };

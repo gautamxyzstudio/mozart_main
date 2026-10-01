@@ -3,7 +3,7 @@ import BlogListVeiw from "@/src/components/pages/blog/BlogListVeiw";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Punjabi Music Marketing Tips & Distribution Guides | Amozart Blog",
+  title: "Music Industry Insights, News & Tips | Amozart",
   description:
     "Master the music industry. Get the latest tips on global music distribution, YouTube monetization, streaming growth, and music promotion for indie artists.",
 };

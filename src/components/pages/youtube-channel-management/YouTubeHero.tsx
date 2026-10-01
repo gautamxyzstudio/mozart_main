@@ -17,17 +17,17 @@ const YouTubeHero = () => {
         <div className="flex flex-col xl:items-start items-center md:w-[55%] w-full space-y-6 md:pr-8 text-center xl:text-left">
 
 
-          <div className="flex flex-col leading-tight items-center md:items-start xl:items-start select-none">
-            <h1 className="text-white font-extrabold text-[34px] md:text-[40px] xl:text-[70px] leading-tight">
+          <h1 className="flex flex-col leading-tight items-center md:items-start xl:items-start select-none">
+            <span className="text-white font-extrabold text-[34px] md:text-[40px] xl:text-[70px] leading-tight">
               YouTube Channel
-            </h1>
-            <h1 className="text-primary bg-linear-to-r from-[#8c52ff] to-[#a273ff] bg-clip-text font-extrabold text-[34px] md:text-[48px] xl:text-[76px] ">
+            </span>
+            <span className="text-primary bg-linear-to-r from-[#8c52ff] to-[#a273ff] bg-clip-text font-extrabold text-[34px] md:text-[48px] xl:text-[76px] ">
               Management
-            </h1>
-            <h1 className="text-white font-extrabold text-[30px] md:text-[42px] xl:text-[68px]  ">
+            </span>
+            <span className="text-white font-extrabold text-[30px] md:text-[42px] xl:text-[68px]  ">
               for Musicians
-            </h1>
-          </div>
+            </span>
+          </h1>
 
 
 
