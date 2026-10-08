@@ -21,7 +21,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "mozart-app.s3.ap-southeast-2.amazonaws.com",  
+        hostname: "pub-dce31bae92a7491490a787f1cc5e40bb.r2.dev",  
         pathname: "/**",
       },
     ]
