@@ -6,20 +6,31 @@ import { useGetInfiniteBlog } from "@/src/hooks/useBlog";
 import { useMemo, useState } from "react";
 
 const BlogListVeiw = () => {
-  const [category, setCategory] = useState("");
+  const [activeCategory, setActiveCategory] = useState("General");
+  const queryCategory = activeCategory === "General" ? "" : activeCategory;
+
   const { data, isLoading, fetchNextPage, hasNextPage, isFetchingNextPage } =
-    useGetInfiniteBlog(9, category);
+    useGetInfiniteBlog(9, queryCategory);
 
   const blogs = useMemo(() => {
     return data?.pages.flatMap((page) => page.data) || [];
   }, [data]);
 
+  const handleCategorySelect = (selectedCat: string) => {
+    setActiveCategory(selectedCat);
+  };
+
+  const handleViewAll = () => {
+    setActiveCategory("General");
+  };
+
   return (
-    <section className="w-full">
+    <div className="w-full min-h-screen bg-white">
       <BlogTopSection
         data={blogs}
         isLoading={isLoading}
-        setCategory={setCategory}
+        activeCategory={activeCategory}
+        onCategorySelect={handleCategorySelect}
       />
       <BlogBottomSection
         data={blogs}
@@ -27,8 +38,9 @@ const BlogListVeiw = () => {
         fetchNextPage={fetchNextPage}
         hasNextPage={hasNextPage}
         isFetchingNextPage={isFetchingNextPage}
+        onViewAll={handleViewAll}
       />
-    </section>
+    </div>
   );
 };
 
